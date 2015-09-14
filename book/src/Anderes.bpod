@@ -1,0 +1,84 @@
+﻿# Buch
+
+=head1 Anderes (noch zu verschieben)
+
+=head3 Das Wichtigste zu Login-Verfahren
+
+Wie bereits in der Einleitung erwähnt:
+
+Login-Verfahren validieren/verifizieren den Anwender, der sich am System anmeldet.
+Das ist ebenfalls eine Art von Datenvalidierung, noch dazu eine äußerst kritische.
+Die Problematik ist fachlich ausführlich beschrieben. Erstaunlicherweise
+wird hier jedoch oft gegen einfachste Regeln verstoßen, sodass sich unnötigerweise
+Schwachstellen ergeben.
+
+Daher gehe ich hier kurz auf wichtige Punkte ein. Die fertige Lösung sollte unbedingt
+von einem Spezialisten untersucht werden!
+
+Bevor man sich mit den verschiedenen Möglichkeiten des Logins beschäftigt, 
+muss man die zu erreichende Sicherheitsstufe festlegen. Das ist Teil des
+Validierungs-Konzepts.
+
+=over
+
+=item 1. Kommunikationsparter verifizieren
+
+Vor dem Login muss man sich von der Echtheit des Web-Servers überzeugen, auf dem
+man sich anmelden möchte. Pisher verwenden oft ähnliche Web-Adressen oder versenden
+falsche Links per Email. Viele Browser zeigen hier links neben der URL ein Symbol
+an, das den Partner verifiziert und beim Anklicken Details des Partners zeigt.
+
+Technisch wird hier das Zertifikat überprüft, das der Webserver verwendet.
+Daher ist es für jede Webseite wichtig, ein - gültiges - Zertifikat zur Verfügung zu stellen.
+
+Bei Schwierigkeiten mit dem Zertifikat, das z.B. gar nicht vorhanden oder ungültig ist,
+sollte man hier stoppen, und auf gar keinen Fall einen Login-Versuch starten.
+Möglicherweise sitzt am anderen Ende der Leitung (auf dem Server) jemand, der
+Ihre Login-Informationen stehlen oder Ihnen anderweitig schaden will.
+
+=item 2. https - Verschlüsselung
+
+Alle Übertragungen zwischen Systemen über das Internet müssen verschlüsselt werden, damit dritte sich
+nicht dazwischenschalten und mitlesen/mithören können. Im Intranet sollte ab einer gewissen
+Größe/Sicherheitsstufe ebenfalls verschlüsselt werden.
+
+Mit "http" versendet der Web-Browser alles unverschlüsselt, auch Passwörter, die ja erst
+auf dem Webserver ausgewertet werden können.
+
+Erst mit dem Umschalten auf "https" wird die Kommunikation zwischen Browser und Web-Server
+verschlüsselt. Informieren Sie sich, wie Ihr Web-Browser das anzeigt. Oft wird ein Schloß
+oben links neben der Adresszeile dargestellt, das beim Anklicken Details anzeigt.
+
+Technisch ist es auch möglich, sich auf einer ungesicherten "http" Seite sicher anzumelden,
+weil anschließend auf das sichere "https" umgeschaltet wird. Das ist aber erst durch
+die Inspektion des HTML-Codes der Seite feststellbar.
+
+Deshalb empfehle ich allen Entwicklern, bereits für das Login auf Verschlüsselung
+mit https zu wechseln.
+
+Für besonders hohe Sicherheit ist https eventuell nicht mehr ausreichend, dann sollten die Daten,
+die über https ausgetauscht werden, noch mit einer hochsicheren Verschlüsselung
+einzeln verschlüsselt werden.
+
+Verschlüsselungssoftware aus den USA ist grundsätzlich als schwach einzustufen, weil
+die Vermarktung in den USA den Einbau von Hintertüren für die NSA zwingend vorsieht.
+Deshalb sind auch PGP-Verfahren ab einer bestimmten Schlüssellänge nicht erwünscht,
+da auch die NSA mit ihren Supercomputern den Schutz nicht knacken kann.
+
+Im Zweifelsfall auf OpenSource SW zurückgreifen und die Libraries selbst inspizieren und compilieren
+oder das von vertrauenswürdigen Institutionen durchführen lassen.
+
+=item 3. Passwörter + TAN
+
+Für die Eingabe von Passwörtern vorgefertigte UI-Elemente verwenden. Eigene sind oft zu unsicher!
+
+Dann das Passwort auf den Webserver übertragen und dort prüfen.
+
+Oder noch sicherer: ....
+
+=item 4. Erfolgreiches Login
+
+=item 5. Sessions
+
+=back
+

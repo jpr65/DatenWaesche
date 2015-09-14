@@ -1,0 +1,41 @@
+﻿# Buch
+
+=head1 Titelseite
+
+=head2 Große Datenwäsche
+
+=head3 Kosten einsparen und Risiken minimieren mit dem Leitfaden zur Datenvalidierung
+
+Oben Links: Blatt mit Schrift, darunter Pfeil auf
+
+Mitte, darunter: Skizze einer Waschmaschine mit Buchstaben und Zeichen in der Trommel
+
+Rechts: Geldhaufen/Scheine, auf die ein Pfeil aus der Waschmaschine zeigt.
+
+=head1 Rücken-Text / Werbung
+
+Datenprüfung ist ein schwer vernachlässigtes Gebiet der Software-Entwicklung.
+
+Mit den im Buch vorgestellten Software-Techniken zur Daten-Validierung
+wird die Datenwäsche ein leicht anzuwendendes Standard-Verfahren.
+
+Dadurch werden Entwicklungszeit und -kosten eingespart.
+
+Auftraggeber definieren im Validierungskonzept, welche Validierungen
+wie und wann durchgeführt werden müssen.
+
+Anwender erhalten Korrektur-Hinweise in der Oberfläche durch standardisierte,
+verständliche Fehlermeldungen.
+
+Erfahrene Anwender können Validierungsregeln selbständig Daten
+und Eingabefeldern zuordnen.
+
+Entwickler erhalten eine exakte Markierung der Code-Zeile,
+in der die verschmutzten Daten entdeckt wurden.
+
+Tester können automatische, isolierte Tests für Validierungsregeln schreiben.
+
+Die SW-Architektur verbessert sich,
+die Robustheit und Testbarkeit steigen, die Aufwände für Entwicklung
+und Tests sinken. 
+
