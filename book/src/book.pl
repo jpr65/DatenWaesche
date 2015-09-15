@@ -53,6 +53,8 @@ say OUTP "=encoding utf8";
 
 foreach my $book_file (@book_files) {
     parse_book_pod($book_file, $output_dir);
+    say OUTP qq();
+    say OUTP qq();
 }
 
 say "Done.";

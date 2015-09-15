@@ -130,10 +130,44 @@ Und das alles mühelos, vollautomatisch, nebenbei.
 
 Genau verstanden haben das die Experten für Hirnforschung noch nicht.
 
-Selbst Experten für Software-Entwicklung verstehen nicht einmal ihre eigene Software,
-die sie selbst entworfen und entwickelt haben.
+=head2 Software und Daten enthalten Fehler
+
+Jede ungeprüfte Software enthält Fehler, eine gut getestete Software enthält weniger
+Fehler.
+
 Die Komplexität jeder größeren Software-Lösung überschreitet irgendwann den Punkt,
 wo ein einzelner sie insgesamt und in allen Details verstehen kann.
+
+Dann verstehen auch die Experten für Software-Entwicklung ihre eigene Software
+nicht mehr, die sie selbst entworfen und entwickelt haben.
+
+Fehlerhafte Software kann natürlich keine fehlerfreien Daten garantieren.
+
+Erstaunlicherweise gehen die meisten Software-Entwickler aber davon aus,
+dass ihre Daten immer korrekt sind. Aber nur validierte Daten sind "korrekt".
+Wobei "korrekt" eine sehr unspezifische Bezeichnung ist. Ich bevorzuge:
+
+  Die Daten sind bereit zum Einsatz für ...
+
+=head4 Beispiel für Zustände von Daten
+
+Ein Feuerwehrfahrzeug, das gerade keine Räder montiert hat, ist nicht
+direkt einsatzbereit.
+
+Die Validierungsprüfung für Einsatzbereitschaft ergibt daher:
+
+  Nicht einsatzbereit
+
+oder auch genauer:
+
+  Einsatzbereit nach Montage der Reifen in ca. 60 Minuten.
+
+Man muss das Fahrzeug jetzt nicht verschrotten, nur weil die Reifen noch fehlen.
+Aber Constraints in Datenbanken verhindern oftmals eine Speicherung von Daten,
+die noch unvollständig sind, was hier der Verschrottung eines
+sehr teuren Spezialfahrzeugs entspricht.
+
+...
 
 =head2 Forderung eines standardisierten Daten-Validierungskonzepts
 

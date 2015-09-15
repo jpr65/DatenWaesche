@@ -1,6 +1,6 @@
 ﻿# Buch
 
-=head1 Anderes (noch zu verschieben)
+=head1 Verwandte Themen
 
 =head3 Das Wichtigste zu Login-Verfahren
 
@@ -68,17 +68,68 @@ da auch die NSA mit ihren Supercomputern den Schutz nicht knacken kann.
 Im Zweifelsfall auf OpenSource SW zurückgreifen und die Libraries selbst inspizieren und compilieren
 oder das von vertrauenswürdigen Institutionen durchführen lassen.
 
-=item 3. Passwörter + TAN
+=item 3. Passwörter + TAN + Private Key
 
 Für die Eingabe von Passwörtern vorgefertigte UI-Elemente verwenden. Eigene sind oft zu unsicher!
 
 Dann das Passwort auf den Webserver übertragen und dort prüfen.
 
-Oder noch sicherer: ....
+Für höchste Sicherheit kann man 10kByte oder mehr, zufällig gefüllt, an das Login übersenden,
+die dann mit dem privaten Key signiert und wieder zurückgesendet werden.
+Das entspricht der hohen Sicherheitstufe von Zertifikaten.
 
 =item 4. Erfolgreiches Login
 
-=item 5. Sessions
+Erst C<nach> dem erfolgreichen Login sollte die Session gestartet werden, die dem User
+die vorkonfigurierten Zugriffsrechte gewährt.
+
+Zugriffsrechte sollten niemals persönlich, sondern nur durch die Zugehörigkeit zu Gruppen
+gewährt werden. Dadurch wird das Erweitern und Einschränken von Rechten sehr vereinfacht
+und sehr übersichtlich.
+
+=item 5. Sicherheits-Schleusen
+
+Sichheitsschleusen werden eingesetzt, um sensible Bereiche besonders zu schützen, in Forschungs-Labors,
+Krankenhäusern, Gefängnissen usw.
+
+Viele Web-Portale arbeiten mit sensiblen Daten, aber ohne Sicherheitsschleuse.
+
+Ich empfehle ein mindestens 3-stufiges System für jede geschäftliche Web-Anwendung.
+Ein einzelner Einbruch in das Webportal verursacht in den meisten Fällen Kosten, die die Kosten
+für Einrichtung und Betrieb zweier weiterer Web-Server um ein vielfaches übersteigt.
+
+Zusätzlich schützt dieser Ansatz vor Angriffen, die das System überlasten sollen
+(Denial of Service Attacks). Nach dem Einloggen kann man durch die Trennung der Web-Server
+eine andere Leitung nutzen und IP-Adressen und URLs variieren.
+
+=item 1. Public Web-Server
+
+Der Public Web-Server enthält den öffentlich zugänglichen Teil, der ohne login
+erreicht und gelesen werden kann.
+
+Minimal enthält er eine Web-Seite, die einen Web-Link (URL) auf den Login-Webserver enthält.
+Er hat bis auf den Link keinerlei Informationen über die anderen Server.
+
+=item 2. Login Web-Server
+
+Der Login Web-Server wird nur für die Authentifizierung eingesetzt. Er erzeugt eine erste,
+kurzlebige Session für den Login-Vorgang und alle damit verbundenen Aktivitäten.
+
+Nach erfolgreichem Login fordert er vom Anwendungssystem eine Session für das authentifizierte
+Login an und sendet die Session-ID an den Webbrowser des Users.
+
+=item 3. Anwendungs-Webserver
+
+Nur der Login Web-Server darf eine Session auf dem Anwendungs-Webserver starten,
+am besten unter Verwendung von Zertifikaten.
+Anfragen von anderen Systemen werden grundsätzlich abgelehnt.
+
+=item 6. Sessions
+
+Die Gültigkeitsdauer und der Gültigkeitsbereich von Sessions müssen genau festgelegt werden.
+Session-IDs benötigen eine Mindestlänge, z.B. von 30 alphanumerischen Zeichen.
 
 =back
 
+Spezialisten für Security und Firewalls haben noch
+weiterführende Ideen und Lösungsansätze im Angebot.
