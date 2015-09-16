@@ -1,0 +1,151 @@
+﻿# Buch
+
+=head1 Einführung in die Datenvalidierung
+
+In diesem Kapitel wird zunächst definiert, was genau unter Daten-Validierung zu verstehen ist.
+Im Anschluss wird die Validierung von Daten aus allen Richtungen betrachtet.
+
+Diese Betrachtungsrichtungen ("Dimensionen") der Validierung sind:
+
+=over
+
+=item 1. Reinheitsgrad
+
+=item 2. Gültigkeitsdauer
+
+=item 3. Datenmenge
+
+=item 4. Validierungsaufwand
+
+=item 5. Komplexität der Daten
+
+=back
+
+Jede Dimension wird im folgenden in einem eigenen Unterkapitel vorgestellt und genau untersucht.
+
+Daraus abzuleitende Maßnahmen für die Software-Entwicklung werden anschließend in eigenen Kapiteln
+zusammengefasst.
+
+=head2 Definition Daten-Validierung
+
+Unter B<Daten-Validierung> versteht man die 
+
+=over
+
+=item 1. B<Prüfung der Syntax von Daten>
+
+durch die Prüfung der formalen Richtigkeit der Daten (Syntax - Rechtschreibung),
+
+=item 2. B<Ermittlung der Gültigkeit von Regeln für die Daten>
+
+nachdem in 1. die Daten erfasst wurden, können jetzt im zweiten Schritt die Inhalte für
+eine Überprüfung von Regeln verwendet werden.
+
+=back
+
+Die Prüfung der inhaltlichen Korrektheit von Daten ist hiervon ausgenommen.
+
+=head2 Schritt 1: Syntaxprüfung
+
+Das Ziel der Syntaxprüfung ist das Herausfiltern von Datenschmutz oder fehlerhaft erfasster Daten und
+die anschliessende Konvertierung (Umwandlung) in einen Software-Datentyp.
+
+Die Syntax der Daten kann natürlich auch über Regeln geprüft werden,
+bevor sie konvertiert (umgewandelt) und gespeichert werden.
+
+=head3 Vertiefung in Beispielen
+
+Daten sollten zunächst immer als Text (String) erfasst werden. Ein Text ist einfach
+eine Abfolge von Zeichen, z.B.
+
+  1 Minute = 60 Sekunden
+
+Dieser Text enthält insgesamt 23 Zeichen (ohne Leerraum außen), und zwar
+3 Ziffern, 4 Leerzeichen (Space) und ein Sonderzeichen, das Gleichheitszeichen.
+
+Um z.B. die Anzahl der Tischtennisbälle in einer Verpackung einzugeben wird der Text
+
+  100
+
+vom Anwender über die Tastatur eingegeben. Der Text besteht aus den Ziffern 1, 0, 0.
+Die Regel I<Ganze Zahl> wird jetzt auf den Text "100" angewendet und bestätigt,
+dass dieser Text in die ganze Zahl I<100> umgewandelt werden kann.
+
+Passender ist hier allerdings die Regel I<Positive ganze Zahl Größer Null>,
+die negative Zahlen und die 0 ausschließt.
+
+Wenn die Regel grünes Licht gibt, kann der Text in eine ganze Zahl (Integer) umgewandelt werden,
+die für Berechnungen und Vergleiche verwendet werden kann.
+
+Wenn nun die Zahl
+
+  999 999 999 999 999
+
+(ohne Leerschritte) eingegeben wird, wird das zu Problemen bei der Umwandlung führen,
+die Zahl ist einfach zu groß für einen Integer.
+
+Daher wird die Regel weiter spezifiziert zu
+
+  Positive ganze Zahl mit maximal 4 Stellen
+
+Jetzt liegt das Maximum bei I<9999> Tischtennisbällen, und es kann in jedem Fall in einen
+Integer umgewandelt werden.
+
+Für Experten noch der Reguläre Ausdruck:
+
+  ^\d{1,4}$
+
+Mit der ganzen Zahl gespeichert als Integer kann nun Schritt 2 durchgeführt werden.
+
+=head2 Schritt 2: Validierungsregeln 
+
+Das Ziel der Validierung über Regeln ist es, bestimmte Eigenschaften der Daten zu
+bestimmen und zu garantieren. Das kann sowohl für einzelne Werte oder auch für komplexe
+Datenstrukturen durchgeführt werden.
+
+=head3 Beispielhafte Validierung für Einzelwert-Prüfung
+
+Für den Webshop soll eine Mindestbestellmenge von 50 und bei einer maximalen Packungsgröße
+von 2000 Bällen festgelegt werden als Regel I<BestellmengeTischtennisbaelle>:
+
+  50 <= AnzahlBälle <= 2000
+
+Leert sich nun das Lager, kann die Regel dynamisch angepasst werden, indem die obere Grenze
+nach und nach verkleinert wird:
+
+  50 <= AnzahlBälle <= 1500
+  50 <= AnzahlBälle <= 1000
+  50 <= AnzahlBälle <= 500
+
+Ist das Lager leer, wird die Regel ersetzt durch
+
+  False, Message:="Zur Zeit sind keine Tischtennisbälle mehr lieferbar."
+
+Wenn Tischtennisbälle nachbestellt wurden, kann die Regel umgeformt werden zu:
+
+  False, Message:="Tischtennisbälle sind erst wieder ab Anfang März lieferbar."
+
+"False" heißt hier, dass die Regel immer fehlschlägt und die als "Message" 
+angegebene Meldung liefert.
+
+=head4 Für Software-Kundige
+
+Die Software ruft immer nur die Regel I<BestellmengeTischtennisbaelle> auf. Wie die Regel
+umgesetzt wird, muss sie nicht wissen und sich auch nicht um die Fehlerbehandlung
+und Fehlermeldung kümmern. So kann die SW von außen verändert werden, ohne eine einzige
+Bedingung (IF ...) im Code programmieren zu müssen, z.B. mit Perl und Scalar::Validation
+sieht der Code dann so aus:
+
+  $bestellmenge_tt_baelle
+      = validate ("Bestellmenge Tischtennisbälle"   # Der Name für den Anwender
+                  => BestellmengeTischtennisbaelle  # Die Regel
+                  => $bestellmenge_tt_baelle        # Der zu prüfende Wert
+  );  
+
+Ganz gleich, was B<vor> der Prüfung mit validate() in der Variablen
+C<$bestellmenge_tt_baelle> stand,
+B<nachher> steht ein gültiger Wert in der Variablen, andernfalls wird die Abarbeitung
+hier mit einer passenden Fehlermeldung unterbrochen.
+Das vereinfacht und stabilisiert die SW sehr.
+
+=head3 Beispielhafte Validierung für Einzelwert-Prüfung
