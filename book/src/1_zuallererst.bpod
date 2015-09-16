@@ -1,0 +1,33 @@
+﻿# Buch
+
+=head1 Zuallererst 
+
+Hier wird der grundsätzliche Aufbau des Buches beschrieben und man erhält Tipps,
+wie man mit dem Buch arbeiten kann.
+
+=head2 Wie Lernen funktioniert
+
+Menschen lernen durch Beispiele und Wiederholungen, die wenigsten haben ein fotographisches
+Gedächtnis, durch das sie wie durch Wikipedia browsen können.
+
+Ich gebe zwar auch Definitionen und Namen an,
+arbeite aber sehr viel mit Beispielen und Wiederholungen.
+
+Wie viele Software-Entwickler habe ich sogar ein schlechtes Gedächtnis. Wie ich mittlerweile
+herausgefunden habe, führt diseser Umstand zu besserer Software, wenn man ihn berücksichtigt:
+
+Man dokumentiert, was man entwickelt hat und warum man es C<so> entwickelt hat,
+wenn es ungewöhnlich ist. Man verwendet sprechende, konsistente Namen für alles und
+liefert Fehlermeldungen, die auch Jahre später noch verständlich sind.
+
+Da Anwender und Entscheider im Allgemeinen keine Software-Entwicklungsexperten sein müssen,
+wiederhole ich kurze Erklärungen für wichtige Begriffe oder wichtige Eigenschaften
+oder wichtige Resultate, damit man nicht immer im Buch hin- und herspringen muss,
+was besonders in der gedruckten Version sehr lästig ist.
+
+Am Ende dieses Kapitels gebe ich noch Leseempfehlungen für die verschiedenen Lesergruppen.
+In der Überschrift oder Einleitung jedes Kapitels informiere ich darüber, für welche Zielgruppen 
+dieses Kapitel interessant ist, wenn es nicht für alle geschrieben ist.
+
+=head2 Über den Umgang mit dem Buch
+

@@ -80,7 +80,7 @@ Das entspricht der hohen Sicherheitstufe von Zertifikaten.
 
 =item 4. Erfolgreiches Login
 
-Erst C<nach> dem erfolgreichen Login sollte die Session gestartet werden, die dem User
+Erst B<nach> dem erfolgreichen Login sollte die Session gestartet werden, die dem User
 die vorkonfigurierten Zugriffsrechte gewährt.
 
 Zugriffsrechte sollten niemals persönlich, sondern nur durch die Zugehörigkeit zu Gruppen
@@ -96,11 +96,13 @@ Viele Web-Portale arbeiten mit sensiblen Daten, aber ohne Sicherheitsschleuse.
 
 Ich empfehle ein mindestens 3-stufiges System für jede geschäftliche Web-Anwendung.
 Ein einzelner Einbruch in das Webportal verursacht in den meisten Fällen Kosten, die die Kosten
-für Einrichtung und Betrieb zweier weiterer Web-Server um ein vielfaches übersteigt.
+für Einrichtung und Betrieb zweier weiterer Web-Server um ein vielfaches übersteigen.
 
 Zusätzlich schützt dieser Ansatz vor Angriffen, die das System überlasten sollen
 (Denial of Service Attacks). Nach dem Einloggen kann man durch die Trennung der Web-Server
 eine andere Leitung nutzen und IP-Adressen und URLs variieren.
+
+=over
 
 =item 1. Public Web-Server
 
@@ -123,6 +125,8 @@ Login an und sendet die Session-ID an den Webbrowser des Users.
 Nur der Login Web-Server darf eine Session auf dem Anwendungs-Webserver starten,
 am besten unter Verwendung von Zertifikaten.
 Anfragen von anderen Systemen werden grundsätzlich abgelehnt.
+
+=back
 
 =item 6. Sessions
 

@@ -62,9 +62,7 @@ Anwender und Entscheider überprüfbar.
 
 =head2 Daten-Validierung
 
-=head3 Definition
-
-Unter Daten-Validierung verstehe ich die Prüfung der
+Unter Daten-Validierung versteht man die Prüfung der
 
    formalen Richtigkeit der Daten (Syntax - Rechtschreibung),
 
@@ -139,7 +137,7 @@ Die Komplexität jeder größeren Software-Lösung überschreitet irgendwann den
 wo ein einzelner sie insgesamt und in allen Details verstehen kann.
 
 Dann verstehen auch die Experten für Software-Entwicklung ihre eigene Software
-nicht mehr, die sie selbst entworfen und entwickelt haben.
+nicht mehr im Detail, die sie selbst entworfen und entwickelt haben.
 
 Fehlerhafte Software kann natürlich keine fehlerfreien Daten garantieren.
 
@@ -163,17 +161,49 @@ oder auch genauer:
   Einsatzbereit nach Montage der Reifen in ca. 60 Minuten.
 
 Man muss das Fahrzeug jetzt nicht verschrotten, nur weil die Reifen noch fehlen.
-Aber Constraints in Datenbanken verhindern oftmals eine Speicherung von Daten,
-die noch unvollständig sind, was hier der Verschrottung eines
-sehr teuren Spezialfahrzeugs entspricht.
 
-...
+Aber genau das passiert, wenn man ungültige Daten nicht speichern kann. Sie
+werden vernichtet. Für Einzelwerte wie z.B. ein Datum, eine ganze Zahl u.ä.
+kann es akzeptabel und sinnvoll sein, wenn man ungültige Werte nicht in der Datenbank
+speichern darf.
+
+Aber einen Brief oder eine Email muss man immer speichern können, unabhängig ob
+leer, fast beendet oder fertig gestellt, auch wenn in der Anschrift die Postleitzahl nicht
+zum Ort passt oder die Email-Adresse unerlaubte Zeichen enthält.
+
+Die Email erhält dann den Status "Nicht versendbar" bedingt durch die ungültige Email-Adresse.
+
+Das Versenden dieser Email kann man dann generell
+verbieten oder den Anwender warnen und abfragen, ob versendet werden soll oder nicht.
+
+Aber er kann die Email öffnen, verändern und erneut prüfen lassen. Ist das Ergebnis positiv,
+wird der Status der Email in "versendbar" geändert und
+sie darf ohne weitere Rückfrage versendet werden.
+
+=head3 Funktionstests während der Entwicklung
+
+Mit Tests findet man Fehler/Abweichungen in der Software, korrigiert sie und testet erneut.
+Das alles findet B<während der Entwicklung im eigenen Hause> statt. 
+Somit ist die gesamte Testumgebung B<kein Produktbestandteil> und muss nur von Testern und
+Entwicklern bedient und verstanden werden.
+
+=head3 Datenwäsche beim Kunden
+
+Die zu prüfenden Daten fallen in der Regel erst beim Kunden an und
+können dann auch nur beim Kunden geprüft werden.
+Die B<Validierung> ist somit B<Produktbestandteil>
+und muss B<vom Kunden bedient und verstanden> werden.
 
 =head2 Forderung eines standardisierten Daten-Validierungskonzepts
 
-Deshalb ist es so wichtig, eine gute Systemarchitektur,
-robuste Funktionalität und Algorithmen zu entwickeln
-und vor allem die Daten ausreichend sauber zu waschen.
+Die Komplexität von Software und Daten erfordert eine gute Systemarchitektur,
+gut testete Funktionalität und robuste Algorithmen.
+
+Die Verwendung von ungewaschenen, nicht geprüften Daten
+führt in den meisten Fällen zu vermeidbaren Fehlern im weiteren Ablauf.
+Eine gezielte Validierung wird die Komplexität der Software reduzieren,
+in vielen Fällen signifikant reduzieren. Datenvalidierung ist also
+ein wichtiger Teil des Software-Produkts.
 
 Wenn dieses Buch der Datenvalidierung die notwendige Aufmerksamkeit
 verschafft, wäre das ein erster Schritt. Ein weiterer wäre die Verabschiedung
