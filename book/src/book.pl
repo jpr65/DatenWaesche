@@ -10,8 +10,8 @@ use Scalar::Validation qw(:all);
 
 my @book_files = qw (
 
-1_zuallererst
 einband
+1_zuallererst
 einleitung
 validierung_einfuehrung
 anderes

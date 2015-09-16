@@ -5,6 +5,30 @@
 Hier wird der grundsätzliche Aufbau des Buches beschrieben und man erhält Tipps,
 wie man mit dem Buch arbeiten kann.
 
+=head2 Leseempfehlungen für dieses Buch
+
+=head3 Für Unentschlossene
+
+Die Rückseite haben Sie wahrscheinlich schon gelesen, wenn nicht, dann dort starten.
+
+Im Anschluss die Einleitung lesen, dann dieses Kapitel und sich eine der in den
+folgenden Unterkapiteln beschriebenen Rollen aussuchen.
+
+=head3 Für Entschlossene
+
+Die Einleitung und die weiteren Unterkapitel von diesem hier lesen startend bei
+"Wie Lernen funktioniert"
+
+=head3 Für Anwender (User)
+
+=head3 Für Entscheider
+
+=head3 Für Software-Spezialisten
+
+Alles lesen.
+
+=head3 Für Tester
+
 =head2 Wie Lernen funktioniert
 
 Menschen lernen durch Beispiele und Wiederholungen, die wenigsten haben ein fotographisches
@@ -16,7 +40,7 @@ arbeite aber sehr viel mit Beispielen und Wiederholungen.
 Wie viele Software-Entwickler habe ich sogar ein schlechtes Gedächtnis. Wie ich mittlerweile
 herausgefunden habe, führt diseser Umstand zu besserer Software, wenn man ihn berücksichtigt:
 
-Man dokumentiert, was man entwickelt hat und warum man es C<so> entwickelt hat,
+Man dokumentiert, was man entwickelt hat und warum man es B<so> entwickelt hat,
 wenn es ungewöhnlich ist. Man verwendet sprechende, konsistente Namen für alles und
 liefert Fehlermeldungen, die auch Jahre später noch verständlich sind.
 
@@ -25,9 +49,26 @@ wiederhole ich kurze Erklärungen für wichtige Begriffe oder wichtige Eigenscha
 oder wichtige Resultate, damit man nicht immer im Buch hin- und herspringen muss,
 was besonders in der gedruckten Version sehr lästig ist.
 
-Am Ende dieses Kapitels gebe ich noch Leseempfehlungen für die verschiedenen Lesergruppen.
+=head2 Über den Umgang mit dem Buch
+
 In der Überschrift oder Einleitung jedes Kapitels informiere ich darüber, für welche Zielgruppen 
 dieses Kapitel interessant ist, wenn es nicht für alle geschrieben ist.
 
-=head2 Über den Umgang mit dem Buch
+Ansonsten spreche ich technische Details kurz an und verweise auf vertiefende Stellen im Buch.
 
+Ich bemühe mich um eine allgemein verständliche Sprache. Das wird mir nicht immer gelingen
+und ich bin für Hinweise auf "Entwicklerische" Worte und Darstellungen dankbar. 
+
+Falls es doch zu technisch wird, überlesen Sie einfach die entsprechenden Passagen,
+das geht vorbei wie ein kleiner Regenschauer. Falls technisch umsetzbar
+werde ich solche Teile mit einem "Achtung: Technik"-Symbol am Rand
+der Seite markieren.
+
+=head4 Und jetzt: Achtung, ein bischen Technik!
+
+Falls Sie Codezeilen nicht verstehen, treten Sie ein wenig zurück und lassen Sie
+das so entstehende Bild auf sich wirken, ohne zu lesen. Wirkt es unordentlich und kompliziert,
+dann B<ist der Code> auch unordentlich und kompliziert. Ein Entwickler, der sich die Stelle
+zwei Jahre später wieder ansieht, muss sich in unordentlichen und komplizierten Code
+auch erst wieder mühsam einarbeiten. Die Genies, die das in weniger als 1 Sekunde korrekt
+erfassen, habe ich bisher nur in Fernsehserien angetroffen.
