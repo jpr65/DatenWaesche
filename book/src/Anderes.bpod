@@ -140,7 +140,7 @@ weiterführende Ideen und Lösungsansätze im Angebot.
 
 =head1 Über den Autor
 
-Mich gibt es seit 1965. Das Ruhrgebiet, wo ich in der Stadtmitte aufgewachsen bin, hieß
+Mich gibt es seit 1965. Das Ruhrgebiet, wo ich in der Stadtmitte von Bochum aufgewachsen bin, hieß
 noch Kohlenpott und das machte damals durchaus Sinn. Über Umweltschutz machte sich kaum
 jemand Gedanken und der Schnee war in den Wintermonaten oft grau von den Ascheresten,
 die die Kohleöfen in die Umgebung pusteten.
@@ -232,7 +232,7 @@ nutzte die gerade eingeführte Email sowie HTML-Seiten zur automatisierten Infor
 Jeden Morgen erhielt jeder eine Email mit den für ihn wichtigen Informationen und URLs
 auf die Details.
 
-Nach 6 Jahren ging es dann 1998 endlich zurück nach NRW zur Telefonentwicklung von Siemens nach Bocholt,
+Nach 6 Jahren ging es dann 1998 endlich zurück nach NRW, zur Telefonentwicklung von Siemens nach Bocholt,
 wo man gerade DECT für Schnurlostelefone erfunden hatte und dringend Verstärkung in der
 Software-Entwicklung benötigte. Dort entwickelte man mit C unter Windows 95, später NT und dann XP
 hardwarenahe Software. Ich entwickelte Tools für die Entwickler mit Perl und später auch C#.
@@ -297,8 +297,24 @@ das CPAN Modul
 um Parameter und Werte komfortabel über Regeln prüfen und eine Dokumentation
 für das API generieren zu können.
 
-Ende 2015 wurden wegen der schlechten Lage bei der Japanischen Muttergesellschaft auch in Europa
+Ende 2015 wurde wegen der schlechten Lage bei der japanischen Muttergesellschaft auch in Europa
 die Entwicklung stark reduziert und ich wechselte zum Deutschen-Medizin-Rechen-Zentrum, kurz DMRZ.
 
 Dort entwickelte ich zunächst neue Verfahren für OCR und Bildverbesserung mit C#, C++ und Visual Basic.
 Aktuell beschäftige ich mich mit der Weiterentwicklung des Web-Portals.
+
+Für dieses Buch entwickle ich gerade BPOD, ein Aufsatz auf POD, mit dem man statt Dokumentation für
+Perl ganze Bücher schreiben und nach HTML und über LaTeX nach PDF konvertieren kann.
+Bpod.pm/.pl ist ein Spartanic Perl Modul, das auf fast jeder Plattform läuft.
+
+Dieses Buch entsteht gerade auf einem Android Tablet.
+
+=head2 Non-Informatik
+
+Mit meiner Familie wohne ich im eigenen Haus mit Garten im westlichen Münsterland.
+
+Zum Ausgleich treibe ich Sport, trainiere für die 6km Laufstrecke und spiele Basketball.
+An der Nordsee fahre ich mit meiner Powermatte auf dem ATB herum und
+seit einigen Jahren tanze ich mit meiner Frau Tango Argentino.
+
+Ich habe schon so viele Bücher gelesen, dass es jetzt an der Zeit war, mal selbst eines zu schreiben.

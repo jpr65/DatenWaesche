@@ -120,7 +120,9 @@ Es existieren wenige, kaum bekannte Frameworks, die den Entwicklern
 die mühevolle Arbeit abnehmen, Prüfungen zu programmieren und zu testen.
 
 Viele User sind es gewöhnt, Daten gleich korrekt einzugeben, weil im Falle eines
-Fehlers die Suche nach der Ursache aufwändig werden kann.
+Fehlers die Suche nach der Ursache aufwändig werden kann. Im schlechtesten Fall,
+der immer noch sehr häufig auftritt, stürzt das Programm ab (Ausnahme in ...)
+oder hängt sich auf und die mühevoll eingetippten Daten sind verloren.
 
 Wenn der Auftraggeber einer SW-Entwicklung nicht explizit Prüfungen fordert
 und sie testet, werden oft keine eingebaut. Denn in Software sieht man meistens
@@ -154,8 +156,8 @@ Fehler.
 Die Komplexität jeder größeren Software-Lösung überschreitet irgendwann den Punkt,
 wo ein einzelner sie insgesamt und in allen Details verstehen kann.
 
-Dann verstehen auch die Experten für Software-Entwicklung ihre eigene Software
-nicht mehr im Detail, die sie selbst entworfen und entwickelt haben.
+Das führt so weit, dass die Experten, die die Software ja entwickelt haben,
+überhaupt nicht mehr wissen, was da genau abläuft.
 
 Fehlerhafte Software kann natürlich keine fehlerfreien Daten garantieren.
 
@@ -211,6 +213,7 @@ Die zu prüfenden Daten fallen in der Regel erst beim Kunden an und
 können dann auch nur beim Kunden geprüft werden.
 Die B<Validierung> ist somit B<Produktbestandteil>
 und muss B<vom Kunden bedient und verstanden> werden.
+Als Produktbestandteil muss natürlich auch die Validierung Funktionstests unterzogen werden.
 
 =head2 Forderung eines standardisierten Daten-Validierungskonzepts
 
