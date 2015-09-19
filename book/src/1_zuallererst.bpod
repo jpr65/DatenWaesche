@@ -38,7 +38,7 @@ Ich gebe zwar auch Definitionen und Namen an,
 arbeite aber sehr viel mit Beispielen und Wiederholungen.
 
 Wie viele Software-Entwickler habe ich sogar ein schlechtes Gedächtnis. Wie ich mittlerweile
-herausgefunden habe, führt diseser Umstand zu besserer Software, wenn man ihn berücksichtigt:
+herausgefunden habe, führt dieser Umstand zu besserer Software, wenn man ihn berücksichtigt:
 
 Man dokumentiert, was man entwickelt hat und warum man es B<so> entwickelt hat,
 wenn es ungewöhnlich ist. Man verwendet sprechende, konsistente Namen für alles und
@@ -68,7 +68,7 @@ der Seite markieren.
 
 Falls Sie Codezeilen nicht verstehen, treten Sie ein wenig zurück und lassen Sie
 das so entstehende Bild auf sich wirken, ohne zu lesen. Wirkt es unordentlich und kompliziert,
-dann B<ist der Code> auch unordentlich und kompliziert. Ein Entwickler, der sich die Stelle
+dann B<ist der Code auch unordentlich und kompliziert>. Ein Entwickler, der sich die Stelle
 zwei Jahre später wieder ansieht, muss sich in unordentlichen und komplizierten Code
 auch erst wieder mühsam einarbeiten. Die Genies, die das in weniger als 1 Sekunde korrekt
 erfassen, habe ich bisher nur in Fernsehserien angetroffen.

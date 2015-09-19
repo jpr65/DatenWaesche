@@ -136,16 +136,28 @@ und Fehlermeldung kümmern. So kann die SW von außen verändert werden, ohne ei
 Bedingung (IF ...) im Code programmieren zu müssen, z.B. mit Perl und Scalar::Validation
 sieht der Code dann so aus:
 
-  $bestellmenge_tt_baelle
+  my $bestellmenge_tt_baelle
       = validate ("Bestellmenge Tischtennisbälle"   # Der Name für den Anwender
                   => BestellmengeTischtennisbaelle  # Die Regel
-                  => $bestellmenge_tt_baelle        # Der zu prüfende Wert
+                  => read_bestellmenge_tt_baelle()  # Der zu prüfende Wert
   );  
 
-Ganz gleich, was B<vor> der Prüfung mit validate() in der Variablen
-C<$bestellmenge_tt_baelle> stand,
-B<nachher> steht ein gültiger Wert in der Variablen, andernfalls wird die Abarbeitung
+Ganz gleich, was die Funktion read_bestellmenge_tt_baelle() der Prüfung mit validate()
+übergibt, B<nachher> steht ein gültiger Wert in der Variablen, andernfalls wird die Abarbeitung
 hier mit einer passenden Fehlermeldung unterbrochen.
 Das vereinfacht und stabilisiert die SW sehr.
 
-=head3 Beispielhafte Validierung für Einzelwert-Prüfung
+Ohne Validerung wird der Code nicht sehr viel kürzer, aber dafür sehr viel instabiler:
+
+  my $bestellmenge_tt_baelle = read_bestellmenge_tt_baelle();  # Ein ungeprüfter Wert!!
+
+=head3 Test der Validierungsregeln für Einzelwert-Prüfung
+
+Da die Validierungsregeln Bestandteil des Produktes sind, müssen sie natürlich auch getestet
+werden. Hier kann man mit Unit-Tests wiederum sehr einfach Tests schreiben, die auch alle
+Sonderfälle abdecken.
+
+Ich empfehle, zuerst die Tests zu schreiben und danach die Regel zu implementieren:
+
+
+

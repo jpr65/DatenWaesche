@@ -1,10 +1,28 @@
 ﻿# Buch
 
+=head1 Teil I: Grundlagen
+
+==part Teil I: Grundlagen ===================================================================
+
 =head1 Einleitung
 
 Daten-Validierung oder Daten-Prüfung funktioniert wie eine Datenwäsche, 
 eine geplante und gezielte Daten-Validierung bezeichne ich 
 als "Große Datenwäsche".
+
+Angelieferte Daten sind meistens schmutzig und manchmal stark verseucht (Viren!).
+Validierung stellt verseuchte Daten in Quarantäne, damit sich die anderen Daten
+nicht anstecken, und reinigt verschmutzte Daten bis zum gewünschten Reinheitsgrad.
+
+In der industriellen Produktion gibt es viele Verfahren zur Aufbereitung von Rohmaterial:
+
+Schafwolle wird mehrfach gewaschen, gekämmt und geglättet, bis man einen
+Faden hat, den man in der Textilerzeugung zur Herstellung von Decken und
+Kleidung verwenden kann.
+
+Für jeden Verarbeitungsschritt ist die Eingangs- und Ausgangsqulität genau definiert.
+
+Für elektronische Datenverarbeitung existieren solche Standards nicht.
 
 =head2 Warum ist Daten-Validierung wichtig?
 
@@ -55,7 +73,7 @@ werden im Buch analysiert und es werden Strategien
 für die SW-Entwicklung vorgestellt,
 die derartige Probleme gar nicht erst entstehen lassen.
 
-Diese Strategien werden im letzten Kapitel zu einem
+Diese Strategien werden im letzten Teil zu einem
 Validierungskonzept verdichtet und die Einhaltung
 dieses Konzepts wird durch Checklisten auch für
 Anwender und Entscheider überprüfbar.

@@ -15,6 +15,7 @@ einband
 einleitung
 validierung_einfuehrung
 anderes
+index_links
 );
 
 my $complete_book_pod = "./gen/DatenWaesche_book.pod";

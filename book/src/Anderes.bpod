@@ -137,3 +137,168 @@ Session-IDs benötigen eine Mindestlänge, z.B. von 30 alphanumerischen Zeichen.
 
 Spezialisten für Security und Firewalls haben noch
 weiterführende Ideen und Lösungsansätze im Angebot.
+
+=head1 Über den Autor
+
+Mich gibt es seit 1965. Das Ruhrgebiet, wo ich in der Stadtmitte aufgewachsen bin, hieß
+noch Kohlenpott und das machte damals durchaus Sinn. Über Umweltschutz machte sich kaum
+jemand Gedanken und der Schnee war in den Wintermonaten oft grau von den Ascheresten,
+die die Kohleöfen in die Umgebung pusteten.
+
+Schon seit dem Kindergarten hatte ich ein großes Interesse an Zahlen.
+In Textaufgaben und Geometrie musste ich mich schwer einarbeiten, das rein logische an der Mathematik
+flog mir zu, jedenfalls in der Schule. An der Uni musste ich zum ersten Mal stark an meinen
+mathematischen Fähigkeiten arbeiten.
+
+Ich studierte Mathematik mit Nebenfach Elektrotechnik an der Universität Dortmund und richtete
+mein Studium ganz auf meinen späteren Beruf als Software-Entwickler aus. Damals hieß
+das im offiziellen Sprachgebrauch noch Programmierer. Als Vertiefungsrichtung wählte ich
+CAD und Fuzzy-Logik, weil sich hier die besten Möglichkeiten für die Kombination
+von Mathematik und Informatik ergaben.
+
+Seit Anfang der 1980er hatte ich viel Kontakt zu Informatikern und Computerfreaks,
+die ich in Kaufhäusern an den Computern und später an den Videospiel-Automaten kennenlernte.
+Diese Automaten waren damals die führenden Computer
+in Grafik, Geschwindigkeit und Bedienbarkeit und kosteten
+ein kleines Vermögen, mehr als der Neuwagen meiner Eltern.
+Mittlerweile gibt es den Mame-Simulator, auf dem die Original-Software der
+Automaten abläuft, für Handys. Aber wie schließt man da einen Joystick an?
+
+=head2 Meine Werdegang in der Informatik
+
+In der Unterstufe wurden die ersten elektronischen Taschenrechner eingeführt, der TI-30.
+Leider war dieses schlechte Gerät noch bis vor kurzem in Benutzung.
+Vorher verwendete man Rechenschieber, elektrische Addi-Maschinen beherrschten nur die
+Grundrechenarten.
+
+In Kaufhäusern und im Büro-Bedarfs-Geschäft "Löwe" in Bochum schrieb ich meine ersten Programme.
+Löwe erlaubte mir sogar die Nutzung der Datasette vom VC-20, und ich konnte meine Programme
+auf einer Musik-Casette speichern. Sonst stand das Gerät, das keiner bedienen konnte und für das es
+keine Software gab, unbenutzt hinten im Laden herum.
+
+Parallel nutzte ich den programmierbaren HP-Taschenrechner von meinem Freund für mathematische
+Algorithmen wie Nullstellensuche usw.
+
+Mein Jahrgang war einer der ersten mit Informatik-Unterricht an den Schulen, in der Oberstufe.
+Das war ein Glück, denn dadurch bekam meine Software eine erste Struktur.
+
+Über den ZX81 (16KByte RAM), den Atari 600XL (64 KByte RAM) und in der Schule den Apple IIe
+arbeitete ich mich zu meinem ersten Computer mit Maus und eingebauter Grafikfähigkeit
+- in Farbe - hoch: zum Atari ST mit 1 MegaByte frei verfügbarem Hauptspeicher und externer
+Diskettenstation. Eine gewaltige 80 Mega-Byte Festplatte habe ich später im Eigenbau nach c't
+nachgerüstet.
+
+Ein MS-Dos PC hatte damals nur Textdarstellung und von den mageren
+640 Kilo-Byte Hauptspeicher hat das Betriebssystem nochmals einiges belegt. Microsoft Windows gab
+es nur im Labor, und der Macintosh von Apple war viel zu teuer und nur in Grün-Weiß verfügbar.
+
+Neben dem Studium entwickelte ich privat Software in Basic und C und im Nebenberuf
+für verschiedene Software-Firmen in C auf PC (MS-Dos), Atari ST, und auf Unix für Sun
+und Nixdorf Unix Server. Bei der letzten Firma erlebte ich das erste Mal, dass mein
+Software-Projekt scheiterte. Ein Programm für die 3D-Darstellung mit verdeckten Kanten,
+das an der fehlerhaften Mathematischen Modellbildung starb:
+
+Die Schnittmenge von zwei Strecken ist eben nicht ein Punkt, sondern wieder eine Strecke.
+
+Erstaunlicherweise hat diesen Sonderfall kein Lehrer und kein Professor erwähnt. Aber 
+das brach meinen Algorithmen das Genick, und weil Funktionen mit vielen hundert Zeilen Code
+die Umstellung zu aufwendig machten - ich arbeitete inzwischen neben meinem Studium 
+über 30 Stunden pro Woche verzweifelt an dem Programm - brach ich die Arbeit schließlich
+ab, kündigte und ging nach UPS, um in der Nachtschicht mit Paketen Mauern in Containern zu bauen.
+
+Die schlechten Erfahrungen mit kleinen Firmen verleiteten mich 1991 dazu, nach meinem Diplom 
+frisch verheiratet ins Exil nach Franken zu gehen, zur Siemens AG, Bereich KWU,
+der als PG (Powergeneration) die radikalen Verkaufsaktionen der Siemens-Vorstände überdauert hat.
+
+Dort lernte ich C++, Objektorientierung, SQL und Datenbankdesign, GUI-Programmierung
+und wurde zum Experten
+für Configuration Management und Setup/Datenbankanpassungen. Weil die Produkte
+Rechenpower brauchten und vor allem stabil laufen mussten, nutzten wir UNIX auf HP Workstations
+und Servern sowie auf PCs.
+
+Vor allem entdeckte ich meine Lieblingssprache: Perl. Unsere Software erforderte die Ablage
+von Prüfungen in der Datenbank. Statt selbst einen Interpreter zu schreiben nutzten wir
+die Eval-Funktion von Perl, um die Regeln zu compilieren und auszuführen.
+Wie ich jetzt erkennen musste, waren wir mit unserem Validierungsframework den gängigen
+Methoden um Jahrzehnte voraus. Ein anderer Kollege implementierte Daten-Validierung
+mit Perl unabhängig von userer Produkt-Software, um unsere virtuellen Leittechnik-Bausteine zu prüfen,
+von denen Hunderte in der DB gespeichert waren.
+
+Wegen der großen Probleme mit der Integration der Software entwickelte ich ein
+"Nightly-Build" mit vollautomatischer Auswertung der veränderten Quelldateien und
+nutzte die gerade eingeführte Email sowie HTML-Seiten zur automatisierten Information
+über Veränderungen und Compile-Probleme.
+
+Jeden Morgen erhielt jeder eine Email mit den für ihn wichtigen Informationen und URLs
+auf die Details.
+
+Nach 6 Jahren ging es dann 1998 endlich zurück nach NRW zur Telefonentwicklung von Siemens nach Bocholt,
+wo man gerade DECT für Schnurlostelefone erfunden hatte und dringend Verstärkung in der
+Software-Entwicklung benötigte. Dort entwickelte man mit C unter Windows 95, später NT und dann XP
+hardwarenahe Software. Ich entwickelte Tools für die Entwickler mit Perl und später auch C#.
+
+Zwei Jahre lang war ich der Verantwortliche für IT und Tools der ebenso schnell wieder geschlossenen
+wie gegründeten Bluetooth-Abteilung mit zum Schluss 50 Kollegen. In dieser Zeit entwickelte ich
+meine ersten beiden Make-File Generatoren mit Perl, der zweite wurde erfolgreich eingesetzt.
+
+Wirklich gut wurde erst die dritte Version, die ich nebenbei privat entwickelt hatte und auf 
+dem deutschen Perlworkshop vorstellte:
+
+Der EasyFileGenerator, der zum Download auf meiner Homepage bereitliegt.
+
+Die Umstellung des Makeverfahrens ist eine sehr heikle Sache und bisher hat niemand außer mir
+den Generator verwendet. Die modernen Entwicklungsumgebungen für C#, Java, Perl kommen ohne Makefiles
+aus und Visual Studio verbirgt das Makefile für C und C++ vor den Entwicklern.
+
+Gemeinsam mit einem Kollegen erfand ich die UIDB (User-Interface-Datenbank),
+die die Displays der Telefone inklusive der Texte beschrieb und die Übersetzung
+der Texte in mehr als 20 Sprachen ermöglichte. Dazu setzten wir Perl und .Net/C# ein,
+die Daten speicherten wir in XML, um sie wie die anderen Quelldateien in ClearCase
+archivieren zu können.
+
+Anfangs wurden die Dateien von Hand erstellt, und mein C-Code Generator war gleichzeitig
+ein Validator, der alles prüfte, was nicht durch XML und XSD darstellbar war.
+
+Die Telefonentwicklung wurde schließlich verkauft und die neue Firma Gigaset reduzierte
+die Anzahl der Entwickler immer weiter. 2009 wechselte ich daher zur Schleupen AG nach Moers.
+
+Dort lernte ich EDIFACT kennen, stellte meine Entwicklungsmethodik
+auf TestDrivenDevelopment um und trat der Clean-Code-Initiative bei.
+
+edi@energy gibt die Prozesse und das Datenformat für EDIFACT verbindlich für den Energiesektor vor.
+Leider hatten die Erfinder des Datenformats vergessen, Markierungen für den Start und das Ende
+von Unterstrukturen zu definieren. Sie ergeben sich allein aus dem Kontext, was eine Validierung
+zu einer sehr anspruchsvollen Aufgabe macht. Unterschiedliche Interpretation der oft ungenauen
+Vorgaben führte zu vielen Problemen, hier hätte ein Validator für EDIFACT-Nachrichten, der eine
+verbindliche Prüfung durchführt, sehr weitergeholfen.
+
+Als letztes Projekt entwarf und entwickelte ich eine automatische Annahme und Weiterverteilung
+von EDIFACT- und anderen Nachrichten, die wie die interne Hauspost eines großen Unternehmens
+funktioniert. Validierung ist hier ein zentrales Thema, da der Großteil der Nachrichten über 
+einfache Email abgewickelt wird. Spam, Emails von unbekannten Absendern, Datei-Anhänge unbekannter
+Struktur, EDIFACT-Nachrichten mit fehlerhaften Absender/Empfänger Informationen oder
+dem falschen Adressaten mussten sicher herausgefiltert und in der Qurantäne-Zone
+zwischengelagert werden. Die Einführung des neuen Produkts bei den Kunden konnte ich leider
+nicht mehr begleiten, weil ich Ende 2012 nach Renesas wechselte.
+
+Bei Renesas Europe implementierte ich Tools für die Chip-Entwicklung, in meiner Lieblingssprache Perl.
+Dort lernte ich das TestAnythingProtokoll (TAP) schätzen, das als Integraler Bestandteil
+von Perl seit über 20 Jahren im Einsatz ist.
+
+Hier perfektionierte ich meine TestDrivenEntwicklung:
+Datei speichern, Tests starten inkl. Auswertung in weniger als 10 Sekunden! Ich begann, jede kleine
+Änderung sofort zu testen und konnte viel Zeit bei der Fehlersuche einsparen.
+
+Da Perl keinerlei Parameterprüfung bei Funktionsaufrufen vorsieht, entwickelte ich
+das CPAN Modul
+
+  Scalar::Validation
+
+um Parameter und Werte komfortabel über Regeln prüfen und eine Dokumentation
+für das API generieren zu können.
+
+Ende 2015 wurden wegen der schlechten Lage bei der Japanischen Muttergesellschaft auch in Europa
+die Entwicklung stark reduziert und ich wechselte zum Deutschen-Medizin-Rechen-Zentrum, kurz DMRZ.
+
+Dort entwickelte ich zunächst neue Verfahren für OCR und Bildverbesserung mit C#, C++ und Visual Basic.
+Aktuell beschäftige ich mich mit der Weiterentwicklung des Web-Portals.
