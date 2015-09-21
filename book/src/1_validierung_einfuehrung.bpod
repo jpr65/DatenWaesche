@@ -138,7 +138,7 @@ sieht der Code dann so aus:
 
   my $bestellmenge_tt_baelle
       = validate ("Bestellmenge Tischtennisbälle"   # Der Name für den Anwender
-                    => BestellmengeTischtennisbaelle  # Die Regel
+                  => BestellmengeTischtennisbaelle  # Die Regel
                   => read_bestellmenge_tt_baelle()  # Der zu prüfende Wert
   );  
  
@@ -158,27 +158,6 @@ werden. Hier kann man mit Unit-Tests wiederum sehr einfach Tests schreiben, die 
 Sonderfälle abdecken.
 
 Ich empfehle, für die Regeln zuerst die Tests zu schreiben und mit einer leeren Prüfung zu starten.
-Hier ein Beispiel mit den genial einfachen Standard-Perl Tests aus Test::More .
 
-    is(validate (Minimum => BestellmengeTischtennisbaelle => 50),
-       50,
-       "  Test Minimale Bestellmenge: 50"
-      );
-    
-    is(validate (Maximum => BestellmengeTischtennisbaelle => 2000),
-       2000,
-       "  Test Maximale Bestellmenge: 2000"
-       );
-
-Das "die" (Exception) von fehlschlagender Validierung kann man mit Test::Exception vom CPAN abfangen,
-doch für Scalar::Validation gibt es einen "Silent" mode, der keine Ausgaben und auch keine Exception
-mit "die" auslöst. Die Fehlermeldung kann man nach der Prüfung abfragen:
-
-    local ($Scalar::Validation::fail_action, $Scalar::Validation::off)
-          = prepare_validation_mode("silent");
-
-    my $expected_error_count = p_start() + 1;
-
-    validate (zuGross => BestellmengeTischtennisbaelle => 2001),
-
-    is (p_start(), $expected_error_count, "! Test zu große Bestellmenge: 2001"); 
+Wie man das sehr leicht implementieren kann,
+ist beschrieben in Teil III, Abschnitt L</Aufbau von Unit-Tests>

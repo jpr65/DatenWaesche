@@ -32,7 +32,8 @@ Einige Beispiele über die Folgen von unzureichender Daten-Validierung:
 
 =item *
 
-Ein Warenkorb in einem Online-Shop kostet immer über 5 Mio Euro, auch ein leerer
+Ein L<Warenkorb|Teurer Einkaufswagen> in einem Online-Shop
+kostet immer über 5 Mio Euro, auch ein leerer
 
 =item *
 

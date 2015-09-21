@@ -1,0 +1,184 @@
+﻿# Buch
+
+=head1 Teil III: Beispielhafte Umsetzung 
+
+==part Teil III: Beispielhafte Umsetzung ===============================================================
+
+=head1 Für alle Prüfungen
+
+Ich empfehle, für die Regeln zuerst die Tests zu schreiben und mit einer leeren Prüfung
+oder einer ersten einfachen Implementierung zu starten.
+
+Es ist sehr wichtig, die einzelnen Ebenen der Prüfungen (Einzel-Wert, Objekt, Aggregate, ...)
+nicht miteinander zu vermischen sondern ganz klar zu trennen.
+
+Ebenso dürfen während der Prüfung die zu prüfenden Daten nicht gelesen oder gespeichert oder
+verändert werden. Der Validator muss B<vor> der Prüfung mit allen notwendigen Daten versorgt werden.
+
+Es gibt nur eine Ausnahme: Default-Werte. Sie dürfen beim Aufruf mit übergeben werden.
+Sie sollten ebenfalls validiert werden. Die Zeiteinsparung ist minimal aber das
+Risiko erheblich, wenn sie nicht geprüft werden.
+
+=head2 Gute Unit-Tests
+
+Die Wichtigste Eigenschaft eines Validierungsframeworks ist die Unterstützung von
+Unit-Tests. Ohne Unit-Tests erreichen die Prüfungen nicht die volle Qualität und
+sind als unsicher einzustufen. Jede kleine Änderung in der Implementierung der Regel
+müsste ja noch durch Tests überprüft werden. Der damit verbundene hohe Aufwand wird bei
+"kleinen, ungefährlichen Änderungen" oft vermieden.
+
+Aber woher weiß man, dass eine Änderung klein und ungefährlich ist?
+
+Ich habe die Erfahrung gemacht, dass kleine Änderungen oft unerwartete große Wirkungen haben. Durch
+einen guten Unit-Test werden diese sofort entdeckt:
+
+  Ändern => speichern => Unit-testen => Differenz => Aha-Effekt.
+
+Und das alles in weniger als 10 Sekunden.
+
+=head1 Einzelwert-Validierung
+
+Das Prüfen von einzelnen Werten scheint die einfachste Aufgabe zu sein,
+aber das täuscht. Hier gibt es viele Frameworks, die mehr oder weniger gut unterstützen.
+
+=head2 Eltern-Prüfungen
+
+Wichtig ist hier besonders, dass man für Prüfungen "Eltern-Prüfungen" festlegen kann, die
+ein positives Ergebnis liefern müssen, bevor die eigentliche Prüfung beginnt.
+Das sollte/muss mit einem Validierungsframework möglich sein.
+
+Beispiel:
+
+  EinzelWert => Numerisch => GanzeZahl => GanzeZahlGroesserNull
+
+Schlägt eine Prüfung fehl, ist die weitere Prüfung beendet. Das ist
+sehr wichtig, denn manche Scriptsprachen versuchen eine Umwandlung
+in passende Typen, die manchmal zu grotesken Fehlern führt,
+siehe L<Teurer Einkaufswagen>.
+
+B<Einzelwert:>
+
+Es wird zuerst geprüft, ob der Prüfling ein einzelner Wert ist. In Scriptsprachen
+kann auch schnell mal eine ganze Liste, ein Zeiger oder irgendetwas anderes
+an den Validierer übergeben werden, siehe wiederum L<Teurer Einkaufswagen>.
+
+Falls ja, wird anschließend geprüft, ob es ein "Numerischer" Wert ist.
+
+Falls ja, ob es eine "Ganze Zahl" ist.
+
+Falls ja, ob "Zahl > 0" gilt.
+
+Ab der fehlgeschlagenen Regel sollten auch die noch ungeprüften Kind-Regeln erwähnt werden,
+z.B.:
+
+  Fehler bei der Prüfung von "Postleitzahl": 'a' ist keine Ziffer.
+    Postleitzahlen bestehen aus genau 5 Ziffern.
+  
+  Fehler bei der Prüfung von "Postleitzahl": Ein 'ARRAY_REF' ist kein einzelnert Wert
+    und damit auch keine Ziffer.
+    Postleitzahlen bestehen aus genau 5 Ziffern.
+
+=head2 Regeln mit Parametern
+
+Es sollte möglich sein, Regeln mit Parametern auszustatten, z.B. für Vergleiche
+oder Intervallprüfungen. So genügt eine einzige Implementierung für Intervall-Prüfungen,
+die dann nur noch entsprechend eingestellt werden muss.
+
+Perl gestattet eine besonders lesbare Variante, da die Klammern für die Liste der Standard-
+Schreibweise für Intervalle entsprechen:
+
+  my $in_intervall => validate (IntervallWert => Intervall => [0, 10] => shift);
+
+=head2 Aufbau von Unit-Tests
+
+Man sollte jeder Regel eine eigene Test-Klasse oder Test-Gruppe gönnen.
+
+=head3 Dummy-Regeln anlegen
+
+Man legt dazu eine Regel an, die alles enthält bis auf die Prüfung.
+
+Für den Start fügt man dann eine leere Prüfung ein, einen sogenannten "Dummy",
+d.h. das Ergebnis der Prüfung ist immer positiv (true).
+
+=head3 Unit Tests implementieren
+
+Hier ein Beispiel mit den genial einfachen Standard-Perl Tests aus Test::More .
+
+    is(validate (Minimum => BestellmengeTischtennisbaelle => 50),
+       50,
+       "  Test Minimale Bestellmenge:   50"
+      );
+    
+    is(validate (BestellMenge => BestellmengeTischtennisbaelle => 798),
+       798,
+       "  Test Mittlere Bestellmenge:  798"
+       );
+
+Mit is_valid() kann überprüft werden, ob eine Regel gültig ist, ohne den weiteren Programmablauf
+zu beenden und ohne eine Meldung auszugeben. Damit kann man sehr leicht überprüfen, ob
+eine Regel gültig ist oder nicht:
+
+Eine gültige Regel:
+
+    ok(  is_valid (Maximum => BestellmengeTischtennisbaelle => 2000),
+       "  Test Maximale Bestellmenge: 2000"
+      );
+
+Eine ungültige Regel:
+
+    ok( !is_valid (zuGross => BestellmengeTischtennisbaelle => 2001),
+       "! Test zu große Bestellmenge: 2001"
+      );
+
+Als Ausgabe eines Test-Laufs erhält man:
+
+  ok 1 -   Test Minimale Bestellmenge:   50
+  ok 2 -   Test Maximale Bestellmenge: 2000
+  ok 3 -   Test Mittlere Bestellmenge:  798
+  ok 4 - ! Test zu große Bestellmenge: 2001
+
+Das Ausrufezeichen "!" markiert Tests, von denen erwartet wurde, dass sie fehlschlagen.
+
+=head3 Validation Regel implementieren
+
+Jetzt wird die eigentliche Regel Schritt für Schritt implementiert und nach jeder Änderung
+werden die Tests angeworfen.
+
+Zum Abschluss sollten alle Tests erfolgreich durchgeführt werden.
+
+Das reine TDD behauptet jetzt, dass die Implementierung fertig ist, aber leider gilt das
+nur, falls die Testüberdeckung vollständig ist.
+
+Üblicherweise startet man mit einigen Tests, implementiert etwas, und dann erweitert man
+schrittweise Tests und Software. Die Kunst besteht darin, mit möglichst wenigen Tests möglich
+viel abzudecken.
+
+B<Um noch mehr Arbeit zu sparen, schlage ich folgendes Vorgehen vor:>
+
+Für den reinen Gültigkeitstest genügt es, zwei Listen aufzustellen, eine mit Werten,
+die die Regel erfüllen und eine mit Werten, die abgewiesen werden sollen.
+
+Diese beiden Listen können dann mit zwei Prüfungen überprüft werden.
+Für jede Meldung sollte dann noch ein weiterer Test geschrieben werden.
+
+    foreach my $wert (   50,   51,   62,  73,  84, 95, 
+                        100,  210,  321, 654, 987,
+                       1234, 1999, 2000
+                     );
+        ok(is_valid (gueltig => BestellmengeTischtennisbaelle => $wert),
+           "Test gültige Bestellmenge: $wert"
+        );
+    }
+
+Eine ungültige Regel:
+
+    ok( !is_valid (zuGross => BestellmengeTischtennisbaelle => 2001),
+       "! Test zu große Bestellmenge: 2001"
+      );
+
+
+
+
+
+
+=head3 ....

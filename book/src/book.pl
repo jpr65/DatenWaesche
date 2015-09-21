@@ -10,12 +10,13 @@ use Scalar::Validation qw(:all);
 
 my @book_files = qw (
 
-einband
-1_zuallererst
-einleitung
-validierung_einfuehrung
-anderes
-index_links
+0_einband
+0_1_zuallererst
+1_einleitung
+1_validierung_einfuehrung
+3_einzelwert_validierung
+5_anderes
+5_index_links
 );
 
 my $complete_book_pod = "./gen/DatenWaesche_book.pod";
