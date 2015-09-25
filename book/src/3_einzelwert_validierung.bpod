@@ -21,7 +21,7 @@ Risiko erheblich, wenn sie nicht geprüft werden.
 
 =head2 Gute Unit-Tests
 
-Die Wichtigste Eigenschaft eines Validierungsframeworks ist die Unterstützung von
+Die wichtigste Eigenschaft eines Validierungsframeworks ist die Unterstützung von
 Unit-Tests. Ohne Unit-Tests erreichen die Prüfungen nicht die volle Qualität und
 sind als unsicher einzustufen. Jede kleine Änderung in der Implementierung der Regel
 müsste ja noch durch Tests überprüft werden. Der damit verbundene hohe Aufwand wird bei
@@ -49,7 +49,15 @@ Das sollte/muss mit einem Validierungsframework möglich sein.
 
 Beispiel:
 
-  EinzelWert => Numerisch => GanzeZahl => GanzeZahlGroesserNull
+  EinzelWert   => Numerisch  => GanzeZahl => GanzeZahlGroesserNull
+
+dabei sind die rechten Einträge die Eltern der linken:
+
+  Urgroßeltern => Großeltern => Eltern    => Kind
+
+und die Regeln werden von Eltern zu Kindern spezifischer. Wenn der Wert 
+B<nicht numerisch> ist, also B<keine Zahl ist>,
+kann er B<auch keine ganze Zahl> sein.
 
 Schlägt eine Prüfung fehl, ist die weitere Prüfung beendet. Das ist
 sehr wichtig, denn manche Scriptsprachen versuchen eine Umwandlung
@@ -74,7 +82,7 @@ z.B.:
   Fehler bei der Prüfung von "Postleitzahl": 'a' ist keine Ziffer.
     Postleitzahlen bestehen aus genau 5 Ziffern.
   
-  Fehler bei der Prüfung von "Postleitzahl": Ein 'ARRAY_REF' ist kein einzelnert Wert
+  Fehler bei der Prüfung von "Postleitzahl": Ein 'ARRAY_REF' ist kein einzelner Wert
     und damit auch keine Ziffer.
     Postleitzahlen bestehen aus genau 5 Ziffern.
 
@@ -84,8 +92,8 @@ Es sollte möglich sein, Regeln mit Parametern auszustatten, z.B. für Vergleich
 oder Intervallprüfungen. So genügt eine einzige Implementierung für Intervall-Prüfungen,
 die dann nur noch entsprechend eingestellt werden muss.
 
-Perl gestattet eine besonders lesbare Variante, da die Klammern für die Liste der Standard-
-Schreibweise für Intervalle entsprechen:
+Perl gestattet eine besonders lesbare Variante, da die Klammern für die Parameter-Liste
+denen der Standard-Schreibweise für Intervalle entsprechen:
 
   my $in_intervall => validate (IntervallWert => Intervall => [0, 10] => shift);
 
@@ -95,7 +103,7 @@ Man sollte jeder Regel eine eigene Test-Klasse oder Test-Gruppe gönnen.
 
 =head3 Dummy-Regeln anlegen
 
-Man legt dazu eine Regel an, die alles enthält bis auf die Prüfung.
+Zuerst legt man eine Regel an, die alles enthält, die Prüfung ausgenommen.
 
 Für den Start fügt man dann eine leere Prüfung ein, einen sogenannten "Dummy",
 d.h. das Ergebnis der Prüfung ist immer positiv (true).
@@ -135,9 +143,12 @@ Als Ausgabe eines Test-Laufs erhält man:
   ok 1 -   Test Minimale Bestellmenge:   50
   ok 2 -   Test Maximale Bestellmenge: 2000
   ok 3 -   Test Mittlere Bestellmenge:  798
-  ok 4 - ! Test zu große Bestellmenge: 2001
+  not ok 4 - ! Test zu große Bestellmenge: 2001
 
-Das Ausrufezeichen "!" markiert Tests, von denen erwartet wurde, dass sie fehlschlagen.
+Mit Ausrufezeichen "!" markiert man Regeln, von denen erwartet wurde, dass sie fehlschlagen.
+Dadurch sind Fehler im Testaufbau leichter zu sehen.
+
+Der 4. Test schlägt fehl (not ok), da die Validierung durch die Dummy-Regel ja immer "true" liefert.
 
 =head3 Validation Regel implementieren
 
@@ -147,34 +158,57 @@ werden die Tests angeworfen.
 Zum Abschluss sollten alle Tests erfolgreich durchgeführt werden.
 
 Das reine TDD behauptet jetzt, dass die Implementierung fertig ist, aber leider gilt das
-nur, falls die Testüberdeckung vollständig ist.
+nur, falls die I<Testüberdeckung bezogen auf die Aufgabenstellung> vollständig ist.
+Eine vollständige Testüberdeckung
+garantiert, dass jeder Programmierfehler durch mindestens einen Test gefunden wird,
+weil kein Test fehlt.
 
-Üblicherweise startet man mit einigen Tests, implementiert etwas, und dann erweitert man
+Das ist eine schöne Idee, in der Praxis aber wenig hilfreich. 
+In sehr einfachen Fällen ist es noch möglich,
+die Testüberdeckung zu überprüfen, in komplerexen sehr aufwändig bis unmöglich.
+
+Daher startet man üblicherweise mit einigen Tests, implementiert etwas, und dann erweitert man
 schrittweise Tests und Software. Die Kunst besteht darin, mit möglichst wenigen Tests möglich
-viel abzudecken.
+viel abzudecken und dabei nichts wesentliches zu vergessen. Dazu benötigt man viel Erfahrung
+und eine spezielle Ausbildung.
+
+Zum Schluss sollte man noch ermitteln, ob die I<Testüberdeckung bezogen auf die Software>
+vollständig ist. Dafür gibt es Tools, die die I<Pfadüberdeckung> der SW-Tests messen,
+d.h. es wird ermittelt, ob jeder IF-THEN-ELSE Zweig der Produkt-Software
+und jede Schleife mindestens einmal durchlaufen wurde.
 
 B<Um noch mehr Arbeit zu sparen, schlage ich folgendes Vorgehen vor:>
 
 Für den reinen Gültigkeitstest genügt es, zwei Listen aufzustellen, eine mit Werten,
 die die Regel erfüllen und eine mit Werten, die abgewiesen werden sollen.
 
-Diese beiden Listen können dann mit zwei Prüfungen überprüft werden.
-Für jede Meldung sollte dann noch ein weiterer Test geschrieben werden.
+Diese beiden Listen können dann mit nur zwei Prüfungen validiert werden.
+Für jede Meldung sollte dann noch ein weiterer Test geschrieben werden,
+um den Inhalt und den korrekten Aufbau zu überprüfen.
 
-    foreach my $wert (   50,   51,   62,  73,  84, 95, 
-                        100,  210,  321, 654, 987,
-                       1234, 1999, 2000
-                     );
+Gültige Werte prüfen:
+
+    foreach my $wert (qw(   50   51   62  73  84  95 
+                           100  210  321 654 987
+                          1234 1999 2000
+                     )) {
         ok(is_valid (gueltig => BestellmengeTischtennisbaelle => $wert),
            "Test gültige Bestellmenge: $wert"
         );
     }
 
-Eine ungültige Regel:
+Ungültige Werte prüfen:
 
-    ok( !is_valid (zuGross => BestellmengeTischtennisbaelle => 2001),
-       "! Test zu große Bestellmenge: 2001"
-      );
+    foreach my $wert (qw(-12340 -2000 -1999 -987  -654    -321  -31 
+                             -1     0     1   49 
+                           2001  2002  3456 7890 12340 99999999999999999
+                         abcdef 2.32   .23  1e4  1.1e3 ABABJKHJREUBFKJHKHJ
+                         *+.;<>?
+                     )) {
+        ok( ! is_valid (ungueltig => BestellmengeTischtennisbaelle => $wert),
+           "Test ungültige Bestellmenge: $wert"
+          );
+    }
 
 
 

@@ -12,9 +12,17 @@ my @book_files = qw (
 
 0_einband
 0_1_zuallererst
+
 1_einleitung
 1_validierung_einfuehrung
+1_dimensionen
+
+2_anforderungen_sw
+2_dimensionen
+
 3_einzelwert_validierung
+3_dimensionen
+
 5_anderes
 5_index_links
 );

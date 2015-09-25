@@ -3,7 +3,7 @@
 =head1 Einführung in die Datenvalidierung
 
 In diesem Kapitel wird zunächst definiert, was genau unter Daten-Validierung zu verstehen ist.
-Im Anschluss wird die Validierung von Daten aus allen Richtungen betrachtet.
+In den folgenden Kapiteln wird die Validierung von Daten aus allen Richtungen betrachtet.
 
 Diese Betrachtungsrichtungen ("Dimensionen") der Validierung sind:
 
@@ -25,6 +25,8 @@ Jede Dimension wird im folgenden in einem eigenen Unterkapitel vorgestellt und g
 
 Daraus abzuleitende Maßnahmen für die Software-Entwicklung werden anschließend in eigenen Kapiteln
 zusammengefasst.
+
+
 
 =head2 Definition Daten-Validierung
 
@@ -133,7 +135,7 @@ angegebene Meldung liefert.
 Die Software ruft immer nur die Regel I<BestellmengeTischtennisbaelle> auf. Wie die Regel
 umgesetzt wird, muss sie nicht wissen und sich auch nicht um die Fehlerbehandlung
 und Fehlermeldung kümmern. So kann die SW von außen verändert werden, ohne eine einzige
-Bedingung (IF ...) im Code programmieren zu müssen, z.B. mit Perl und Scalar::Validation
+Bedingung (IF ...) im Code programmieren zu müssen, z.B. mit Perl und L</Scalar::Validation>
 sieht der Code dann so aus:
 
   my $bestellmenge_tt_baelle
@@ -157,7 +159,127 @@ Da die Validierungsregeln Bestandteil des Produktes sind, müssen sie natürlich
 werden. Hier kann man mit Unit-Tests wiederum sehr einfach Tests schreiben, die auch alle
 Sonderfälle abdecken.
 
-Ich empfehle, für die Regeln zuerst die Tests zu schreiben und mit einer leeren Prüfung zu starten.
-
-Wie man das sehr leicht implementieren kann,
+Wie man Validierung mittels TDD leicht und sicher implementieren kann,
 ist beschrieben in Teil III, Abschnitt L</Aufbau von Unit-Tests>
+
+
+
+=head2 Grundsätzliches zu Prüfungen/Entscheidungen
+
+Datenvalidierung ist ein Prüfverfahren. Der Validator trifft die Entscheidung, ob die Daten
+der Regel entsprechen oder nicht.
+
+Daraus ergeben sich mindestens sieben! Fälle - und nicht nur zwei -, die zu unterscheiden sind!
+
+Die 1-3 sind Status-Informationen über die Durchführung der Prüfung, die letzten 4-7
+die möglichen Ergebnisse der Prüfung. Ich fand es praktischer, das zusammenzufassen, aber
+Ihnen stehen natürlich auch alle anderen Möglichkeiten offen.
+
+=over
+
+=item 1. L</Prüfungsfall ?: Ungeprüft>
+
+=item 2. L</Prüfungsfall X: Prüfung anstehend>
+
+=item 3. L</Prüfungsfall R: Prüfung läuft>
+
+=item 4. L</Prüfungsfall TP: Korrekt bestanden>
+
+=item 5. L</Prüfungsfall TN: Korrekt durchgefallen>
+
+=item 6. L</Prüfungsfall FP: Regelwidrig bestanden>
+
+=item 7. L</Prüfungsfall FN: Regelkonform, aber durchgefallen>
+
+Vor allem in der Medizin wird das Modell mit den vier Prüfergebnissen
+eingesetzt, um Fehldiagnosen zu kennzeichnen.
+
+=back
+
+=head3 Prüfungsfall ?: Ungeprüft
+
+Merker: ? weiß nicht genau...
+
+Neue oder veränderte Daten stehen immer im Status ungeprüft. Ungeprüfte Daten dürfen
+nur editiert werden. Weiterverwendung für andere Prozesse/Services ist mit hohem
+Risiko verbunden und muss verhindert werden. Das wird nicht immer funktionieren...
+
+=head3 Prüfungsfall X: Prüfung anstehend
+
+Merker: angekreuzt mit X für eine Prüfung
+
+Die Daten sind für eine Prüfung markiert. Editieren/Update ist möglich, dann wird wieder
+auf "? (ungeprüft)" umgeschaltet.
+
+=head3 Prüfungsfall R: Prüfung läuft
+
+Merker: R (Running, Laufende) Prüfung
+
+Ob man bei laufender Prüfung das Verändern der Daten noch zulässt, muss festgeschrieben
+und dann auch eingehalten werden. Verändern führt wieder in Zustand "? (ungeprüft)" .
+Der Validator muss in diesem Fall die Änderung des Status erkennen und das Ergebnis
+der Prüfung verwerfen. Es darf keinesfalls in die Daten geschrieben werden,
+da ja ein ganz anderer Stand geprüft worden ist. Wird das nicht berücksichtigt,
+hat man ungeprüfte Daten mit einer Prüfplakette versehen:
+
+Man fährt mit dem Auto zum TÜV, lässt prüfen, besteht, erhält die TÜV-Plakette und
+den Eintrag im Fahrzeugschein.
+Man fährt nach Hause und nimmt größere, abnahmepflichtige Umbauten am Fahrzeug vor,
+B<ohne> das Fahrzeug nocheinmal zu einer Abnahme vorzuführen.
+
+Jetzt hat man ein Fahrzeug mit TÜV-Plakette, aber ohne Zulassung. Man verliert u.U.
+seinen Versicherungsschutz. Aber man hat ja nicht vor, aufzufallen! Wird schon gutgehen.
+
+Meistens geht es auch gut, mit den Daten jedenfalls. Das Auto muss ja in zwei Jahren wieder
+zum TÜV, die Daten meistens nicht.
+
+=head3 Prüfungsfall TP: Korrekt bestanden
+
+Merker: True Positive
+
+"True Positive" oder "Korrekt erfüllt" heißt folgendes:
+
+Der zweite Teil bezieht sich auf das festgestellte Ergebnis der Prüfung. Die Prüfung wurde
+von der Software als erfüllt (positive oder true) angesehen.
+
+Als Ergebnis wird "bestanden" in die Daten eingetragen.
+
+Der erste Teil informiert darüber, ob die vom System getroffene Entscheidung richtig war,
+in diesem Fall ja, daher "True" oder "Korrekt".
+Nur dieser Fall garantiert die unproblematische Weiterverwendung der Daten.
+
+=head3 Prüfungsfall TN: Korrekt durchgefallen
+
+Merker: True Negative
+
+Der Prüfling ist leider durchgefallen (Teil 2: Negative),
+die Prüfung wurde nicht bestanden. Diese Entscheidung war korrekt (Teil 1: true)
+
+Als Ergebnis wird "durchgefallen" in die Daten eingetragen.
+
+Alles gut, die Daten müssen überarbeitet werden.
+
+=head3 Prüfungsfall FP: Regelwidrig bestanden
+
+Merker: False Positive
+
+Das ist der kritische Fall, der nicht auftreten sollte.
+
+Der Prüfling ist nach Lage der Daten durchgefallen.
+
+Leider ergibt die Prüfung, dass er bestanden hat (Positive)!
+
+Was nicht korrekt ist (False in Teil 1).
+
+Als Ergebnis wird trotzdem "bestanden" in die Daten eingetragen.
+Die Software geht ja davon aus, dass er bestanden hat.
+
+Übertragen auf Autos heisst das, dass der TÜV-Prüfer gravierende Mängel übersehen
+hat und Ihnen eine TÜV-Bescheinigung ausstellt, obwohl das Fahrzeug nicht verkehrstüchtig
+ist, weil die Bremsen versagen könnten.
+
+Statt in die Werkstatt fahren Sie hoffentlich nicht in zwei Tagen ins Gebirge.
+
+=head3 Prüfungsfall FN: Regelkonform, aber durchgefallen    
+
+

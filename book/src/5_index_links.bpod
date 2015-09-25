@@ -2,6 +2,217 @@
 
 =head1 Anhang
 
+=head2 Kleine Einführung in Perl
+
+Ich zeige in diesem Buch Pseudocode oder L<Perl|/Perl>.
+Da nicht alle diese Programmiersprache kennen
+werden, gibt es hier eine kleine Einführung, die bei Ihnen vielleicht Appetit auf mehr weckt.
+
+=head4 Perl Kommentare
+
+Das Kommentarzeichen ist das Hash-Tag "#".
+
+=head4 Perl Variablen
+
+Variablen starten mit $, @ oder %
+
+  my $variable = "Wert";         # als String
+  $variable    = 1;              # als Zahl oder String oder Boolean
+  $variable    = "true";         # Per Konvention als Boolean
+  
+  print "$variable\n";
+  say $variable;                 # Dasselbe wie oben
+
+  my @array       = (1,3,4);     # Ein dynamisches Array
+  my $einzel_wert = $array[1];   # Der 2. Eintrag im Array [0..2]
+  
+  print "$array[1]\n";           
+  say    $array[1];              # Dasselbe wie oben      
+  print "$einzel_wert\n";        # Dasselbe wie oben 
+
+  my %sport_hash  = ('Nowitzki',    'Basketball',
+                     Beckenbauer => 'Fussball',    # '' für linken Teil unnötig
+                     TigerWoods  => 'Golf',
+  );
+
+  # mit qw ohne Kommas und '
+  %sport_hash  = qw (Nowitzki    Basketball
+                     Beckenbauer Fussball
+                     TigerWoods  Golf
+  );
+
+Wer treibt welchen Sport?
+
+  my $sportler = "Nowitzki";
+  my $sport    = $sport_hash{$sportler};
+
+  say "Was spielt $sportler? $sport!";
+  say "Was spielt $sportler? $sport_hash{$sportler}!";
+
+ergibt die Ausgabe:
+
+  Was spielt Nowitzki? Basketball!
+  Was spielt Nowitzki? Basketball!
+
+=head4 Perl Kontrollstrukturen
+
+Die Kontrollstrukturen wurden von C übernommen und unterscheiden sich nicht von
+C++ / C# oder Java. Zusätzlich gibt es noch:
+
+  unless ($isTrue) {
+  }
+
+was identisch ist mit 
+
+  if (!$isTrue) {
+  }
+
+"unless" und "if" kann man noch nachstellen:
+
+  say "wert ist nicht gesetzt" unless defined $wert;
+  say "zu Groß: $wert"         if     ist_zu_gross($wert);
+                                                                                                                                                                                                                                            
+=head4 Perl SubCalls/Funktionen/Methoden
+
+Funktionen haben in Perl höchstens einen Namen und keinerlei Signatur. Werte muss man sich vom
+Call-Stack selbst abholen. Das führt immer wieder zu Problemen und war der Grund für mich
+L<Scalar::Validation> zu implementieren und auf dem L<CPAN> für alle bereitzustellen.
+
+Diese Funktion hat diverse Probleme und soll nur als schlechtes Beispiel dienen!
+
+  sub mein_addierer {
+      # Keine Argument-Liste!!
+      my $sum = 0;
+
+      while ($zahl = shift) {  # bricht ab, falls $zahl == 0, '' oder nicht definiert
+          $sum += $zahl;       # Wandelt alle Argumente irgendwie in Zahlen um
+      }
+
+      return $sum;
+  }
+
+Mit dem Aufruf
+
+  my $rechnung = [ 1, 2 , 3, 4];
+  my $sum = mein_addierer($rechnung);
+
+erhält man als Preis immer eine mindestens 7-stellige Summe im Millionenbereich.
+
+Ob man und welchen Typ man zurückgibt, bleibt dem Programmierer überlassen.
+
+Fehler in diesem Bereich führen oft zu schwer zu findenden Laufzeitproblemen, wenn man 
+nichts unternimmt.
+
+Man darf bei Aufrufen die Klammern weglassen:
+
+  my $sum = mein_addierer($rechnung);
+  my $sum = mein_addierer $rechnung;  # dasselbe in grün!
+
+Dann muss die Funktion aber schon bekannt sein, ansonsten gibt es schwer zu erkennende Syntax-Fehler.
+Ich und viele andere empfehlen daher, die Klammern zu verwenden.
+
+=head4 Perl Klassen
+
+Klassen in Perl5 sind ein Kapitel für sich, Methodenaufrufe können sehr langsam werden.
+Da Objektorientierung in Perl5 nur als Aufsatz auf Perl4 eingebaut wurde
+und Perl4 keine Klassen kennt, sind die Konstrukte teilweise merkwürdig.
+
+Nun folgt ein kurzes Beispielprogramm als Aufwärm-Übung.
+So würde ich das natürlich nie
+in realen Projekten implementieren: Die Prüfungen fehlen und Objekte
+wären für diese minimale Funktionalität total überflüssig.
+
+Bevor man Fussball spielen kann, muss man halt zuerst laufen lernen.
+
+  # --- Name der Klasse ---------------------------------------
+  package Autobesitzer;                         
+ 
+  # --- Konstruktor -------------------------------------------
+  sub new                                      
+  {
+      my $caller = $_[0];
+      my $class  = ref($caller) || $caller;
+
+      # let the class go
+      my $self = {};
+      bless $self, $class;
+ 
+      $self->{Vorname} = shift;
+
+      return $self;
+  }
+
+  # --- Property ----------------------------------------------
+  sub Vorname {                  
+      my $self = shift;          # this in C++/C#
+      my $neuer_vorname = shift; # ein optionaler neuer Vorname
+
+      $self->{Vorname} = $neuer_vorname if defined $neuer_vorname;
+
+      return $self->{Vorname};
+  }
+
+  # --- Methode ----------------------------------------------
+  sub hat_einen {
+      my $self = shift; # this in C++/C#
+      my $auto = shift; # Das erste Argument des Methodenaufrufs
+
+      # hier fängt die Methode an ... 
+
+      return $self->Vorname . " hat einen $auto.";
+  }
+
+  # --- Methode ----------------------------------------------
+  sub hat_ein {
+      my $self = shift; # this in C++/C#
+      my $auto = shift; # Das erste Argument des Methodenaufrufs
+
+      # hier fängt die Methode an ... 
+
+      return $self->Vorname . " hat ein $auto.";
+  }
+
+  # --- Hauptprogramm ---------------------------------------
+  package main;
+
+  my  $auto_besitzer = new AutoBesitzer("Ralf");
+  
+  say $auto_besitzer->hat_einen("Golf");
+  say $auto_besitzer->hat_ein("Fahrrad");
+
+ergibt die Ausgabe von
+
+  Ralf hat einen Golf.
+  Ralf hat ein Fahrrad.
+ 
+Beim lesenden Zugriff auf den Vornamen lässt man die Klammern üblicherweise weg:
+ 
+  say auto_besitzer->Vorname;            # GetVorname
+  say auto_besitzer->Vorname("Peter");   # SetVorname
+     
+Mit L</Moo> vom L</CPAN> sollte als Minimum verwendet werden, wenn man selbst Objekte/Klassen
+definieren möchte, zusätzlich zu einer Validierung wie L</Scalar::Validation>.
+
+=head4 Perl Operatoren
+
+Perl kennt sehr viele Operatoren, von denen die bekannten wie in C funktionieren, mit einer Ausnahme:
+
+"." wird zum Verketten von Strings verwendet. "+" führt immer eine numerische Addition durch.
+
+Daher kann für Zugriff auf Objekte nur "->" verwendet werden.
+
+Außerdem werden für Vergleiche noch verschiedene Operatoren benötigt, je nach dem, ob man numerisch
+oder auf Text-Basis vergleichen möchte:
+
+  == <=  < >  >= !=   # für Zahlen
+  eq le lt gt ge ne   # für Text
+
+Wer es genau wissen möchte, kann die Operatoren in der offiziellen Perl-Dokumentation unter 
+L<http://perldoc.perl.org/perlop.html#Relational-Operators>
+nachlesen.
+
+Alles weitere sollte man auf Wikipedia oder in einem der dort gelisteten guten Perl-Bücher nachlesen.
+
 =head2 Kurz erklärt
 
 Viele der hier aufgeführten Kurzerklärungen sind von Wikipedia und anderen OpenData im Web
@@ -11,19 +222,130 @@ Viele der hier aufgeführten Kurzerklärungen sind von Wikipedia und anderen Ope
 
 =head3 CPAN
 
+=head3 Developer
+
+Englisch für Entwickler, s.u.
+
 =head3 edi@energy
 
 =head3 EDIFACT
 
 =head3 Gigaset
 
+=head3 Entwickler
+
+Der Entwickler, oder genauer Software-Entwickler,
+erschafft die Software, was nur zu einem Teil aus programmieren besteht.
+
+Er sollte auch Tickets gemeinsam mit dem Produktmanagement beurteilen,
+daraus resultierende Änderungen abschätzen und dokumentieren,
+nach erfolgter Änderung der SW den Testern bei der Anpassung der
+Testfälle helfen und noch einiges mehr.
+
+=head3 Fehler
+
+Ein Programmfehler liegt vor, wenn das Programm sich anders verhält, als vorgesehen.
+Das können Abstürze (Programm beendet sich ungeplant) oder Aufhänger sein
+(Programm reagiert nicht mehr).
+
+Aber auch wenn das Programm "fünf" statt "vier" ausgibt, spricht man von einem "Defect"
+oder einem Fehler.
+
+Schwerwiegend oder kritisch ist ein Fehler,
+wenn z.B. an einer Ampel das grüne Licht eingeschaltet wird
+statt des roten und alle vier Ampeln einer unübersichtlichen Kreuzung grün zeigen.
+
+Das passiert allerdings fast nie, da Ampelschaltungen nach sehr gründlichen
+Vorschriften validiert werden.
+
+=head3 Hardware
+
+Auf Hardware läuft die Software, das Programm ab. Hardware lässt sich
+meistens nicht mehr verändern daher der Name.
+
+Einen Computer kann man teilweise noch umbauen, ein Handy oder ein Tablet eher
+nicht.
+
+Gängige Hardware: Uhren, Handys, Tablets, Computer; Steuerungs-Microchips für Autos,
+Heizungen, Kraftwerke, Zugtüren, Klimaanlagen, ...
+
+Mechanische und elektrische Systeme werden immer mehr durch Elektronik ersetzt,
+was oft nicht notwendig und manchmal sogar gefährlich ist. Elektronik mit
+Software ist eben viel komplexer und fehleranfälliger.
+
+=head3 Moo
+
 =head3 Perl
+
+L<Wikipedia:|https://de.m.wikipedia.org/wiki/Perl_(Programmiersprache)>
+L<Perl|https://de.m.wikipedia.org/wiki/Perl_(Programmiersprache)>
+ist eine freie, plattformunabhängige und interpretierte Programmiersprache
+(Skriptsprache), die mehrere Programmierparadigmen unterstützt.
+
+Eine kleine Einführung steht im Kapitel L</Kleine Einführung in Perl>.
 
 =head3 POD und BPOD
 
 =head3 Renesas
 
+=head3 Scalar::Validation
+
+Mein frei verfügbares Perl Modul vom CPAN zur Validierung einzelner Werte.
+Anwendungsbeispiele finden sich überall im Buch, siehe Index.
+
+L<https://metacpan.org/pod/Scalar::Validation>
+
+=head3 SW - Software
+
+Das Programm, das auf einer Hardware, dem Computer, Handy oder Tablet abläuft.
+
 =head3 Tango Argentino
+
+=head3 TAP - Test Anything Protocol
+
+L<https://en.m.wikipedia.org/wiki/Test_Anything_Protocol>
+
+Ein minimalistisches, gut lesbares Text-Protokoll für Unit-Tests:
+
+  ok 1 - Postleitzahl 12345
+  not ok 2 - Postleitzahl 00123:
+  # expected: 00123
+  #      got: 123
+
+Für TAP existieren viele Perl-Klassen zur Analyse und Verdichtung der Testausgaben,
+da TAP ursprünglich für die Unit-Tests des Perl-Kernels entwickelt wurde.
+
+Beispiel: Die Testauswertung für das CPAN Modul
+L<Scalar::Validation|http://matrix.cpantesters.org/?dist=Scalar-Validation+0.700> 
+
+TAP Output ist völlig unabhängig von der eingesetzten Programmiersprache und
+Unit-Testumgebung. Leider können nicht alle Unit-Test-Tools TAP als Ausgabe
+erzeugen.
+
+=head3 TDD - Test Driven Development
+
+Eine SW-Entwicklungsmethodik, die die Tests vor der Implementierung erstellt.
+Dadurch wird die SW automatisch besser testbar.
+Auch die Verbesserung der SW-Architektur
+ist möglich, erfolgt aber nicht automatisch.
+
+Ich empfehle "TDD-Light": Der SW-Entwickler startet mit allen Tests, die
+aus der Entwicklungsaufgabe ableitbar sind, und ergänzt diejenigen, die ihm
+zusätzlich einfallen. Danach implementiert er die Funktionalität,
+erweitert die Tests wechselweise
+und bezieht auch die Tester ein.
+
+=head3 Tester
+
+Ein guter SW-Tester kann Software schreiben, nämlich automatische Tests und Hilfstools für das
+Testen. Und er versteht, wie Software entwickelt wird, damit er gezielt nach Schwachstellen
+suchen kann.
+
+Sein Ziel ist es, möglichst alle kritischen und möglichst viele andere Fehler zu finden.
+Dazu versucht er auch, das System mit unsinnigen und unerlaubten Eingaben auszutricksen.
+
+Für kritische Anwendungen/Funktionen sollte er die UNIT-Tests, die ein Entwickler geschrieben
+hat, zumindest reviewen, besser noch komplettieren und weiterentwickeln.
 
 =head2 Index
 

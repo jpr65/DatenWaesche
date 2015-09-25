@@ -1,0 +1,29 @@
+﻿# Buch
+
+=head1 Datenwäsche
+
+Mit der "Datenwäsche" oder auch Datenfilterung werden die Daten schrittweise
+für die weitere Verarbeitung vorbereitet, bis der gewünschte
+L<Reinheitsgrad|/Dimension Reinheitsgrad> erreicht ist.
+
+=head2 Validierung von Rohdaten
+
+Bei Dateien und größeren Datenmengen ist immer ein Virencheck durchzuführen.
+
+Für den Virencheck kann man auf viele Produkte zurückgreifen.
+
+Bei kleineren Daten, z.B. einem - vermeintlichen - Datumstext sollte eine Prüfung auf binärer
+Ebene auf unerlaubte Zeichen durchgeführt werden. Dabei sollten unbedingt nur bekannte Zeichen
+erlaubt werden (White-List). Angreifer sind sehr kreativ in der Codierung von Zeichen.
+
+Schlägt die Prüfung fehl, müssen die Daten in eine Quarantäne-Station, wo sie gefahrlos weiter
+untersucht werden können. Sie dürfen B<auf keinen Fall weiter verarbeitet> werden.
+
+Beispiel Datum:
+
+1. Prüfung: Enthält das Datum unerlaubte Byte-Kombinationen?
+
+2. Umwandlung in Text. Traten dabei Fehler auf?
+
+3. Prüfung auf allgemein unerlaubte Zeichen, z.B. '
+

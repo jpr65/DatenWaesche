@@ -1,0 +1,45 @@
+﻿# Buch
+
+=head1 Dimension Reinheitsgrad
+
+In der Fertigung von Gütern gibt es den Ausdruck der "Erlaubten Toleranzen", der für
+jedes Produkt genau festgelegt wird. Je geringer die Toleranz, desto aufwändiger und
+damit teurer wird der Produktionsprozess.
+
+Beispiele:
+
+In einer Fabrik werden Seile für den Segelbedarf hergestellt. Weil der laufende Meter
+in der Produktion weniger als 10 Cent kostet und die Seile in Trommeln zu 1000 Metern
+geliefert werden, ist die Toleranz hier 0+10 Meter. Eine genauere Messung würde
+3 Euro kosten und wäre damit teurer als die durchschnittlich 5m zu lang gelieferten
+Seile, die ja nur 50 Cent kosten.
+
+Eine Wand für ein Wohnhaus hat eine Toleranz von vielleicht 5mm, ein Micro-USB-Stecker
+für ein Ladegerät eine Toleranz von 0,1mm.
+
+Die Fertigungstoleranz entspricht bei Daten dem "Verschmutzungsgrad". Durch mehrfaches
+Validieren (Waschen) werden die Daten bis zum gewünschten Ergebnis gesäubert. Wie das
+funktioniert und was es bedeutet, wird im Folgenden mit der Validierung eines Geburtsdatums
+illustriert.
+
+=head2 Reinheitsgrad 0: Roh
+
+Rohdaten sind gerade angelieferte Daten, die noch in keine Weise untersucht wurden.
+
+Sie bergen große Risiken, z.B. das Risiko, mit Viren verseucht zu sein.
+
+Das gilt auch immer für Daten, die von anderen Systemen oder vom Anwender kommen und
+ganz besonders für Email-Anhänge von SPAM- und Schad-Emails.
+
+Prüfungen im UserInterface, d.h. der Webseite, der App oder eines PC-Programms sind
+Komfort für den User. Die eigentliche Prüfung startet auf dem (Web-)Server,
+denn den Dritte könnten die Daten verfälschen, der User oder ein Stellvertreter könnten
+bewusste Sabotage verüben oder die Daten könnten durch den Transport beschädigt worden sein.
+
+Da man in vielen Fällen prüfen muss, kann man sich eine komplexe und eventuell falsch getroffene
+Entscheidung, ob und was geprüft werden soll, sparen und gleich alles prüfen.
+Dadurch gewinnt man Zeit in der Entwicklung und Sicherheit, was man sich mit
+Mehrkosten zur Laufzeit erkauft.
+
+=head2 Reinheitsgrad 1: Ungefährlich
+
