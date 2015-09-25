@@ -251,35 +251,57 @@ Nur dieser Fall garantiert die unproblematische Weiterverwendung der Daten.
 =head3 Prüfungsfall TN: Korrekt durchgefallen
 
 Merker: True Negative
-
+  
 Der Prüfling ist leider durchgefallen (Teil 2: Negative),
 die Prüfung wurde nicht bestanden. Diese Entscheidung war korrekt (Teil 1: true)
-
+  
 Als Ergebnis wird "durchgefallen" in die Daten eingetragen.
-
+  
 Alles gut, die Daten müssen überarbeitet werden.
-
+ 
 =head3 Prüfungsfall FP: Regelwidrig bestanden
-
+   
 Merker: False Positive
+   
+Fussball: Ein Tor wurde vom Schiedsrichter anerkannt, obwohl es Abseits war!
 
-Das ist der kritische Fall, der nicht auftreten sollte.
-
+Das ist der kritische Fall, der nicht auftreten sollte.  
 Der Prüfling ist nach Lage der Daten durchgefallen.
-
+    
 Leider ergibt die Prüfung, dass er bestanden hat (Positive)!
-
+ 
 Was nicht korrekt ist (False in Teil 1).
-
+  
 Als Ergebnis wird trotzdem "bestanden" in die Daten eingetragen.
-Die Software geht ja davon aus, dass er bestanden hat.
-
+Die Software geht ja davon aus, dass er bestanden hat!
+ 
 Übertragen auf Autos heisst das, dass der TÜV-Prüfer gravierende Mängel übersehen
 hat und Ihnen eine TÜV-Bescheinigung ausstellt, obwohl das Fahrzeug nicht verkehrstüchtig
-ist, weil die Bremsen versagen könnten.
+ist, weil die Bremsen versagen könnten. 
 
 Statt in die Werkstatt fahren Sie hoffentlich nicht in zwei Tagen ins Gebirge.
+                                          
+Die Anzahl dieser Fälle kann man nur reduzieren durch ausgiebige Tests der Prüfungen oder mehrere
+unabhängige Prüfungen, die alle parallel ausgeführt werden.
 
 =head3 Prüfungsfall FN: Regelkonform, aber durchgefallen    
 
+Merker: False Negative
+
+Fussball: Ein Tor wurde vom Schiedsrichter nicht anerkannt, und auf Abseits entschieden.
+Diese Entscheidung war leider falsch. Es nämlich B<kein Abseits>.
+
+Nach Lage der Daten hat der Prüfling bestanden, aber der Prüfer sieht das fälschlicherweise
+anders und verweigert die TÜV-Plakette.
+
+Als Ergebnis wird "durchgefallen" (Negative) in die Daten eingetragen.
+Was in diesem Fall nicht stimmt (False) und so manchen Anwender in den Wahnsinn treibt.
+Er hat ja alles korrekt eingegeben, aber die Daten werden nicht akzeptiert.
+
+Hier ist es wichtig, dass das System von Hand überstimmt werden kann, indem man den
+Zustand auf "bestanden" ändert. Natürlich nur nach genauer Prüfung durch eine Experten,
+der nicht der User sein sollte, der die Daten erstellt hat.
+
+Sonst läuft man Gefahr, dass der User alle fehlerhaften Daten ohne weitere Prüfung
+einfach "durchwinkt" und das System mit fehlerhaften Daten geflutet wird.
 
