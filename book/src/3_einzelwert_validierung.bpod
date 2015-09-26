@@ -51,7 +51,7 @@ Beispiel:
 
   EinzelWert   => Numerisch  => GanzeZahl => GanzeZahlGroesserNull
 
-dabei sind die rechten Einträge die Eltern der linken:
+dabei sind die linken Einträge die Eltern der rechten:
 
   Urgroßeltern => Großeltern => Eltern    => Kind
 

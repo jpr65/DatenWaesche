@@ -5,6 +5,23 @@
 Hier wird der grundsätzliche Aufbau des Buches beschrieben und man erhält Tipps,
 wie man mit dem Buch arbeiten kann.
 
+=head2 Ziele des Buchs
+
+Dieses Buch verfolgt mehrere Ziele:
+
+Es soll darstellen, dass eine gründliche, geplante Datenprüfung Zeit und Geld in der Entwicklung 
+von Software einspart und ihre Qualität deutlich verbessert.
+
+Es soll das Bewusstsein vermitteln, dass Datenprüfung eine absolute Notwendigkeit ist und
+ihre Vernachlässigung schwer wiegende Folgen haben kann.
+
+Es soll alle Beteiligten mit dem für sie nötigen Wissen über Datenprüfung ausstatten.
+
+Es soll einen Leitfaden für die Datenprüfung liefern.
+
+Wenn es jetzt noch gelänge, eine Clean-Data Initiative analog zur CleanCode Initiative zu starten,
+wäre das mehr, als ich erwarten kann.
+
 =head2 Leseempfehlungen für dieses Buch
 
 =head3 Für Unentschlossene

@@ -21,9 +21,9 @@ Diese Betrachtungsrichtungen ("Dimensionen") der Validierung sind:
 
 =back
 
-Jede Dimension wird im folgenden in einem eigenen Unterkapitel vorgestellt und genau untersucht.
+Jede Dimension wird im folgenden in einem eigenen Kapitel vorgestellt und genau untersucht.
 
-Daraus abzuleitende Maßnahmen für die Software-Entwicklung werden anschließend in eigenen Kapiteln
+Daraus abzuleitende Maßnahmen für die Software-Entwicklung werden in Teil II in eigenen Kapiteln
 zusammengefasst.
 
 
@@ -107,7 +107,7 @@ Datenstrukturen durchgeführt werden.
 
 =head3 Beispielhafte Validierung für Einzelwert-Prüfung
 
-Für den Webshop soll eine Mindestbestellmenge von 50 und bei einer maximalen Packungsgröße
+Für den Webshop soll eine Mindestbestellmenge von 50 bei einer maximalen Packungsgröße
 von 2000 Bällen festgelegt werden als Regel I<BestellmengeTischtennisbaelle>:
 
   50 <= AnzahlBälle <= 2000
@@ -191,10 +191,10 @@ Ihnen stehen natürlich auch alle anderen Möglichkeiten offen.
 
 =item 7. L</Prüfungsfall FN: Regelkonform, aber durchgefallen>
 
+=back
+
 Vor allem in der Medizin wird das Modell mit den vier Prüfergebnissen
 eingesetzt, um Fehldiagnosen zu kennzeichnen.
-
-=back
 
 =head3 Prüfungsfall ?: Ungeprüft
 

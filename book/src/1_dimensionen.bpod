@@ -1,5 +1,31 @@
 ﻿# Buch
 
+=head1 Dimensionen der Validierung
+
+In den folgenden Kapiteln wird die Validierung von Daten aus allen Richtungen betrachtet.
+
+Diese Betrachtungsrichtungen ("Dimensionen") der Validierung sind:
+
+=over
+
+=item 1. Reinheitsgrad
+
+=item 2. Gültigkeitsdauer
+
+=item 3. Datenmenge
+
+=item 4. Validierungsaufwand
+
+=item 5. Komplexität der Daten
+
+=back
+
+In den Dimensionen 2-5 gibt es viele verschiedene Größenordnungen, die unterschiedliche Anforderungen
+an die Software stellen und die Art und Weise, wie Validierung durchgeführt und implementiert wird,
+maßgeblich beeinflusst. Dieser Buchteil stellt die Dimensionen zunächst vor, im Teil II werden daraus
+Anforderungen an die Software abgeleitet und im dritten werden für einige Teile beispielhafte
+Implementierungen entwickelt.
+
 =head1 Dimension Reinheitsgrad
 
 In der Fertigung von Gütern gibt es den Ausdruck der "Erlaubten Toleranzen", der für
@@ -10,9 +36,9 @@ Beispiele:
 
 In einer Fabrik werden Seile für den Segelbedarf hergestellt. Weil der laufende Meter
 in der Produktion weniger als 10 Cent kostet und die Seile in Trommeln zu 1000 Metern
-geliefert werden, ist die Toleranz hier 0+10 Meter. Eine genauere Messung würde
+geliefert werden, ist die Toleranz hier 10 Meter. Eine genauere Messung würde
 3 Euro kosten und wäre damit teurer als die durchschnittlich 5m zu lang gelieferten
-Seile, die ja nur 50 Cent kosten.
+Seile, die ja nur 50 Cent mehr kosten.
 
 Eine Wand für ein Wohnhaus hat eine Toleranz von vielleicht 5mm, ein Micro-USB-Stecker
 für ein Ladegerät eine Toleranz von 0,1mm.

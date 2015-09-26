@@ -144,8 +144,10 @@ Bevor man Fussball spielen kann, muss man halt zuerst laufen lernen.
 
   # --- Property ----------------------------------------------
   sub Vorname {                  
-      my $self = shift;          # this in C++/C#
+      my $self          = shift; # this in C++/C#
       my $neuer_vorname = shift; # ein optionaler neuer Vorname
+
+      # hier fängt die Methode an ... 
 
       $self->{Vorname} = $neuer_vorname if defined $neuer_vorname;
 
@@ -190,7 +192,7 @@ Beim lesenden Zugriff auf den Vornamen lässt man die Klammern üblicherweise we
   say auto_besitzer->Vorname;            # GetVorname
   say auto_besitzer->Vorname("Peter");   # SetVorname
      
-Mit L</Moo> vom L</CPAN> sollte als Minimum verwendet werden, wenn man selbst Objekte/Klassen
+L</Moo> vom L</CPAN> sollte als Minimum verwendet werden, wenn man selbst Objekte/Klassen
 definieren möchte, zusätzlich zu einer Validierung wie L</Scalar::Validation>.
 
 =head4 Perl Operatoren
@@ -207,9 +209,9 @@ oder auf Text-Basis vergleichen möchte:
   == <=  < >  >= !=   # für Zahlen
   eq le lt gt ge ne   # für Text
 
-Wer es genau wissen möchte, kann die Operatoren in der offiziellen Perl-Dokumentation unter 
+Wer es genau wissen möchte, die Operatoren sind in der offiziellen Perl-Dokumentation unter 
 L<http://perldoc.perl.org/perlop.html#Relational-Operators>
-nachlesen.
+genauer dargestellt.
 
 Alles weitere sollte man auf Wikipedia oder in einem der dort gelisteten guten Perl-Bücher nachlesen.
 
