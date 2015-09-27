@@ -1,9 +1,5 @@
 ﻿# Buch
 
-=head1 Teil III: Beispielhafte Umsetzung 
-
-==part Teil III: Beispielhafte Umsetzung ===============================================================
-
 =head1 Für alle Prüfungen
 
 Ich empfehle, für die Regeln zuerst die Tests zu schreiben und mit einer leeren Prüfung
@@ -62,13 +58,13 @@ kann er B<auch keine ganze Zahl> sein.
 Schlägt eine Prüfung fehl, ist die weitere Prüfung beendet. Das ist
 sehr wichtig, denn manche Scriptsprachen versuchen eine Umwandlung
 in passende Typen, die manchmal zu grotesken Fehlern führt,
-siehe L<Teurer Einkaufswagen>.
+siehe L</Teurer Einkaufswagen>.
 
 B<Einzelwert:>
 
 Es wird zuerst geprüft, ob der Prüfling ein einzelner Wert ist. In Scriptsprachen
 kann auch schnell mal eine ganze Liste, ein Zeiger oder irgendetwas anderes
-an den Validierer übergeben werden, siehe wiederum L<Teurer Einkaufswagen>.
+an den Validierer übergeben werden, siehe wiederum L</Teurer Einkaufswagen>.
 
 Falls ja, wird anschließend geprüft, ob es ein "Numerischer" Wert ist.
 

@@ -71,14 +71,15 @@ was identisch ist mit
 
   say "wert ist nicht gesetzt" unless defined $wert;
   say "zu Groß: $wert"         if     ist_zu_gross($wert);
-                                                                                                                                                                                                                                            
-=head4 Perl SubCalls/Funktionen/Methoden
+
+=head4 Perl SubCalls, Funktionen, Methoden
 
 Funktionen haben in Perl höchstens einen Namen und keinerlei Signatur. Werte muss man sich vom
 Call-Stack selbst abholen. Das führt immer wieder zu Problemen und war der Grund für mich
-L<Scalar::Validation> zu implementieren und auf dem L<CPAN> für alle bereitzustellen.
+L</Scalar::Validation> zu implementieren und auf dem L</CPAN> für alle bereitzustellen.
 
 Diese Funktion hat diverse Probleme und soll nur als schlechtes Beispiel dienen!
+Hier tritt das Problem des L</Teuren Einkaufswagen> auf.
 
   sub mein_addierer {
       # Keine Argument-Liste!!
@@ -276,6 +277,8 @@ was oft nicht notwendig und manchmal sogar gefährlich ist. Elektronik mit
 Software ist eben viel komplexer und fehleranfälliger.
 
 =head3 Moo
+
+=head3 Notaus
 
 =head3 Perl
 

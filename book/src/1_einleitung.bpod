@@ -32,7 +32,7 @@ Einige Beispiele über die Folgen von unzureichender Daten-Validierung:
 
 =item *
 
-Ein L<Warenkorb|Teurer Einkaufswagen> in einem Online-Shop
+Ein L<Warenkorb|/Teurer Einkaufswagen> in einem Online-Shop
 kostet immer über 5 Mio Euro, auch ein leerer
 
 =item *
