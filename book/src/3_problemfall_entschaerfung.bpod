@@ -1,0 +1,245 @@
+﻿# Buch
+
+=head1 Teil III: Beispielhafte Umsetzung 
+
+==part Teil III: Beispielhafte Umsetzung ===============================================================
+
+=head1 Problemfall Entschärfung
+
+=head2 Teurer Einkaufswagen
+
+=over
+
+=item B<Problem:>
+
+Ein Teurer Einkaufswagen in einem Online-Shop
+kostet immer über 5 Mio Euro, auch ein leerer
+
+=back
+
+Ein kleiner Programmierfehler mit schwerwiegenden Folgen.
+
+Viele Programmiersprachen führen Typ-Konvertierungen durch, wenn das Argument
+einer Funktion nicht passt. Das ist nicht immer vorteilhaft.
+
+Übergibt man einer Funktion in Perl beispielsweise statt einer Liste von
+Preisen die Referenz (Zeiger) auf diese Liste, gibt Perl keinen Fehler aus.
+Die Adresse der Referenz im Hauptspeicher ist ja eine Zahl, und die kann
+zur Summe der Preise addiert werden.
+
+Damit ergibt sich - auf meinem PC - eine Summe von mehr als 5 Mio. Euro.
+In anderen Fällen kann der Wert noch deutlich höher liegen.
+
+Solange dieser Fehler nicht behoben ist, kann keine Bestellung mehr korrekt
+durchgeführt werden. Mit der Folge, dass solange nichts verkauft werden kann.
+
+Ist die Bestellung schon bestätigt, muss sie storniert werden, was
+wahrscheinlich aufwendig und schwierig ist, vor allem, wenn solche Fehler
+nicht bedacht wurden.
+
+Das Problem wird durch Datenvalidierung auf verschiedenen Ebenen vermieden
+bzw. gelöst.
+
+=over
+
+=item 1. B<Notaus>
+
+Als Notaus-Funktion muss jede Rechnung B<vor> der Buchung überprüft werden.
+In diesem Fall hätte eine Regel, die alle Einkäufe mit negativem Geldbetrag oder
+einem hohen Geldbetrag - z.B. > 1000 EUR - abweist, das Schlimmste verhindert.
+
+Der Anwender hätte diese Rechnung nie gesehen und der Einkauf wäre mit dem Hinweis
+auf einen internen Software-Fehler oder Ähnlichem gestoppt worden.
+
+Diesen Fehler hätte man überlicherweise spätestens beim Systemtest finden sollen.
+Falls nicht, verhindert die Notabschaltung Schlimmeres.
+
+=item 2. B<Parameter-Prüfung>
+
+Den eigentlichen Fehler, den falsch übergebenen Parameter der Summen-Funktion,
+hätte eine Parameter-Prüfung sofort gefunden, nämlich beim ersten Durchlauf durch
+die fehlerhafte Code-Stelle.
+
+In der Perl-Funktion L<mein_addierer()|/Perl SubCalls, Funktionen, Methoden> aus der L<kleinen
+Einführung in Perl|/Kleine Einführung in Perl> steckt dieser Fehler, der nicht so leicht
+zu sehen ist:
+
+  sub mein_addierer {
+      # Keine Argument-Liste!!
+      my $sum = 0;
+
+      while ($zahl = shift) {  # bricht ab, falls $zahl == 0, '' oder nicht definiert
+          $sum += $zahl;       # Wandelt alle Argumente irgendwie in Zahlen um
+      }
+
+      return $sum;
+  }
+
+Mit dem Aufruf
+
+  my $rechnung = [ 1, 2 , 3, 4];
+  my $sum = mein_addierer($rechnung);
+
+erhält man als Preis immer eine mindestens 7-stellige Summe im Millionenbereich.
+
+Die Koorektur mittels Scalar::Validation ist denkbar einfach, die Bildung der Summe
+erhält eine Validierung durch:
+
+  #           Name      Regel         Wert
+  $sum += par Betrag => GeldBetrag => $zahl;
+
+Jetzt muss noch die Regel "GeldBetrag" definiert werden, z.B. als
+
+  -100 <= geld_betrag <= 1000
+
+mit Scalar::Validation durch:
+
+  name_rule (GeldBetrag => -Range => [-100.00, 1000.00] => Float);
+
+GeldBetrag kann und muss ab jetzt überall als Validierungsregel eingesetzt werden,
+wo mit Geldbeträgen gearbeitet wird.
+
+Eine durch Validierung abgesicherte Version der Funktion sieht dann folgendermaßen aus:
+
+  sub sicherer_addierer {
+      my $sum = 0;
+
+      while (defined $zahl = shift) {
+          $sum += par Betrag => GeldBetrag => $zahl;
+      }
+
+      return validate (Betrag => GeldBetrag => $sum);
+  }
+
+  my $rechnung = [ 1, 2 , 3, 4];
+  my $sum      = validate ("Ihre Rechnungssumme" =>
+                           RechnungsSumme        =>
+                           mein_addierer($rechnung)
+  );
+
+mit der neuen Regel RechnungsSumme:
+
+  name_rule (RechnungsSumme => -Range => [1.00, 5000.00] => Float);
+
+Rechnungen für weniger als 1 Euro werden damit nicht automatisch
+herausgegeben.
+
+=back
+
+=head2 Eingedoste Bluetooth Autoschlüssel
+
+=over
+
+=item B<Problem:>
+
+Eine neue Generation von Bluetooth-Autoschlüsseln muss in einer Keksdose aus
+Metall aufbewahrt werden
+
+=back
+
+Es ist schon praktisch, wenn sich das Auto automatisch aufschließt,
+sobald man näher als 10m an das Fahrzeug herantritt. 
+
+So weit die Idee: Ist der Schlüssel nah am Auto, dann wird aufgeschlossen
+und der Motor kann gestartet werden.
+
+Leider liegt der Schlüssel nach der Ablage in der Wohnung auch nah genug an der Außentür,
+um das Signal über Kabel oder Funktechnik zum Auto weiterzutransportieren.
+
+Der Dieb muss nur noch einsteigen und abfahren.
+
+=over
+
+=item B<Analyse>
+
+Hier liegt ein schwerer Login-Validierungsfehler vor. Man hat schlicht die Repeater-Funktion
+des Bluetooth-Standards übersehen, die es ermöglicht, das Signal des Schlüssels über
+Kabel oder Funk beliebig weiter zu übertragen. Damit ist es unerheblich, ob sich der Schlüssel
+in der verschlossenen Wohnung, auf der Straße oder im Auto selbst befindet, da man
+ja den Knopf zum Öffnen der Tür nicht mehr drücken muss.
+
+Die zum Diebstahl notwendige Ausrüstung kann man in jedem Elektronik-/IT-Einzelhandel erwerben.
+
+Die Idee eines Schlüssels ist ja, dass nur Besitz des Schlüssels die Türöffnung ermöglicht.
+Die aktuelle Funktechnik ist auch nicht sehr sicher, aber wenigstens muss man einen Knopf
+auf dem Schlüssel zur Türöffnung betätigen, was den physikalischen Besitz des Schlüssels 
+unbedingt erfordert.
+
+=back
+
+Im Internet konnte ich keine offizielle Stellungnahme oder gar Warnungen und Handlungshinweise
+zu diesem Problem finden. Man will seine Kunden ja nicht irritieren.
+
+Für den Besitzer des Autos wird es sehr schwer werden, einen Diebstahl nachzuweisen, da
+das Fahrzeug ja in keiner Weise manipuliert oder beschädigt wird.
+
+Meine Kollegen haben bei Gigaset Messungen für DECT Telefone durchgeführt, deren Sendeleistung bei 100m
+liegt. Für sie reicht die Keksdose aus Metall nicht, man muss den Deckel mit einer Schraube je
+Randzentimeter festschrauben, damit das Signal in der Dose bleibt. Da Bluetooth nur eine
+Reichweite von 10m hat, könnte die Keksdose auch ohne Verschraubung ausreichen.
+
+Um zu testen, ob der Schutz durch die Dose ausreichend ist, kann man sich mit dem
+Autoschlüssel in der fest verschlossenen Dose seinem Fahrzeug nähern. Das Fahrzeug
+muss verschlossen bleiben.
+
+Ein ähnliches Problem bildet das Login durch Fingerabdruck: Es ist sehr leicht, sich die
+Fingerabdrücke einer Person zu beschaffen und damit Türen zu öffnen.
+
+Smartphones als Türöffner bilden die allerhöchste Risikogruppe. Hier kann man bequem aus dem Ausland
+in die Geräte eindringen, den elektronischen Schlüssel und die dazugehörige Adresse kopieren
+und warten, bis der Besitzer im Urlaub ist, worüber man ja über das Handy informiert wird.
+
+Ich habe an meiner Tür ein altmodisches, rein mechanisches Schloss von hoher Qualität,
+in das man einen Schlüssel stecken und ihn von Hand drehen muss.
+
+Für die Öffnung dieses Schlosses benötigt auch ein erfahrener Schlüsseldienst ohne 
+den passenden Schlüssel Stunden.
+
+
+
+=head2 Kreditkartenbetrug
+
+
+=over
+
+=item B<Problem:>
+
+Hacker kaufen mit erfundenen oder gestohlenen Kreditkarten im großen Stil in Online-Shops ein,
+Besitzer der Karten müssen sich gegen Abbuchungen/Rechnungen wehren.
+
+=back
+
+=head2 Webserver Ausfall
+
+=over
+
+=item B<Problem:>
+
+Die Webserver von Internet-Portalen fallen immer wieder aus
+
+=back
+
+=over
+
+=item B<Problem:>
+
+=head2 Gescheitertes Software Project durch Schmutzige Daten
+
+"Schmutzige Daten" verhindern die Fertigstellung eines
+Software-Produkts
+
+=back
+
+=head2 Bestechung in Indien
+
+=over
+
+=item B<Problem:>
+
+In Indien leben viele Verstorbene noch ein langes Leben
+
+
+=back
+
+=head2 
+
