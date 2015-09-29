@@ -209,6 +209,72 @@ Besitzer der Karten müssen sich gegen Abbuchungen/Rechnungen wehren.
 
 =back
 
+Die Überprüfung von Kreditkarten stellt besondere Herausforderungen an die Validierung.
+Wer da Fehler macht, zahlt unter Umständen einen hohen Preis. Kreditkarten sind nämlich
+nicht für die Verwendung im Internet entworfen worden.
+
+Der Besitzer der Karte kann mit Geheimzahl oder Unterschrift vor Ort im Geschäft einkaufen.
+Das ist einigermaßen sicher, weil er die Karte vorzeigen muss und der Verkäufer die Karte
+auf Echtheit prüfen kann, persönlich oder im Kartenleser.
+
+=over
+
+=item B<Analyse:>
+
+Nicht so im Internet: Hier genügen die Daten, die Karte wird nicht benötigt. Da jeder Online-Shop
+alle für die Abrechnung mit dem Kreditinstitut notwendigen Daten vom Anwender einfordert,
+hat er einen kompletten Datensatz. Wenn nur einige diesen weiterverkaufen, haben Kreditkartenbetrüger
+leichtes Spiel und die Kartenbesitzer und Online-Shops das Nachsehen.
+
+Es handelt sich um ein ähnliches Problem wie die eingedosten Autoschlüssel.
+Der Schlüssel - die Kreditkarte - wird im Prozess nicht mehr benötigt: Jeder kann auf
+Ihr Kreditkonto zugreifen!
+
+=back
+
+Fragen Sie die Experten, ob die automatische Prüfung einer Kreditkarte online möglich ist.
+Ich konnte dazu keine Informationen im Internet finden.
+
+Dabei wäre die Lösung ein Chip in der Karte, der einen privaten PGP-Key enthält und Daten über
+ein USB-Gerät der Bank verschlüsseln kann:
+
+Der Web-Shop übermittelt die Daten des Einkaufs, die Karte verschlüsselt, und mit den verschlüsselten
+Daten wird die Abrechnung beim Kreditinstitut durchgeführt. Aber solange Kreditkartenbesitzer
+und Online-Shops das Risiko tragen, haben die Banken natürlich kein Interesse, eine solche Lösung
+zu unterstützen, da der Aufwand nicht unerheblich ist.
+
+Die Technik dazu gibt es schon mindestens 10 Jahre.
+
+=head3 Kreditkartenprüfung
+
+Was kann man aktuell unternehmen?
+
+=over
+
+=item 1. Einzelwertprüfung
+
+Alle Daten einfordern und Syntax prüfen.
+
+=item 2. Prüfziffern bestimmen
+
+Leider hat jedes Institut seine eigenen Verfahren für die Bestimmung der Prüfziffern.
+
+=back
+
+Werden die Tests bestanden, hat man leider noch nicht viel erreicht.
+
+=over
+
+=item 3. Nachprüfung
+
+Ob das Konto gedeckt, die Karte nicht gesperrt
+und der Einkäufer sie überhaupt besitzt, ist schwer festzustellen.
+
+=back
+
+Fragen Sie Experten, wie Sie weiter vorgehen können und wägen Sie die kaufmännischen Risiken ab.
+
+
 =head2 Webserver Ausfall
 
 =over
