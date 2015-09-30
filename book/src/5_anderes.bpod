@@ -106,7 +106,7 @@ Zusätzlich schützt dieser Ansatz vor Angriffen, die das System überlasten sol
 (Denial of Service Attacks). Nach dem Einloggen kann man durch die Trennung der Web-Server
 eine andere Leitung nutzen und IP-Adressen und URLs variieren.
 
-=over
+=over2
 
 =item 1. Public Web-Server
 

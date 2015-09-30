@@ -48,7 +48,7 @@ Validieren (Waschen) werden die Daten bis zum gewünschten Ergebnis gesäubert. 
 funktioniert und was es bedeutet, wird im Folgenden mit der Validierung eines Geburtsdatums
 illustriert.
 
-=head2 Reinheitsgrad 0: Roh
+=head2 Reinheitsgrad 0 - Roh
 
 Rohdaten sind gerade angelieferte Daten, die noch in keine Weise untersucht wurden.
 
@@ -59,7 +59,7 @@ ganz besonders für Email-Anhänge von SPAM- und Schad-Emails.
 
 Prüfungen im UserInterface, d.h. der Webseite, der App oder eines PC-Programms sind
 Komfort für den User. Die eigentliche Prüfung startet auf dem (Web-)Server,
-denn den Dritte könnten die Daten verfälschen, der User oder ein Stellvertreter könnten
+denn Dritte könnten die Daten verfälschen, der User oder ein Stellvertreter könnten
 bewusste Sabotage verüben oder die Daten könnten durch den Transport beschädigt worden sein.
 
 Da man in vielen Fällen prüfen muss, kann man sich eine komplexe und eventuell falsch getroffene
@@ -67,5 +67,87 @@ Entscheidung, ob und was geprüft werden soll, sparen und gleich alles prüfen.
 Dadurch gewinnt man Zeit in der Entwicklung und Sicherheit, was man sich mit
 Mehrkosten zur Laufzeit erkauft.
 
-=head2 Reinheitsgrad 1: Ungefährlich
+Rohdaten werden von Virenscannern untersucht und in die Quarantäne verschoben, falls
+nur der Verdacht auf Virenbefall besteht.
 
+Ebenso werden Dateien/Daten, die zu stark von der erwarteten Größe abweichen, in
+einen Fehlercontainer verschoben und etikettiert mit "unerwartete Größe".
+
+Die aussortierten Dateien oder Daten können dann bei Bedarf weiter untersucht werden.
+Dazu ist Spezialsoftware auf speziellen Systemen notwendig.
+Üblicherweise werden sie nach Ablauf einer festgelegten Frist - z.B. 4 Wochen - gelöscht.
+
+Unser Geburtsdatum passiert diesen Test mit Leichtigkeit, denn es ist ja nur ein kurzer Text.
+
+=head2 Reinheitsgrad 1 - Ungefährlich
+
+Da die Daten/Dateien jetzt höchstwahrscheinlich ungefährlich sind - vollständig sicher ist man
+da nie - , können Sie geöffnet und inspiziert werden.
+
+An der Dateiendung darf man sich nicht orientieren, Schadsoftware verwendet oft unverdächtige
+Dateiendungen, um ausführbaren Code zu verstecken.
+
+Von jeder Datei werden nur die ersten 1000 Zeichen binär eingelesen und überprüft, ob
+es sich um die gewünschten Datenformate handelt. Jedes Dateiformat hat seine speziellen
+Kennungen, die jetzt überprüft werden.
+
+Werden Unregelmäßigkeiten festgestellt, wandern auch diese Dateien in den Fehlcontainer mit
+dem Etikett "unerwarteter Dateiinhalt".
+
+Dasselbe gilt für Daten.
+
+Die Datei/Daten sind damit als Bild/Video/Text oder ähnlich eingestuft.
+
+Formate, die nicht bekannt sind oder nicht verarbeitet werden können, landen wiederum
+etikettiert im Fehlcontainer.
+
+Unser Geburtsdatum passiert auch diesen Test und wird als UTF-Text eingestuft.
+
+Der Inhalt wäre beispielsweise:
+
+  2003-10-09
+
+also der 09. Oktober 2003
+
+=head2 Reinheitsgrad 2 - Vorgefiltert
+
+Ab jetzt spreche ich nur noch von Daten, die durch die SW bearbeitet werden. Ob sie aus Dateien,
+Streams oder anderen Quellen stammen, ist nun unerheblich.
+
+Erst hier startet die Verarbeitung durch die Anwendungssoftware.
+
+Für unser Geburtsdatum bedeutet das, dass es als UTF-8 Text eingelesen wird und
+eine schnelle Prüfung für einen Datumskandidaten durchläuft:
+
+Die Länge muss zwischen 4 und 30 Zeichen liegen, außer Zahlen und Buchstaben sind nur 
+Blank (Leerschritt), '.' und '-' erlaubt.
+
+Falls der Datumskandidat diesen Test nicht besteht, wird er als "ungeeignet für Datum" in der
+Datenhaltung markiert.
+
+2003-10-09 erfüllt die Bedingung und wird an den Grobfilter weitergereicht.
+
+=head2 Reinheitsgrad 3 - Grobfilter
+
+Der "datum_kandidat" durchläuft nun die festgelegte Validierung für ein Datumt.
+
+Nach der Validierung wird es entweder als "gültiges Datum" eingestuft oder als "fehlerhaftes Datum"
+und in der Datenhaltung entsprechend markiert.
+
+Das Geburtsdatum besteht auch diesen Test und wird als "gültiges Datum"
+an die nächste Stufe weitergereicht.
+
+=head2 Reinheitsgrad 4 - Mittelfilter
+
+Ein gültiges Datum ist nur dann ein Geburtsdatum, wenn es gleich heute ist oder in der Vergangenheit
+liegt.
+
+Der 01.01.2100 ist damit kein gültiges Geburtsdatum.
+
+2003-10-09 erfüllt die Bedingung.
+
+=head2 Reinheitsgrad 5 - Feinfilter
+
+=head2 Reinheitsgrad 6 - Superfeiner Filter
+
+=head2 Reinheitsgrad 7 - Reinraum

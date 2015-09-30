@@ -274,7 +274,6 @@ und der Einkäufer sie überhaupt besitzt, ist schwer festzustellen.
 
 Fragen Sie Experten, wie Sie weiter vorgehen können und wägen Sie die kaufmännischen Risiken ab.
 
-
 =head2 Webserver Ausfall
 
 =over
@@ -285,16 +284,53 @@ Die Webserver von Internet-Portalen fallen immer wieder aus
 
 =back
 
+Es gibt viele Möglichkeiten, Attacken auf Webserver durchzuführen. Durch den Einsatz
+mehrerer Webserver, wie in L</Das Wichtigste zu Login-Verfahren>, "Sicherheitsschleusen"
+beschrieben, wird das System sicherer.
+
+Ein zweiter Punkt ist die sichere Validierung der Parameter, die vom Web-Browser über das
+Internet auf den Web-Server übertragen werden.
+
+Der dritte Punkt betrifft Uploads. Sie sollten ab einer individuell festgelegten Größe
+abgebrochen werden. Erfolgreiche Uploads müssen in die Quarantäne und dürfen erst nach
+erfolgreichem Virencheck weiter verarbeitet werden. Nun müssen noch die ersten 1000 Bytes
+untersucht werden, um den Dateityp zweifelsfrei festzustellen.
+
+Führt man jetzt noch ein sicheres Login-Verfahren und Firewalls ein,
+hat man schon mehr getan als die meisten Web-Portale.
+
+Diese Punkte kann man auch noch nachträglich mit geringem Mehraufwand angehen.
+
+Webserver können aber auch "von innen" gestört werden.  Siehe nächstes Unterkapitel.
+
+
+=head2 Gescheitertes Software Projekt durch Schmutzige Daten
+
 =over
 
 =item B<Problem:>
 
-=head2 Gescheitertes Software Project durch Schmutzige Daten
-
-"Schmutzige Daten" verhindern die Fertigstellung eines
-Software-Produkts
+"Schmutzige Daten" verhindern die Fertigstellung eines Software-Produkts
 
 =back
+
+Große Schwierigkeiten entstehen immer wieder durch 
+nicht robuste Software und vor allem bei der Verwendung von nicht validierten Daten
+im Zusammenspiel mit nicht robuster Software.
+
+Man kann nur schwer Software nachträglich stabilisieren oder eine durchgängige Validierung einführen,
+weil dafür oft eine Änderung der Software-Architektur erforderlich ist.
+
+Oft werden aus Zeitdruck nur wenige Datenprüfungen implementiert und - noch gefährlicher -
+es existiert auch kein Konzept für die Validierung. Solange der User - und die Software -
+keine Fehler machen, ist alles gut. Aber die Fehler werden kommen und oft erst viel zu spät
+entdeckt.
+
+Jetzt muss man nicht nur die Fehler in der Software beheben und Prüfungen einfügen, sondern
+auch noch bei den Kunden die Daten reparieren. Das hat schon manche Software-Schmiede nicht
+überlebt.
+
+Mit einem schlüssigen Validierungskonzept werden Sie nicht in diese Falle laufen.
 
 =head2 Bestechung in Indien
 
@@ -304,8 +340,20 @@ Software-Produkts
 
 In Indien leben viele Verstorbene noch ein langes Leben
 
-
 =back
 
-=head2 
+In Indien werden durch Bestechung von Beamten immer wieder Lebende für tot erklärt, um
+z.B. Grundstücke vorzeitig zu erben und verkaufen zu können. Die Betroffenen geraten
+in große Schwierigkeiten.
+
+In Indien hat dieser Punkt wenig mit Software-Entwicklung,
+aber viel mit Daten-Validierung zu tun und der Frage, wer überhaupt Daten verändern darf.
+
+In der westlichen Welt und überall, wo auch bei den Behörden immer mehr digitalisiert wird,
+betreffen diese Fragen auch die Software. Ein duales System, das bei wichtigen Dokumenten
+ein physikalisches Original vorschreibt, erhöht die Sicherheit enorm.
+
+Identitätsdiebstahl oder gar Identitätsvernichtung bilden immer wieder das zentrale Thema in
+Büchern oder Filmen.
+
 
