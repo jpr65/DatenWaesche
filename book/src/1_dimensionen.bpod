@@ -48,6 +48,8 @@ Validieren (Waschen) werden die Daten bis zum gewünschten Ergebnis gesäubert. 
 funktioniert und was es bedeutet, wird im Folgenden mit der Validierung eines Geburtsdatums
 illustriert.
 
+Die Einteilung in Reinheitsgrade ist ab 3 willkürlich und abhängig vom Einsatzgebiet.
+
 =head2 Reinheitsgrad 0 - Roh
 
 Rohdaten sind gerade angelieferte Daten, die noch in keine Weise untersucht wurden.
@@ -101,7 +103,7 @@ Die Datei/Daten sind damit als Bild/Video/Text oder ähnlich eingestuft.
 Formate, die nicht bekannt sind oder nicht verarbeitet werden können, landen wiederum
 etikettiert im Fehlcontainer.
 
-Unser Geburtsdatum passiert auch diesen Test und wird als UTF-Text eingestuft.
+Unser Geburtsdatum passiert auch diesen Test und wird als UTF-8 Text eingestuft.
 
 Der Inhalt wäre beispielsweise:
 
@@ -109,7 +111,7 @@ Der Inhalt wäre beispielsweise:
 
 also der 09. Oktober 2003
 
-=head2 Reinheitsgrad 2 - Vorgefiltert
+=head2 Reinheitsgrad 2 - Grob Klassifiziert
 
 Ab jetzt spreche ich nur noch von Daten, die durch die SW bearbeitet werden. Ob sie aus Dateien,
 Streams oder anderen Quellen stammen, ist nun unerheblich.
@@ -125,11 +127,11 @@ Blank (Leerschritt), '.' und '-' erlaubt.
 Falls der Datumskandidat diesen Test nicht besteht, wird er als "ungeeignet für Datum" in der
 Datenhaltung markiert.
 
-2003-10-09 erfüllt die Bedingung und wird an den Grobfilter weitergereicht.
+2003-10-09 erfüllt die Bedingung und wird an den nächsten Filter weitergereicht.
 
-=head2 Reinheitsgrad 3 - Grobfilter
+=head2 Reinheitsgrad 3 - Fein Klassifiziert
 
-Der "datum_kandidat" durchläuft nun die festgelegte Validierung für ein Datumt.
+Der "datum_kandidat" durchläuft nun die festgelegte Validierung für ein Datum.
 
 Nach der Validierung wird es entweder als "gültiges Datum" eingestuft oder als "fehlerhaftes Datum"
 und in der Datenhaltung entsprechend markiert.
@@ -139,15 +141,353 @@ an die nächste Stufe weitergereicht.
 
 =head2 Reinheitsgrad 4 - Mittelfilter
 
+Da der Datums-Text ein "gültiges Datum" ist, kann er in ein echtes "Datum" (den Datentyp Date)
+umgewandelt werden. Nun kann die Software mit dem Datum rechnen und vergleichen.
+
 Ein gültiges Datum ist nur dann ein Geburtsdatum, wenn es gleich heute ist oder in der Vergangenheit
 liegt.
 
 Der 01.01.2100 ist damit kein gültiges Geburtsdatum.
 
-2003-10-09 erfüllt die Bedingung.
+2003-10-09 erfüllt auch diese Bedingung und erreicht damit die nächste Stufe.
 
 =head2 Reinheitsgrad 5 - Feinfilter
 
+Hier endet die automatische Prüfung durch Software in den meisten Fällen.
+
+Aber nicht die Validierung!
+
+Außerdem wird jetzt nicht mehr nur ein einzelner Wert geprüft, sondern das ganze Objekt
+"Person" mit Name, Vorname, Adresse, Geburtsort und Geburtsdatum.
+
+Ein Mitarbeiter erhält nun durch die Software die Aufgabe, die erfassten Daten
+mit dem Personalausweis/Reisepass zu vergleichen, der als Original vorliegt.
+
+Stimmen alle Daten überein, und damit auch die beiden Geburtstage,
+markiert er diesen Test "von Hand" über die Programmoberfläche als bestanden.
+
+Die Software kann alternativ mit bereits vorhandenen Daten vergleichen
+oder beim Einwohnermeldeamt nachfragen.
+
+Wenn dieser Test bestanden wurde, geht es in die nächste Stufe.
+
 =head2 Reinheitsgrad 6 - Superfeiner Filter
 
+Da man Pässe fälschen kann, wird der Eintrag über die Geburt aus dem Familienstammbuch des
+Geburtsortes angefordert und mit den Daten verglichen. Mit etwas Glück ist auch die
+Ausweisnummer im Familienstammbuch vermerkt oder angehängt.
+
+Stimmen die Daten überein, wird die letzte Stufe erreicht, der Reinraum.
+
 =head2 Reinheitsgrad 7 - Reinraum
+
+Die Personen-Daten gehören somit zu einer realen Person und sind verifiziert.
+
+=head2 Notwendige Reinheit
+
+Welcher Reinheitsgrad für welche Daten in welcher Situation erreicht werden muss,
+ist im einzelnen festzulegen:
+
+Da für Geburtstage der Reinheitsgrad 5 immer ohne großen Aufwand erreicht werden kann,
+sollte man ihn als Minimum vorschreiben.
+
+Für den Verkauf eines Hauses oder Grundstückes Reinheitsgrad 7 notwendig. 
+
+Der Validator ist hier der Notar, der prüft, indem er Foto und Unterschrift
+des Ausweises mit dem Käufer/Verkäufer
+vergleicht und sich die Daten durch das Einwohnermeldeamt bestätigen lässt.
+
+=head1 Dimension Gültigkeitsdauer
+
+Die Gültigkeitsdauer einer Validierung bildet die 2. Dimension.
+
+Wie lange gilt ein Prüfungsergebnis? Ein Neuwagen hat 3 Jahre Zeit bis zur nächsten
+TÜV-Prüfung, danach wird auf 2 Jahre verkürzt. Busse werden jährlich TÜV-geprüft,
+bei Baukränen und Baggern ist mir die Situation nicht bekannt.
+
+Für Daten ist die Gültigkeitsdauer von Prüfungen optimalerweise als Ablauf-Datum oder
+auch -Zeit festgelegt.
+
+Zeiträume von Millisekunden in Echtzeitsystemen bis zu Jahrzehnten sind möglich.
+
+=head2 Gültigkeit im Millisekundenbereich: ms
+
+In der Produktion werden viele Messdaten innerhalb von Millisekunden erfasst und
+verarbeitet. Hier gelten die speziellen Anforderungen für Echtzeit-Systeme der
+Branche, die je nach Anwendungsfall mehr oder weniger stark reguliert sind.
+
+=head2 Gültigkeit im Sekundenbereich: s
+
+Im Basketball hat der Spieler nach der Freigabe durch den Schiedsrichter 5 Sekunden Zeit,
+einen Einwurf durchzuführen. Solange ist ein Einwurf gültig und das Spiel
+wird fortgesetzt.
+
+Nach Ablauf der Frist wird abgepfiffen und ein trotzdem erfolgter Einwurf wird ungültig.
+Das Spiel wird abgebrochen und die gegnerische Mannschaft erhält den nächsten Einwurf.
+
+=head2 Gültigkeit im Minutenbereich: m
+
+Eine Session im Internetportal meiner Bank läuft nach 15 Minuten ab,
+wenn keine Aktionen durchgeführt werden. Dann wird der Anwender
+automatisch ausgeloggt und muss sich neu anmelden.
+
+Mit jeder Anfrage an den Server wird die Frist zurückgesetzt und die 15 Minuten starten erneut.
+
+=head2 Gültigkeit im Stundenbereich: h
+
+Ein Einzelfahrschein im öffentlichen Nahverkehr hat eine nach Preisstufen
+festgelegte Gültigkeitsdauer von 0,5 bis 3 Stunden. Die Frist startet mit der Entwertung,
+die den Fahrschein mit der aktuellen Zeit stempelt. Durch Zeitvergleich kann der
+Schaffner, Fahrer oder Kontrolleur feststellen, ob der Fahrschein noch gültig ist oder nicht.
+
+=head2 Tägliche Gültigkeit: T
+
+Ein Tagesticket im öffentlichen Nahverkehr ist genau einen Tag gültig,
+plus ein paar weitere Stunden in der frühen Nacht.
+
+Für die Überprüfung wird die Uhrzeit noch benötigt,
+falls der nachfolgende Tag schon erreicht wurde.
+
+=head2 Wöchentliche Gültigkeit: W
+
+Ein Wochenticket im öffentlichen Nahverkehr gilt genau für eine Kalenderwoche.
+
+Ab Wochenfrist reicht ein Kalender zur Prüfung aus, die Uhrzeit wird nicht mehr benötigt.
+
+=head2 Monatliche Gültigkeit: M
+
+Ein Monatsticket gilt für den aufgedruckten Kalendermonat + 1 Tag vom nächsten Monat.
+
+=head2 Jährliche Gültigkeit: J
+
+Die Bahncard gilt ein Kalenderjahr.
+
+Die Autobahn-Plakette der Schweiz für z.B. 2013 gilt von Ende Dezember 2012 bis Januar 2014.
+
+=head2 Mehrjährige Gültigkeit: VJ
+
+Kreditkarten und Personalausweise/Pässe gelten für viele Jahre, enthalten aber ein genaues
+Ablaufdatum oder einen Ablaufmonat.
+
+=head2 Lebenslange Gültigkeit
+
+Führerscheine für PKWs und Motorräder gelten ein Leben lang. Ob das eine sinnvolle Dauer
+ist, wenn im Alter die Reaktionsfähigkeit und Fähigkeit, ein Fahrzeug zu führen, langsam schwindet?
+Doch wo soll man die Grenze ziehen?
+
+=head2 Zusammenfassung Gültigkeitsdauer
+
+Die Gültigkeitsdauer einer Validierung muss festgelegt werden. Das ist im Prinzip
+nicht schwer, aber es muss getan werden.
+
+Die Dauer der Gültigkeit wiederum kann auch durch den Zustand der Daten oder über andere 
+Regeln beeinflusst werden: TÜV für Neuwagen erstmalig nach 3 Jahren, dann nach 2 Jahren.
+
+Aus der Gültigkeitsdauer sollten Ablauf-Zeit oder -Datum berechnet und
+in den Daten selbst gespeichert werden.
+
+Ist das Ablaufdatum überschritten, geht die Validierung in den Zustand "ungeprüft" über.
+
+Die Gültigkeit kann auch verlängert werden, wie im Beispiel des Online-Bankings. Dann
+wird einfach ein neues Ablaufdatum eingetragen.
+
+=head1 Dimensionen Datenmenge und Validierungsaufwand
+
+Die Datenmenge ist eine weitere wichtige Information für die Validierung, die gemeinsam
+mit dem Aufwand für eine einzelne Validierung die Zeitdauer für die Überprüfung
+des gesamten Systems bestimmt.
+
+Die Datenmenge sollte man grob abschätzen und in 1000er Schritten in Klassen einteilen:
+
+=over
+
+=item * S (small - klein) weniger als 50
+
+=item * k (Kilo) um die 1.000
+
+=item * M (Mega) um die 1.000.000 (Million)
+
+=item * G (Giga) um die 1.000.000.000 (Milliarde)
+
+=item * T (Tera) um die 1.000.000.000.000 (Billion)
+
+=back
+
+Giga und Tera sind zwar ungewöhnlich, aber nicht unmöglich.
+
+Der Validierungsaufwand für die Validierung eines einzelnen Datensatzes ist deutlich
+schwerer abzuschätzen und sollte sobald wie möglich durch Messungen überprüft werden.
+
+Die Werte müssen in neutrale Punkte umgerechnet werden, um die Aufwände unabhängig
+von der eingesetzten Technologie zu erfassen.
+
+=over
+
+=item * Einfache Operationen (1 Punkt)
+
+Vergleiche von Text und Zahlen:
+Hat der PKW mehr als 140.000 km zurückgelegt?
+
+=item * Komplexere Operationen (25 Punkte)
+
+Vergleiche mittels L<Regular Expressions>:
+Überprüfung einer Email-Adresse auf korrekte Schreibweise.
+
+=item * Abgleich mit Listen und DB-Einträgen (20 - 500 Punkte)
+
+Wurde derselbe Datensatz bereits angelegt?
+Existiert für jedes Kind in der DB mindestens ein Elternteil?
+
+=item * Validierung durch externe Web-Services (100 - 1.000.000 Punkte)
+
+Ermittlung des Halters durch Toll-Collect für die Nachforderung einer
+nicht bezahlten LKW-Maut.
+
+=item * Validierung durch persönliche Überprüfung (1.000.000 und mehr Punkte) 
+
+Notar, TÜV, Polizei
+
+=back
+
+Die Punkte wurden von mir "nach Gefühl" vergeben. Durch Messungen und Erfahrung
+muss daraus eine sinnvolle Standard-Bewertung entwickelt werden.
+
+Der Validierungsaufwand einer Validierung berechnet sich damit aus der 
+
+   Anzahl der Daten * Punkte (Einzelaufwand der Validierung) 
+
+Summiert man die Aufwände für die verschiedenen Validierungen, erhält
+man eine Gesamtpunktzahl.
+
+Über die Performance des Gesamtsystems, d.h. wieviele Punkte können
+pro Tag abgearbeitet werden, ergibt sich die Dauer für eine vollständige Daten-Prüfung.
+
+Für große Datenmengen kann diese Dauer Monate oder Jahre erreichen.
+
+Durch ungünstige Abläufe und ungeschickte Programmierung kann man die Aufwände um Faktoren von
+100 oder mehr erhöhen. Im Extremfall beschäftigt sich das System nur noch mit Prüfungen, die
+nie abgeschlossen werden können.
+
+Wie man die Aufwände für die Datenvalidierung minimiert,
+ist eines der zentralen Themen in Teil II und Teil III dieses Buches.
+
+=head1 Dimension Komplexität der Daten
+
+Die Komplexität der Daten/Klassen bildet die letzte Dimension der Validierung.
+
+=over
+
+=item 0. Einzelwert
+
+Ein einzelner Wert, z.B. eine Ja/Nein-Entscheidung, eine Zahl oder ein Name
+bilden die einfachste mögliche Datenstruktur.
+
+=item 1. Komplexer Wert
+
+Eine Uhrzeit, ein Datum, eine Ortsposition (Breiten- und Längengrad) bilden
+die nächsthöhere Stufe.
+
+=item 2. Aufruf-Parameter
+
+Achtung Software-Technik!
+
+Die Aufruf-Parameter einer Funktion oder Methode setzen sich aus einer
+Liste von benannten oder nur numerierten Variablen von Typ 0, 1, 2 oder 3
+zusammen. Sie werden hier aufgeführt, weil sie mit denselben Verfahren
+geprüft werden müssen wie die anderen mehr anwenderbezogenen Daten.
+
+=item 3. Instanzdaten
+
+Eine Ansammlung von benannten Daten des Typs 0 und 1 (einfache und komplexe Werte)
+bilden ein L<Objekt>, softwaretechnisch eine L<Instanz>. 
+
+Eine Adresse setzt sich (in Deutschland) aus der Straße, der Hausnummer, der Postleitzahl und
+dem Ortsnamen zusammen.
+
+  Hauptstr. 1
+  4630 Bochum 1
+
+oder mit der neuen Postleitzahl
+
+  Hauptstr. 1
+  44787 Bochum
+
+Das ist der einfachste Fall. Es gibt Adressen ohne Straße, aber mit Hausnummern.
+Straßen ohne Hausnummern. Zusammengesetzte Ortsnamen und Gemeinde/Ort Kombinationen
+und vieles mehr.
+
+Ein Postleitzahl ist manchmal nicht bekannt und deswegen auch kein Pflichtfeld.
+
+Das einzige, was an einer Adresse sicher ist, ist dass die Postleitzahl oft nicht
+zur Kombination von Straße, Hausnummer und Ort passt.
+
+Insgesamt hat man jedenfalls 3 oder 4 einzelne Werte, je nachdem ob man Straße und
+Hausnummer zu einem komplexen Wert zusammenfasst oder nicht.
+
+=item 4. Aggregatdaten
+
+Den Zusammenbau von mehreren Instanzen zu etwas Größerem nennt man Aggregat.
+
+Eine Person hat einen Vornamen, einen Nachnamen und ein Geburtsdatum. Dadurch
+würde für die Speicherung der Daten eine Instanz ausreichen, wenn sie nicht
+noch eine oder mehrere Adressen hätte:
+
+  Peter Mustermann
+  geb. am 17.04.1983
+
+  Adresse:
+    Hauptstr. 1
+    44787 Bochum
+
+  Telefon:
+    0234/123456789-4711
+
+  Email: pm@myweb.de
+
+=item 5. Zusammengesetztes Aggregat
+
+Im technischen Bereich ist der Motor eines Autos ein sehr komplexes Aggregat.
+Die Lichtmaschine (ein Stromgenerator) ist ein weniger komplexes Aggregat.
+
+Ein "Zusammengesetztes Aggregat" enthält nicht nur Instanzen, sondern andere
+Aggregate.
+
+Ein Auto enthält einen Motor zu dem eine Lichtmaschine gehört, die durch
+einen Riemen vom Motor angetrieben wird.
+Nur der Riemen ist kein Aggregat, sondern eine Instanz oder ein einzelner
+Wert, das hängt von der Modellierung ab.
+
+=item 6. Service
+
+Mit den bisher vorgestellten Daten und den dazugehörigen Funktionen/Methoden
+kann man nun einen Service erstellen.
+
+Ab dieser Stufe gibt es keine reinen Daten-Objekte mehr, jetzt tritt die Funktionalität
+in den Vordergrund.
+
+Ein gut programmierter Service lässt sich zum Beispiel mit einem guten Restaurant vergleichen:
+
+Man meldet sich am Eingang, wird zu seinem reservierten Platz geführt und erhält
+sofort die Speisekarte und ein Begrüßungsgetränk.
+
+Der Ober hilft bei der Auswahl der Speisen und gibt Empfehlungen. Das Menü wird zügig und
+in hoher Qualität serviert.
+
+Nach dem Besuch des Restaurants ist man rundum zufrieden.
+
+Die Realität bezogen auf Software und Internet sieht meistens anders aus. Aber einige
+arbeiten daran, den Standard eines guten Restaurants zu erreichen.
+
+
+
+=item 7. Library
+
+=item 8. Programm/APP
+
+=item 9. SW-Produkt / Web-Portal
+
+=item 10. Computer / Smartphone
+
+=item 11. Computernetzwerk
+
+=item 12. World-Wide-Web
