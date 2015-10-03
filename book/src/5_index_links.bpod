@@ -235,6 +235,8 @@ Englisch für Entwickler, s.u.
 
 =head3 Gigaset
 
+=head3 Instanz
+
 =head3 Entwickler
 
 Der Entwickler, oder genauer Software-Entwickler,
@@ -279,6 +281,11 @@ Software ist eben viel komplexer und fehleranfälliger.
 =head3 Moo
 
 =head3 Notaus
+
+=head3 Objekt
+
+C[Muss noch einfacher werden] Ein Objekt (engl. Object) der realen Welt wird oft mehr
+oder weniger 1:1 in die Anwendungs-Domäne der Software übernommen.
 
 =head3 Perl
 

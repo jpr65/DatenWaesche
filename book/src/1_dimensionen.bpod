@@ -375,19 +375,19 @@ ist eines der zentralen Themen in Teil II und Teil III dieses Buches.
 
 Die Komplexität der Daten/Klassen bildet die letzte Dimension der Validierung.
 
-=over
 
-=item 0. Einzelwert
+
+=head2 Komplexität 0. Einzelwert
 
 Ein einzelner Wert, z.B. eine Ja/Nein-Entscheidung, eine Zahl oder ein Name
 bilden die einfachste mögliche Datenstruktur.
 
-=item 1. Komplexer Wert
+=head2 Komplexität 1. Komplexer Wert
 
 Eine Uhrzeit, ein Datum, eine Ortsposition (Breiten- und Längengrad) bilden
 die nächsthöhere Stufe.
 
-=item 2. Aufruf-Parameter
+=head2 Komplexität 2. Aufruf-Parameter
 
 Achtung Software-Technik!
 
@@ -396,10 +396,10 @@ Liste von benannten oder nur numerierten Variablen von Typ 0, 1, 2 oder 3
 zusammen. Sie werden hier aufgeführt, weil sie mit denselben Verfahren
 geprüft werden müssen wie die anderen mehr anwenderbezogenen Daten.
 
-=item 3. Instanzdaten
+=head2 Komplexität 3. Instanzdaten
 
 Eine Ansammlung von benannten Daten des Typs 0 und 1 (einfache und komplexe Werte)
-bilden ein L<Objekt>, softwaretechnisch eine L<Instanz>. 
+bilden ein L</Objekt>, softwaretechnisch eine L</Instanz>. 
 
 Eine Adresse setzt sich (in Deutschland) aus der Straße, der Hausnummer, der Postleitzahl und
 dem Ortsnamen zusammen.
@@ -424,7 +424,7 @@ zur Kombination von Straße, Hausnummer und Ort passt.
 Insgesamt hat man jedenfalls 3 oder 4 einzelne Werte, je nachdem ob man Straße und
 Hausnummer zu einem komplexen Wert zusammenfasst oder nicht.
 
-=item 4. Aggregatdaten
+=head2 Komplexität 4. Aggregatdaten
 
 Den Zusammenbau von mehreren Instanzen zu etwas Größerem nennt man Aggregat.
 
@@ -444,10 +444,10 @@ noch eine oder mehrere Adressen hätte:
 
   Email: pm@myweb.de
 
-=item 5. Zusammengesetztes Aggregat
+=head2 Komplexität 5. Zusammengesetztes Aggregat
 
 Im technischen Bereich ist der Motor eines Autos ein sehr komplexes Aggregat.
-Die Lichtmaschine (ein Stromgenerator) ist ein weniger komplexes Aggregat.
+Die Lichtmaschine (ein Stromgenerator) ist ein ein weniger komplexes Aggregat.
 
 Ein "Zusammengesetztes Aggregat" enthält nicht nur Instanzen, sondern andere
 Aggregate.
@@ -457,7 +457,7 @@ einen Riemen vom Motor angetrieben wird.
 Nur der Riemen ist kein Aggregat, sondern eine Instanz oder ein einzelner
 Wert, das hängt von der Modellierung ab.
 
-=item 6. Service
+=head2 Komplexität 6. Service
 
 Mit den bisher vorgestellten Daten und den dazugehörigen Funktionen/Methoden
 kann man nun einen Service erstellen.
@@ -475,19 +475,19 @@ in hoher Qualität serviert.
 
 Nach dem Besuch des Restaurants ist man rundum zufrieden.
 
-Die Realität bezogen auf Software und Internet sieht meistens anders aus. Aber einige
+Die Realität bezogen auf Software und Internet sieht oft anders aus. Aber einige
 arbeiten daran, den Standard eines guten Restaurants zu erreichen.
 
 
 
-=item 7. Library
+=head2 Komplexität 7. Library
 
-=item 8. Programm/APP
+=head2 Komplexität 8. Programm/APP
 
-=item 9. SW-Produkt / Web-Portal
+=head2 Komplexität 9. SW-Produkt / Web-Portal
 
-=item 10. Computer / Smartphone
+=head2 Komplexität 10. Computer / Smartphone
 
-=item 11. Computernetzwerk
+=head2 Komplexität 11. Computernetzwerk
 
-=item 12. World-Wide-Web
+=head2 Komplexität 12. World-Wide-Web

@@ -108,7 +108,7 @@ Eine durch Validierung abgesicherte Version der Funktion sieht dann folgendermaÃ
           $sum += par Betrag => GeldBetrag => $zahl;
       }
 
-      return validate (Betrag => GeldBetrag => $sum);
+      return $sum;
   }
 
   my $rechnung = [ 1, 2 , 3, 4];
