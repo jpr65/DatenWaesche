@@ -500,19 +500,56 @@ Nach dem Besuch des Restaurants ist man rundum zufrieden.
 Die Realität bezogen auf Software und Internet sieht oft anders aus. Aber einige
 arbeiten daran, den Standard eines guten Restaurants zu erreichen.
 
+=head2 Weitere Stufen der Komplexität
 
+Der Service ist nun nicht die höchste Stufe der Komplexität, aber die noch höheren Stufen
+stellen keine weiteren Anforderungen an die Implementierung der Datenvalidierung,
+wenn bis hierhin alles passend umgesetzt wurde. Ich möchte sie aber trotzdem kurz auflisten:
 
-=head2 Komplexität 7. Library
+=over
 
-=head2 Komplexität 8. Programm/APP
+=item * Komplexität 7. Library
 
-=head2 Komplexität 9. SW-Produkt / Web-Portal
+Eine Library ist eine Zusammenfassung von Objekten/Klassen und Funktionen zu einem bestimmten Thema.
+Die Implementierung der Validierung ist ein Kandidat für eine Library, die Regeln selbst können in
+einer zweiten Library oder in einer Datenbank gespeichert werden, wenn sie sehr umfangreich sind.
+Siehe Teile II und III.
 
-=head2 Komplexität 10. Computer / Smartphone
+=item * Komplexität 8. Programm/APP
 
-=head2 Komplexität 11. Computernetzwerk
+Mit oder ohne Libraries (nicht zu empfehlen!) erzeugt man ein Programm oder eine App, welche
+man starten und bedienen kann.
 
-=head2 Komplexität 12. World-Wide-Web
+=item * Komplexität 9. SW-Produkt / Web-Portal
+
+Ein Software-Produkt hat mindestens ein Programm, oft mehrere und zusätzlich noch Konfigurationsdaten.
+
+Ein Web-Portal enthält mindestens einen Web-Server als Programm, oft noch viele weitere zusätzliche
+Programme, Scripts und Services, die über die Webseiten gestartet und bedient werden.
+
+=item * Komplexität 10. Computer / Smartphone
+
+Auf einem Computer oder Smartphone laufen viele Programme/Apps parallel. Mittlerweile auch bei Apple...
+
+=item * Komplexität 11. Computernetzwerk
+
+Computer kann man miteinander verbinden und enthält damit ein Computernetzwerk, in dem Computer Daten
+austauschen und gegenseitig Services starten können. Von privaten Kleinnetzwerken
+mit einem PC und einem Smartphone bis zu mehr als 100.000 Computern in großen Firmen ist alles möglich.
+Große Firmen betreiben oft ein eigenes Intranet, das wie das WWW funktioniert aber nur interne Computer
+zulässt.
+
+=item * Komplexität 12. World-Wide-Web
+
+Für das WWW kann jeder einen Server bereitstellen.
+Dazu benötigt er nichts als eine Web-Domain oder eine URL, eine IP-Adresse und einen Zugang zum WWW.
+Das WWW organisiert die Reise der Daten zu allen Kommunikations-Partnern und ermöglicht den Zugriff
+über Web-Browser, das Versenden von Emails und vieles mehr.
+
+Die Anzahl der vernetzten Geräte hat die Milliarden-Grenze durch die vielen Smartphones
+mittlerweile locker überschritten.
+
+=back
 
 =head1 Dimension Validierungsregeln
 
