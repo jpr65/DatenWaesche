@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="UTF-8"?><simplemind-mindmaps doc-version="3" generator="SimpleMindAndroid" gen-version="1.9.9">
+<mindmap>
+<meta>
+<guid guid="AFF9E95CDECE5C75027AA8782D4FECD3"/>
+<title text="Datenvalidierung"/>
+<style key="system.soft-palette"/>
+<auto-numbering style="disabled"/>
+<scrollstate zoom="95" x="303.0" y="585.0"/>
+<selection guid="WHA_Zxb0wZQKabBXSiff5g" type="node" id="65"/>
+<main-centraltheme id="0"/>
+</meta>
+<topics>
+<topic id="0" parent="-1" guid="4BRHUGYRRAmxVxpsnLb7AA" x="454.88986" y="546.3833" palette="1" colorinfo="1" text="Datenvalidierung"/>
+<topic id="1" parent="0" guid="YTQoNHGihon7I2Tnde8BrQ" x="840.1" y="192.08038" palette="2" colorinfo="2" text="Dimensionen"/>
+<topic id="2" parent="1" guid="tonbf5NBs7BWSv1xVnEFyg" x="1008.0444" y="-123.78987" text="Aufwand">
+<note>Aufwand für die Durchführung der Prüfung</note>
+</topic>
+<topic id="3" parent="2" guid="2rEcO0-tF40Cy3gWb07Zwg" x="1134.2786" y="-129.47238" text="Vergleich"/>
+<topic id="4" parent="2" guid="pNupykmUWFfIhLRi8J6HlA" x="1148.4579" y="-178.38597" text="Regex"/>
+<topic id="5" parent="2" guid="HZoLt1WNxtUDiK6_1elt6g" x="1152.8768" y="-240.51527" text="Abgleich"/>
+<topic id="6" parent="5" guid="IAQ3QqGwIr89eSHuqQBtjQ" x="1263.5298" y="-238.10872" text="Mit Liste"/>
+<topic id="7" parent="5" guid="4zmBmChEI2yKaOFqoG1UqA" x="1273.3018" y="-311.1413" text="Mit Datenbank"/>
+<topic id="8" parent="2" guid="i537Xtf0DBwW1JD06H7oPA" x="1127.0299" y="-321.47165" text="externe (Web-) Services"/>
+<topic id="9" parent="2" guid="VJDuOlNQBWZDf1EZIDa0Jg" x="1038.0569" y="-357.94727" text="Persönliche Überprüfung"/>
+<topic id="10" parent="1" guid="BRAmJ-stfQFWeAA1lQ_b6A" x="373.51224" y="104.06784" text="Reinheitsgrad"/>
+<topic id="11" parent="10" guid="vsQ4Dl-cT9te-6_4LyeGdA" x="421.34567" y="168.37105" text="Roh"/>
+<topic id="12" parent="11" guid="SJGZqJ-fH-NPCcFmfpgDRg" x="483.78555" y="198.90836" text="&quot;Datenmüll&quot;"/>
+<topic id="13" parent="10" guid="gJstUIneTM24uUvVcvx9Zw" x="263.81238" y="194.52162" text="Vorgefiltert"/>
+<topic id="14" parent="13" guid="pR2jsaIB8oryZEmC3NFspw" x="215.96887" y="275.93668" text="Text"/>
+<topic id="15" parent="10" guid="1DB574QabpZsPPsT0yjuBg" x="348.8622" y="238.50848" text="Ungefährlich"/>
+<topic id="16" parent="15" guid="0kDFMVRzXTaWH5UpuHVUVw" x="371.72696" y="292.408" text="Virenfrei"/>
+<topic id="17" parent="10" guid="ZrcwHpsOjSxFy6oa6FfN2Q" x="239.3855" y="141.7111" text="Grobfilter"/>
+<topic id="18" parent="17" guid="LDXLfqdicDvLK3JM8UbTPA" x="147.75433" y="222.59686" text="Kandidat\Nfür Datum"/>
+<topic id="19" parent="10" guid="LbTHk8VhiwGtd6thx4l2Ng" x="224.6059" y="93.77265" text="Mittelfilter"/>
+<topic id="20" parent="19" guid="yKt65byZvcZdM_uSULadhA" x="123.918884" y="142.97882" text="Datum"/>
+<topic id="21" parent="10" guid="rHmXvVG8x0FhLZtIhlEBfQ" x="238.65912" y="31.923965" text="Feinfilter"/>
+<topic id="22" parent="21" guid="sSh3_EKb9kRg-Tcpc3dXEA" x="126.734985" y="48.10443" text="Geburtsdatum"/>
+<topic id="23" parent="10" guid="B2USmbzn7STiLHyNkiV6Vg" x="279.6855" y="-44.728928" text="Superfeiner\NFilter"/>
+<topic id="24" parent="23" guid="RK1lCu5hpDWSjYjl27HCeA" x="175.85974" y="-65.28395" text="Bestätigt \Ndurch Pass"/>
+<topic id="25" parent="10" guid="8aHw4r86jSB_NsnVP2_HSg" x="352.44156" y="-124.1826" text="Reinraum"/>
+<topic id="26" parent="25" x="345.9218" y="-194.80663" text="Verifiziert durch Vorlage \Ndes Familienstammbuchs"/>
+<topic id="27" parent="1" guid="j_xMGTqWgTZSqL8MSV8zyQ" x="1237.5216" y="59.242374" text="Komplexität"/>
+<topic id="28" parent="27" guid="CeM6QAj_cLu9O6jFrY9NqQ" x="1238.397" y="155.72897" text="Einzelwert"/>
+<topic id="29" parent="27" guid="MYuNeF6W_kGV493ce82KSQ" x="1324.228" y="104.58153" text="Call Parameter"/>
+<topic id="30" parent="27" guid="ejv0aTaRk7wsjCkcHtSmyw" x="1352.616" y="52.262676" text="Instanz"/>
+<topic id="31" parent="27" guid="3rVbYmJXHeEfjWwnYmXcnQ" x="1348.3634" y="-8.760204" text="Aggregat"/>
+<topic id="32" parent="27" guid="CWgN-vkiGQ5KDv8ld-m8PQ" x="1303.3726" y="-45.654385" text="Beispiele"/>
+<topic id="33" parent="32" guid="wl9XlDPVsTxhiD90Cr3GkQ" x="1328.3572" y="-138.11435" text="Kreditkarte"/>
+<topic id="34" parent="32" guid="_aKh4jR35mBp47bg2IIWUg" x="1158.5519" y="-44.206043" text="Geburtsdatum"/>
+<topic id="35" parent="32" guid="76cqSE3ouaiHvnjWLkxEgA" x="1420.2617" y="-90.24599" text="Busfahrerlaubnis">
+<link diagramref="774C3FE7EE94DE6519E6C54730D39770" ishotlink="false"/>
+</topic>
+<topic id="36" parent="1" guid="PRzysuzbx97puteUB9ysqg" x="853.30585" y="-113.576096" text="Daten-\NMenge"/>
+<topic id="37" parent="36" guid="OYVlJkG-9eu96IEcg9EwSg" x="924.6492" y="-184.3404" text="1"/>
+<topic id="38" parent="36" guid="JBnzwyubi0Mnu0yEfYB6eA" x="902.0348" y="-236.54579" text="1k"/>
+<topic id="39" parent="36" guid="ddsfoWcdTniQizW0PARd1w" x="883.50433" y="-274.90744" text="1M"/>
+<topic id="40" parent="36" guid="SozbykSsrg8mkWe9HxZyGQ" x="860.43835" y="-305.87262" text="1G"/>
+<topic id="41" parent="36" guid="1mogLU28knymvCUACcM0mw" x="813.08057" y="-334.3197" text="1T"/>
+<topic id="42" parent="1" guid="9XOhp2Jg6sS8Im6rpqbDDA" x="692.91406" y="-69.27904" text="Gültigkeitsdauer"/>
+<topic id="43" parent="42" guid="Egjg462_VnD_3Jc8iiC50w" x="712.86194" y="-141.73409" text="1s"/>
+<topic id="44" parent="42" guid="lBvTcDaBR9TdIFg9dKeuEw" x="668.99536" y="-161.4236" text="1min"/>
+<topic id="45" parent="42" guid="ygFc9LoEs4Gpu7q1i58JMA" x="616.5759" y="-175.00273" text="1h"/>
+<topic id="46" parent="42" guid="CFfPSpZpfpf30YjbgIeENw" x="570.1717" y="-145.95317" text="1T"/>
+<topic id="47" parent="42" guid="kCc3rEBRmtMuVvnXrFpAbQ" x="566.5162" y="-105.326096" text="1W"/>
+<topic id="48" parent="42" guid="kU_solsnXjl2cexw6I4rgg" x="575.5525" y="-66.05653" text="1M"/>
+<topic id="49" parent="42" guid="-OG1yIZzJXim5KEuafakNw" x="589.2495" y="-25.221603" text="Jahre"/>
+<topic id="50" parent="42" guid="HuuljZksMt0-EuyYIAJnXA" x="654.65765" y="7.461441" text="Bis Datum\N / Uhrzeit"/>
+<topic id="51" parent="1" guid="RQ3Fr3q7GL1DC5Dw22mbYw" x="1223.3363" y="278.69287" text="Regeln"/>
+<topic id="52" parent="51" guid="N7IvFfcgSbnPlxYYdGntSA" x="1335.1466" y="364.3008" text="Gültigkeit"/>
+<topic id="53" parent="52" guid="DBgACxhwIdCtSsuqHFepVA" x="1472.8777" y="367.76453" text="Zeitlich"/>
+<topic id="54" parent="52" guid="cy-dlsUVY_U0Vs7YIcjEdQ" x="1448.0914" y="408.37766" text="Optional"/>
+<topic id="55" parent="52" guid="aBF_knH4VdaSe-nvYCOQzA" x="1427.8405" y="462.69113" text="Privat">
+<note>Regeln, die nur für bestimmte Objekte gelten</note>
+</topic>
+<topic id="56" parent="51" guid="QVQ0tTn6ZdQVNXKNfZzHXQ" x="1352.8073" y="303.08362" text="Änderungen"/>
+<topic id="57" parent="56" guid="3IMy6K-b6dEn63NbpbdPSQ" x="1517.1958" y="264.6061" text="ElternListe +/- Regel"/>
+<topic id="58" parent="56" guid="qFAvjrluosJ0iEqGsESKsg" x="1515.2294" y="321.5839" text="Implementierung"/>
+<topic id="59" parent="51" guid="RhmQi0wNWQJO_rVTIXLthQ" x="1351.6168" y="225.95747" text="Release"/>
+<topic id="60" parent="1" guid="2TCU88mRaRhvVHYp7z4xcQ" x="752.94586" y="529.42444" text="Ergebnisse"/>
+<topic id="61" parent="60" guid="t6k-MoIjIjAXf8K4WY7ZqQ" x="654.82117" y="589.73663" text="Verarbeitung"/>
+<topic id="62" parent="61" guid="AHQ4653B95ZvX0jrKcR-eA" x="721.0612" y="639.42444" text="speichern"/>
+<topic id="63" parent="61" guid="ByPjiTgeCYDBtGAqMlKfKA" x="696.3235" y="718.36707" text="verdichten"/>
+<topic id="64" parent="61" guid="DQjehMxbVNHfXk_lBfFwvQ" x="618.6177" y="687.6268" text="analysieren"/>
+<topic id="65" parent="61" guid="WHA_Zxb0wZQKabBXSiff5g" x="564.757" y="645.222" text="präsentieren"/>
+<topic id="66" parent="60" guid="GCCNLHSfCNbrphbDCC9drw" x="801.9697" y="597.7208" text="Zuordnung"/>
+<topic id="67" parent="66" guid="EqrMH3OFBl1vj442vsv2hA" x="938.6858" y="599.7271" text="System/Admin"/>
+<topic id="68" parent="66" guid="HpmLuFEZa9cLXKiif4Z6fg" x="909.4371" y="641.2902" text="Entwickler"/>
+<topic id="69" parent="66" guid="oAGGnIUAwJ-eoAhCX95GcA" x="908.92957" y="683.7437" text="Tester"/>
+<topic id="70" parent="66" guid="i3T46RCUEr83moHELGFkVw" x="898.6093" y="728.8889" text="Support"/>
+<topic id="71" parent="66" guid="7aiAKwzmP0GehQ4nx_3kZQ" x="832.2504" y="766.06525" text="Anwender"/>
+<topic id="72" parent="71" guid="oBKlhuUXnVu2l9eF2LID0Q" x="918.1947" y="811.59955" text="Shop-Betreiber"/>
+<topic id="73" parent="71" guid="MzNiF_BEnTDK0DNUgvxovA" x="861.8385" y="851.3319" text="Kunde"/>
+<topic id="74" parent="1" guid="dvmAJ4RrdAzPziBkC0gWTA" x="1018.2222" y="478.45273" text="Priorität">
+<note>der Durchführung</note>
+</topic>
+<topic id="75" parent="74" guid="mtIictR82xsg7e0qXJ69tg" x="1122.6979" y="437.69525" text="Regel"/>
+<topic id="76" parent="75" guid="z2OIN4WC8OTRPJS7BHFifA" x="1211.9808" y="386.19064" text="Gültigkeitsdauer"/>
+<topic id="77" parent="75" guid="nm4l2NFZUlcjfSnwd5_OQw" x="1244.4369" y="438.98172" text="Versionssprung"/>
+<topic id="78" parent="75" guid="kUGWn9PONn6gFN3-RIq9Yw" x="1223.0378" y="489.8165" text="Manuelle Prio"/>
+<topic id="79" parent="74" guid="RpUs39pzu1fKkQkgLcU81A" x="1091.2225" y="558.63605" text="Daten"/>
+<topic id="80" parent="79" guid="zRAdXnsY358ezNPxkoYzmw" x="1211.3857" y="548.97797" text="Ablaufdatum"/>
+<topic id="81" parent="79" guid="uTuQP-shIZ6zWE8Zqn308g" x="1212.1472" y="599.23413" text="Einstufung"/>
+<topic id="82" parent="79" guid="jwkOkcV-idJNKJZX0Jc47Q" x="1184.3146" y="640.8227" text="Manuelle Prio"/>
+<topic id="83" parent="0" guid="nPyUOJDJfrYSRBqICzNFHg" x="302.41187" y="479.7183" palette="3" colorinfo="3" text="Dokumente"/>
+<topic id="84" parent="83" guid="qGV1iSFjkomLoyi1lldTHA" x="183.39868" y="392.89346" text="Validierungskonzept"/>
+<topic id="85" parent="83" guid="UdKR1X3uGMEK2qxVQpCmuA" x="159.09177" y="460.19492" text="Validierungsplan"/>
+<topic id="86" parent="0" guid="R5AiRJuX0-2mB3LSAx-_fg" x="390.14572" y="757.1516" palette="4" colorinfo="4" text="Frameworks"/>
+<topic id="87" parent="86" guid="WGQSRtRjsTqjB0w7w9HH6Q" x="487.1578" y="844.00635" text="Rules"/>
+<topic id="88" parent="87" guid="qpnfDlWizM-4cUg54pNPnw" x="616.1456" y="892.532" text="Dynamisch"/>
+<topic id="89" parent="87" guid="4-LrJdvwHVuEazAxRLY9wQ" x="619.6727" y="847.3324" text="Erweiterbar"/>
+<topic id="90" parent="87" guid="52UiqYCC8Yu4azGQ-NAoCg" x="600.41455" y="938.38" text="Rollenbasiert"/>
+<topic id="91" parent="87" guid="eKulmBEZ4TV-aBzLZfkBag" x="609.4369" y="799.4387" text="Programmierbar"/>
+<topic id="92" parent="87" guid="_sYA1zIg6fgdJkZxZh0rMA" x="419.509" y="938.9701" text="Ablage"/>
+<topic id="93" parent="92" guid="rw6nHutVvjG9ABJ5I5kSQQ" x="461.74667" y="1019.17993" text="Code"/>
+<topic id="94" parent="92" guid="940KbePricZKGkUpg1EpKw" x="388.25668" y="1016.3739" text="Dateien"/>
+<topic id="95" parent="92" guid="cyLuyFP8GPChPXolyN3Y5Q" x="340.47592" y="969.73254" text="Datenbank"/>
+<topic id="96" parent="87" guid="vaX1sKKQFkv2X_0GC7BEJA" x="572.9691" y="984.3761" text="Userbezogen"/>
+<topic id="97" parent="86" guid="dHu-tmmCf9c3sVrWo77vFA" x="346.5344" y="820.3445" text="für"/>
+<topic id="98" parent="97" guid="AK5VIxE0NbvYxr3sZT-XPQ" x="311.5086" y="883.8259" text="UI"/>
+<topic id="99" parent="97" x="233.31125" y="841.1029" text="Server/\NService"/>
+<topic id="100" parent="0" guid="4_Yk8mFEArMt7bpK-UL_uQ" x="202.34201" y="615.422" palette="5" colorinfo="5" text="Ergebnisse"/>
+<topic id="101" parent="100" guid="r44-V48jTttYZi9tFPtIPQ" x="64.38431" y="630.6277" text="Präsentation"/>
+<topic id="102" parent="101" guid="nvy754laF5PC9-q2Z_U2vg" x="-85.845856" y="759.7456" text="Entwickler/Tester"/>
+<topic id="103" parent="101" guid="9wAkd1DEJNY-YjQqRvlogA" x="-95.9061" y="708.6653" text="Support-Team"/>
+<topic id="104" parent="101" guid="QEEazwLcL5Qsg-t2Wa4xEQ" x="-97.4595" y="661.91614" text="Profi-User"/>
+<topic id="105" parent="101" guid="ECLa9V8kf7H5ylSJrIw0Hw" x="-98.66635" y="617.5387" text="User"/>
+<topic id="106" parent="101" guid="jqJcG5vtgVHxjYOXnFIjsw" x="36.361725" y="742.12085" text="Manager"/>
+<topic id="107" parent="100" guid="MGJ_yC1IK68z1Um_VzjqHQ" x="173.02615" y="703.5625" text="Daten"/>
+</topics>
+<relations/>
+</mindmap>
+</simplemind-mindmaps>
