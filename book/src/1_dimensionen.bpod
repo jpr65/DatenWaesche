@@ -8,15 +8,37 @@ Diese Betrachtungsrichtungen ("Dimensionen") der Validierung sind:
 
 =over
 
-=item 1. Reinheitsgrad
+=item B<1. Reinheitsgrad>
 
-=item 2. Gültigkeitsdauer
+Wie sauber sind die Daten?
 
-=item 3. Datenmenge
+=item B<2. Gültigkeitsdauer>
 
-=item 4. Validierungsaufwand
+Wie lange ist das Ergebnis der Validierung gültig?
 
-=item 5. Komplexität der Daten
+=item B<3. Datenmenge>
+
+Welche Datenmengen sind zu verarbeiten?
+
+=item B<4. Validierungsaufwand>
+
+Wie hoch ist der Aufwand, eine einzelne Prüfung durchzuführen?
+
+=item B<5. Komplexität der Daten>
+
+Welcher Komplexitätsstufe gehören die Daten/Objekte an?
+
+=item B<6. Validierungsregeln>
+
+Regeln im Lauf der Entwicklung und Freigabe (Release) von Software
+
+=item B<7. Priorität>
+
+Priorität der Ausführung der Daten-Prüfung abhängig von Regeln und Daten
+
+=item B<8. Ergebnisse>
+
+Verarbeitung und Zuordnung der Ergebnisse von Validierungen
 
 =back
 
@@ -491,3 +513,78 @@ arbeiten daran, den Standard eines guten Restaurants zu erreichen.
 =head2 Komplexität 11. Computernetzwerk
 
 =head2 Komplexität 12. World-Wide-Web
+
+=head1 Dimension Validierungsregeln
+
+=head2 Gültigkeit von Regeln
+
+=head3 Zeitliche Gültigkeit von Regeln
+
+=head3 Optionale Regeln
+
+=head3 Private Regeln
+
+=head2 Änderung von Regeln
+
+=head3 Änderung der Regelimplementierung
+
+=head3 Änderung der Regeleltern
+
+=head3 Änderung der Gültigkeit
+
+=head2 Release von Regeln
+
+=head1 Dimension Priorität
+
+=head2 Priorität von Regeln
+
+=head3 Regel-Priorität nach Gültigkeitsdauer
+
+=head3 Regel-Priorität nach Versionssprung
+
+=head3 manuelle Regelpriorität
+
+=head2 Priorität von Daten
+
+=head3 Daten-Priorität nach Ablaufdatum 
+
+=head3 Daten-Priorität nach Einstufung
+
+*** Wichtigkeit der Daten-Klasse
+
+=head3 Manuelle Daten-Priorität
+
+*** Wichtigkeit einzelner Datensätze
+
+=head1 Dimension Ergebnisse
+
+=head2 Ergebnis Verarbeitung
+
+=head3 Ergebnisse speichern
+
+=head3 Ergebnisse verdichten
+
+=head3 Ergebnisse analysieren
+
+=head3 Ergebnisse präsentieren
+
+=head2 Ergebnis-Zuordnung
+
+=head3 Ergebnisse für Administratoren
+
+=head3 Ergebnisse für Entwickler
+
+=head3 Ergebnisse für Tester
+
+=head3 Ergebnisse für Support
+
+=head3 Ergebnisse für externe Prüfer
+
+=head3 Ergebnisse für Anwender
+
+=head4 Ergebnisse für Shop-Betreiber
+
+=head4 Ergebnisse für Shop-Kunden
+
+
+

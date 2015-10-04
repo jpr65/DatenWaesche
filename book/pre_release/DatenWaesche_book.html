@@ -1,0 +1,2428 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title></title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:unknown@localhost.nonet" />
+</head>
+
+<body style="background-color: white">
+
+
+
+<ul id="index">
+  <li><a href="#Titelseite">Titelseite</a>
+    <ul>
+      <li><a href="#Gro-e-Datenw-sche">Große Datenwäsche</a>
+        <ul>
+          <li><a href="#Kosten-einsparen-und-Risiken-minimieren-mit-dem-Leitfaden-zur-Datenvalidierung">Kosten einsparen und Risiken minimieren mit dem Leitfaden zur Datenvalidierung</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#R-cken-Text-Werbung">Rücken-Text / Werbung</a></li>
+  <li><a href="#Zuallererst">Zuallererst</a>
+    <ul>
+      <li><a href="#Ziele-des-Buchs">Ziele des Buchs</a></li>
+      <li><a href="#Leseempfehlungen-f-r-dieses-Buch">Leseempfehlungen für dieses Buch</a>
+        <ul>
+          <li><a href="#F-r-Unentschlossene">Für Unentschlossene</a></li>
+          <li><a href="#F-r-Entschlossene">Für Entschlossene</a></li>
+          <li><a href="#F-r-Anwender-User">Für Anwender (User)</a></li>
+          <li><a href="#F-r-Entscheider">Für Entscheider</a></li>
+          <li><a href="#F-r-Software-Spezialisten">Für Software-Spezialisten</a></li>
+          <li><a href="#F-r-Tester">Für Tester</a></li>
+        </ul>
+      </li>
+      <li><a href="#Wie-Lernen-funktioniert">Wie Lernen funktioniert</a></li>
+      <li><a href="#ber-den-Umgang-mit-dem-Buch">Über den Umgang mit dem Buch</a>
+        <ul>
+          <li>
+            <ul>
+              <li><a href="#Und-jetzt:-Achtung-ein-bischen-Technik">Und jetzt: Achtung, ein bischen Technik!</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#Teil-I:-Grundlagen">Teil I: Grundlagen</a></li>
+  <li><a href="#Einleitung">Einleitung</a>
+    <ul>
+      <li><a href="#Warum-ist-Daten-Validierung-wichtig">Warum ist Daten-Validierung wichtig?</a></li>
+      <li><a href="#Daten-Validierung">Daten-Validierung</a>
+        <ul>
+          <li><a href="#Aktueller-Stand-der-Daten-Validierung">Aktueller Stand der Daten-Validierung</a></li>
+        </ul>
+      </li>
+      <li><a href="#Der-beste-Validator">Der beste Validator</a></li>
+      <li><a href="#Software-und-Daten-enthalten-Fehler">Software und Daten enthalten Fehler</a>
+        <ul>
+          <li>
+            <ul>
+              <li><a href="#Beispiel-f-r-Zust-nde-von-Daten">Beispiel für Zustände von Daten</a></li>
+            </ul>
+          </li>
+          <li><a href="#Funktionstests-w-hrend-der-Entwicklung">Funktionstests während der Entwicklung</a></li>
+          <li><a href="#Datenw-sche-beim-Kunden">Datenwäsche beim Kunden</a></li>
+        </ul>
+      </li>
+      <li><a href="#Forderung-eines-standardisierten-Daten-Validierungskonzepts">Forderung eines standardisierten Daten-Validierungskonzepts</a></li>
+      <li><a href="#Thematische-Abgrenzung">Thematische Abgrenzung</a>
+        <ul>
+          <li><a href="#Login-Verfahren">Login-Verfahren</a></li>
+          <li><a href="#Personenbezogene-Daten">Personenbezogene Daten</a></li>
+          <li><a href="#Datensicherheit">Datensicherheit</a>
+            <ul>
+              <li><a href="#Beispiel-Texterkennung">Beispiel Texterkennung</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#Einf-hrung-in-die-Datenvalidierung">Einführung in die Datenvalidierung</a>
+    <ul>
+      <li><a href="#Definition-Daten-Validierung">Definition Daten-Validierung</a></li>
+      <li><a href="#Schritt-1:-Syntaxpr-fung">Schritt 1: Syntaxprüfung</a>
+        <ul>
+          <li><a href="#Vertiefung-in-Beispielen">Vertiefung in Beispielen</a></li>
+        </ul>
+      </li>
+      <li><a href="#Schritt-2:-Validierungsregeln">Schritt 2: Validierungsregeln</a>
+        <ul>
+          <li><a href="#Beispielhafte-Validierung-f-r-Einzelwert-Pr-fung">Beispielhafte Validierung für Einzelwert-Prüfung</a>
+            <ul>
+              <li><a href="#F-r-Software-Kundige">Für Software-Kundige</a></li>
+            </ul>
+          </li>
+          <li><a href="#Test-der-Validierungsregeln-f-r-Einzelwert-Pr-fung">Test der Validierungsregeln für Einzelwert-Prüfung</a></li>
+        </ul>
+      </li>
+      <li><a href="#Grunds-tzliches-zu-Pr-fungen-Entscheidungen">Grundsätzliches zu Prüfungen/Entscheidungen</a>
+        <ul>
+          <li><a href="#Pr-fungsfall-:-Ungepr-ft1">Prüfungsfall ?: Ungeprüft</a></li>
+          <li><a href="#Pr-fungsfall-X:-Pr-fung-anstehend1">Prüfungsfall X: Prüfung anstehend</a></li>
+          <li><a href="#Pr-fungsfall-R:-Pr-fung-l-uft1">Prüfungsfall R: Prüfung läuft</a></li>
+          <li><a href="#Pr-fungsfall-TP:-Korrekt-bestanden1">Prüfungsfall TP: Korrekt bestanden</a></li>
+          <li><a href="#Pr-fungsfall-TN:-Korrekt-durchgefallen1">Prüfungsfall TN: Korrekt durchgefallen</a></li>
+          <li><a href="#Pr-fungsfall-FP:-Regelwidrig-bestanden1">Prüfungsfall FP: Regelwidrig bestanden</a></li>
+          <li><a href="#Pr-fungsfall-FN:-Regelkonform-aber-durchgefallen1">Prüfungsfall FN: Regelkonform, aber durchgefallen</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#Dimensionen-der-Validierung">Dimensionen der Validierung</a></li>
+  <li><a href="#Dimension-Reinheitsgrad">Dimension Reinheitsgrad</a>
+    <ul>
+      <li><a href="#Reinheitsgrad-0---Roh">Reinheitsgrad 0 - Roh</a></li>
+      <li><a href="#Reinheitsgrad-1---Ungef-hrlich">Reinheitsgrad 1 - Ungefährlich</a></li>
+      <li><a href="#Reinheitsgrad-2---Grob-Klassifiziert">Reinheitsgrad 2 - Grob Klassifiziert</a></li>
+      <li><a href="#Reinheitsgrad-3---Fein-Klassifiziert">Reinheitsgrad 3 - Fein Klassifiziert</a></li>
+      <li><a href="#Reinheitsgrad-4---Mittelfilter">Reinheitsgrad 4 - Mittelfilter</a></li>
+      <li><a href="#Reinheitsgrad-5---Feinfilter">Reinheitsgrad 5 - Feinfilter</a></li>
+      <li><a href="#Reinheitsgrad-6---Superfeiner-Filter">Reinheitsgrad 6 - Superfeiner Filter</a></li>
+      <li><a href="#Reinheitsgrad-7---Reinraum">Reinheitsgrad 7 - Reinraum</a></li>
+      <li><a href="#Notwendige-Reinheit">Notwendige Reinheit</a></li>
+    </ul>
+  </li>
+  <li><a href="#Dimension-G-ltigkeitsdauer">Dimension Gültigkeitsdauer</a>
+    <ul>
+      <li><a href="#G-ltigkeit-im-Millisekundenbereich:-ms">Gültigkeit im Millisekundenbereich: ms</a></li>
+      <li><a href="#G-ltigkeit-im-Sekundenbereich:-s">Gültigkeit im Sekundenbereich: s</a></li>
+      <li><a href="#G-ltigkeit-im-Minutenbereich:-m">Gültigkeit im Minutenbereich: m</a></li>
+      <li><a href="#G-ltigkeit-im-Stundenbereich:-h">Gültigkeit im Stundenbereich: h</a></li>
+      <li><a href="#T-gliche-G-ltigkeit:-T">Tägliche Gültigkeit: T</a></li>
+      <li><a href="#W-chentliche-G-ltigkeit:-W">Wöchentliche Gültigkeit: W</a></li>
+      <li><a href="#Monatliche-G-ltigkeit:-M">Monatliche Gültigkeit: M</a></li>
+      <li><a href="#J-hrliche-G-ltigkeit:-J">Jährliche Gültigkeit: J</a></li>
+      <li><a href="#Mehrj-hrige-G-ltigkeit:-VJ">Mehrjährige Gültigkeit: VJ</a></li>
+      <li><a href="#Lebenslange-G-ltigkeit">Lebenslange Gültigkeit</a></li>
+      <li><a href="#Zusammenfassung-G-ltigkeitsdauer">Zusammenfassung Gültigkeitsdauer</a></li>
+    </ul>
+  </li>
+  <li><a href="#Dimensionen-Datenmenge-und-Validierungsaufwand">Dimensionen Datenmenge und Validierungsaufwand</a></li>
+  <li><a href="#Dimension-Komplexit-t-der-Daten">Dimension Komplexität der Daten</a>
+    <ul>
+      <li><a href="#Komplexit-t-0.-Einzelwert">Komplexität 0. Einzelwert</a></li>
+      <li><a href="#Komplexit-t-1.-Komplexer-Wert">Komplexität 1. Komplexer Wert</a></li>
+      <li><a href="#Komplexit-t-2.-Aufruf-Parameter">Komplexität 2. Aufruf-Parameter</a></li>
+      <li><a href="#Komplexit-t-3.-Instanzdaten">Komplexität 3. Instanzdaten</a></li>
+      <li><a href="#Komplexit-t-4.-Aggregatdaten">Komplexität 4. Aggregatdaten</a></li>
+      <li><a href="#Komplexit-t-5.-Zusammengesetztes-Aggregat">Komplexität 5. Zusammengesetztes Aggregat</a></li>
+      <li><a href="#Komplexit-t-6.-Service">Komplexität 6. Service</a></li>
+      <li><a href="#Komplexit-t-7.-Library">Komplexität 7. Library</a></li>
+      <li><a href="#Komplexit-t-8.-Programm-APP">Komplexität 8. Programm/APP</a></li>
+      <li><a href="#Komplexit-t-9.-SW-Produkt-Web-Portal">Komplexität 9. SW-Produkt / Web-Portal</a></li>
+      <li><a href="#Komplexit-t-10.-Computer-Smartphone">Komplexität 10. Computer / Smartphone</a></li>
+      <li><a href="#Komplexit-t-11.-Computernetzwerk">Komplexität 11. Computernetzwerk</a></li>
+      <li><a href="#Komplexit-t-12.-World-Wide-Web">Komplexität 12. World-Wide-Web</a></li>
+    </ul>
+  </li>
+  <li><a href="#Dimension-Validierungsregeln">Dimension Validierungsregeln</a>
+    <ul>
+      <li><a href="#G-ltigkeit-von-Regeln">Gültigkeit von Regeln</a>
+        <ul>
+          <li><a href="#Zeitliche-G-ltigkeit-von-Regeln">Zeitliche Gültigkeit von Regeln</a></li>
+          <li><a href="#Optionale-Regeln">Optionale Regeln</a></li>
+          <li><a href="#Private-Regeln">Private Regeln</a></li>
+        </ul>
+      </li>
+      <li><a href="#nderung-von-Regeln">Änderung von Regeln</a>
+        <ul>
+          <li><a href="#nderung-der-Regelimplementierung">Änderung der Regelimplementierung</a></li>
+          <li><a href="#nderung-der-Regeleltern">Änderung der Regeleltern</a></li>
+          <li><a href="#nderung-der-G-ltigkeit">Änderung der Gültigkeit</a></li>
+        </ul>
+      </li>
+      <li><a href="#Release-von-Regeln">Release von Regeln</a></li>
+    </ul>
+  </li>
+  <li><a href="#Dimension-Priorit-t">Dimension Priorität</a>
+    <ul>
+      <li><a href="#Priorit-t-von-Regeln">Priorität von Regeln</a>
+        <ul>
+          <li><a href="#Regel-Priorit-t-nach-G-ltigkeitsdauer">Regel-Priorität nach Gültigkeitsdauer</a></li>
+          <li><a href="#Regel-Priorit-t-nach-Versionssprung">Regel-Priorität nach Versionssprung</a></li>
+          <li><a href="#manuelle-Regelpriorit-t">manuelle Regelpriorität</a></li>
+        </ul>
+      </li>
+      <li><a href="#Priorit-t-von-Daten">Priorität von Daten</a>
+        <ul>
+          <li><a href="#Daten-Priorit-t-nach-Ablaufdatum">Daten-Priorität nach Ablaufdatum</a></li>
+          <li><a href="#Daten-Priorit-t-nach-Einstufung">Daten-Priorität nach Einstufung</a></li>
+          <li><a href="#Manuelle-Daten-Priorit-t">Manuelle Daten-Priorität</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#Dimension-Ergebnisse">Dimension Ergebnisse</a>
+    <ul>
+      <li><a href="#Ergebnis-Verarbeitung">Ergebnis Verarbeitung</a>
+        <ul>
+          <li><a href="#Ergebnisse-speichern">Ergebnisse speichern</a></li>
+          <li><a href="#Ergebnisse-verdichten">Ergebnisse verdichten</a></li>
+          <li><a href="#Ergebnisse-analysieren">Ergebnisse analysieren</a></li>
+          <li><a href="#Ergebnisse-pr-sentieren">Ergebnisse präsentieren</a></li>
+        </ul>
+      </li>
+      <li><a href="#Ergebnis-Zuordnung">Ergebnis-Zuordnung</a>
+        <ul>
+          <li><a href="#Ergebnisse-f-r-Administratoren">Ergebnisse für Administratoren</a></li>
+          <li><a href="#Ergebnisse-f-r-Entwickler">Ergebnisse für Entwickler</a></li>
+          <li><a href="#Ergebnisse-f-r-Tester">Ergebnisse für Tester</a></li>
+          <li><a href="#Ergebnisse-f-r-Support">Ergebnisse für Support</a></li>
+          <li><a href="#Ergebnisse-f-r-externe-Pr-fer">Ergebnisse für externe Prüfer</a></li>
+          <li><a href="#Ergebnisse-f-r-Anwender">Ergebnisse für Anwender</a>
+            <ul>
+              <li><a href="#Ergebnisse-f-r-Shop-Betreiber">Ergebnisse für Shop-Betreiber</a></li>
+              <li><a href="#Ergebnisse-f-r-Shop-Kunden">Ergebnisse für Shop-Kunden</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#Teil-II:-Anforderungen-an-die-Software">Teil II: Anforderungen an die Software</a></li>
+  <li><a href="#Neues-Kapitel">&lt;Neues Kapitel&gt;</a>
+    <ul>
+      <li><a href="#Neues-Unterkapitel">&lt;Neues Unterkapitel&gt;</a>
+        <ul>
+          <li><a href="#pod">....</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#Datenw-sche">Datenwäsche</a>
+    <ul>
+      <li><a href="#Validierung-von-Rohdaten">Validierung von Rohdaten</a></li>
+    </ul>
+  </li>
+  <li><a href="#Teil-III:-Beispielhafte-Umsetzung">Teil III: Beispielhafte Umsetzung</a></li>
+  <li><a href="#Problemfall-Entsch-rfung">Problemfall Entschärfung</a>
+    <ul>
+      <li><a href="#Teurer-Einkaufswagen">Teurer Einkaufswagen</a></li>
+      <li><a href="#Eingedoste-Bluetooth-Autoschl-ssel">Eingedoste Bluetooth Autoschlüssel</a></li>
+      <li><a href="#Kreditkartenbetrug">Kreditkartenbetrug</a>
+        <ul>
+          <li><a href="#Kreditkartenpr-fung">Kreditkartenprüfung</a></li>
+        </ul>
+      </li>
+      <li><a href="#Webserver-Ausfall">Webserver Ausfall</a></li>
+      <li><a href="#Gescheitertes-Software-Projekt-durch-Schmutzige-Daten">Gescheitertes Software Projekt durch Schmutzige Daten</a></li>
+      <li><a href="#Bestechung-in-Indien">Bestechung in Indien</a></li>
+    </ul>
+  </li>
+  <li><a href="#F-r-alle-Pr-fungen">Für alle Prüfungen</a>
+    <ul>
+      <li><a href="#Gute-Unit-Tests">Gute Unit-Tests</a></li>
+    </ul>
+  </li>
+  <li><a href="#Einzelwert-Validierung">Einzelwert-Validierung</a>
+    <ul>
+      <li><a href="#Eltern-Pr-fungen">Eltern-Prüfungen</a></li>
+      <li><a href="#Regeln-mit-Parametern">Regeln mit Parametern</a></li>
+      <li><a href="#Aufbau-von-Unit-Tests">Aufbau von Unit-Tests</a>
+        <ul>
+          <li><a href="#Dummy-Regeln-anlegen">Dummy-Regeln anlegen</a></li>
+          <li><a href="#Unit-Tests-implementieren">Unit Tests implementieren</a></li>
+          <li><a href="#Validation-Regel-implementieren">Validation Regel implementieren</a></li>
+          <li><a href="#pod1">....</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#Neues-Kapitel1">&lt;Neues Kapitel&gt;</a></li>
+  <li><a href="#Teil-V:-Abschluss-und-Anh-nge">Teil V: Abschluss und Anhänge</a></li>
+  <li><a href="#Verwandte-Themen">Verwandte Themen</a>
+    <ul>
+      <li>
+        <ul>
+          <li><a href="#Das-Wichtigste-zu-Login-Verfahren">Das Wichtigste zu Login-Verfahren</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#ber-den-Autor">Über den Autor</a>
+    <ul>
+      <li><a href="#Meine-Werdegang-in-der-Informatik">Meine Werdegang in der Informatik</a></li>
+      <li><a href="#Non-Informatik">Non-Informatik</a></li>
+    </ul>
+  </li>
+  <li><a href="#Anhang">Anhang</a>
+    <ul>
+      <li><a href="#Kleine-Einf-hrung-in-Perl">Kleine Einführung in Perl</a>
+        <ul>
+          <li>
+            <ul>
+              <li><a href="#Perl-Kommentare">Perl Kommentare</a></li>
+              <li><a href="#Perl-Variablen">Perl Variablen</a></li>
+              <li><a href="#Perl-Kontrollstrukturen">Perl Kontrollstrukturen</a></li>
+              <li><a href="#Perl-SubCalls-Funktionen-Methoden">Perl SubCalls, Funktionen, Methoden</a></li>
+              <li><a href="#Perl-Klassen">Perl Klassen</a></li>
+              <li><a href="#Perl-Operatoren">Perl Operatoren</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><a href="#Kurz-erkl-rt">Kurz erklärt</a>
+        <ul>
+          <li><a href="#ATB">ATB</a></li>
+          <li><a href="#CPAN">CPAN</a></li>
+          <li><a href="#Developer">Developer</a></li>
+          <li><a href="#edi-energy">edi@energy</a></li>
+          <li><a href="#EDIFACT">EDIFACT</a></li>
+          <li><a href="#Gigaset">Gigaset</a></li>
+          <li><a href="#Instanz">Instanz</a></li>
+          <li><a href="#Entwickler">Entwickler</a></li>
+          <li><a href="#Fehler">Fehler</a></li>
+          <li><a href="#Hardware">Hardware</a></li>
+          <li><a href="#Moo">Moo</a></li>
+          <li><a href="#Notaus1">Notaus</a></li>
+          <li><a href="#Objekt">Objekt</a></li>
+          <li><a href="#Perl">Perl</a></li>
+          <li><a href="#POD-und-BPOD">POD und BPOD</a></li>
+          <li><a href="#Renesas">Renesas</a></li>
+          <li><a href="#Scalar::Validation">Scalar::Validation</a></li>
+          <li><a href="#SW---Software">SW - Software</a></li>
+          <li><a href="#Tango-Argentino">Tango Argentino</a></li>
+          <li><a href="#TAP---Test-Anything-Protocol">TAP - Test Anything Protocol</a></li>
+          <li><a href="#TDD---Test-Driven-Development">TDD - Test Driven Development</a></li>
+          <li><a href="#Tester">Tester</a></li>
+        </ul>
+      </li>
+      <li><a href="#Index">Index</a></li>
+    </ul>
+  </li>
+  <li><a href="#POD-ERRORS">POD ERRORS</a></li>
+</ul>
+
+<h1 id="Titelseite">Titelseite</h1>
+
+<h2 id="Gro-e-Datenw-sche">Große Datenwäsche</h2>
+
+<h3 id="Kosten-einsparen-und-Risiken-minimieren-mit-dem-Leitfaden-zur-Datenvalidierung">Kosten einsparen und Risiken minimieren mit dem Leitfaden zur Datenvalidierung</h3>
+
+<p>Oben Links: Blatt mit Schrift, darunter Pfeil auf</p>
+
+<p>Mitte, darunter: Skizze einer Waschmaschine mit Buchstaben und Zeichen in der Trommel</p>
+
+<p>Rechts: Geldhaufen/Scheine, auf die ein Pfeil aus der Waschmaschine zeigt.</p>
+
+<h1 id="R-cken-Text-Werbung">Rücken-Text / Werbung</h1>
+
+<p>Datenprüfung ist ein schwer vernachlässigtes Gebiet der Software-Entwicklung.</p>
+
+<p>Mit den im Buch vorgestellten Software-Techniken zur Daten-Validierung wird die Datenwäsche ein leicht anzuwendendes Standard-Verfahren.</p>
+
+<p>Dadurch werden Entwicklungszeit und -kosten eingespart.</p>
+
+<p>Auftraggeber definieren im Validierungskonzept, welche Validierungen wie und wann durchgeführt werden müssen.</p>
+
+<p>Anwender erhalten Korrektur-Hinweise in der Oberfläche durch standardisierte, verständliche Fehlermeldungen.</p>
+
+<p>Erfahrene Anwender können Validierungsregeln selbständig Daten und Eingabefeldern zuordnen.</p>
+
+<p>Entwickler erhalten eine exakte Markierung der Code-Zeile, in der die verschmutzten Daten entdeckt wurden.</p>
+
+<p>Tester können automatische, isolierte Tests für Validierungsregeln schreiben.</p>
+
+<p>Die SW-Architektur verbessert sich, die Robustheit und Testbarkeit steigen, die Aufwände für Entwicklung und Tests sinken.</p>
+
+<h1 id="Zuallererst">Zuallererst</h1>
+
+<p>Hier wird der grundsätzliche Aufbau des Buches beschrieben und man erhält Tipps, wie man mit dem Buch arbeiten kann.</p>
+
+<h2 id="Ziele-des-Buchs">Ziele des Buchs</h2>
+
+<p>Dieses Buch verfolgt mehrere Ziele:</p>
+
+<p>Es soll darstellen, dass eine gründliche, geplante Datenprüfung Zeit und Geld in der Entwicklung von Software einspart und ihre Qualität deutlich verbessert.</p>
+
+<p>Es soll das Bewusstsein vermitteln, dass Datenprüfung eine absolute Notwendigkeit ist und ihre Vernachlässigung schwer wiegende Folgen haben kann.</p>
+
+<p>Es soll alle Beteiligten mit dem für sie nötigen Wissen über Datenprüfung ausstatten.</p>
+
+<p>Es soll einen Leitfaden für die Datenprüfung liefern.</p>
+
+<p>Wenn es jetzt noch gelänge, eine Clean-Data Initiative analog zur CleanCode Initiative zu starten, wäre das mehr, als ich erwarten kann.</p>
+
+<h2 id="Leseempfehlungen-f-r-dieses-Buch">Leseempfehlungen für dieses Buch</h2>
+
+<h3 id="F-r-Unentschlossene">Für Unentschlossene</h3>
+
+<p>Die Rückseite haben Sie wahrscheinlich schon gelesen, wenn nicht, dann dort starten.</p>
+
+<p>Im Anschluss die Einleitung lesen, dann dieses Kapitel und sich eine der in den folgenden Unterkapiteln beschriebenen Rollen aussuchen.</p>
+
+<h3 id="F-r-Entschlossene">Für Entschlossene</h3>
+
+<p>Die Einleitung und die weiteren Unterkapitel von diesem hier lesen startend bei &quot;Wie Lernen funktioniert&quot;</p>
+
+<h3 id="F-r-Anwender-User">Für Anwender (User)</h3>
+
+<h3 id="F-r-Entscheider">Für Entscheider</h3>
+
+<h3 id="F-r-Software-Spezialisten">Für Software-Spezialisten</h3>
+
+<p>Alles lesen.</p>
+
+<h3 id="F-r-Tester">Für Tester</h3>
+
+<h2 id="Wie-Lernen-funktioniert">Wie Lernen funktioniert</h2>
+
+<p>Menschen lernen durch Beispiele und Wiederholungen, die wenigsten haben ein fotographisches Gedächtnis, durch das sie wie durch Wikipedia browsen können.</p>
+
+<p>Ich gebe zwar auch Definitionen und Namen an, arbeite aber sehr viel mit Beispielen und Wiederholungen.</p>
+
+<p>Wie viele Software-Entwickler habe ich sogar ein schlechtes Gedächtnis. Wie ich mittlerweile herausgefunden habe, führt dieser Umstand zu besserer Software, wenn man ihn berücksichtigt:</p>
+
+<p>Man dokumentiert, was man entwickelt hat und warum man es <b>so</b> entwickelt hat, wenn es ungewöhnlich ist. Man verwendet sprechende, konsistente Namen für alles und liefert Fehlermeldungen, die auch Jahre später noch verständlich sind.</p>
+
+<p>Da Anwender und Entscheider im Allgemeinen keine Software-Entwicklungsexperten sein müssen, wiederhole ich kurze Erklärungen für wichtige Begriffe, wichtige Eigenschaften oder wichtige Resultate, damit man nicht immer im Buch hin- und herspringen muss, was besonders in der gedruckten Version sehr lästig ist.</p>
+
+<h2 id="ber-den-Umgang-mit-dem-Buch">Über den Umgang mit dem Buch</h2>
+
+<p>In der Überschrift oder Einleitung jedes Kapitels informiere ich darüber, für welche Zielgruppen dieses Kapitel interessant ist, wenn es nicht für alle geschrieben ist.</p>
+
+<p>Ansonsten spreche ich technische Details kurz an und verweise auf vertiefende Stellen im Buch.</p>
+
+<p>Ich bemühe mich um eine allgemein verständliche Sprache. Das wird mir nicht immer gelingen und ich bin für Hinweise auf &quot;Entwicklerische&quot; Worte und Darstellungen dankbar.</p>
+
+<p>Falls es doch zu technisch wird, überlesen Sie einfach die entsprechenden Passagen, das geht vorbei wie ein kleiner Regenschauer. Falls technisch umsetzbar werde ich solche Teile mit einem &quot;Achtung: Technik&quot;-Symbol am Rand der Seite markieren.</p>
+
+<h4 id="Und-jetzt:-Achtung-ein-bischen-Technik">Und jetzt: Achtung, ein bischen Technik!</h4>
+
+<p>Falls Sie Codezeilen nicht verstehen, treten Sie ein wenig zurück und lassen Sie das so entstehende Bild auf sich wirken, ohne zu lesen. Wirkt es unordentlich und kompliziert, dann <b>ist der Code auch unordentlich und kompliziert</b>. Ein Entwickler, der sich die Stelle zwei Jahre später wieder ansieht, muss sich in unordentlichen und komplizierten Code auch erst wieder mühsam einarbeiten. Die Genies, die das in weniger als 1 Sekunde korrekt erfassen, habe ich bisher nur in Fernsehserien angetroffen.</p>
+
+<h1 id="Teil-I:-Grundlagen">Teil I: Grundlagen</h1>
+
+<p>==part Teil I: Grundlagen ===================================================================</p>
+
+<h1 id="Einleitung">Einleitung</h1>
+
+<p>Daten-Validierung oder Daten-Prüfung funktioniert wie eine Datenwäsche, eine geplante und gezielte Daten-Validierung bezeichne ich als &quot;Große Datenwäsche&quot;.</p>
+
+<p>Angelieferte Daten sind meistens schmutzig und manchmal stark verseucht (Viren!). Validierung stellt verseuchte Daten in Quarantäne, damit sich die anderen Daten nicht anstecken, und reinigt verschmutzte Daten bis zum gewünschten Reinheitsgrad.</p>
+
+<p>In der industriellen Produktion gibt es viele Verfahren zur Aufbereitung von Rohmaterial:</p>
+
+<p>Schafwolle wird mehrfach gewaschen, gekämmt und geglättet, bis man einen Faden hat, den man in der Textilerzeugung zur Herstellung von Decken und Kleidung verwenden kann.</p>
+
+<p>Für jeden Verarbeitungsschritt ist die Eingangs- und Ausgangsqualität genau definiert.</p>
+
+<p>Für elektronische Datenverarbeitung existieren solche Standards nicht.</p>
+
+<h2 id="Warum-ist-Daten-Validierung-wichtig">Warum ist Daten-Validierung wichtig?</h2>
+
+<p>Einige Beispiele über die Folgen von unzureichender Daten-Validierung:</p>
+
+<ul>
+
+<li><p>Ein <a href="#Teurer-Einkaufswagen">Warenkorb</a> in einem Online-Shop kostet immer über 5 Mio Euro, auch ein leerer</p>
+
+</li>
+<li><p>Eine neue Generation von Bluetooth-Autoschlüsseln muss in einer Keksdose aus Metall aufbewahrt werden</p>
+
+</li>
+<li><p>Hacker kaufen mit erfundenen oder gestohlenen Kreditkarten im großen Stil in Online-Shops ein, Besitzer der Karten müssen sich gegen Abbuchungen/Rechnungen wehren.</p>
+
+</li>
+<li><p>Die Webserver von Internet-Portalen fallen immer wieder aus</p>
+
+</li>
+<li><p>&quot;Schmutzige Daten&quot; verhindern die Fertigstellung eines Software-Produkts</p>
+
+</li>
+<li><p>In Indien leben viele Verstorbene noch ein langes Leben</p>
+
+</li>
+</ul>
+
+<p>Das ist nur eine kleine Auswahl, mit zum Teil fatalen Folgen für die Betroffenen. Betriebswirtschaftlich drohen große Kapitalverluste oder der Konkurs des Unternehmens.</p>
+
+<p>Die oben aufgelisteten Fälle werden im Buch analysiert und es werden Strategien für die SW-Entwicklung vorgestellt, die derartige Probleme gar nicht erst entstehen lassen.</p>
+
+<p>Diese Strategien werden im letzten Teil zu einem Validierungskonzept verdichtet und die Einhaltung dieses Konzepts wird durch Checklisten auch für Anwender und Entscheider überprüfbar.</p>
+
+<h2 id="Daten-Validierung">Daten-Validierung</h2>
+
+<p>Unter Daten-Validierung versteht man die Prüfung der</p>
+
+<pre><code>   formalen Richtigkeit der Daten (Syntax - Rechtschreibung),</code></pre>
+
+<p>die Beurteilung der</p>
+
+<pre><code>   Gültigkeit von Regeln, die auf die Daten angewendet werden,</code></pre>
+
+<p>und die</p>
+
+<pre><code>   inhaltliche Korrektheit.</code></pre>
+
+<p>Die ersten beiden Punkte können automatisiert und vollständig durch Software geprüft werden. Beim letzten Punkt, der inhaltlichen Korrektheit, wird dies nur in Ausnahmefällen gelingen.</p>
+
+<h3 id="Aktueller-Stand-der-Daten-Validierung">Aktueller Stand der Daten-Validierung</h3>
+
+<p>Schon die Römer führten Volkszählungen durch, wie im Neuen Testmanent und in anderen Quellen beschrieben ist.</p>
+
+<p>Auch diese Daten mussten damals überprüft werden, damit nicht bewusst weniger Einwohner angegeben werden konnten, um z.B. weniger Steuern zahlen zu müssen.</p>
+
+<p>Ohne Unterstützung durch IT war die Validierung der Daten damals wahrscheinlich sehr aufwändig.</p>
+
+<p>Heute verfügen wir über Mobile-Phones, Computer, Server und andere IT-Technologie, aber die Menge der zu prüfenden Daten und die Anzahl an erforderlichen Prüfungen steigt stark an, genauso wie die Anzahl der SW-Systeme, die diese Prüfungen automatisiert durchführen sollen.</p>
+
+<p>Leider wird Daten-Validierung durch IT nicht an Universitäten gelehrt oder in Schulungen behandelt. Standards existieren nicht und dieses Buch ist eines der ersten, das sich ausschließlich diesem Thema widmet.</p>
+
+<p>Es existieren wenige, kaum bekannte Frameworks, die den Entwicklern die mühevolle Arbeit abnehmen, Prüfungen zu programmieren und zu testen.</p>
+
+<p>Viele User sind es gewöhnt, Daten gleich korrekt einzugeben, weil im Falle eines Fehlers die Suche nach der Ursache aufwändig werden kann. Im schlechtesten Fall, der immer noch sehr häufig auftritt, stürzt das Programm ab (Ausnahme in ...) oder hängt sich auf und die mühevoll eingetippten Daten sind verloren.</p>
+
+<p>Wenn der Auftraggeber einer SW-Entwicklung nicht explizit Prüfungen fordert und sie testet, werden oft keine eingebaut. Denn in Software sieht man meistens nicht, ob die Tür zum Tresor offen ist oder gleich ganz fehlt.</p>
+
+<h2 id="Der-beste-Validator">Der beste Validator</h2>
+
+<p>Wir selbst führen unablässig Prüfungen durch, wenn wir unsere Sinneseindrücke verarbeiten. Unsere Augen, Ohren, Nasen und Hände liefern nämlich oft falsche, ungenaue, widersprüchliche oder doch stark unterschiedliche Eindrücke unserer Umgebung, die erst durch die Prüfung und Weiterverarbeitung als konsistentes Ganzes - als persönliche Wirklichkeit - erfahren wird.</p>
+
+<p>Dafür nutzen wir den besten Validator, der uns zur Verfügung steht:</p>
+
+<pre><code>  Unser Gehirn.</code></pre>
+
+<p>Nachts werden dann die neuen Eindrücke nochmals sortiert, neuronale Fehlschaltungen identifiziert und korrigiert. Und das alles mühelos, vollautomatisch, nebenbei.</p>
+
+<p>Genau verstanden haben das die Experten für Hirnforschung noch nicht.</p>
+
+<h2 id="Software-und-Daten-enthalten-Fehler">Software und Daten enthalten Fehler</h2>
+
+<p>Jede ungeprüfte Software enthält Fehler, eine gut getestete Software enthält weniger Fehler.</p>
+
+<p>Die Komplexität jeder größeren Software-Lösung überschreitet irgendwann den Punkt, wo ein einzelner sie insgesamt und in allen Details verstehen kann.</p>
+
+<p>Das führt so weit, dass die Experten, die die Software ja entwickelt haben, überhaupt nicht mehr wissen, was da genau abläuft.</p>
+
+<p>Fehlerhafte Software kann natürlich keine fehlerfreien Daten garantieren.</p>
+
+<p>Erstaunlicherweise gehen die meisten Software-Entwickler aber davon aus, dass ihre Daten immer korrekt sind. Aber nur validierte Daten sind &quot;korrekt&quot;. Wobei &quot;korrekt&quot; eine sehr unspezifische Bezeichnung ist. Ich bevorzuge:</p>
+
+<pre><code>  Die Daten sind bereit zum Einsatz für ...</code></pre>
+
+<h4 id="Beispiel-f-r-Zust-nde-von-Daten">Beispiel für Zustände von Daten</h4>
+
+<p>Ein Feuerwehrfahrzeug, das gerade keine Räder montiert hat, ist nicht direkt einsatzbereit.</p>
+
+<p>Die Validierungsprüfung für Einsatzbereitschaft ergibt daher:</p>
+
+<pre><code>  Nicht einsatzbereit</code></pre>
+
+<p>oder auch genauer:</p>
+
+<pre><code>  Einsatzbereit nach Montage der Reifen in ca. 60 Minuten.</code></pre>
+
+<p>Man muss das Fahrzeug jetzt nicht verschrotten, nur weil die Reifen noch fehlen.</p>
+
+<p>Aber genau das passiert, wenn man ungültige Daten nicht speichern kann. Sie werden vernichtet. Für Einzelwerte wie z.B. ein Datum, eine ganze Zahl u.ä. kann es akzeptabel und sinnvoll sein, wenn man ungültige Werte nicht in der Datenbank speichern darf.</p>
+
+<p>Aber einen Brief oder eine Email muss man immer speichern können, unabhängig ob leer, fast beendet oder fertig gestellt, auch wenn in der Anschrift die Postleitzahl nicht zum Ort passt oder die Email-Adresse unerlaubte Zeichen enthält.</p>
+
+<p>Die Email erhält dann den Status &quot;Nicht versendbar&quot; bedingt durch die ungültige Email-Adresse.</p>
+
+<p>Das Versenden dieser Email kann man dann generell verbieten oder den Anwender warnen und abfragen, ob versendet werden soll oder nicht.</p>
+
+<p>Aber er kann die Email öffnen, verändern und erneut prüfen lassen. Ist das Ergebnis positiv, wird der Status der Email in &quot;versendbar&quot; geändert und sie darf ohne weitere Rückfrage versendet werden.</p>
+
+<h3 id="Funktionstests-w-hrend-der-Entwicklung">Funktionstests während der Entwicklung</h3>
+
+<p>Mit Tests findet man Fehler/Abweichungen in der Software, korrigiert sie und testet erneut. Das alles findet <b>während der Entwicklung im eigenen Hause</b> statt. Somit ist die gesamte Testumgebung <b>kein Produktbestandteil</b> und muss nur von Testern und Entwicklern bedient und verstanden werden.</p>
+
+<h3 id="Datenw-sche-beim-Kunden">Datenwäsche beim Kunden</h3>
+
+<p>Die zu prüfenden Daten fallen in der Regel erst beim Kunden an und können dann auch nur beim Kunden geprüft werden. Die <b>Validierung</b> ist somit <b>Produktbestandteil</b> und muss <b>vom Kunden bedient und verstanden</b> werden. Als Produktbestandteil muss natürlich auch die Validierung Funktionstests unterzogen werden.</p>
+
+<h2 id="Forderung-eines-standardisierten-Daten-Validierungskonzepts">Forderung eines standardisierten Daten-Validierungskonzepts</h2>
+
+<p>Die Komplexität von Software und Daten erfordert eine gute Systemarchitektur, gut testete Funktionalität und robuste Algorithmen.</p>
+
+<p>Die Verwendung von ungewaschenen, nicht geprüften Daten führt in den meisten Fällen zu vermeidbaren Fehlern im weiteren Ablauf. Eine gezielte Validierung wird die Komplexität der Software reduzieren, in vielen Fällen signifikant reduzieren. Datenvalidierung ist also ein wichtiger Teil des Software-Produkts.</p>
+
+<p>Wenn dieses Buch der Datenvalidierung die notwendige Aufmerksamkeit verschafft, wäre das ein erster Schritt. Ein weiterer wäre die Verabschiedung von Standards und eines standardisierten Validierungskonzepts.</p>
+
+<p>Für alle Entwickler: auf dem CPAN finden Sie mein Perl-Modul</p>
+
+<pre><code>  Scalar::Validation</code></pre>
+
+<p>das einige der hier noch zu besprechenden Verfahrensweisen bereits bereitstellt und sich in realen Projekten bewährt hat.</p>
+
+<h2 id="Thematische-Abgrenzung">Thematische Abgrenzung</h2>
+
+<p>Datensicherheit, die Verarbeitung personenbezogener Daten und Login-Verfahren überschneiden sich teilweise mit der Datenvalidierung.</p>
+
+<h3 id="Login-Verfahren">Login-Verfahren</h3>
+
+<p>Login-Verfahren validieren/verifizieren den Anwender, der sich am System anmeldet. Das ist ebenfalls eine Art von Datenvalidierung, noch dazu eine äußerst kritische. Die Problematik ist fachlich ausführlich beschrieben. Erstaunlicherweise wird hier jedoch oft gegen einfachste Regeln verstoßen, sodass sich unnötigerweise Schwachstellen ergeben.</p>
+
+<p>Im Kapitel <a href="#Das-Wichtigste-zu-Login-Verfahren">&quot;Das Wichtigste zu Login-Verfahren&quot;</a> gehe ich daher kurz auf wichtige Punkte ein. Die fertige Lösung sollte unbedingt von einem Spezialisten untersucht werden!</p>
+
+<h3 id="Personenbezogene-Daten">Personenbezogene Daten</h3>
+
+<p>Die Verarbeitung personenbezogener Daten - auch einfach Datenschutz genannt - ist gesetzlich geregelt. Hier steht allerdings die Speicherung und Verwendung der Daten im Vordergrund. Sie findet in der Regel <b>nach</b> der Validierung statt. Zugriffe auf solche Daten während der Validierung sollten von einem fachkundigen Datenschützer untersucht und freigegeben werden. Bei wiederholten oder groben Verstößen ist mit empfindlichen Strafen zu rechnen!</p>
+
+<h3 id="Datensicherheit">Datensicherheit</h3>
+
+<p>Datensicherheit ist ein vieldeutiger Begriff. Er wird im Zusammenhang mit Personenbezogenen Daten verwendet, siehe vorigen Abschnitt.</p>
+
+<p>Eine weitere Verwendung findet im Zusammenhang mit Daten-Sicherung und -Wiederherstellung (Backup) statt.</p>
+
+<p>Die dritte Bedeutung ist die folgende:</p>
+
+<p>Sind die Daten verlässlich? Korrekt? Geprüft? In diesem Sinne bildet Datensicherheit einen Teilaspekt von Datenvalidierung.</p>
+
+<h4 id="Beispiel-Texterkennung">Beispiel Texterkennung</h4>
+
+<p>Werden Dokumente / Briefe / Formulare fotografiert oder eingescannt und anschließend eine automatische Texterkennung (OCR) durchgeführt, ergeben sich unsichere Daten.</p>
+
+<p>Buchstaben werden verwechselt, hinzugefügt, überlesen.</p>
+
+<p>Diese Unsicherheit kann unter anderem durch die Anwendung von Daten-Validierung reduziert oder beseitigt werden.</p>
+
+<h1 id="Einf-hrung-in-die-Datenvalidierung">Einführung in die Datenvalidierung</h1>
+
+<p>In diesem Kapitel wird zunächst definiert, was genau unter Daten-Validierung zu verstehen ist. In den folgenden Kapiteln wird die Validierung von Daten aus allen Richtungen betrachtet.</p>
+
+<p>Diese Betrachtungsrichtungen (&quot;Dimensionen&quot;) der Validierung sind:</p>
+
+<dl>
+
+<dt id="Reinheitsgrad">1. Reinheitsgrad</dt>
+<dd>
+
+</dd>
+<dt id="G-ltigkeitsdauer">2. Gültigkeitsdauer</dt>
+<dd>
+
+</dd>
+<dt id="Datenmenge">3. Datenmenge</dt>
+<dd>
+
+</dd>
+<dt id="Validierungsaufwand">4. Validierungsaufwand</dt>
+<dd>
+
+</dd>
+<dt id="Komplexit-t-der-Daten">5. Komplexität der Daten</dt>
+<dd>
+
+</dd>
+</dl>
+
+<p>Jede Dimension wird im folgenden in einem eigenen Kapitel vorgestellt und genau untersucht.</p>
+
+<p>Daraus abzuleitende Maßnahmen für die Software-Entwicklung werden in Teil II in eigenen Kapiteln zusammengefasst.</p>
+
+<h2 id="Definition-Daten-Validierung">Definition Daten-Validierung</h2>
+
+<p>Unter <b>Daten-Validierung</b> versteht man die</p>
+
+<dl>
+
+<dt id="Pr-fung-der-Syntax-von-Daten">1. <b>Prüfung der Syntax von Daten</b></dt>
+<dd>
+
+<p>durch die Prüfung der formalen Richtigkeit der Daten (Syntax - Rechtschreibung),</p>
+
+</dd>
+<dt id="Ermittlung-der-G-ltigkeit-von-Regeln-f-r-die-Daten">2. <b>Ermittlung der Gültigkeit von Regeln für die Daten</b></dt>
+<dd>
+
+<p>nachdem in 1. die Daten erfasst wurden, können jetzt im zweiten Schritt die Inhalte für eine Überprüfung von Regeln verwendet werden.</p>
+
+</dd>
+</dl>
+
+<p>Die Prüfung der inhaltlichen Korrektheit von Daten ist hiervon ausgenommen.</p>
+
+<h2 id="Schritt-1:-Syntaxpr-fung">Schritt 1: Syntaxprüfung</h2>
+
+<p>Das Ziel der Syntaxprüfung ist das Herausfiltern von Datenschmutz oder fehlerhaft erfasster Daten und die anschliessende Konvertierung (Umwandlung) in einen Software-Datentyp.</p>
+
+<p>Die Syntax der Daten kann natürlich auch über Regeln geprüft werden, bevor sie konvertiert (umgewandelt) und gespeichert werden.</p>
+
+<h3 id="Vertiefung-in-Beispielen">Vertiefung in Beispielen</h3>
+
+<p>Daten sollten zunächst immer als Text (String) erfasst werden. Ein Text ist einfach eine Abfolge von Zeichen, z.B.</p>
+
+<pre><code>  1 Minute = 60 Sekunden</code></pre>
+
+<p>Dieser Text enthält insgesamt 23 Zeichen (ohne Leerraum außen), und zwar 3 Ziffern, 4 Leerzeichen (Space) und ein Sonderzeichen, das Gleichheitszeichen.</p>
+
+<p>Um z.B. die Anzahl der Tischtennisbälle in einer Verpackung einzugeben wird der Text</p>
+
+<pre><code>  100</code></pre>
+
+<p>vom Anwender über die Tastatur eingegeben. Der Text besteht aus den Ziffern 1, 0, 0. Die Regel <i>Ganze Zahl</i> wird jetzt auf den Text &quot;100&quot; angewendet und bestätigt, dass dieser Text in die ganze Zahl <i>100</i> umgewandelt werden kann.</p>
+
+<p>Passender ist hier allerdings die Regel <i>Positive ganze Zahl Größer Null</i>, die negative Zahlen und die 0 ausschließt.</p>
+
+<p>Wenn die Regel grünes Licht gibt, kann der Text in eine ganze Zahl (Integer) umgewandelt werden, die für Berechnungen und Vergleiche verwendet werden kann.</p>
+
+<p>Wenn nun die Zahl</p>
+
+<pre><code>  999 999 999 999 999</code></pre>
+
+<p>(ohne Leerschritte) eingegeben wird, wird das zu Problemen bei der Umwandlung führen, die Zahl ist einfach zu groß für einen Integer.</p>
+
+<p>Daher wird die Regel weiter spezifiziert zu</p>
+
+<pre><code>  Positive ganze Zahl mit maximal 4 Stellen</code></pre>
+
+<p>Jetzt liegt das Maximum bei <i>9999</i> Tischtennisbällen, und es kann in jedem Fall in einen Integer umgewandelt werden.</p>
+
+<p>Für Experten noch der Reguläre Ausdruck:</p>
+
+<pre><code>  ^\d{1,4}$</code></pre>
+
+<p>Mit der ganzen Zahl gespeichert als Integer kann nun Schritt 2 durchgeführt werden.</p>
+
+<h2 id="Schritt-2:-Validierungsregeln">Schritt 2: Validierungsregeln</h2>
+
+<p>Das Ziel der Validierung über Regeln ist es, bestimmte Eigenschaften der Daten zu bestimmen und zu garantieren. Das kann sowohl für einzelne Werte oder auch für komplexe Datenstrukturen durchgeführt werden.</p>
+
+<h3 id="Beispielhafte-Validierung-f-r-Einzelwert-Pr-fung">Beispielhafte Validierung für Einzelwert-Prüfung</h3>
+
+<p>Für den Webshop soll eine Mindestbestellmenge von 50 bei einer maximalen Packungsgröße von 2000 Bällen festgelegt werden als Regel <i>BestellmengeTischtennisbaelle</i>:</p>
+
+<pre><code>  50 &lt;= AnzahlBälle &lt;= 2000</code></pre>
+
+<p>Leert sich nun das Lager, kann die Regel dynamisch angepasst werden, indem die obere Grenze nach und nach verkleinert wird:</p>
+
+<pre><code>  50 &lt;= AnzahlBälle &lt;= 1500
+  50 &lt;= AnzahlBälle &lt;= 1000
+  50 &lt;= AnzahlBälle &lt;= 500</code></pre>
+
+<p>Ist das Lager leer, wird die Regel ersetzt durch</p>
+
+<pre><code>  False, Message:=&quot;Zur Zeit sind keine Tischtennisbälle mehr lieferbar.&quot;</code></pre>
+
+<p>Wenn Tischtennisbälle nachbestellt wurden, kann die Regel umgeformt werden zu:</p>
+
+<pre><code>  False, Message:=&quot;Tischtennisbälle sind erst wieder ab Anfang März lieferbar.&quot;</code></pre>
+
+<p>&quot;False&quot; heißt hier, dass die Regel immer fehlschlägt und die als &quot;Message&quot; angegebene Meldung liefert.</p>
+
+<h4 id="F-r-Software-Kundige">Für Software-Kundige</h4>
+
+<p>Die Software ruft immer nur die Regel <i>BestellmengeTischtennisbaelle</i> auf. Wie die Regel umgesetzt wird, muss sie nicht wissen und sich auch nicht um die Fehlerbehandlung und Fehlermeldung kümmern. So kann die SW von außen verändert werden, ohne eine einzige Bedingung (IF ...) im Code programmieren zu müssen, z.B. mit Perl und <a href="#Scalar::Validation">&quot;Scalar::Validation&quot;</a> sieht der Code dann so aus:</p>
+
+<pre><code>  my $bestellmenge_tt_baelle
+      = validate (&quot;Bestellmenge Tischtennisbälle&quot;   # Der Name für den Anwender
+                  =&gt; BestellmengeTischtennisbaelle  # Die Regel
+                  =&gt; read_bestellmenge_tt_baelle()  # Der zu prüfende Wert
+  );  
+ </code></pre>
+
+<p>Ganz gleich, was die Funktion read_bestellmenge_tt_baelle() der Prüfung mit validate() übergibt, <b>nachher</b> steht ein gültiger Wert in der Variablen, andernfalls wird die Abarbeitung hier mit einer passenden Fehlermeldung unterbrochen. Das vereinfacht und stabilisiert die SW sehr.</p>
+
+<p>Ohne Validerung wird der Code nicht sehr viel kürzer, aber dafür sehr viel instabiler:</p>
+
+<pre><code>  my $bestellmenge_tt_baelle = read_bestellmenge_tt_baelle();  # Ein ungeprüfter Wert!!</code></pre>
+
+<h3 id="Test-der-Validierungsregeln-f-r-Einzelwert-Pr-fung">Test der Validierungsregeln für Einzelwert-Prüfung</h3>
+
+<p>Da die Validierungsregeln Bestandteil des Produktes sind, müssen sie natürlich auch getestet werden. Hier kann man mit Unit-Tests wiederum sehr einfach Tests schreiben, die auch alle Sonderfälle abdecken.</p>
+
+<p>Wie man Validierung mittels TDD leicht und sicher implementieren kann, ist beschrieben in Teil III, Abschnitt <a href="#Aufbau-von-Unit-Tests">&quot;Aufbau von Unit-Tests&quot;</a></p>
+
+<h2 id="Grunds-tzliches-zu-Pr-fungen-Entscheidungen">Grundsätzliches zu Prüfungen/Entscheidungen</h2>
+
+<p>Datenvalidierung ist ein Prüfverfahren. Der Validator trifft die Entscheidung, ob die Daten der Regel entsprechen oder nicht.</p>
+
+<p>Daraus ergeben sich mindestens sieben! Fälle - und nicht nur zwei -, die zu unterscheiden sind!</p>
+
+<p>Die 1-3 sind Status-Informationen über die Durchführung der Prüfung, die letzten 4-7 die möglichen Ergebnisse der Prüfung. Es ist meistens keine gute Idee, die beiden Kategorien zu einer zusammenzufassen, wie man in Teil II sehen wird, aber Ihnen stehen natürlich auch alle anderen Möglichkeiten offen.</p>
+
+<dl>
+
+<dt id="Pr-fungsfall-:-Ungepr-ft">1. <a href="#Pr-fungsfall-:-Ungepr-ft">&quot;Prüfungsfall ?: Ungeprüft&quot;</a></dt>
+<dd>
+
+</dd>
+<dt id="Pr-fungsfall-X:-Pr-fung-anstehend">2. <a href="#Pr-fungsfall-X:-Pr-fung-anstehend">&quot;Prüfungsfall X: Prüfung anstehend&quot;</a></dt>
+<dd>
+
+</dd>
+<dt id="Pr-fungsfall-R:-Pr-fung-l-uft">3. <a href="#Pr-fungsfall-R:-Pr-fung-l-uft">&quot;Prüfungsfall R: Prüfung läuft&quot;</a></dt>
+<dd>
+
+</dd>
+<dt id="Pr-fungsfall-TP:-Korrekt-bestanden">4. <a href="#Pr-fungsfall-TP:-Korrekt-bestanden">&quot;Prüfungsfall TP: Korrekt bestanden&quot;</a></dt>
+<dd>
+
+</dd>
+<dt id="Pr-fungsfall-TN:-Korrekt-durchgefallen">5. <a href="#Pr-fungsfall-TN:-Korrekt-durchgefallen">&quot;Prüfungsfall TN: Korrekt durchgefallen&quot;</a></dt>
+<dd>
+
+</dd>
+<dt id="Pr-fungsfall-FP:-Regelwidrig-bestanden">6. <a href="#Pr-fungsfall-FP:-Regelwidrig-bestanden">&quot;Prüfungsfall FP: Regelwidrig bestanden&quot;</a></dt>
+<dd>
+
+</dd>
+<dt id="Pr-fungsfall-FN:-Regelkonform-aber-durchgefallen">7. <a href="#Pr-fungsfall-FN:-Regelkonform-aber-durchgefallen">&quot;Prüfungsfall FN: Regelkonform, aber durchgefallen&quot;</a></dt>
+<dd>
+
+</dd>
+</dl>
+
+<p>Vor allem in der Medizin wird das Modell mit den vier Prüfergebnissen eingesetzt, um Fehldiagnosen zu kennzeichnen.</p>
+
+<h3 id="Pr-fungsfall-:-Ungepr-ft1">Prüfungsfall ?: Ungeprüft</h3>
+
+<p>Merker: ? weiß nicht genau...</p>
+
+<p>Neue oder veränderte Daten stehen immer im Status ungeprüft. Ungeprüfte Daten dürfen nur editiert werden. Weiterverwendung für andere Prozesse/Services ist mit hohem Risiko verbunden und muss verhindert werden. Das wird nicht immer funktionieren...</p>
+
+<h3 id="Pr-fungsfall-X:-Pr-fung-anstehend1">Prüfungsfall X: Prüfung anstehend</h3>
+
+<p>Merker: angekreuzt mit X für eine Prüfung</p>
+
+<p>Die Daten sind für eine Prüfung markiert. Editieren/Update ist möglich, dann wird wieder auf &quot;? (ungeprüft)&quot; umgeschaltet.</p>
+
+<h3 id="Pr-fungsfall-R:-Pr-fung-l-uft1">Prüfungsfall R: Prüfung läuft</h3>
+
+<p>Merker: R (Running, Laufende) Prüfung</p>
+
+<p>Ob man bei laufender Prüfung das Verändern der Daten noch zulässt, muss festgeschrieben und dann auch eingehalten werden. Verändern führt wieder in Zustand &quot;? (ungeprüft)&quot; . Der Validator muss in diesem Fall die Änderung des Status erkennen und das Ergebnis der Prüfung verwerfen. Es darf keinesfalls in die Daten geschrieben werden, da ja ein ganz anderer Stand geprüft worden ist. Wird das nicht berücksichtigt, hat man ungeprüfte Daten mit einer Prüfplakette versehen:</p>
+
+<p>Man fährt mit dem Auto zum TÜV, lässt prüfen, besteht, erhält die TÜV-Plakette und den Eintrag im Fahrzeugschein. Man fährt nach Hause und nimmt größere, abnahmepflichtige Umbauten am Fahrzeug vor, <b>ohne</b> das Fahrzeug nocheinmal zu einer Abnahme vorzuführen.</p>
+
+<p>Jetzt hat man ein Fahrzeug mit TÜV-Plakette, aber ohne Zulassung. Man verliert u.U. seinen Versicherungsschutz. Aber man hat ja nicht vor, aufzufallen! Wird schon gutgehen.</p>
+
+<p>Meistens geht es auch gut, mit den Daten jedenfalls. Das Auto muss ja in zwei Jahren wieder zum TÜV, die Daten meistens nicht.</p>
+
+<h3 id="Pr-fungsfall-TP:-Korrekt-bestanden1">Prüfungsfall TP: Korrekt bestanden</h3>
+
+<p>Merker: True Positive</p>
+
+<p>&quot;True Positive&quot; oder &quot;Korrekt erfüllt&quot; heißt folgendes:</p>
+
+<p>Der zweite Teil bezieht sich auf das festgestellte Ergebnis der Prüfung. Die Prüfung wurde von der Software als erfüllt (positive oder true) angesehen.</p>
+
+<p>Als Ergebnis wird &quot;bestanden&quot; in die Daten eingetragen.</p>
+
+<p>Der erste Teil informiert darüber, ob die vom System getroffene Entscheidung richtig war, in diesem Fall ja, daher &quot;True&quot; oder &quot;Korrekt&quot;. Nur dieser Fall garantiert die unproblematische Weiterverwendung der Daten.</p>
+
+<h3 id="Pr-fungsfall-TN:-Korrekt-durchgefallen1">Prüfungsfall TN: Korrekt durchgefallen</h3>
+
+<p>Merker: True Negative</p>
+
+<p>Der Prüfling ist leider durchgefallen (Teil 2: Negative), die Prüfung wurde nicht bestanden. Diese Entscheidung war korrekt (Teil 1: true)</p>
+
+<p>Als Ergebnis wird &quot;durchgefallen&quot; in die Daten eingetragen.</p>
+
+<p>Alles gut, die Daten müssen überarbeitet werden.</p>
+
+<h3 id="Pr-fungsfall-FP:-Regelwidrig-bestanden1">Prüfungsfall FP: Regelwidrig bestanden</h3>
+
+<p>Merker: False Positive</p>
+
+<p>Fussball: Ein Tor wurde vom Schiedsrichter anerkannt, obwohl es Abseits war!</p>
+
+<p>Das ist der kritische Fall, der nicht auftreten sollte. Der Prüfling ist nach Lage der Daten durchgefallen.</p>
+
+<p>Leider ergibt die Prüfung, dass er bestanden hat (Positive)!</p>
+
+<p>Was nicht korrekt ist (False in Teil 1).</p>
+
+<p>Als Ergebnis wird trotzdem &quot;bestanden&quot; in die Daten eingetragen. Die Software geht ja davon aus, dass er bestanden hat!</p>
+
+<p>Übertragen auf Autos heisst das, dass der TÜV-Prüfer gravierende Mängel übersehen hat und Ihnen eine TÜV-Bescheinigung ausstellt, obwohl das Fahrzeug nicht verkehrstüchtig ist, weil die Bremsen versagen könnten.</p>
+
+<p>Statt in die Werkstatt fahren Sie hoffentlich nicht in zwei Tagen ins Gebirge.</p>
+
+<p>Die Anzahl dieser Fälle kann man nur reduzieren durch ausgiebige Tests der Prüfungen oder mehrere unabhängige Prüfungen, die alle parallel ausgeführt werden.</p>
+
+<h3 id="Pr-fungsfall-FN:-Regelkonform-aber-durchgefallen1">Prüfungsfall FN: Regelkonform, aber durchgefallen</h3>
+
+<p>Merker: False Negative</p>
+
+<p>Fussball: Ein Tor wurde vom Schiedsrichter nicht anerkannt, und auf Abseits entschieden. Diese Entscheidung war leider falsch. Es nämlich <b>kein Abseits</b>.</p>
+
+<p>Nach Lage der Daten hat der Prüfling bestanden, aber der Prüfer sieht das fälschlicherweise anders und verweigert die TÜV-Plakette.</p>
+
+<p>Als Ergebnis wird &quot;durchgefallen&quot; (Negative) in die Daten eingetragen. Was in diesem Fall nicht stimmt (False) und so manchen Anwender in den Wahnsinn treibt. Er hat ja alles korrekt eingegeben, aber die Daten werden nicht akzeptiert.</p>
+
+<p>Hier ist es wichtig, dass das System von Hand überstimmt werden kann, indem man den Zustand auf &quot;bestanden&quot; ändert. Natürlich nur nach genauer Prüfung durch eine Experten, der nicht der User sein sollte, der die Daten erstellt hat.</p>
+
+<p>Sonst läuft man Gefahr, dass der User alle fehlerhaften Daten ohne weitere Prüfung einfach &quot;durchwinkt&quot; und das System mit fehlerhaften Daten geflutet wird.</p>
+
+<h1 id="Dimensionen-der-Validierung">Dimensionen der Validierung</h1>
+
+<p>In den folgenden Kapiteln wird die Validierung von Daten aus allen Richtungen betrachtet.</p>
+
+<p>Diese Betrachtungsrichtungen (&quot;Dimensionen&quot;) der Validierung sind:</p>
+
+<dl>
+
+<dt id="Reinheitsgrad1"><b>1. Reinheitsgrad</b></dt>
+<dd>
+
+<p>Wie sauber sind die Daten?</p>
+
+</dd>
+<dt id="G-ltigkeitsdauer1"><b>2. Gültigkeitsdauer</b></dt>
+<dd>
+
+<p>Wie lange ist das Ergebnis der Validierung gültig?</p>
+
+</dd>
+<dt id="Datenmenge1"><b>3. Datenmenge</b></dt>
+<dd>
+
+<p>Welche Datenmengen sind zu verarbeiten?</p>
+
+</dd>
+<dt id="Validierungsaufwand1"><b>4. Validierungsaufwand</b></dt>
+<dd>
+
+<p>Wie hoch ist der Aufwand, eine einzelne Prüfung durchzuführen?</p>
+
+</dd>
+<dt id="Komplexit-t-der-Daten1"><b>5. Komplexität der Daten</b></dt>
+<dd>
+
+<p>Welcher Komplexitätsstufe gehören die Daten/Objekte an?</p>
+
+</dd>
+<dt id="Validierungsregeln"><b>6. Validierungsregeln</b></dt>
+<dd>
+
+<p>Regeln im Lauf der Entwicklung und Freigabe (Release) von Software</p>
+
+</dd>
+<dt id="Priorit-t"><b>7. Priorität</b></dt>
+<dd>
+
+<p>Priorität der Ausführung der Daten-Prüfung abhängig von Regeln und Daten</p>
+
+</dd>
+<dt id="Ergebnisse"><b>8. Ergebnisse</b></dt>
+<dd>
+
+<p>Verarbeitung und Zuordnung der Ergebnisse von Validierungen</p>
+
+</dd>
+</dl>
+
+<p>In den Dimensionen 2-5 gibt es viele verschiedene Größenordnungen, die unterschiedliche Anforderungen an die Software stellen und die Art und Weise, wie Validierung durchgeführt und implementiert wird, maßgeblich beeinflusst. Dieser Buchteil stellt die Dimensionen zunächst vor, im Teil II werden daraus Anforderungen an die Software abgeleitet und im dritten werden für einige Teile beispielhafte Implementierungen entwickelt.</p>
+
+<h1 id="Dimension-Reinheitsgrad">Dimension Reinheitsgrad</h1>
+
+<p>In der Fertigung von Gütern gibt es den Ausdruck der &quot;Erlaubten Toleranzen&quot;, der für jedes Produkt genau festgelegt wird. Je geringer die Toleranz, desto aufwändiger und damit teurer wird der Produktionsprozess.</p>
+
+<p>Beispiele:</p>
+
+<p>In einer Fabrik werden Seile für den Segelbedarf hergestellt. Weil der laufende Meter in der Produktion weniger als 10 Cent kostet und die Seile in Trommeln zu 1000 Metern geliefert werden, ist die Toleranz hier 10 Meter. Eine genauere Messung würde 3 Euro kosten und wäre damit teurer als die durchschnittlich 5m zu lang gelieferten Seile, die ja nur 50 Cent mehr kosten.</p>
+
+<p>Eine Wand für ein Wohnhaus hat eine Toleranz von vielleicht 5mm, ein Micro-USB-Stecker für ein Ladegerät eine Toleranz von 0,1mm.</p>
+
+<p>Die Fertigungstoleranz entspricht bei Daten dem &quot;Verschmutzungsgrad&quot;. Durch mehrfaches Validieren (Waschen) werden die Daten bis zum gewünschten Ergebnis gesäubert. Wie das funktioniert und was es bedeutet, wird im Folgenden mit der Validierung eines Geburtsdatums illustriert.</p>
+
+<p>Die Einteilung in Reinheitsgrade ist ab 3 willkürlich und abhängig vom Einsatzgebiet.</p>
+
+<h2 id="Reinheitsgrad-0---Roh">Reinheitsgrad 0 - Roh</h2>
+
+<p>Rohdaten sind gerade angelieferte Daten, die noch in keine Weise untersucht wurden.</p>
+
+<p>Sie bergen große Risiken, z.B. das Risiko, mit Viren verseucht zu sein.</p>
+
+<p>Das gilt auch immer für Daten, die von anderen Systemen oder vom Anwender kommen und ganz besonders für Email-Anhänge von SPAM- und Schad-Emails.</p>
+
+<p>Prüfungen im UserInterface, d.h. der Webseite, der App oder eines PC-Programms sind Komfort für den User. Die eigentliche Prüfung startet auf dem (Web-)Server, denn Dritte könnten die Daten verfälschen, der User oder ein Stellvertreter könnten bewusste Sabotage verüben oder die Daten könnten durch den Transport beschädigt worden sein.</p>
+
+<p>Da man in vielen Fällen prüfen muss, kann man sich eine komplexe und eventuell falsch getroffene Entscheidung, ob und was geprüft werden soll, sparen und gleich alles prüfen. Dadurch gewinnt man Zeit in der Entwicklung und Sicherheit, was man sich mit Mehrkosten zur Laufzeit erkauft.</p>
+
+<p>Rohdaten werden von Virenscannern untersucht und in die Quarantäne verschoben, falls nur der Verdacht auf Virenbefall besteht.</p>
+
+<p>Ebenso werden Dateien/Daten, die zu stark von der erwarteten Größe abweichen, in einen Fehlercontainer verschoben und etikettiert mit &quot;unerwartete Größe&quot;.</p>
+
+<p>Die aussortierten Dateien oder Daten können dann bei Bedarf weiter untersucht werden. Dazu ist Spezialsoftware auf speziellen Systemen notwendig. Üblicherweise werden sie nach Ablauf einer festgelegten Frist - z.B. 4 Wochen - gelöscht.</p>
+
+<p>Unser Geburtsdatum passiert diesen Test mit Leichtigkeit, denn es ist ja nur ein kurzer Text.</p>
+
+<h2 id="Reinheitsgrad-1---Ungef-hrlich">Reinheitsgrad 1 - Ungefährlich</h2>
+
+<p>Da die Daten/Dateien jetzt höchstwahrscheinlich ungefährlich sind - vollständig sicher ist man da nie - , können Sie geöffnet und inspiziert werden.</p>
+
+<p>An der Dateiendung darf man sich nicht orientieren, Schadsoftware verwendet oft unverdächtige Dateiendungen, um ausführbaren Code zu verstecken.</p>
+
+<p>Von jeder Datei werden nur die ersten 1000 Zeichen binär eingelesen und überprüft, ob es sich um die gewünschten Datenformate handelt. Jedes Dateiformat hat seine speziellen Kennungen, die jetzt überprüft werden.</p>
+
+<p>Werden Unregelmäßigkeiten festgestellt, wandern auch diese Dateien in den Fehlcontainer mit dem Etikett &quot;unerwarteter Dateiinhalt&quot;.</p>
+
+<p>Dasselbe gilt für Daten.</p>
+
+<p>Die Datei/Daten sind damit als Bild/Video/Text oder ähnlich eingestuft.</p>
+
+<p>Formate, die nicht bekannt sind oder nicht verarbeitet werden können, landen wiederum etikettiert im Fehlcontainer.</p>
+
+<p>Unser Geburtsdatum passiert auch diesen Test und wird als UTF-8 Text eingestuft.</p>
+
+<p>Der Inhalt wäre beispielsweise:</p>
+
+<pre><code>  2003-10-09</code></pre>
+
+<p>also der 09. Oktober 2003</p>
+
+<h2 id="Reinheitsgrad-2---Grob-Klassifiziert">Reinheitsgrad 2 - Grob Klassifiziert</h2>
+
+<p>Ab jetzt spreche ich nur noch von Daten, die durch die SW bearbeitet werden. Ob sie aus Dateien, Streams oder anderen Quellen stammen, ist nun unerheblich.</p>
+
+<p>Erst hier startet die Verarbeitung durch die Anwendungssoftware.</p>
+
+<p>Für unser Geburtsdatum bedeutet das, dass es als UTF-8 Text eingelesen wird und eine schnelle Prüfung für einen Datumskandidaten durchläuft:</p>
+
+<p>Die Länge muss zwischen 4 und 30 Zeichen liegen, außer Zahlen und Buchstaben sind nur Blank (Leerschritt), &#39;.&#39; und &#39;-&#39; erlaubt.</p>
+
+<p>Falls der Datumskandidat diesen Test nicht besteht, wird er als &quot;ungeeignet für Datum&quot; in der Datenhaltung markiert.</p>
+
+<p>2003-10-09 erfüllt die Bedingung und wird an den nächsten Filter weitergereicht.</p>
+
+<h2 id="Reinheitsgrad-3---Fein-Klassifiziert">Reinheitsgrad 3 - Fein Klassifiziert</h2>
+
+<p>Der &quot;datum_kandidat&quot; durchläuft nun die festgelegte Validierung für ein Datum.</p>
+
+<p>Nach der Validierung wird es entweder als &quot;gültiges Datum&quot; eingestuft oder als &quot;fehlerhaftes Datum&quot; und in der Datenhaltung entsprechend markiert.</p>
+
+<p>Das Geburtsdatum besteht auch diesen Test und wird als &quot;gültiges Datum&quot; an die nächste Stufe weitergereicht.</p>
+
+<h2 id="Reinheitsgrad-4---Mittelfilter">Reinheitsgrad 4 - Mittelfilter</h2>
+
+<p>Da der Datums-Text ein &quot;gültiges Datum&quot; ist, kann er in ein echtes &quot;Datum&quot; (den Datentyp Date) umgewandelt werden. Nun kann die Software mit dem Datum rechnen und vergleichen.</p>
+
+<p>Ein gültiges Datum ist nur dann ein Geburtsdatum, wenn es gleich heute ist oder in der Vergangenheit liegt.</p>
+
+<p>Der 01.01.2100 ist damit kein gültiges Geburtsdatum.</p>
+
+<p>2003-10-09 erfüllt auch diese Bedingung und erreicht damit die nächste Stufe.</p>
+
+<h2 id="Reinheitsgrad-5---Feinfilter">Reinheitsgrad 5 - Feinfilter</h2>
+
+<p>Hier endet die automatische Prüfung durch Software in den meisten Fällen.</p>
+
+<p>Aber nicht die Validierung!</p>
+
+<p>Außerdem wird jetzt nicht mehr nur ein einzelner Wert geprüft, sondern das ganze Objekt &quot;Person&quot; mit Name, Vorname, Adresse, Geburtsort und Geburtsdatum.</p>
+
+<p>Ein Mitarbeiter erhält nun durch die Software die Aufgabe, die erfassten Daten mit dem Personalausweis/Reisepass zu vergleichen, der als Original vorliegt.</p>
+
+<p>Stimmen alle Daten überein, und damit auch die beiden Geburtstage, markiert er diesen Test &quot;von Hand&quot; über die Programmoberfläche als bestanden.</p>
+
+<p>Die Software kann alternativ mit bereits vorhandenen Daten vergleichen oder beim Einwohnermeldeamt nachfragen.</p>
+
+<p>Wenn dieser Test bestanden wurde, geht es in die nächste Stufe.</p>
+
+<h2 id="Reinheitsgrad-6---Superfeiner-Filter">Reinheitsgrad 6 - Superfeiner Filter</h2>
+
+<p>Da man Pässe fälschen kann, wird der Eintrag über die Geburt aus dem Familienstammbuch des Geburtsortes angefordert und mit den Daten verglichen. Mit etwas Glück ist auch die Ausweisnummer im Familienstammbuch vermerkt oder angehängt.</p>
+
+<p>Stimmen die Daten überein, wird die letzte Stufe erreicht, der Reinraum.</p>
+
+<h2 id="Reinheitsgrad-7---Reinraum">Reinheitsgrad 7 - Reinraum</h2>
+
+<p>Die Personen-Daten gehören somit zu einer realen Person und sind verifiziert.</p>
+
+<h2 id="Notwendige-Reinheit">Notwendige Reinheit</h2>
+
+<p>Welcher Reinheitsgrad für welche Daten in welcher Situation erreicht werden muss, ist im einzelnen festzulegen:</p>
+
+<p>Da für Geburtstage der Reinheitsgrad 5 immer ohne großen Aufwand erreicht werden kann, sollte man ihn als Minimum vorschreiben.</p>
+
+<p>Für den Verkauf eines Hauses oder Grundstückes Reinheitsgrad 7 notwendig.</p>
+
+<p>Der Validator ist hier der Notar, der prüft, indem er Foto und Unterschrift des Ausweises mit dem Käufer/Verkäufer vergleicht und sich die Daten durch das Einwohnermeldeamt bestätigen lässt.</p>
+
+<h1 id="Dimension-G-ltigkeitsdauer">Dimension Gültigkeitsdauer</h1>
+
+<p>Die Gültigkeitsdauer einer Validierung bildet die 2. Dimension.</p>
+
+<p>Wie lange gilt ein Prüfungsergebnis? Ein Neuwagen hat 3 Jahre Zeit bis zur nächsten TÜV-Prüfung, danach wird auf 2 Jahre verkürzt. Busse werden jährlich TÜV-geprüft, bei Baukränen und Baggern ist mir die Situation nicht bekannt.</p>
+
+<p>Für Daten ist die Gültigkeitsdauer von Prüfungen optimalerweise als Ablauf-Datum oder auch -Zeit festgelegt.</p>
+
+<p>Zeiträume von Millisekunden in Echtzeitsystemen bis zu Jahrzehnten sind möglich.</p>
+
+<h2 id="G-ltigkeit-im-Millisekundenbereich:-ms">Gültigkeit im Millisekundenbereich: ms</h2>
+
+<p>In der Produktion werden viele Messdaten innerhalb von Millisekunden erfasst und verarbeitet. Hier gelten die speziellen Anforderungen für Echtzeit-Systeme der Branche, die je nach Anwendungsfall mehr oder weniger stark reguliert sind.</p>
+
+<h2 id="G-ltigkeit-im-Sekundenbereich:-s">Gültigkeit im Sekundenbereich: s</h2>
+
+<p>Im Basketball hat der Spieler nach der Freigabe durch den Schiedsrichter 5 Sekunden Zeit, einen Einwurf durchzuführen. Solange ist ein Einwurf gültig und das Spiel wird fortgesetzt.</p>
+
+<p>Nach Ablauf der Frist wird abgepfiffen und ein trotzdem erfolgter Einwurf wird ungültig. Das Spiel wird abgebrochen und die gegnerische Mannschaft erhält den nächsten Einwurf.</p>
+
+<h2 id="G-ltigkeit-im-Minutenbereich:-m">Gültigkeit im Minutenbereich: m</h2>
+
+<p>Eine Session im Internetportal meiner Bank läuft nach 15 Minuten ab, wenn keine Aktionen durchgeführt werden. Dann wird der Anwender automatisch ausgeloggt und muss sich neu anmelden.</p>
+
+<p>Mit jeder Anfrage an den Server wird die Frist zurückgesetzt und die 15 Minuten starten erneut.</p>
+
+<h2 id="G-ltigkeit-im-Stundenbereich:-h">Gültigkeit im Stundenbereich: h</h2>
+
+<p>Ein Einzelfahrschein im öffentlichen Nahverkehr hat eine nach Preisstufen festgelegte Gültigkeitsdauer von 0,5 bis 3 Stunden. Die Frist startet mit der Entwertung, die den Fahrschein mit der aktuellen Zeit stempelt. Durch Zeitvergleich kann der Schaffner, Fahrer oder Kontrolleur feststellen, ob der Fahrschein noch gültig ist oder nicht.</p>
+
+<h2 id="T-gliche-G-ltigkeit:-T">Tägliche Gültigkeit: T</h2>
+
+<p>Ein Tagesticket im öffentlichen Nahverkehr ist genau einen Tag gültig, plus ein paar weitere Stunden in der frühen Nacht.</p>
+
+<p>Für die Überprüfung wird die Uhrzeit noch benötigt, falls der nachfolgende Tag schon erreicht wurde.</p>
+
+<h2 id="W-chentliche-G-ltigkeit:-W">Wöchentliche Gültigkeit: W</h2>
+
+<p>Ein Wochenticket im öffentlichen Nahverkehr gilt genau für eine Kalenderwoche.</p>
+
+<p>Ab Wochenfrist reicht ein Kalender zur Prüfung aus, die Uhrzeit wird nicht mehr benötigt.</p>
+
+<h2 id="Monatliche-G-ltigkeit:-M">Monatliche Gültigkeit: M</h2>
+
+<p>Ein Monatsticket gilt für den aufgedruckten Kalendermonat + 1 Tag vom nächsten Monat.</p>
+
+<h2 id="J-hrliche-G-ltigkeit:-J">Jährliche Gültigkeit: J</h2>
+
+<p>Die Bahncard gilt ein Kalenderjahr.</p>
+
+<p>Die Autobahn-Plakette der Schweiz für z.B. 2013 gilt von Ende Dezember 2012 bis Januar 2014.</p>
+
+<h2 id="Mehrj-hrige-G-ltigkeit:-VJ">Mehrjährige Gültigkeit: VJ</h2>
+
+<p>Kreditkarten und Personalausweise/Pässe gelten für viele Jahre, enthalten aber ein genaues Ablaufdatum oder einen Ablaufmonat.</p>
+
+<h2 id="Lebenslange-G-ltigkeit">Lebenslange Gültigkeit</h2>
+
+<p>Führerscheine für PKWs und Motorräder gelten ein Leben lang. Ob das eine sinnvolle Dauer ist, wenn im Alter die Reaktionsfähigkeit und Fähigkeit, ein Fahrzeug zu führen, langsam schwindet? Doch wo soll man die Grenze ziehen?</p>
+
+<h2 id="Zusammenfassung-G-ltigkeitsdauer">Zusammenfassung Gültigkeitsdauer</h2>
+
+<p>Die Gültigkeitsdauer einer Validierung muss festgelegt werden. Das ist im Prinzip nicht schwer, aber es muss getan werden.</p>
+
+<p>Die Dauer der Gültigkeit wiederum kann auch durch den Zustand der Daten oder über andere Regeln beeinflusst werden: TÜV für Neuwagen erstmalig nach 3 Jahren, dann nach 2 Jahren.</p>
+
+<p>Aus der Gültigkeitsdauer sollten Ablauf-Zeit oder -Datum berechnet und in den Daten selbst gespeichert werden.</p>
+
+<p>Ist das Ablaufdatum überschritten, geht die Validierung in den Zustand &quot;ungeprüft&quot; über.</p>
+
+<p>Die Gültigkeit kann auch verlängert werden, wie im Beispiel des Online-Bankings. Dann wird einfach ein neues Ablaufdatum eingetragen.</p>
+
+<h1 id="Dimensionen-Datenmenge-und-Validierungsaufwand">Dimensionen Datenmenge und Validierungsaufwand</h1>
+
+<p>Die Datenmenge ist eine weitere wichtige Information für die Validierung, die gemeinsam mit dem Aufwand für eine einzelne Validierung die Zeitdauer für die Überprüfung des gesamten Systems bestimmt.</p>
+
+<p>Die Datenmenge sollte man grob abschätzen und in 1000er Schritten in Klassen einteilen:</p>
+
+<ul>
+
+<li><p>S (small - klein) weniger als 50</p>
+
+</li>
+<li><p>k (Kilo) um die 1.000</p>
+
+</li>
+<li><p>M (Mega) um die 1.000.000 (Million)</p>
+
+</li>
+<li><p>G (Giga) um die 1.000.000.000 (Milliarde)</p>
+
+</li>
+<li><p>T (Tera) um die 1.000.000.000.000 (Billion)</p>
+
+</li>
+</ul>
+
+<p>Giga und Tera sind zwar ungewöhnlich, aber nicht unmöglich.</p>
+
+<p>Der Validierungsaufwand für die Validierung eines einzelnen Datensatzes ist deutlich schwerer abzuschätzen und sollte sobald wie möglich durch Messungen überprüft werden.</p>
+
+<p>Die Werte müssen in neutrale Punkte umgerechnet werden, um die Aufwände unabhängig von der eingesetzten Technologie zu erfassen.</p>
+
+<ul>
+
+<li><p>Einfache Operationen (1 Punkt)</p>
+
+<p>Vergleiche von Text und Zahlen: Hat der PKW mehr als 140.000 km zurückgelegt?</p>
+
+</li>
+<li><p>Komplexere Operationen (25 Punkte)</p>
+
+<p>Vergleiche mittels <a href="#Regular-Expressions">&quot;Regular Expressions&quot;</a>: Überprüfung einer Email-Adresse auf korrekte Schreibweise.</p>
+
+</li>
+<li><p>Abgleich mit Listen und DB-Einträgen (20 - 500 Punkte)</p>
+
+<p>Wurde derselbe Datensatz bereits angelegt? Existiert für jedes Kind in der DB mindestens ein Elternteil?</p>
+
+</li>
+<li><p>Validierung durch externe Web-Services (100 - 1.000.000 Punkte)</p>
+
+<p>Ermittlung des Halters durch Toll-Collect für die Nachforderung einer nicht bezahlten LKW-Maut.</p>
+
+</li>
+<li><p>Validierung durch persönliche Überprüfung (1.000.000 und mehr Punkte)</p>
+
+<p>Notar, TÜV, Polizei</p>
+
+</li>
+</ul>
+
+<p>Die Punkte wurden von mir &quot;nach Gefühl&quot; vergeben. Durch Messungen und Erfahrung muss daraus eine sinnvolle Standard-Bewertung entwickelt werden.</p>
+
+<p>Der Validierungsaufwand einer Validierung berechnet sich damit aus der</p>
+
+<pre><code>   Anzahl der Daten * Punkte (Einzelaufwand der Validierung) </code></pre>
+
+<p>Summiert man die Aufwände für die verschiedenen Validierungen, erhält man eine Gesamtpunktzahl.</p>
+
+<p>Über die Performance des Gesamtsystems, d.h. wieviele Punkte können pro Tag abgearbeitet werden, ergibt sich die Dauer für eine vollständige Daten-Prüfung.</p>
+
+<p>Für große Datenmengen kann diese Dauer Monate oder Jahre erreichen.</p>
+
+<p>Durch ungünstige Abläufe und ungeschickte Programmierung kann man die Aufwände um Faktoren von 100 oder mehr erhöhen. Im Extremfall beschäftigt sich das System nur noch mit Prüfungen, die nie abgeschlossen werden können.</p>
+
+<p>Wie man die Aufwände für die Datenvalidierung minimiert, ist eines der zentralen Themen in Teil II und Teil III dieses Buches.</p>
+
+<h1 id="Dimension-Komplexit-t-der-Daten">Dimension Komplexität der Daten</h1>
+
+<p>Die Komplexität der Daten/Klassen bildet die letzte Dimension der Validierung.</p>
+
+<h2 id="Komplexit-t-0.-Einzelwert">Komplexität 0. Einzelwert</h2>
+
+<p>Ein einzelner Wert, z.B. eine Ja/Nein-Entscheidung, eine Zahl oder ein Name bilden die einfachste mögliche Datenstruktur.</p>
+
+<h2 id="Komplexit-t-1.-Komplexer-Wert">Komplexität 1. Komplexer Wert</h2>
+
+<p>Eine Uhrzeit, ein Datum, eine Ortsposition (Breiten- und Längengrad) bilden die nächsthöhere Stufe.</p>
+
+<h2 id="Komplexit-t-2.-Aufruf-Parameter">Komplexität 2. Aufruf-Parameter</h2>
+
+<p>Achtung Software-Technik!</p>
+
+<p>Die Aufruf-Parameter einer Funktion oder Methode setzen sich aus einer Liste von benannten oder nur numerierten Variablen von Typ 0, 1, 2 oder 3 zusammen. Sie werden hier aufgeführt, weil sie mit denselben Verfahren geprüft werden müssen wie die anderen mehr anwenderbezogenen Daten.</p>
+
+<h2 id="Komplexit-t-3.-Instanzdaten">Komplexität 3. Instanzdaten</h2>
+
+<p>Eine Ansammlung von benannten Daten des Typs 0 und 1 (einfache und komplexe Werte) bilden ein <a href="#Objekt">&quot;Objekt&quot;</a>, softwaretechnisch eine <a href="#Instanz">&quot;Instanz&quot;</a>.</p>
+
+<p>Eine Adresse setzt sich (in Deutschland) aus der Straße, der Hausnummer, der Postleitzahl und dem Ortsnamen zusammen.</p>
+
+<pre><code>  Hauptstr. 1
+  4630 Bochum 1</code></pre>
+
+<p>oder mit der neuen Postleitzahl</p>
+
+<pre><code>  Hauptstr. 1
+  44787 Bochum</code></pre>
+
+<p>Das ist der einfachste Fall. Es gibt Adressen ohne Straße, aber mit Hausnummern. Straßen ohne Hausnummern. Zusammengesetzte Ortsnamen und Gemeinde/Ort Kombinationen und vieles mehr.</p>
+
+<p>Ein Postleitzahl ist manchmal nicht bekannt und deswegen auch kein Pflichtfeld.</p>
+
+<p>Das einzige, was an einer Adresse sicher ist, ist dass die Postleitzahl oft nicht zur Kombination von Straße, Hausnummer und Ort passt.</p>
+
+<p>Insgesamt hat man jedenfalls 3 oder 4 einzelne Werte, je nachdem ob man Straße und Hausnummer zu einem komplexen Wert zusammenfasst oder nicht.</p>
+
+<h2 id="Komplexit-t-4.-Aggregatdaten">Komplexität 4. Aggregatdaten</h2>
+
+<p>Den Zusammenbau von mehreren Instanzen zu etwas Größerem nennt man Aggregat.</p>
+
+<p>Eine Person hat einen Vornamen, einen Nachnamen und ein Geburtsdatum. Dadurch würde für die Speicherung der Daten eine Instanz ausreichen, wenn sie nicht noch eine oder mehrere Adressen hätte:</p>
+
+<pre><code>  Peter Mustermann
+  geb. am 17.04.1983
+
+  Adresse:
+    Hauptstr. 1
+    44787 Bochum
+
+  Telefon:
+    0234/123456789-4711
+
+  Email: pm@myweb.de</code></pre>
+
+<h2 id="Komplexit-t-5.-Zusammengesetztes-Aggregat">Komplexität 5. Zusammengesetztes Aggregat</h2>
+
+<p>Im technischen Bereich ist der Motor eines Autos ein sehr komplexes Aggregat. Die Lichtmaschine (ein Stromgenerator) ist ein ein weniger komplexes Aggregat.</p>
+
+<p>Ein &quot;Zusammengesetztes Aggregat&quot; enthält nicht nur Instanzen, sondern andere Aggregate.</p>
+
+<p>Ein Auto enthält einen Motor zu dem eine Lichtmaschine gehört, die durch einen Riemen vom Motor angetrieben wird. Nur der Riemen ist kein Aggregat, sondern eine Instanz oder ein einzelner Wert, das hängt von der Modellierung ab.</p>
+
+<h2 id="Komplexit-t-6.-Service">Komplexität 6. Service</h2>
+
+<p>Mit den bisher vorgestellten Daten und den dazugehörigen Funktionen/Methoden kann man nun einen Service erstellen.</p>
+
+<p>Ab dieser Stufe gibt es keine reinen Daten-Objekte mehr, jetzt tritt die Funktionalität in den Vordergrund.</p>
+
+<p>Ein gut programmierter Service lässt sich zum Beispiel mit einem guten Restaurant vergleichen:</p>
+
+<p>Man meldet sich am Eingang, wird zu seinem reservierten Platz geführt und erhält sofort die Speisekarte und ein Begrüßungsgetränk.</p>
+
+<p>Der Ober hilft bei der Auswahl der Speisen und gibt Empfehlungen. Das Menü wird zügig und in hoher Qualität serviert.</p>
+
+<p>Nach dem Besuch des Restaurants ist man rundum zufrieden.</p>
+
+<p>Die Realität bezogen auf Software und Internet sieht oft anders aus. Aber einige arbeiten daran, den Standard eines guten Restaurants zu erreichen.</p>
+
+<h2 id="Komplexit-t-7.-Library">Komplexität 7. Library</h2>
+
+<h2 id="Komplexit-t-8.-Programm-APP">Komplexität 8. Programm/APP</h2>
+
+<h2 id="Komplexit-t-9.-SW-Produkt-Web-Portal">Komplexität 9. SW-Produkt / Web-Portal</h2>
+
+<h2 id="Komplexit-t-10.-Computer-Smartphone">Komplexität 10. Computer / Smartphone</h2>
+
+<h2 id="Komplexit-t-11.-Computernetzwerk">Komplexität 11. Computernetzwerk</h2>
+
+<h2 id="Komplexit-t-12.-World-Wide-Web">Komplexität 12. World-Wide-Web</h2>
+
+<h1 id="Dimension-Validierungsregeln">Dimension Validierungsregeln</h1>
+
+<h2 id="G-ltigkeit-von-Regeln">Gültigkeit von Regeln</h2>
+
+<h3 id="Zeitliche-G-ltigkeit-von-Regeln">Zeitliche Gültigkeit von Regeln</h3>
+
+<h3 id="Optionale-Regeln">Optionale Regeln</h3>
+
+<h3 id="Private-Regeln">Private Regeln</h3>
+
+<h2 id="nderung-von-Regeln">Änderung von Regeln</h2>
+
+<h3 id="nderung-der-Regelimplementierung">Änderung der Regelimplementierung</h3>
+
+<h3 id="nderung-der-Regeleltern">Änderung der Regeleltern</h3>
+
+<h3 id="nderung-der-G-ltigkeit">Änderung der Gültigkeit</h3>
+
+<h2 id="Release-von-Regeln">Release von Regeln</h2>
+
+<h1 id="Dimension-Priorit-t">Dimension Priorität</h1>
+
+<h2 id="Priorit-t-von-Regeln">Priorität von Regeln</h2>
+
+<h3 id="Regel-Priorit-t-nach-G-ltigkeitsdauer">Regel-Priorität nach Gültigkeitsdauer</h3>
+
+<h3 id="Regel-Priorit-t-nach-Versionssprung">Regel-Priorität nach Versionssprung</h3>
+
+<h3 id="manuelle-Regelpriorit-t">manuelle Regelpriorität</h3>
+
+<h2 id="Priorit-t-von-Daten">Priorität von Daten</h2>
+
+<h3 id="Daten-Priorit-t-nach-Ablaufdatum">Daten-Priorität nach Ablaufdatum</h3>
+
+<h3 id="Daten-Priorit-t-nach-Einstufung">Daten-Priorität nach Einstufung</h3>
+
+<p>*** Wichtigkeit der Daten-Klasse</p>
+
+<h3 id="Manuelle-Daten-Priorit-t">Manuelle Daten-Priorität</h3>
+
+<p>*** Wichtigkeit einzelner Datensätze</p>
+
+<h1 id="Dimension-Ergebnisse">Dimension Ergebnisse</h1>
+
+<h2 id="Ergebnis-Verarbeitung">Ergebnis Verarbeitung</h2>
+
+<h3 id="Ergebnisse-speichern">Ergebnisse speichern</h3>
+
+<h3 id="Ergebnisse-verdichten">Ergebnisse verdichten</h3>
+
+<h3 id="Ergebnisse-analysieren">Ergebnisse analysieren</h3>
+
+<h3 id="Ergebnisse-pr-sentieren">Ergebnisse präsentieren</h3>
+
+<h2 id="Ergebnis-Zuordnung">Ergebnis-Zuordnung</h2>
+
+<h3 id="Ergebnisse-f-r-Administratoren">Ergebnisse für Administratoren</h3>
+
+<h3 id="Ergebnisse-f-r-Entwickler">Ergebnisse für Entwickler</h3>
+
+<h3 id="Ergebnisse-f-r-Tester">Ergebnisse für Tester</h3>
+
+<h3 id="Ergebnisse-f-r-Support">Ergebnisse für Support</h3>
+
+<h3 id="Ergebnisse-f-r-externe-Pr-fer">Ergebnisse für externe Prüfer</h3>
+
+<h3 id="Ergebnisse-f-r-Anwender">Ergebnisse für Anwender</h3>
+
+<h4 id="Ergebnisse-f-r-Shop-Betreiber">Ergebnisse für Shop-Betreiber</h4>
+
+<h4 id="Ergebnisse-f-r-Shop-Kunden">Ergebnisse für Shop-Kunden</h4>
+
+<h1 id="Teil-II:-Anforderungen-an-die-Software">Teil II: Anforderungen an die Software</h1>
+
+<p>==part Teil II: Anforderungen an die Software =====================================================</p>
+
+<h1 id="Neues-Kapitel">&lt;Neues Kapitel&gt;</h1>
+
+<h2 id="Neues-Unterkapitel">&lt;Neues Unterkapitel&gt;</h2>
+
+<h3 id="pod">....</h3>
+
+<h1 id="Datenw-sche">Datenwäsche</h1>
+
+<p>Mit der &quot;Datenwäsche&quot; oder auch Datenfilterung werden die Daten schrittweise für die weitere Verarbeitung vorbereitet, bis der gewünschte <a href="#Dimension-Reinheitsgrad">Reinheitsgrad</a> erreicht ist.</p>
+
+<h2 id="Validierung-von-Rohdaten">Validierung von Rohdaten</h2>
+
+<p>Bei Dateien und größeren Datenmengen ist immer ein Virencheck durchzuführen.</p>
+
+<p>Für den Virencheck kann man auf viele Produkte zurückgreifen.</p>
+
+<p>Bei kleineren Daten, z.B. einem - vermeintlichen - Datumstext sollte eine Prüfung auf binärer Ebene auf unerlaubte Zeichen durchgeführt werden. Dabei sollten unbedingt nur bekannte Zeichen erlaubt werden (White-List). Angreifer sind sehr kreativ in der Codierung von Zeichen.</p>
+
+<p>Schlägt die Prüfung fehl, müssen die Daten in eine Quarantäne-Station, wo sie gefahrlos weiter untersucht werden können. Sie dürfen <b>auf keinen Fall weiter verarbeitet</b> werden.</p>
+
+<p>Beispiel Datum:</p>
+
+<p>1. Prüfung: Enthält das Datum unerlaubte Byte-Kombinationen?</p>
+
+<p>2. Umwandlung in Text. Traten dabei Fehler auf?</p>
+
+<p>3. Prüfung auf allgemein unerlaubte Zeichen, z.B. &#39;</p>
+
+<h1 id="Teil-III:-Beispielhafte-Umsetzung">Teil III: Beispielhafte Umsetzung</h1>
+
+<p>==part Teil III: Beispielhafte Umsetzung ===============================================================</p>
+
+<h1 id="Problemfall-Entsch-rfung">Problemfall Entschärfung</h1>
+
+<h2 id="Teurer-Einkaufswagen">Teurer Einkaufswagen</h2>
+
+<dl>
+
+<dt id="Problem"><b>Problem:</b></dt>
+<dd>
+
+<p>Ein Teurer Einkaufswagen in einem Online-Shop kostet immer über 5 Mio Euro, auch ein leerer</p>
+
+</dd>
+</dl>
+
+<p>Ein kleiner Programmierfehler mit schwerwiegenden Folgen.</p>
+
+<p>Viele Programmiersprachen führen Typ-Konvertierungen durch, wenn das Argument einer Funktion nicht passt. Das ist nicht immer vorteilhaft.</p>
+
+<p>Übergibt man einer Funktion in Perl beispielsweise statt einer Liste von Preisen die Referenz (Zeiger) auf diese Liste, gibt Perl keinen Fehler aus. Die Adresse der Referenz im Hauptspeicher ist ja eine Zahl, und die kann zur Summe der Preise addiert werden.</p>
+
+<p>Damit ergibt sich - auf meinem PC - eine Summe von mehr als 5 Mio. Euro. In anderen Fällen kann der Wert noch deutlich höher liegen.</p>
+
+<p>Solange dieser Fehler nicht behoben ist, kann keine Bestellung mehr korrekt durchgeführt werden. Mit der Folge, dass solange nichts verkauft werden kann.</p>
+
+<p>Ist die Bestellung schon bestätigt, muss sie storniert werden, was wahrscheinlich aufwendig und schwierig ist, vor allem, wenn solche Fehler nicht bedacht wurden.</p>
+
+<p>Das Problem wird durch Datenvalidierung auf verschiedenen Ebenen vermieden bzw. gelöst.</p>
+
+<dl>
+
+<dt id="Notaus">1. <b>Notaus</b></dt>
+<dd>
+
+<p>Als Notaus-Funktion muss jede Rechnung <b>vor</b> der Buchung überprüft werden. In diesem Fall hätte eine Regel, die alle Einkäufe mit negativem Geldbetrag oder einem hohen Geldbetrag - z.B. &gt; 1000 EUR - abweist, das Schlimmste verhindert.</p>
+
+<p>Der Anwender hätte diese Rechnung nie gesehen und der Einkauf wäre mit dem Hinweis auf einen internen Software-Fehler oder Ähnlichem gestoppt worden.</p>
+
+<p>Diesen Fehler hätte man überlicherweise spätestens beim Systemtest finden sollen. Falls nicht, verhindert die Notabschaltung Schlimmeres.</p>
+
+</dd>
+<dt id="Parameter-Pr-fung">2. <b>Parameter-Prüfung</b></dt>
+<dd>
+
+<p>Den eigentlichen Fehler, den falsch übergebenen Parameter der Summen-Funktion, hätte eine Parameter-Prüfung sofort gefunden, nämlich beim ersten Durchlauf durch die fehlerhafte Code-Stelle.</p>
+
+<p>In der Perl-Funktion <a href="#Perl-SubCalls-Funktionen-Methoden">mein_addierer()</a> aus der <a href="#Kleine-Einf-hrung-in-Perl">kleinen Einführung in Perl</a> steckt dieser Fehler, der nicht so leicht zu sehen ist:</p>
+
+<pre><code>  sub mein_addierer {
+      # Keine Argument-Liste!!
+      my $sum = 0;
+
+      while ($zahl = shift) {  # bricht ab, falls $zahl == 0, &#39;&#39; oder nicht definiert
+          $sum += $zahl;       # Wandelt alle Argumente irgendwie in Zahlen um
+      }
+
+      return $sum;
+  }</code></pre>
+
+<p>Mit dem Aufruf</p>
+
+<pre><code>  my $rechnung = [ 1, 2 , 3, 4];
+  my $sum = mein_addierer($rechnung);</code></pre>
+
+<p>erhält man als Preis immer eine mindestens 7-stellige Summe im Millionenbereich.</p>
+
+<p>Die Koorektur mittels Scalar::Validation ist denkbar einfach, die Bildung der Summe erhält eine Validierung durch:</p>
+
+<pre><code>  #           Name      Regel         Wert
+  $sum += par Betrag =&gt; GeldBetrag =&gt; $zahl;</code></pre>
+
+<p>Jetzt muss noch die Regel &quot;GeldBetrag&quot; definiert werden, z.B. als</p>
+
+<pre><code>  -100 &lt;= geld_betrag &lt;= 1000</code></pre>
+
+<p>mit Scalar::Validation durch:</p>
+
+<pre><code>  name_rule (GeldBetrag =&gt; -Range =&gt; [-100.00, 1000.00] =&gt; Float);</code></pre>
+
+<p>GeldBetrag kann und muss ab jetzt überall als Validierungsregel eingesetzt werden, wo mit Geldbeträgen gearbeitet wird.</p>
+
+<p>Eine durch Validierung abgesicherte Version der Funktion sieht dann folgendermaßen aus:</p>
+
+<pre><code>  sub sicherer_addierer {
+      my $sum = 0;
+
+      while (defined $zahl = shift) {
+          $sum += par Betrag =&gt; GeldBetrag =&gt; $zahl;
+      }
+
+      return $sum;
+  }
+
+  my $rechnung = [ 1, 2 , 3, 4];
+  my $sum      = validate (&quot;Ihre Rechnungssumme&quot; =&gt;
+                           RechnungsSumme        =&gt;
+                           mein_addierer($rechnung)
+  );</code></pre>
+
+<p>mit der neuen Regel RechnungsSumme:</p>
+
+<pre><code>  name_rule (RechnungsSumme =&gt; -Range =&gt; [1.00, 5000.00] =&gt; Float);</code></pre>
+
+<p>Rechnungen für weniger als 1 Euro werden damit nicht automatisch herausgegeben.</p>
+
+</dd>
+</dl>
+
+<h2 id="Eingedoste-Bluetooth-Autoschl-ssel">Eingedoste Bluetooth Autoschlüssel</h2>
+
+<dl>
+
+<dt id="Problem1"><b>Problem:</b></dt>
+<dd>
+
+<p>Eine neue Generation von Bluetooth-Autoschlüsseln muss in einer Keksdose aus Metall aufbewahrt werden</p>
+
+</dd>
+</dl>
+
+<p>Es ist schon praktisch, wenn sich das Auto automatisch aufschließt, sobald man näher als 10m an das Fahrzeug herantritt.</p>
+
+<p>So weit die Idee: Ist der Schlüssel nah am Auto, dann wird aufgeschlossen und der Motor kann gestartet werden.</p>
+
+<p>Leider liegt der Schlüssel nach der Ablage in der Wohnung auch nah genug an der Außentür, um das Signal über Kabel oder Funktechnik zum Auto weiterzutransportieren.</p>
+
+<p>Der Dieb muss nur noch einsteigen und abfahren.</p>
+
+<dl>
+
+<dt id="Analyse"><b>Analyse</b></dt>
+<dd>
+
+<p>Hier liegt ein schwerer Login-Validierungsfehler vor. Man hat schlicht die Repeater-Funktion des Bluetooth-Standards übersehen, die es ermöglicht, das Signal des Schlüssels über Kabel oder Funk beliebig weiter zu übertragen. Damit ist es unerheblich, ob sich der Schlüssel in der verschlossenen Wohnung, auf der Straße oder im Auto selbst befindet, da man ja den Knopf zum Öffnen der Tür nicht mehr drücken muss.</p>
+
+<p>Die zum Diebstahl notwendige Ausrüstung kann man in jedem Elektronik-/IT-Einzelhandel erwerben.</p>
+
+<p>Die Idee eines Schlüssels ist ja, dass nur Besitz des Schlüssels die Türöffnung ermöglicht. Die aktuelle Funktechnik ist auch nicht sehr sicher, aber wenigstens muss man einen Knopf auf dem Schlüssel zur Türöffnung betätigen, was den physikalischen Besitz des Schlüssels unbedingt erfordert.</p>
+
+</dd>
+</dl>
+
+<p>Im Internet konnte ich keine offizielle Stellungnahme oder gar Warnungen und Handlungshinweise zu diesem Problem finden. Man will seine Kunden ja nicht irritieren.</p>
+
+<p>Für den Besitzer des Autos wird es sehr schwer werden, einen Diebstahl nachzuweisen, da das Fahrzeug ja in keiner Weise manipuliert oder beschädigt wird.</p>
+
+<p>Meine Kollegen haben bei Gigaset Messungen für DECT Telefone durchgeführt, deren Sendeleistung bei 100m liegt. Für sie reicht die Keksdose aus Metall nicht, man muss den Deckel mit einer Schraube je Randzentimeter festschrauben, damit das Signal in der Dose bleibt. Da Bluetooth nur eine Reichweite von 10m hat, könnte die Keksdose auch ohne Verschraubung ausreichen.</p>
+
+<p>Um zu testen, ob der Schutz durch die Dose ausreichend ist, kann man sich mit dem Autoschlüssel in der fest verschlossenen Dose seinem Fahrzeug nähern. Das Fahrzeug muss verschlossen bleiben.</p>
+
+<p>Ein ähnliches Problem bildet das Login durch Fingerabdruck: Es ist sehr leicht, sich die Fingerabdrücke einer Person zu beschaffen und damit Türen zu öffnen.</p>
+
+<p>Smartphones als Türöffner bilden die allerhöchste Risikogruppe. Hier kann man bequem aus dem Ausland in die Geräte eindringen, den elektronischen Schlüssel und die dazugehörige Adresse kopieren und warten, bis der Besitzer im Urlaub ist, worüber man ja über das Handy informiert wird.</p>
+
+<p>Ich habe an meiner Tür ein altmodisches, rein mechanisches Schloss von hoher Qualität, in das man einen Schlüssel stecken und ihn von Hand drehen muss.</p>
+
+<p>Für die Öffnung dieses Schlosses benötigt auch ein erfahrener Schlüsseldienst ohne den passenden Schlüssel Stunden.</p>
+
+<h2 id="Kreditkartenbetrug">Kreditkartenbetrug</h2>
+
+<dl>
+
+<dt id="Problem2"><b>Problem:</b></dt>
+<dd>
+
+<p>Hacker kaufen mit erfundenen oder gestohlenen Kreditkarten im großen Stil in Online-Shops ein, Besitzer der Karten müssen sich gegen Abbuchungen/Rechnungen wehren.</p>
+
+</dd>
+</dl>
+
+<p>Die Überprüfung von Kreditkarten stellt besondere Herausforderungen an die Validierung. Wer da Fehler macht, zahlt unter Umständen einen hohen Preis. Kreditkarten sind nämlich nicht für die Verwendung im Internet entworfen worden.</p>
+
+<p>Der Besitzer der Karte kann mit Geheimzahl oder Unterschrift vor Ort im Geschäft einkaufen. Das ist einigermaßen sicher, weil er die Karte vorzeigen muss und der Verkäufer die Karte auf Echtheit prüfen kann, persönlich oder im Kartenleser.</p>
+
+<dl>
+
+<dt id="Analyse1"><b>Analyse:</b></dt>
+<dd>
+
+<p>Nicht so im Internet: Hier genügen die Daten, die Karte wird nicht benötigt. Da jeder Online-Shop alle für die Abrechnung mit dem Kreditinstitut notwendigen Daten vom Anwender einfordert, hat er einen kompletten Datensatz. Wenn nur einige diesen weiterverkaufen, haben Kreditkartenbetrüger leichtes Spiel und die Kartenbesitzer und Online-Shops das Nachsehen.</p>
+
+<p>Es handelt sich um ein ähnliches Problem wie die eingedosten Autoschlüssel. Der Schlüssel - die Kreditkarte - wird im Prozess nicht mehr benötigt: Jeder kann auf Ihr Kreditkonto zugreifen!</p>
+
+</dd>
+</dl>
+
+<p>Fragen Sie die Experten, ob die automatische Prüfung einer Kreditkarte online möglich ist. Ich konnte dazu keine Informationen im Internet finden.</p>
+
+<p>Dabei wäre die Lösung ein Chip in der Karte, der einen privaten PGP-Key enthält und Daten über ein USB-Gerät der Bank verschlüsseln kann:</p>
+
+<p>Der Web-Shop übermittelt die Daten des Einkaufs, die Karte verschlüsselt, und mit den verschlüsselten Daten wird die Abrechnung beim Kreditinstitut durchgeführt. Aber solange Kreditkartenbesitzer und Online-Shops das Risiko tragen, haben die Banken natürlich kein Interesse, eine solche Lösung zu unterstützen, da der Aufwand nicht unerheblich ist.</p>
+
+<p>Die Technik dazu gibt es schon mindestens 10 Jahre.</p>
+
+<h3 id="Kreditkartenpr-fung">Kreditkartenprüfung</h3>
+
+<p>Was kann man aktuell unternehmen?</p>
+
+<dl>
+
+<dt id="Einzelwertpr-fung">1. Einzelwertprüfung</dt>
+<dd>
+
+<p>Alle Daten einfordern und Syntax prüfen.</p>
+
+</dd>
+<dt id="Pr-fziffern-bestimmen">2. Prüfziffern bestimmen</dt>
+<dd>
+
+<p>Leider hat jedes Institut seine eigenen Verfahren für die Bestimmung der Prüfziffern.</p>
+
+</dd>
+</dl>
+
+<p>Werden die Tests bestanden, hat man leider noch nicht viel erreicht.</p>
+
+<dl>
+
+<dt id="Nachpr-fung">3. Nachprüfung</dt>
+<dd>
+
+<p>Ob das Konto gedeckt, die Karte nicht gesperrt und der Einkäufer sie überhaupt besitzt, ist schwer festzustellen.</p>
+
+</dd>
+</dl>
+
+<p>Fragen Sie Experten, wie Sie weiter vorgehen können und wägen Sie die kaufmännischen Risiken ab.</p>
+
+<h2 id="Webserver-Ausfall">Webserver Ausfall</h2>
+
+<dl>
+
+<dt id="Problem3"><b>Problem:</b></dt>
+<dd>
+
+<p>Die Webserver von Internet-Portalen fallen immer wieder aus</p>
+
+</dd>
+</dl>
+
+<p>Es gibt viele Möglichkeiten, Attacken auf Webserver durchzuführen. Durch den Einsatz mehrerer Webserver, wie in <a href="#Das-Wichtigste-zu-Login-Verfahren">&quot;Das Wichtigste zu Login-Verfahren&quot;</a>, &quot;Sicherheitsschleusen&quot; beschrieben, wird das System sicherer.</p>
+
+<p>Ein zweiter Punkt ist die sichere Validierung der Parameter, die vom Web-Browser über das Internet auf den Web-Server übertragen werden.</p>
+
+<p>Der dritte Punkt betrifft Uploads. Sie sollten ab einer individuell festgelegten Größe abgebrochen werden. Erfolgreiche Uploads müssen in die Quarantäne und dürfen erst nach erfolgreichem Virencheck weiter verarbeitet werden. Nun müssen noch die ersten 1000 Bytes untersucht werden, um den Dateityp zweifelsfrei festzustellen.</p>
+
+<p>Führt man jetzt noch ein sicheres Login-Verfahren und Firewalls ein, hat man schon mehr getan als die meisten Web-Portale.</p>
+
+<p>Diese Punkte kann man auch noch nachträglich mit geringem Mehraufwand angehen.</p>
+
+<p>Webserver können aber auch &quot;von innen&quot; gestört werden. Siehe nächstes Unterkapitel.</p>
+
+<h2 id="Gescheitertes-Software-Projekt-durch-Schmutzige-Daten">Gescheitertes Software Projekt durch Schmutzige Daten</h2>
+
+<dl>
+
+<dt id="Problem4"><b>Problem:</b></dt>
+<dd>
+
+<p>&quot;Schmutzige Daten&quot; verhindern die Fertigstellung eines Software-Produkts</p>
+
+</dd>
+</dl>
+
+<p>Große Schwierigkeiten entstehen immer wieder durch nicht robuste Software und vor allem bei der Verwendung von nicht validierten Daten im Zusammenspiel mit nicht robuster Software.</p>
+
+<p>Man kann nur schwer Software nachträglich stabilisieren oder eine durchgängige Validierung einführen, weil dafür oft eine Änderung der Software-Architektur erforderlich ist.</p>
+
+<p>Oft werden aus Zeitdruck nur wenige Datenprüfungen implementiert und - noch gefährlicher - es existiert auch kein Konzept für die Validierung. Solange der User - und die Software - keine Fehler machen, ist alles gut. Aber die Fehler werden kommen und oft erst viel zu spät entdeckt.</p>
+
+<p>Jetzt muss man nicht nur die Fehler in der Software beheben und Prüfungen einfügen, sondern auch noch bei den Kunden die Daten reparieren. Das hat schon manche Software-Schmiede nicht überlebt.</p>
+
+<p>Mit einem schlüssigen Validierungskonzept werden Sie nicht in diese Falle laufen.</p>
+
+<h2 id="Bestechung-in-Indien">Bestechung in Indien</h2>
+
+<dl>
+
+<dt id="Problem5"><b>Problem:</b></dt>
+<dd>
+
+<p>In Indien leben viele Verstorbene noch ein langes Leben</p>
+
+</dd>
+</dl>
+
+<p>In Indien werden durch Bestechung von Beamten immer wieder Lebende für tot erklärt, um z.B. Grundstücke vorzeitig zu erben und verkaufen zu können. Die Betroffenen geraten in große Schwierigkeiten.</p>
+
+<p>In Indien hat dieser Punkt wenig mit Software-Entwicklung, aber viel mit Daten-Validierung zu tun und der Frage, wer überhaupt Daten verändern darf.</p>
+
+<p>In der westlichen Welt und überall, wo auch bei den Behörden immer mehr digitalisiert wird, betreffen diese Fragen auch die Software. Ein duales System, das bei wichtigen Dokumenten ein physikalisches Original vorschreibt, erhöht die Sicherheit enorm.</p>
+
+<p>Identitätsdiebstahl oder gar Identitätsvernichtung bilden immer wieder das zentrale Thema in Büchern oder Filmen.</p>
+
+<h1 id="F-r-alle-Pr-fungen">Für alle Prüfungen</h1>
+
+<p>Ich empfehle, für die Regeln zuerst die Tests zu schreiben und mit einer leeren Prüfung oder einer ersten einfachen Implementierung zu starten.</p>
+
+<p>Es ist sehr wichtig, die einzelnen Ebenen der Prüfungen (Einzel-Wert, Objekt, Aggregate, ...) nicht miteinander zu vermischen sondern ganz klar zu trennen.</p>
+
+<p>Ebenso dürfen während der Prüfung die zu prüfenden Daten nicht gelesen oder gespeichert oder verändert werden. Der Validator muss <b>vor</b> der Prüfung mit allen notwendigen Daten versorgt werden.</p>
+
+<p>Es gibt nur eine Ausnahme: Default-Werte. Sie dürfen beim Aufruf mit übergeben werden. Sie sollten ebenfalls validiert werden. Die Zeiteinsparung ist minimal aber das Risiko erheblich, wenn sie nicht geprüft werden.</p>
+
+<h2 id="Gute-Unit-Tests">Gute Unit-Tests</h2>
+
+<p>Die wichtigste Eigenschaft eines Validierungsframeworks ist die Unterstützung von Unit-Tests. Ohne Unit-Tests erreichen die Prüfungen nicht die volle Qualität und sind als unsicher einzustufen. Jede kleine Änderung in der Implementierung der Regel müsste ja noch durch Tests überprüft werden. Der damit verbundene hohe Aufwand wird bei &quot;kleinen, ungefährlichen Änderungen&quot; oft vermieden.</p>
+
+<p>Aber woher weiß man, dass eine Änderung klein und ungefährlich ist?</p>
+
+<p>Ich habe die Erfahrung gemacht, dass kleine Änderungen oft unerwartete große Wirkungen haben. Durch einen guten Unit-Test werden diese sofort entdeckt:</p>
+
+<pre><code>  Ändern =&gt; speichern =&gt; Unit-testen =&gt; Differenz =&gt; Aha-Effekt.</code></pre>
+
+<p>Und das alles in weniger als 10 Sekunden.</p>
+
+<h1 id="Einzelwert-Validierung">Einzelwert-Validierung</h1>
+
+<p>Das Prüfen von einzelnen Werten scheint die einfachste Aufgabe zu sein, aber das täuscht. Hier gibt es viele Frameworks, die mehr oder weniger gut unterstützen.</p>
+
+<h2 id="Eltern-Pr-fungen">Eltern-Prüfungen</h2>
+
+<p>Wichtig ist hier besonders, dass man für Prüfungen &quot;Eltern-Prüfungen&quot; festlegen kann, die ein positives Ergebnis liefern müssen, bevor die eigentliche Prüfung beginnt. Das sollte/muss mit einem Validierungsframework möglich sein.</p>
+
+<p>Beispiel:</p>
+
+<pre><code>  EinzelWert   =&gt; Numerisch  =&gt; GanzeZahl =&gt; GanzeZahlGroesserNull</code></pre>
+
+<p>dabei sind die linken Einträge die Eltern der rechten:</p>
+
+<pre><code>  Urgroßeltern =&gt; Großeltern =&gt; Eltern    =&gt; Kind</code></pre>
+
+<p>und die Regeln werden von Eltern zu Kindern spezifischer. Wenn der Wert <b>nicht numerisch</b> ist, also <b>keine Zahl ist</b>, kann er <b>auch keine ganze Zahl</b> sein.</p>
+
+<p>Schlägt eine Prüfung fehl, ist die weitere Prüfung beendet. Das ist sehr wichtig, denn manche Scriptsprachen versuchen eine Umwandlung in passende Typen, die manchmal zu grotesken Fehlern führt, siehe <a href="#Teurer-Einkaufswagen">&quot;Teurer Einkaufswagen&quot;</a>.</p>
+
+<p><b>Einzelwert:</b></p>
+
+<p>Es wird zuerst geprüft, ob der Prüfling ein einzelner Wert ist. In Scriptsprachen kann auch schnell mal eine ganze Liste, ein Zeiger oder irgendetwas anderes an den Validierer übergeben werden, siehe wiederum <a href="#Teurer-Einkaufswagen">&quot;Teurer Einkaufswagen&quot;</a>.</p>
+
+<p>Falls ja, wird anschließend geprüft, ob es ein &quot;Numerischer&quot; Wert ist.</p>
+
+<p>Falls ja, ob es eine &quot;Ganze Zahl&quot; ist.</p>
+
+<p>Falls ja, ob &quot;Zahl &gt; 0&quot; gilt.</p>
+
+<p>Ab der fehlgeschlagenen Regel sollten auch die noch ungeprüften Kind-Regeln erwähnt werden, z.B.:</p>
+
+<pre><code>  Fehler bei der Prüfung von &quot;Postleitzahl&quot;: &#39;a&#39; ist keine Ziffer.
+    Postleitzahlen bestehen aus genau 5 Ziffern.
+  
+  Fehler bei der Prüfung von &quot;Postleitzahl&quot;: Ein &#39;ARRAY_REF&#39; ist kein einzelner Wert
+    und damit auch keine Ziffer.
+    Postleitzahlen bestehen aus genau 5 Ziffern.</code></pre>
+
+<h2 id="Regeln-mit-Parametern">Regeln mit Parametern</h2>
+
+<p>Es sollte möglich sein, Regeln mit Parametern auszustatten, z.B. für Vergleiche oder Intervallprüfungen. So genügt eine einzige Implementierung für Intervall-Prüfungen, die dann nur noch entsprechend eingestellt werden muss.</p>
+
+<p>Perl gestattet eine besonders lesbare Variante, da die Klammern für die Parameter-Liste denen der Standard-Schreibweise für Intervalle entsprechen:</p>
+
+<pre><code>  my $in_intervall =&gt; validate (IntervallWert =&gt; Intervall =&gt; [0, 10] =&gt; shift);</code></pre>
+
+<h2 id="Aufbau-von-Unit-Tests">Aufbau von Unit-Tests</h2>
+
+<p>Man sollte jeder Regel eine eigene Test-Klasse oder Test-Gruppe gönnen.</p>
+
+<h3 id="Dummy-Regeln-anlegen">Dummy-Regeln anlegen</h3>
+
+<p>Zuerst legt man eine Regel an, die alles enthält, die Prüfung ausgenommen.</p>
+
+<p>Für den Start fügt man dann eine leere Prüfung ein, einen sogenannten &quot;Dummy&quot;, d.h. das Ergebnis der Prüfung ist immer positiv (true).</p>
+
+<h3 id="Unit-Tests-implementieren">Unit Tests implementieren</h3>
+
+<p>Hier ein Beispiel mit den genial einfachen Standard-Perl Tests aus Test::More .</p>
+
+<pre><code>    is(validate (Minimum =&gt; BestellmengeTischtennisbaelle =&gt; 50),
+       50,
+       &quot;  Test Minimale Bestellmenge:   50&quot;
+      );
+    
+    is(validate (BestellMenge =&gt; BestellmengeTischtennisbaelle =&gt; 798),
+       798,
+       &quot;  Test Mittlere Bestellmenge:  798&quot;
+       );</code></pre>
+
+<p>Mit is_valid() kann überprüft werden, ob eine Regel gültig ist, ohne den weiteren Programmablauf zu beenden und ohne eine Meldung auszugeben. Damit kann man sehr leicht überprüfen, ob eine Regel gültig ist oder nicht:</p>
+
+<p>Eine gültige Regel:</p>
+
+<pre><code>    ok(  is_valid (Maximum =&gt; BestellmengeTischtennisbaelle =&gt; 2000),
+       &quot;  Test Maximale Bestellmenge: 2000&quot;
+      );</code></pre>
+
+<p>Eine ungültige Regel:</p>
+
+<pre><code>    ok( !is_valid (zuGross =&gt; BestellmengeTischtennisbaelle =&gt; 2001),
+       &quot;! Test zu große Bestellmenge: 2001&quot;
+      );</code></pre>
+
+<p>Als Ausgabe eines Test-Laufs erhält man:</p>
+
+<pre><code>  ok 1 -   Test Minimale Bestellmenge:   50
+  ok 2 -   Test Maximale Bestellmenge: 2000
+  ok 3 -   Test Mittlere Bestellmenge:  798
+  not ok 4 - ! Test zu große Bestellmenge: 2001</code></pre>
+
+<p>Mit Ausrufezeichen &quot;!&quot; markiert man Regeln, von denen erwartet wurde, dass sie fehlschlagen. Dadurch sind Fehler im Testaufbau leichter zu sehen.</p>
+
+<p>Der 4. Test schlägt fehl (not ok), da die Validierung durch die Dummy-Regel ja immer &quot;true&quot; liefert.</p>
+
+<h3 id="Validation-Regel-implementieren">Validation Regel implementieren</h3>
+
+<p>Jetzt wird die eigentliche Regel Schritt für Schritt implementiert und nach jeder Änderung werden die Tests angeworfen.</p>
+
+<p>Zum Abschluss sollten alle Tests erfolgreich durchgeführt werden.</p>
+
+<p>Das reine TDD behauptet jetzt, dass die Implementierung fertig ist, aber leider gilt das nur, falls die <i>Testüberdeckung bezogen auf die Aufgabenstellung</i> vollständig ist. Eine vollständige Testüberdeckung garantiert, dass jeder Programmierfehler durch mindestens einen Test gefunden wird, weil kein Test fehlt.</p>
+
+<p>Das ist eine schöne Idee, in der Praxis aber wenig hilfreich. In sehr einfachen Fällen ist es noch möglich, die Testüberdeckung zu überprüfen, in komplerexen sehr aufwändig bis unmöglich.</p>
+
+<p>Daher startet man üblicherweise mit einigen Tests, implementiert etwas, und dann erweitert man schrittweise Tests und Software. Die Kunst besteht darin, mit möglichst wenigen Tests möglich viel abzudecken und dabei nichts wesentliches zu vergessen. Dazu benötigt man viel Erfahrung und eine spezielle Ausbildung.</p>
+
+<p>Zum Schluss sollte man noch ermitteln, ob die <i>Testüberdeckung bezogen auf die Software</i> vollständig ist. Dafür gibt es Tools, die die <i>Pfadüberdeckung</i> der SW-Tests messen, d.h. es wird ermittelt, ob jeder IF-THEN-ELSE Zweig der Produkt-Software und jede Schleife mindestens einmal durchlaufen wurde.</p>
+
+<p><b>Um noch mehr Arbeit zu sparen, schlage ich folgendes Vorgehen vor:</b></p>
+
+<p>Für den reinen Gültigkeitstest genügt es, zwei Listen aufzustellen, eine mit Werten, die die Regel erfüllen und eine mit Werten, die abgewiesen werden sollen.</p>
+
+<p>Diese beiden Listen können dann mit nur zwei Prüfungen validiert werden. Für jede Meldung sollte dann noch ein weiterer Test geschrieben werden, um den Inhalt und den korrekten Aufbau zu überprüfen.</p>
+
+<p>Gültige Werte prüfen:</p>
+
+<pre><code>    foreach my $wert (qw(   50   51   62  73  84  95 
+                           100  210  321 654 987
+                          1234 1999 2000
+                     )) {
+        ok(is_valid (gueltig =&gt; BestellmengeTischtennisbaelle =&gt; $wert),
+           &quot;Test gültige Bestellmenge: $wert&quot;
+        );
+    }</code></pre>
+
+<p>Ungültige Werte prüfen:</p>
+
+<pre><code>    foreach my $wert (qw(-12340 -2000 -1999 -987  -654    -321  -31 
+                             -1     0     1   49 
+                           2001  2002  3456 7890 12340 99999999999999999
+                         abcdef 2.32   .23  1e4  1.1e3 ABABJKHJREUBFKJHKHJ
+                         *+.;&lt;&gt;?
+                     )) {
+        ok( ! is_valid (ungueltig =&gt; BestellmengeTischtennisbaelle =&gt; $wert),
+           &quot;Test ungültige Bestellmenge: $wert&quot;
+          );
+    }</code></pre>
+
+<h3 id="pod1">....</h3>
+
+<h1 id="Neues-Kapitel1">&lt;Neues Kapitel&gt;</h1>
+
+<h1 id="Teil-V:-Abschluss-und-Anh-nge">Teil V: Abschluss und Anhänge</h1>
+
+<p>==part Teil V: Abschluss und Anhänge ==========================================================</p>
+
+<h1 id="Verwandte-Themen">Verwandte Themen</h1>
+
+<h3 id="Das-Wichtigste-zu-Login-Verfahren">Das Wichtigste zu Login-Verfahren</h3>
+
+<p>Wie bereits in der Einleitung erwähnt:</p>
+
+<p>Login-Verfahren validieren/verifizieren den Anwender, der sich am System anmeldet. Das ist ebenfalls eine Art von Datenvalidierung, noch dazu eine äußerst kritische. Die Problematik ist fachlich ausführlich beschrieben. Erstaunlicherweise wird hier jedoch oft gegen einfachste Regeln verstoßen, sodass sich unnötigerweise Schwachstellen ergeben.</p>
+
+<p>Daher gehe ich hier kurz auf wichtige Punkte ein. Die fertige Lösung sollte unbedingt von einem Spezialisten untersucht werden!</p>
+
+<p>Bevor man sich mit den verschiedenen Möglichkeiten des Logins beschäftigt, muss man die zu erreichende Sicherheitsstufe festlegen. Das ist Teil des Validierungs-Konzepts.</p>
+
+<dl>
+
+<dt id="Kommunikationsparter-verifizieren">1. Kommunikationsparter verifizieren</dt>
+<dd>
+
+<p>Vor dem Login muss man sich von der Echtheit des Web-Servers überzeugen, auf dem man sich anmelden möchte. Pisher verwenden oft ähnliche Web-Adressen oder versenden falsche Links per Email. Viele Browser zeigen hier links neben der URL ein Symbol an, das den Partner verifiziert und beim Anklicken Details des Partners zeigt.</p>
+
+<p>Technisch wird hier das Zertifikat überprüft, das der Webserver verwendet. Daher ist es für jede Webseite wichtig, ein - gültiges - Zertifikat zur Verfügung zu stellen.</p>
+
+<p>Bei Schwierigkeiten mit dem Zertifikat, das z.B. gar nicht vorhanden oder ungültig ist, sollte man hier stoppen, und auf gar keinen Fall einen Login-Versuch starten. Möglicherweise sitzt am anderen Ende der Leitung (auf dem Server) jemand, der Ihre Login-Informationen stehlen oder Ihnen anderweitig schaden will.</p>
+
+</dd>
+<dt id="https---Verschl-sselung">2. https - Verschlüsselung</dt>
+<dd>
+
+<p>Alle Übertragungen zwischen Systemen über das Internet müssen verschlüsselt werden, damit dritte sich nicht dazwischenschalten und mitlesen/mithören können. Im Intranet sollte ab einer gewissen Größe/Sicherheitsstufe ebenfalls verschlüsselt werden.</p>
+
+<p>Mit &quot;http&quot; versendet der Web-Browser alles unverschlüsselt, auch Passwörter, die ja erst auf dem Webserver ausgewertet werden können.</p>
+
+<p>Erst mit dem Umschalten auf &quot;https&quot; wird die Kommunikation zwischen Browser und Web-Server verschlüsselt. Informieren Sie sich, wie Ihr Web-Browser das anzeigt. Oft wird ein Schloß oben links neben der Adresszeile dargestellt, das beim Anklicken Details anzeigt.</p>
+
+<p>Technisch ist es auch möglich, sich auf einer ungesicherten &quot;http&quot; Seite sicher anzumelden, weil anschließend auf das sichere &quot;https&quot; umgeschaltet wird. Das ist aber erst durch die Inspektion des HTML-Codes der Seite feststellbar.</p>
+
+<p>Deshalb empfehle ich allen Entwicklern, bereits für das Login auf Verschlüsselung mit https zu wechseln.</p>
+
+<p>Für besonders hohe Sicherheit ist https eventuell nicht mehr ausreichend, dann sollten die Daten, die über https ausgetauscht werden, noch mit einer hochsicheren Verschlüsselung einzeln verschlüsselt werden.</p>
+
+<p>Verschlüsselungssoftware aus den USA ist grundsätzlich als schwach einzustufen, weil die Vermarktung in den USA den Einbau von Hintertüren für die NSA zwingend vorsieht. Deshalb sind auch PGP-Verfahren ab einer bestimmten Schlüssellänge nicht erwünscht, da auch die NSA mit ihren Supercomputern den Schutz nicht knacken kann.</p>
+
+<p>Im Zweifelsfall auf OpenSource SW zurückgreifen und die Libraries selbst inspizieren und compilieren oder das von vertrauenswürdigen Institutionen durchführen lassen.</p>
+
+</dd>
+<dt id="Passw-rter-TAN-Private-Key">3. Passwörter + TAN + Private Key</dt>
+<dd>
+
+<p>Für die Eingabe von Passwörtern vorgefertigte UI-Elemente verwenden. Eigene sind oft zu unsicher!</p>
+
+<p>Dann das Passwort auf den Webserver übertragen und dort prüfen.</p>
+
+<p>Für höchste Sicherheit kann man 10kByte oder mehr, zufällig gefüllt, an das Login übersenden, die dann mit dem privaten Key signiert und wieder zurückgesendet werden. Das entspricht der hohen Sicherheitstufe von Zertifikaten.</p>
+
+</dd>
+<dt id="Erfolgreiches-Login">4. Erfolgreiches Login</dt>
+<dd>
+
+<p>Erst <b>nach</b> dem erfolgreichen Login sollte die Session gestartet werden, die dem User die vorkonfigurierten Zugriffsrechte gewährt.</p>
+
+<p>Zugriffsrechte sollten niemals persönlich, sondern nur durch die Zugehörigkeit zu Gruppen gewährt werden. Dadurch wird das Erweitern und Einschränken von Rechten sehr vereinfacht und sehr übersichtlich.</p>
+
+</dd>
+<dt id="Sicherheits-Schleusen">5. Sicherheits-Schleusen</dt>
+<dd>
+
+<p>Sichheitsschleusen werden eingesetzt, um sensible Bereiche besonders zu schützen, in Forschungs-Labors, Krankenhäusern, Gefängnissen usw.</p>
+
+<p>Viele Web-Portale arbeiten mit sensiblen Daten, aber ohne Sicherheitsschleuse.</p>
+
+<p>Ich empfehle ein mindestens 3-stufiges System für jede geschäftliche Web-Anwendung. Ein einzelner Einbruch in das Webportal verursacht in den meisten Fällen Kosten, die die Kosten für Einrichtung und Betrieb zweier weiterer Web-Server um ein vielfaches übersteigen.</p>
+
+<p>Zusätzlich schützt dieser Ansatz vor Angriffen, die das System überlasten sollen (Denial of Service Attacks). Nach dem Einloggen kann man durch die Trennung der Web-Server eine andere Leitung nutzen und IP-Adressen und URLs variieren.</p>
+
+</dd>
+<dt id="Public-Web-Server">1. Public Web-Server</dt>
+<dd>
+
+<p>Der Public Web-Server enthält den öffentlich zugänglichen Teil, der ohne login erreicht und gelesen werden kann.</p>
+
+<p>Minimal enthält er eine Web-Seite, die einen Web-Link (URL) auf den Login-Webserver enthält. Er hat bis auf den Link keinerlei Informationen über die anderen Server.</p>
+
+</dd>
+<dt id="Login-Web-Server">2. Login Web-Server</dt>
+<dd>
+
+<p>Der Login Web-Server wird nur für die Authentifizierung eingesetzt. Er erzeugt eine erste, kurzlebige Session für den Login-Vorgang und alle damit verbundenen Aktivitäten.</p>
+
+<p>Nach erfolgreichem Login fordert er vom Anwendungssystem eine Session für das authentifizierte Login an und sendet die Session-ID an den Webbrowser des Users.</p>
+
+</dd>
+<dt id="Anwendungs-Webserver">3. Anwendungs-Webserver</dt>
+<dd>
+
+<p>Nur der Login Web-Server darf eine Session auf dem Anwendungs-Webserver starten, am besten unter Verwendung von Zertifikaten. Anfragen von anderen Systemen werden grundsätzlich abgelehnt.</p>
+
+</dd>
+</dl>
+
+<dl>
+
+<dt id="Sessions">6. Sessions</dt>
+<dd>
+
+<p>Die Gültigkeitsdauer und der Gültigkeitsbereich von Sessions müssen genau festgelegt werden. Session-IDs benötigen eine Mindestlänge, z.B. von 30 alphanumerischen Zeichen.</p>
+
+</dd>
+</dl>
+
+<p>Spezialisten für Security und Firewalls haben noch weiterführende Ideen und Lösungsansätze im Angebot.</p>
+
+<h1 id="ber-den-Autor">Über den Autor</h1>
+
+<p>Mich gibt es seit 1965. Das Ruhrgebiet, wo ich in der Stadtmitte von Bochum aufgewachsen bin, hieß noch Kohlenpott und das machte damals durchaus Sinn. Über Umweltschutz machte sich kaum jemand Gedanken und der Schnee war in den Wintermonaten oft grau von den Ascheresten, die die Kohleöfen in die Umgebung pusteten.</p>
+
+<p>Schon seit dem Kindergarten hatte ich ein großes Interesse an Zahlen. In Textaufgaben und Geometrie musste ich mich schwer einarbeiten, das rein logische an der Mathematik flog mir zu, jedenfalls in der Schule. An der Uni musste ich zum ersten Mal stark an meinen mathematischen Fähigkeiten arbeiten.</p>
+
+<p>Ich studierte Mathematik mit Nebenfach Elektrotechnik an der Universität Dortmund und richtete mein Studium ganz auf meinen späteren Beruf als Software-Entwickler aus. Damals hieß das im offiziellen Sprachgebrauch noch Programmierer. Als Vertiefungsrichtung wählte ich CAD und Fuzzy-Logik, weil sich hier die besten Möglichkeiten für die Kombination von Mathematik und Informatik ergaben.</p>
+
+<p>Seit Anfang der 1980er hatte ich viel Kontakt zu Informatikern und Computerfreaks, die ich in Kaufhäusern an den Computern und später an den Videospiel-Automaten kennenlernte. Diese Automaten waren damals die führenden Computer in Grafik, Geschwindigkeit und Bedienbarkeit und kosteten ein kleines Vermögen, mehr als der Neuwagen meiner Eltern. Mittlerweile gibt es den Mame-Simulator, auf dem die Original-Software der Automaten abläuft, für Handys. Aber wie schließt man da einen Joystick an?</p>
+
+<h2 id="Meine-Werdegang-in-der-Informatik">Meine Werdegang in der Informatik</h2>
+
+<p>In der Unterstufe wurden die ersten elektronischen Taschenrechner eingeführt, der TI-30. Leider war dieses schlechte Gerät noch bis vor kurzem in Benutzung. Vorher verwendete man Rechenschieber, elektrische Addi-Maschinen beherrschten nur die Grundrechenarten.</p>
+
+<p>In Kaufhäusern und im Büro-Bedarfs-Geschäft &quot;Löwe&quot; in Bochum schrieb ich meine ersten Programme. Löwe erlaubte mir sogar die Nutzung der Datasette vom VC-20, und ich konnte meine Programme auf einer Musik-Casette speichern. Sonst stand das Gerät, das keiner bedienen konnte und für das es keine Software gab, unbenutzt hinten im Laden herum.</p>
+
+<p>Parallel nutzte ich den programmierbaren HP-Taschenrechner von meinem Freund für mathematische Algorithmen wie Nullstellensuche usw.</p>
+
+<p>Mein Jahrgang war einer der ersten mit Informatik-Unterricht an den Schulen, in der Oberstufe. Das war ein Glück, denn dadurch bekam meine Software eine erste Struktur.</p>
+
+<p>Über den ZX81 (16KByte RAM), den Atari 600XL (64 KByte RAM) und in der Schule den Apple IIe arbeitete ich mich zu meinem ersten Computer mit Maus und eingebauter Grafikfähigkeit - in Farbe - hoch: zum Atari ST mit 1 MegaByte frei verfügbarem Hauptspeicher und externer Diskettenstation. Eine gewaltige 80 Mega-Byte Festplatte habe ich später im Eigenbau nach c&#39;t nachgerüstet.</p>
+
+<p>Ein MS-Dos PC hatte damals nur Textdarstellung und von den mageren 640 Kilo-Byte Hauptspeicher hat das Betriebssystem nochmals einiges belegt. Microsoft Windows gab es nur im Labor, und der Macintosh von Apple war viel zu teuer und nur in Grün-Weiß verfügbar.</p>
+
+<p>Neben dem Studium entwickelte ich privat Software in Basic und C und im Nebenberuf für verschiedene Software-Firmen in C auf PC (MS-Dos), Atari ST, und auf Unix für Sun und Nixdorf Unix Server. Bei der letzten Firma erlebte ich das erste Mal, dass mein Software-Projekt scheiterte. Ein Programm für die 3D-Darstellung mit verdeckten Kanten, das an der fehlerhaften Mathematischen Modellbildung starb:</p>
+
+<p>Die Schnittmenge von zwei Strecken ist eben nicht ein Punkt, sondern wieder eine Strecke.</p>
+
+<p>Erstaunlicherweise hat diesen Sonderfall kein Lehrer und kein Professor erwähnt. Aber das brach meinen Algorithmen das Genick, und weil Funktionen mit vielen hundert Zeilen Code die Umstellung zu aufwendig machten - ich arbeitete inzwischen neben meinem Studium über 30 Stunden pro Woche verzweifelt an dem Programm - brach ich die Arbeit schließlich ab, kündigte und ging nach UPS, um in der Nachtschicht mit Paketen Mauern in Containern zu bauen.</p>
+
+<p>Die schlechten Erfahrungen mit kleinen Firmen verleiteten mich 1991 dazu, nach meinem Diplom frisch verheiratet ins Exil nach Franken zu gehen, zur Siemens AG, Bereich KWU, der als PG (Powergeneration) die radikalen Verkaufsaktionen der Siemens-Vorstände überdauert hat.</p>
+
+<p>Dort lernte ich C++, Objektorientierung, SQL und Datenbankdesign, GUI-Programmierung und wurde zum Experten für Configuration Management und Setup/Datenbankanpassungen. Weil die Produkte Rechenpower brauchten und vor allem stabil laufen mussten, nutzten wir UNIX auf HP Workstations und Servern sowie auf PCs.</p>
+
+<p>Vor allem entdeckte ich meine Lieblingssprache: Perl. Unsere Software erforderte die Ablage von Prüfungen in der Datenbank. Statt selbst einen Interpreter zu schreiben nutzten wir die Eval-Funktion von Perl, um die Regeln zu compilieren und auszuführen. Wie ich jetzt erkennen musste, waren wir mit unserem Validierungsframework den gängigen Methoden um Jahrzehnte voraus. Ein anderer Kollege implementierte Daten-Validierung mit Perl unabhängig von userer Produkt-Software, um unsere virtuellen Leittechnik-Bausteine zu prüfen, von denen Hunderte in der DB gespeichert waren.</p>
+
+<p>Wegen der großen Probleme mit der Integration der Software entwickelte ich ein &quot;Nightly-Build&quot; mit vollautomatischer Auswertung der veränderten Quelldateien und nutzte die gerade eingeführte Email sowie HTML-Seiten zur automatisierten Information über Veränderungen und Compile-Probleme.</p>
+
+<p>Jeden Morgen erhielt jeder eine Email mit den für ihn wichtigen Informationen und URLs auf die Details.</p>
+
+<p>Nach 6 Jahren ging es dann 1998 endlich zurück nach NRW, zur Telefonentwicklung von Siemens nach Bocholt, wo man gerade DECT für Schnurlostelefone erfunden hatte und dringend Verstärkung in der Software-Entwicklung benötigte. Dort entwickelte man mit C unter Windows 95, später NT und dann XP hardwarenahe Software. Ich entwickelte Tools für die Entwickler mit Perl und später auch C#.</p>
+
+<p>Zwei Jahre lang war ich der Verantwortliche für IT und Tools der ebenso schnell wieder geschlossenen wie gegründeten Bluetooth-Abteilung mit zum Schluss 50 Kollegen. In dieser Zeit entwickelte ich meine ersten beiden Make-File Generatoren mit Perl, der zweite wurde erfolgreich eingesetzt.</p>
+
+<p>Wirklich gut wurde erst die dritte Version, die ich nebenbei privat entwickelt hatte und auf dem deutschen Perlworkshop vorstellte:</p>
+
+<p>Der EasyFileGenerator, der zum Download auf meiner Homepage bereitliegt.</p>
+
+<p>Die Umstellung des Makeverfahrens ist eine sehr heikle Sache und bisher hat niemand außer mir den Generator verwendet. Die modernen Entwicklungsumgebungen für C#, Java, Perl kommen ohne Makefiles aus und Visual Studio verbirgt das Makefile für C und C++ vor den Entwicklern.</p>
+
+<p>Gemeinsam mit einem Kollegen erfand ich die UIDB (User-Interface-Datenbank), die die Displays der Telefone inklusive der Texte beschrieb und die Übersetzung der Texte in mehr als 20 Sprachen ermöglichte. Dazu setzten wir Perl und .Net/C# ein, die Daten speicherten wir in XML, um sie wie die anderen Quelldateien in ClearCase archivieren zu können.</p>
+
+<p>Anfangs wurden die Dateien von Hand erstellt, und mein C-Code Generator war gleichzeitig ein Validator, der alles prüfte, was nicht durch XML und XSD darstellbar war.</p>
+
+<p>Die Telefonentwicklung wurde schließlich verkauft und die neue Firma Gigaset reduzierte die Anzahl der Entwickler immer weiter. 2009 wechselte ich daher zur Schleupen AG nach Moers.</p>
+
+<p>Dort lernte ich EDIFACT kennen, stellte meine Entwicklungsmethodik auf TestDrivenDevelopment um und trat der Clean-Code-Initiative bei.</p>
+
+<p>edi@energy gibt die Prozesse und das Datenformat für EDIFACT verbindlich für den Energiesektor vor. Leider hatten die Erfinder des Datenformats vergessen, Markierungen für den Start und das Ende von Unterstrukturen zu definieren. Sie ergeben sich allein aus dem Kontext, was eine Validierung zu einer sehr anspruchsvollen Aufgabe macht. Unterschiedliche Interpretation der oft ungenauen Vorgaben führte zu vielen Problemen, hier hätte ein Validator für EDIFACT-Nachrichten, der eine verbindliche Prüfung durchführt, sehr weitergeholfen.</p>
+
+<p>Als letztes Projekt entwarf und entwickelte ich eine automatische Annahme und Weiterverteilung von EDIFACT- und anderen Nachrichten, die wie die interne Hauspost eines großen Unternehmens funktioniert. Validierung ist hier ein zentrales Thema, da der Großteil der Nachrichten über einfache Email abgewickelt wird. Spam, Emails von unbekannten Absendern, Datei-Anhänge unbekannter Struktur, EDIFACT-Nachrichten mit fehlerhaften Absender/Empfänger Informationen oder dem falschen Adressaten mussten sicher herausgefiltert und in der Qurantäne-Zone zwischengelagert werden. Die Einführung des neuen Produkts bei den Kunden konnte ich leider nicht mehr begleiten, weil ich Ende 2012 nach Renesas wechselte.</p>
+
+<p>Bei Renesas Europe implementierte ich Tools für die Chip-Entwicklung, in meiner Lieblingssprache Perl. Dort lernte ich das TestAnythingProtokoll (TAP) schätzen, das als Integraler Bestandteil von Perl seit über 20 Jahren im Einsatz ist.</p>
+
+<p>Hier perfektionierte ich meine TestDrivenEntwicklung: Datei speichern, Tests starten inkl. Auswertung in weniger als 10 Sekunden! Ich begann, jede kleine Änderung sofort zu testen und konnte viel Zeit bei der Fehlersuche einsparen.</p>
+
+<p>Da Perl keinerlei Parameterprüfung bei Funktionsaufrufen vorsieht, entwickelte ich das CPAN Modul</p>
+
+<pre><code>  Scalar::Validation</code></pre>
+
+<p>um Parameter und Werte komfortabel über Regeln prüfen und eine Dokumentation für das API generieren zu können.</p>
+
+<p>Ende 2015 wurde wegen der schlechten Lage bei der japanischen Muttergesellschaft auch in Europa die Entwicklung stark reduziert und ich wechselte zum Deutschen-Medizin-Rechen-Zentrum, kurz DMRZ.</p>
+
+<p>Dort entwickelte ich zunächst neue Verfahren für OCR und Bildverbesserung mit C#, C++ und Visual Basic. Aktuell beschäftige ich mich mit der Weiterentwicklung des Web-Portals.</p>
+
+<p>Für dieses Buch entwickle ich gerade BPOD, ein Aufsatz auf POD, mit dem man statt Dokumentation für Perl ganze Bücher schreiben und nach HTML und über LaTeX nach PDF konvertieren kann. Bpod.pm/.pl ist ein Spartanic Perl Modul, das auf fast jeder Plattform läuft.</p>
+
+<p>Dieses Buch entsteht gerade auf einem Android Tablet.</p>
+
+<h2 id="Non-Informatik">Non-Informatik</h2>
+
+<p>Mit meiner Familie wohne ich im eigenen Haus mit Garten im westlichen Münsterland.</p>
+
+<p>Zum Ausgleich treibe ich Sport, trainiere für die 6km Laufstrecke und spiele Basketball. An der Nordsee fahre ich mit meiner Powermatte auf dem ATB herum und seit einigen Jahren tanze ich mit meiner Frau Tango Argentino.</p>
+
+<p>Ich habe schon so viele Bücher gelesen, dass es jetzt an der Zeit war, mal selbst eines zu schreiben.</p>
+
+<h1 id="Anhang">Anhang</h1>
+
+<h2 id="Kleine-Einf-hrung-in-Perl">Kleine Einführung in Perl</h2>
+
+<p>Ich zeige in diesem Buch Pseudocode oder <a href="#Perl">Perl</a>. Da nicht alle diese Programmiersprache kennen werden, gibt es hier eine kleine Einführung, die bei Ihnen vielleicht Appetit auf mehr weckt.</p>
+
+<h4 id="Perl-Kommentare">Perl Kommentare</h4>
+
+<p>Das Kommentarzeichen ist das Hash-Tag &quot;#&quot;.</p>
+
+<h4 id="Perl-Variablen">Perl Variablen</h4>
+
+<p>Variablen starten mit $, @ oder %</p>
+
+<pre><code>  my $variable = &quot;Wert&quot;;         # als String
+  $variable    = 1;              # als Zahl oder String oder Boolean
+  $variable    = &quot;true&quot;;         # Per Konvention als Boolean
+  
+  print &quot;$variable\n&quot;;
+  say $variable;                 # Dasselbe wie oben
+
+  my @array       = (1,3,4);     # Ein dynamisches Array
+  my $einzel_wert = $array[1];   # Der 2. Eintrag im Array [0..2]
+  
+  print &quot;$array[1]\n&quot;;           
+  say    $array[1];              # Dasselbe wie oben      
+  print &quot;$einzel_wert\n&quot;;        # Dasselbe wie oben 
+
+  my %sport_hash  = (&#39;Nowitzki&#39;,    &#39;Basketball&#39;,
+                     Beckenbauer =&gt; &#39;Fussball&#39;,    # &#39;&#39; für linken Teil unnötig
+                     TigerWoods  =&gt; &#39;Golf&#39;,
+  );
+
+  # mit qw ohne Kommas und &#39;
+  %sport_hash  = qw (Nowitzki    Basketball
+                     Beckenbauer Fussball
+                     TigerWoods  Golf
+  );</code></pre>
+
+<p>Wer treibt welchen Sport?</p>
+
+<pre><code>  my $sportler = &quot;Nowitzki&quot;;
+  my $sport    = $sport_hash{$sportler};
+
+  say &quot;Was spielt $sportler? $sport!&quot;;
+  say &quot;Was spielt $sportler? $sport_hash{$sportler}!&quot;;</code></pre>
+
+<p>ergibt die Ausgabe:</p>
+
+<pre><code>  Was spielt Nowitzki? Basketball!
+  Was spielt Nowitzki? Basketball!</code></pre>
+
+<h4 id="Perl-Kontrollstrukturen">Perl Kontrollstrukturen</h4>
+
+<p>Die Kontrollstrukturen wurden von C übernommen und unterscheiden sich nicht von C++ / C# oder Java. Zusätzlich gibt es noch:</p>
+
+<pre><code>  unless ($isTrue) {
+  }</code></pre>
+
+<p>was identisch ist mit</p>
+
+<pre><code>  if (!$isTrue) {
+  }</code></pre>
+
+<p>&quot;unless&quot; und &quot;if&quot; kann man noch nachstellen:</p>
+
+<pre><code>  say &quot;wert ist nicht gesetzt&quot; unless defined $wert;
+  say &quot;zu Groß: $wert&quot;         if     ist_zu_gross($wert);</code></pre>
+
+<h4 id="Perl-SubCalls-Funktionen-Methoden">Perl SubCalls, Funktionen, Methoden</h4>
+
+<p>Funktionen haben in Perl höchstens einen Namen und keinerlei Signatur. Werte muss man sich vom Call-Stack selbst abholen. Das führt immer wieder zu Problemen und war der Grund für mich <a href="#Scalar::Validation">&quot;Scalar::Validation&quot;</a> zu implementieren und auf dem <a href="#CPAN">&quot;CPAN&quot;</a> für alle bereitzustellen.</p>
+
+<p>Diese Funktion hat diverse Probleme und soll nur als schlechtes Beispiel dienen! Hier tritt das Problem des <a href="#Teuren-Einkaufswagen">&quot;Teuren Einkaufswagen&quot;</a> auf.</p>
+
+<pre><code>  sub mein_addierer {
+      # Keine Argument-Liste!!
+      my $sum = 0;
+
+      while ($zahl = shift) {  # bricht ab, falls $zahl == 0, &#39;&#39; oder nicht definiert
+          $sum += $zahl;       # Wandelt alle Argumente irgendwie in Zahlen um
+      }
+
+      return $sum;
+  }</code></pre>
+
+<p>Mit dem Aufruf</p>
+
+<pre><code>  my $rechnung = [ 1, 2 , 3, 4];
+  my $sum = mein_addierer($rechnung);</code></pre>
+
+<p>erhält man als Preis immer eine mindestens 7-stellige Summe im Millionenbereich.</p>
+
+<p>Ob man und welchen Typ man zurückgibt, bleibt dem Programmierer überlassen.</p>
+
+<p>Fehler in diesem Bereich führen oft zu schwer zu findenden Laufzeitproblemen, wenn man nichts unternimmt.</p>
+
+<p>Man darf bei Aufrufen die Klammern weglassen:</p>
+
+<pre><code>  my $sum = mein_addierer($rechnung);
+  my $sum = mein_addierer $rechnung;  # dasselbe in grün!</code></pre>
+
+<p>Dann muss die Funktion aber schon bekannt sein, ansonsten gibt es schwer zu erkennende Syntax-Fehler. Ich und viele andere empfehlen daher, die Klammern zu verwenden.</p>
+
+<h4 id="Perl-Klassen">Perl Klassen</h4>
+
+<p>Klassen in Perl5 sind ein Kapitel für sich, Methodenaufrufe können sehr langsam werden. Da Objektorientierung in Perl5 nur als Aufsatz auf Perl4 eingebaut wurde und Perl4 keine Klassen kennt, sind die Konstrukte teilweise merkwürdig.</p>
+
+<p>Nun folgt ein kurzes Beispielprogramm als Aufwärm-Übung. So würde ich das natürlich nie in realen Projekten implementieren: Die Prüfungen fehlen und Objekte wären für diese minimale Funktionalität total überflüssig.</p>
+
+<p>Bevor man Fussball spielen kann, muss man halt zuerst laufen lernen.</p>
+
+<pre><code>  # --- Name der Klasse ---------------------------------------
+  package Autobesitzer;                         
+ 
+  # --- Konstruktor -------------------------------------------
+  sub new                                      
+  {
+      my $caller = $_[0];
+      my $class  = ref($caller) || $caller;
+
+      # let the class go
+      my $self = {};
+      bless $self, $class;
+ 
+      $self-&gt;{Vorname} = shift;
+
+      return $self;
+  }
+
+  # --- Property ----------------------------------------------
+  sub Vorname {                  
+      my $self          = shift; # this in C++/C#
+      my $neuer_vorname = shift; # ein optionaler neuer Vorname
+
+      # hier fängt die Methode an ... 
+
+      $self-&gt;{Vorname} = $neuer_vorname if defined $neuer_vorname;
+
+      return $self-&gt;{Vorname};
+  }
+
+  # --- Methode ----------------------------------------------
+  sub hat_einen {
+      my $self = shift; # this in C++/C#
+      my $auto = shift; # Das erste Argument des Methodenaufrufs
+
+      # hier fängt die Methode an ... 
+
+      return $self-&gt;Vorname . &quot; hat einen $auto.&quot;;
+  }
+
+  # --- Methode ----------------------------------------------
+  sub hat_ein {
+      my $self = shift; # this in C++/C#
+      my $auto = shift; # Das erste Argument des Methodenaufrufs
+
+      # hier fängt die Methode an ... 
+
+      return $self-&gt;Vorname . &quot; hat ein $auto.&quot;;
+  }
+
+  # --- Hauptprogramm ---------------------------------------
+  package main;
+
+  my  $auto_besitzer = new AutoBesitzer(&quot;Ralf&quot;);
+  
+  say $auto_besitzer-&gt;hat_einen(&quot;Golf&quot;);
+  say $auto_besitzer-&gt;hat_ein(&quot;Fahrrad&quot;);</code></pre>
+
+<p>ergibt die Ausgabe von</p>
+
+<pre><code>  Ralf hat einen Golf.
+  Ralf hat ein Fahrrad.
+ </code></pre>
+
+<p>Beim lesenden Zugriff auf den Vornamen lässt man die Klammern üblicherweise weg:</p>
+
+<pre><code>  say auto_besitzer-&gt;Vorname;            # GetVorname
+  say auto_besitzer-&gt;Vorname(&quot;Peter&quot;);   # SetVorname
+     </code></pre>
+
+<p><a href="#Moo">&quot;Moo&quot;</a> vom <a href="#CPAN">&quot;CPAN&quot;</a> sollte als Minimum verwendet werden, wenn man selbst Objekte/Klassen definieren möchte, zusätzlich zu einer Validierung wie <a href="#Scalar::Validation">&quot;Scalar::Validation&quot;</a>.</p>
+
+<h4 id="Perl-Operatoren">Perl Operatoren</h4>
+
+<p>Perl kennt sehr viele Operatoren, von denen die bekannten wie in C funktionieren, mit einer Ausnahme:</p>
+
+<p>&quot;.&quot; wird zum Verketten von Strings verwendet. &quot;+&quot; führt immer eine numerische Addition durch.</p>
+
+<p>Daher kann für Zugriff auf Objekte nur &quot;-&gt;&quot; verwendet werden.</p>
+
+<p>Außerdem werden für Vergleiche noch verschiedene Operatoren benötigt, je nach dem, ob man numerisch oder auf Text-Basis vergleichen möchte:</p>
+
+<pre><code>  == &lt;=  &lt; &gt;  &gt;= !=   # für Zahlen
+  eq le lt gt ge ne   # für Text</code></pre>
+
+<p>Wer es genau wissen möchte, die Operatoren sind in der offiziellen Perl-Dokumentation unter <a href="http://perldoc.perl.org/perlop.html#Relational-Operators">http://perldoc.perl.org/perlop.html#Relational-Operators</a> genauer dargestellt.</p>
+
+<p>Alles weitere sollte man auf Wikipedia oder in einem der dort gelisteten guten Perl-Bücher nachlesen.</p>
+
+<h2 id="Kurz-erkl-rt">Kurz erklärt</h2>
+
+<p>Viele der hier aufgeführten Kurzerklärungen sind von Wikipedia und anderen OpenData im Web übernommen. Der angefügte Link dient als Quellennachweis.</p>
+
+<h3 id="ATB">ATB</h3>
+
+<h3 id="CPAN">CPAN</h3>
+
+<h3 id="Developer">Developer</h3>
+
+<p>Englisch für Entwickler, s.u.</p>
+
+<h3 id="edi-energy">edi@energy</h3>
+
+<h3 id="EDIFACT">EDIFACT</h3>
+
+<h3 id="Gigaset">Gigaset</h3>
+
+<h3 id="Instanz">Instanz</h3>
+
+<h3 id="Entwickler">Entwickler</h3>
+
+<p>Der Entwickler, oder genauer Software-Entwickler, erschafft die Software, was nur zu einem Teil aus programmieren besteht.</p>
+
+<p>Er sollte auch Tickets gemeinsam mit dem Produktmanagement beurteilen, daraus resultierende Änderungen abschätzen und dokumentieren, nach erfolgter Änderung der SW den Testern bei der Anpassung der Testfälle helfen und noch einiges mehr.</p>
+
+<h3 id="Fehler">Fehler</h3>
+
+<p>Ein Programmfehler liegt vor, wenn das Programm sich anders verhält, als vorgesehen. Das können Abstürze (Programm beendet sich ungeplant) oder Aufhänger sein (Programm reagiert nicht mehr).</p>
+
+<p>Aber auch wenn das Programm &quot;fünf&quot; statt &quot;vier&quot; ausgibt, spricht man von einem &quot;Defect&quot; oder einem Fehler.</p>
+
+<p>Schwerwiegend oder kritisch ist ein Fehler, wenn z.B. an einer Ampel das grüne Licht eingeschaltet wird statt des roten und alle vier Ampeln einer unübersichtlichen Kreuzung grün zeigen.</p>
+
+<p>Das passiert allerdings fast nie, da Ampelschaltungen nach sehr gründlichen Vorschriften validiert werden.</p>
+
+<h3 id="Hardware">Hardware</h3>
+
+<p>Auf Hardware läuft die Software, das Programm ab. Hardware lässt sich meistens nicht mehr verändern daher der Name.</p>
+
+<p>Einen Computer kann man teilweise noch umbauen, ein Handy oder ein Tablet eher nicht.</p>
+
+<p>Gängige Hardware: Uhren, Handys, Tablets, Computer; Steuerungs-Microchips für Autos, Heizungen, Kraftwerke, Zugtüren, Klimaanlagen, ...</p>
+
+<p>Mechanische und elektrische Systeme werden immer mehr durch Elektronik ersetzt, was oft nicht notwendig und manchmal sogar gefährlich ist. Elektronik mit Software ist eben viel komplexer und fehleranfälliger.</p>
+
+<h3 id="Moo">Moo</h3>
+
+<h3 id="Notaus1">Notaus</h3>
+
+<h3 id="Objekt">Objekt</h3>
+
+<p>C[Muss noch einfacher werden] Ein Objekt (engl. Object) der realen Welt wird oft mehr oder weniger 1:1 in die Anwendungs-Domäne der Software übernommen.</p>
+
+<h3 id="Perl">Perl</h3>
+
+<p><a href="https://de.m.wikipedia.org/wiki/Perl_(Programmiersprache)">Wikipedia:</a> <a href="https://de.m.wikipedia.org/wiki/Perl_(Programmiersprache)">Perl</a> ist eine freie, plattformunabhängige und interpretierte Programmiersprache (Skriptsprache), die mehrere Programmierparadigmen unterstützt.</p>
+
+<p>Eine kleine Einführung steht im Kapitel <a href="#Kleine-Einf-hrung-in-Perl">&quot;Kleine Einführung in Perl&quot;</a>.</p>
+
+<h3 id="POD-und-BPOD">POD und BPOD</h3>
+
+<h3 id="Renesas">Renesas</h3>
+
+<h3 id="Scalar::Validation">Scalar::Validation</h3>
+
+<p>Mein frei verfügbares Perl Modul vom CPAN zur Validierung einzelner Werte. Anwendungsbeispiele finden sich überall im Buch, siehe Index.</p>
+
+<p><a href="https://metacpan.org/pod/Scalar::Validation">https://metacpan.org/pod/Scalar::Validation</a></p>
+
+<h3 id="SW---Software">SW - Software</h3>
+
+<p>Das Programm, das auf einer Hardware, dem Computer, Handy oder Tablet abläuft.</p>
+
+<h3 id="Tango-Argentino">Tango Argentino</h3>
+
+<h3 id="TAP---Test-Anything-Protocol">TAP - Test Anything Protocol</h3>
+
+<p><a href="https://en.m.wikipedia.org/wiki/Test_Anything_Protocol">https://en.m.wikipedia.org/wiki/Test_Anything_Protocol</a></p>
+
+<p>Ein minimalistisches, gut lesbares Text-Protokoll für Unit-Tests:</p>
+
+<pre><code>  ok 1 - Postleitzahl 12345
+  not ok 2 - Postleitzahl 00123:
+  # expected: 00123
+  #      got: 123</code></pre>
+
+<p>Für TAP existieren viele Perl-Klassen zur Analyse und Verdichtung der Testausgaben, da TAP ursprünglich für die Unit-Tests des Perl-Kernels entwickelt wurde.</p>
+
+<p>Beispiel: Die Testauswertung für das CPAN Modul <a href="http://matrix.cpantesters.org/?dist=Scalar-Validation+0.700">Scalar::Validation</a></p>
+
+<p>TAP Output ist völlig unabhängig von der eingesetzten Programmiersprache und Unit-Testumgebung. Leider können nicht alle Unit-Test-Tools TAP als Ausgabe erzeugen.</p>
+
+<h3 id="TDD---Test-Driven-Development">TDD - Test Driven Development</h3>
+
+<p>Eine SW-Entwicklungsmethodik, die die Tests vor der Implementierung erstellt. Dadurch wird die SW automatisch besser testbar. Auch die Verbesserung der SW-Architektur ist möglich, erfolgt aber nicht automatisch.</p>
+
+<p>Ich empfehle &quot;TDD-Light&quot;: Der SW-Entwickler startet mit allen Tests, die aus der Entwicklungsaufgabe ableitbar sind, und ergänzt diejenigen, die ihm zusätzlich einfallen. Danach implementiert er die Funktionalität, erweitert die Tests wechselweise und bezieht auch die Tester ein.</p>
+
+<h3 id="Tester">Tester</h3>
+
+<p>Ein guter SW-Tester kann Software schreiben, nämlich automatische Tests und Hilfstools für das Testen. Und er versteht, wie Software entwickelt wird, damit er gezielt nach Schwachstellen suchen kann.</p>
+
+<p>Sein Ziel ist es, möglichst alle kritischen und möglichst viele andere Fehler zu finden. Dazu versucht er auch, das System mit unsinnigen und unerlaubten Eingaben auszutricksen.</p>
+
+<p>Für kritische Anwendungen/Funktionen sollte er die UNIT-Tests, die ein Entwickler geschrieben hat, zumindest reviewen, besser noch komplettieren und weiterentwickeln.</p>
+
+<h2 id="Index">Index</h2>
+
+<h1 id="POD-ERRORS">POD ERRORS</h1>
+
+<p>Hey! <b>The above document had some coding errors, which are explained below:</b></p>
+
+<dl>
+
+<dt id="Around-line-2149">Around line 2149:</dt>
+<dd>
+
+<p>Unknown directive: =over2</p>
+
+</dd>
+<dt id="Around-line-2175">Around line 2175:</dt>
+<dd>
+
+<p>&#39;=item&#39; outside of any &#39;=over&#39;</p>
+
+</dd>
+</dl>
+
+
+</body>
+
+</html>
+
+
