@@ -553,37 +553,211 @@ mittlerweile locker überschritten.
 
 =head1 Dimension Validierungsregeln
 
+Die Gültigkeit, die Änderungen und das Release (Auslieferung) von Validierungsregeln
+bilden eine weitere Dimension, deren Behandlung außerordentlich komplex ist und die
+allzuoft vernachlässigt wird.
+
 =head2 Gültigkeit von Regeln
+
+Nicht alle Regeln sind jederzeit und für jeden gültig.
 
 =head3 Zeitliche Gültigkeit von Regeln
 
+Durch Änderungen von Gesetzen kann eine Regel zu einem bestimmten Termin verschärft oder 
+großzügiger ausgelegt werden. Beispiel Zoll:
+
+Zum 01.01.2016 gelten folgende (fiktive) Bestimmungen:
+
+=over
+
+=item * Alkoholeinfuhr
+
+Statt bisher 5 Liter Wein sind nur noch 3 Liter zollfrei von Gebieten außerhalb der EU
+einführbar.
+
+Die Regel wurde verschärft. Dadurch müssen alle Lieferungen, die nach ab dem 01.01.2015
+eintreffen, überprüft und neu verzollt werden, wenn sie mehr als 3 Liter Wein enthalten,
+auch wenn die Bestellung 2014 aufgegeben wurde.
+
+=item * Zigaretteneinfuhr
+
+Statt bisher 1 Stange Zigaretten können jetzt 2 Stangen zollfrei eingeführt werden.
+
+Die Regel wurde gelockert. Die Lieferung ist auf jeden Fall korrekt verzollt,
+bei mehr als 1 Stange Zigaretten wird allerdings 1 Stange zuviel verzollt.
+Um Kosten zu sparen, kann die Lieferung neu verzollt werden.
+
+=back
+
 =head3 Optionale Regeln
+
+Optionale Regeln gelten nicht für alle Daten, sondern nur unter bestimmten Bedingungen.
+Das kann erfordern, die vor jeder Anwendung die Regel zu prüfen.
+
+=over
+
+=item * Zigaretteneinfuhr: Zusatz
+
+Das gilt jetzt neuerdings auch innerhalb der EU.
+
+Dieser Regelzusatz erzwingt die neue Verzollung von Zigaretten, die ab dem 01.01.2015
+innerhalb der EU geliefert werden und mehr als 2 Stangen beinhalten.
+Bisher waren ja beliebige Mengen zollfrei.
+
+Eine einmalige neue Prüfung reicht hier aus.
+
+=item * Winterreifen
+
+Im Winter muss man bei winterlichen Verhältnissen mit Winter- oder Allwetter-Reifen fahren.
+Sommerreifen sind unter diesen Bedingungen nicht mehr erlaubt.
+
+B<Vor Antritt von jeder Fahrt> muss die Regel geprüft werden. Wie ist die Temperatur?
+Ist mit Fahrbahnglätte durch Schnee, Eis oder Reif zu rechnen? Falls ja,
+müssen Fahrzeuge mit Sommerreifen in der Garage stehen bleiben.
+
+=item * Busfahrer
+
+Für Busfahrer im Fernverkehr gelten besonders strenge Richtlinien. Neben der Fahrerlaubnis
+muss auf Pausen und Ruhezeiten sowie die Gesundheit des Fahrers geachtet werden.
+Diese komplexe Prüfung ist dazu in viele Einzelprüfungen aufzulösen, von denen einige vor Fahrtantritt
+durchzuführen sind, Pausen und Ruhezeiten müssen kontinuierlich
+während der Fahrt überprüft werden werden.
+
+=over
 
 =head3 Private Regeln
 
+Der Anwohner einer für Kraftfahrzeuge gesperrten Straße hat eine dauerhafte Sondergenehmigung,
+die ihm das Fahren auf der ansonsten gesperrten Straße erlaubt.
+
+Diese Regel überlagert in seinem Fall das Verbot
+und erlaubt ihm das Fahren auf der gesperrten Straße.
+
+=head3 Kombination der Gültigkeiten für Regeln
+
+Nach häufigem zu schnellen Fahren erhält ein Fahrer eine Fahrsperre und muss
+für einen Monat seinen Führerschein abgeben. Er darf aber noch zur Arbeit fahren.
+
+Der Fahrer erhält für eine begrenzte Zeit eine private Regel.
+
 =head2 Änderung von Regeln
+
+Werden Regeln verändert, die bereits ausgeliefert wurden und in Verwendung sind,
+müssen abhängig von der Art der Änderung Prüfungen erneut durchgeführt werden.
 
 =head3 Änderung der Regelimplementierung
 
-=head3 Änderung der Regeleltern
+Änderungen der Implmentierung einer Regel führen zu einer neuen Regel,
+die stärker oder schwächer einschränken kann oder auch völlig anders arbeitet.
+
+Die sichere Methode ist, alle Prüfungen zu verwerfen und entsprechend neu
+durchzuführen.
+
+Bei kleinen Änderungen sollte unbedingt durch Tests verifiziert werden,
+dass die Änderung auch wirklich klein ist. Die Ermittlung, was neu zu testen ist,
+ist oft aufwendiger als die Prüfung für alle erneut durchzuführen. Denn
+auch die Auswahl der Prüflinge muss beschrieben, implementiert und getestet werden.
+Das bindet Entwickler und Tester und kostet Zeit.
+
+Beispiel: *** fehlt ***
+
+=head3 Änderung der Elternregeln
+
+Wird die Liste der Elternregeln verändert, durch Streichung oder Hinzufügung von Regeln,
+muss die Prüfung neu durchgeführt werden.
+
+Beispiel: *** fehlt ***
 
 =head3 Änderung der Gültigkeit
 
+Wird die Gültigkeits-Dauer einer Regel verkürzt, müssen alle Prüfungen neu durchgeführt
+werden, um die neue Gültigkeits-Dauer zu bestimmen.
+
+Dasselbe gilt für die Änderung des Zeitraums, für den eine Regel gilt.
+
+Beispiel: *** fehlt ***
+
+=head3 Propagierung von Regeländerungen
+
+Alle Kinder und ihre Enkel, Urenkel, ... einer Regel müssen neu durchgeführt werden,
+falls eine der oben angegebenen Fälle für eine Änderung dieser Regel eintritt.
+
+Beispiel: *** fehlt ***
+
 =head2 Release von Regeln
+
+Der letzte Punkt betrifft das Release (Freigabe und Auslieferung) von Regeln.
+
+Jede Änderung einer Regel erzeugt Prüfrunden für alle Kind-Regeln und alle Daten,
+zu deren Validierung die Regel eingesetzt worden ist.
+
+Wenn ständig Regeln geändert und ausgeliefert werden, werden auch ständig neue Prüfrunden
+notwendig sein. Irgendwann beschäftigt sich das System dann hauptsächlich mit
+der Planung und Durchführung von Prüfungen.
+
+Das Ziel sollte daher sein, Regeln in größeren Abständen zu aktualisieren.
+
+Wenn Regeln direkt in der DB geändert werden können, müssen besonderen Schutzmaßnahmen
+getroffen werden, siehe dazu Teil II.
+
+Um überhaupt feststellen zu können, was neu gerpüft werden muss, benötigt jede Regel
+eine Versionsnummer, die durch das Release hochgezählt wird, wenn die Regel geändert wurde.
+
+Die weiteren Details dazu finden sich ebenfalls in Teil II
 
 =head1 Dimension Priorität
 
+Wenn große Mengen an Daten neu zu validieren sind, müssen Prioritäten die Validierungen
+in eine sinnvolle Reihenfolge bringen. Das Wichtigste zuerst, das andere später.
+
+Für die Berechnung der Priorität können eigene Regeln definiert werden. Hier ist sehr viel
+möglich und deshalb können für jedes Projekt andere Einstufungen verwendet werden.
+
+Was sich unter welchen Umständen bewährt, muss sich noch zeigen. Ohne Prioritäten wird man
+bei großen Datenmengen allerdings nicht glücklich. Wie die Praxis bereits gezeigt hat,
+ist es oft und regelmäßig notwendig, bestimmte Prüfungen vorzuziehen.
+
 =head2 Priorität von Regeln
+
+Zur Festlegung der Reihenfolge für die Abarbeitung von geänderten Regeln existieren
+zwei Prinzipien:
+
+=over
+
+=item * Gültigkeitsdauer
+
+=item * Versionssprung
+
+=item * Manuell vergeben
+
+Falls die Automatik nicht das gewünschte Ergebnis liefert, sollte man noch von Hand
+eine Priorität vergeben können.
+
+=back
 
 =head3 Regel-Priorität nach Gültigkeitsdauer
 
+Je kleiner die Gültigkeitsdauer, desto höher die Priorität. Ob das eine sinnvolle 
+Einteilung ist, muss sich noch zeigen.
+
 =head3 Regel-Priorität nach Versionssprung
+
+Je mehr Änderungen eine Regel erfährt, desto wichtiger wird die Prüfung.
+Auch hier muss die Praxis zeigen, ob es sich um eine sinnvolle Einteilung handelt.
 
 =head3 manuelle Regelpriorität
 
+Falls die Priorität stark von der durch Gültigkeitsdauer und Versionssprung zugewiesenen
+abweicht, muss die Priorität von Hand vergeben werden können.
+
 =head2 Priorität von Daten
 
-=head3 Daten-Priorität nach Ablaufdatum 
+Die zweite Priorität sortiert die zu prüfenden Datensätze in eine Reihenfolge.
+
+=head3 Daten-Priorität nach Ablaufdatum
+
+Wenn Daten ihr Ablaufdatum für die Prüfung überschreiten, müssen sie für die
+nächsten Prüfrunden eingeplant werden.
 
 =head3 Daten-Priorität nach Einstufung
 
