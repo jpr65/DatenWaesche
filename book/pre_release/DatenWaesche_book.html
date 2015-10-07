@@ -16,7 +16,11 @@
     <ul>
       <li><a href="#Gro-e-Datenw-sche">Große Datenwäsche</a>
         <ul>
-          <li><a href="#Kosten-einsparen-und-Risiken-minimieren-mit-dem-Leitfaden-zur-Datenvalidierung">Kosten einsparen und Risiken minimieren mit dem Leitfaden zur Datenvalidierung</a></li>
+          <li><a href="#Clean-Data">Clean Data</a>
+            <ul>
+              <li><a href="#Kosten-einsparen-und-Risiken-minimieren-mit-dem-Leitfaden-zur-Datenvalidierung">Kosten einsparen und Risiken minimieren mit dem Leitfaden zur Datenvalidierung</a></li>
+            </ul>
+          </li>
         </ul>
       </li>
     </ul>
@@ -152,12 +156,7 @@
       <li><a href="#Komplexit-t-4.-Aggregatdaten">Komplexität 4. Aggregatdaten</a></li>
       <li><a href="#Komplexit-t-5.-Zusammengesetztes-Aggregat">Komplexität 5. Zusammengesetztes Aggregat</a></li>
       <li><a href="#Komplexit-t-6.-Service">Komplexität 6. Service</a></li>
-      <li><a href="#Komplexit-t-7.-Library">Komplexität 7. Library</a></li>
-      <li><a href="#Komplexit-t-8.-Programm-APP">Komplexität 8. Programm/APP</a></li>
-      <li><a href="#Komplexit-t-9.-SW-Produkt-Web-Portal">Komplexität 9. SW-Produkt / Web-Portal</a></li>
-      <li><a href="#Komplexit-t-10.-Computer-Smartphone">Komplexität 10. Computer / Smartphone</a></li>
-      <li><a href="#Komplexit-t-11.-Computernetzwerk">Komplexität 11. Computernetzwerk</a></li>
-      <li><a href="#Komplexit-t-12.-World-Wide-Web">Komplexität 12. World-Wide-Web</a></li>
+      <li><a href="#Weitere-Stufen-der-Komplexit-t">Weitere Stufen der Komplexität</a></li>
     </ul>
   </li>
   <li><a href="#Dimension-Validierungsregeln">Dimension Validierungsregeln</a>
@@ -167,13 +166,15 @@
           <li><a href="#Zeitliche-G-ltigkeit-von-Regeln">Zeitliche Gültigkeit von Regeln</a></li>
           <li><a href="#Optionale-Regeln">Optionale Regeln</a></li>
           <li><a href="#Private-Regeln">Private Regeln</a></li>
+          <li><a href="#Kombination-der-G-ltigkeiten-f-r-Regeln">Kombination der Gültigkeiten für Regeln</a></li>
         </ul>
       </li>
       <li><a href="#nderung-von-Regeln">Änderung von Regeln</a>
         <ul>
           <li><a href="#nderung-der-Regelimplementierung">Änderung der Regelimplementierung</a></li>
-          <li><a href="#nderung-der-Regeleltern">Änderung der Regeleltern</a></li>
+          <li><a href="#nderung-der-Elternregeln">Änderung der Elternregeln</a></li>
           <li><a href="#nderung-der-G-ltigkeit">Änderung der Gültigkeit</a></li>
+          <li><a href="#Propagierung-von-Regel-nderungen">Propagierung von Regeländerungen</a></li>
         </ul>
       </li>
       <li><a href="#Release-von-Regeln">Release von Regeln</a></li>
@@ -204,7 +205,6 @@
           <li><a href="#Ergebnisse-speichern">Ergebnisse speichern</a></li>
           <li><a href="#Ergebnisse-verdichten">Ergebnisse verdichten</a></li>
           <li><a href="#Ergebnisse-analysieren">Ergebnisse analysieren</a></li>
-          <li><a href="#Ergebnisse-pr-sentieren">Ergebnisse präsentieren</a></li>
         </ul>
       </li>
       <li><a href="#Ergebnis-Zuordnung">Ergebnis-Zuordnung</a>
@@ -222,8 +222,10 @@
           </li>
         </ul>
       </li>
+      <li><a href="#Ergebnis-Pr-sentation">Ergebnis-Präsentation</a></li>
     </ul>
   </li>
+  <li><a href="#Fazit-zu-Validierungsdimensionen">Fazit zu Validierungsdimensionen</a></li>
   <li><a href="#Teil-II:-Anforderungen-an-die-Software">Teil II: Anforderungen an die Software</a></li>
   <li><a href="#Neues-Kapitel">&lt;Neues Kapitel&gt;</a>
     <ul>
@@ -314,6 +316,7 @@
           <li><a href="#edi-energy">edi@energy</a></li>
           <li><a href="#EDIFACT">EDIFACT</a></li>
           <li><a href="#Gigaset">Gigaset</a></li>
+          <li><a href="#GUID">GUID</a></li>
           <li><a href="#Instanz">Instanz</a></li>
           <li><a href="#Entwickler">Entwickler</a></li>
           <li><a href="#Fehler">Fehler</a></li>
@@ -335,14 +338,15 @@
       <li><a href="#Index">Index</a></li>
     </ul>
   </li>
-  <li><a href="#POD-ERRORS">POD ERRORS</a></li>
 </ul>
 
 <h1 id="Titelseite">Titelseite</h1>
 
 <h2 id="Gro-e-Datenw-sche">Große Datenwäsche</h2>
 
-<h3 id="Kosten-einsparen-und-Risiken-minimieren-mit-dem-Leitfaden-zur-Datenvalidierung">Kosten einsparen und Risiken minimieren mit dem Leitfaden zur Datenvalidierung</h3>
+<h3 id="Clean-Data">Clean Data</h3>
+
+<h4 id="Kosten-einsparen-und-Risiken-minimieren-mit-dem-Leitfaden-zur-Datenvalidierung">Kosten einsparen und Risiken minimieren mit dem Leitfaden zur Datenvalidierung</h4>
 
 <p>Oben Links: Blatt mit Schrift, darunter Pfeil auf</p>
 
@@ -442,7 +446,25 @@
 
 <h1 id="Einleitung">Einleitung</h1>
 
-<p>Daten-Validierung oder Daten-Prüfung funktioniert wie eine Datenwäsche, eine geplante und gezielte Daten-Validierung bezeichne ich als &quot;Große Datenwäsche&quot;.</p>
+<p>Mein Buch ist der erste Versuch, das Gebiet der Daten-Validierung in der Informations-Technologie (IT) umfassend zu beschreiben. Ob es mir gelungen ist, alles verständlich und vollständig darzustellen, kann ich nicht beurteilen. Dazu warte ich auf Ihre Kommentare, liebe Leser.</p>
+
+<p>Dieses Buch verfolgt unter anderem folgende Ziele:</p>
+
+<ul>
+
+<li><p>Sensibilität für Daten-Validierung wecken</p>
+
+</li>
+<li><p>Diskussionen über Daten-Validierung anstoßen</p>
+
+</li>
+</ul>
+
+<p>Weitere Ziele sind gelistet unter <a href="#Ziele-des-Buchs">&quot;Ziele des Buchs&quot;</a> im Kapitel <a href="#Zuallererst">&quot;Zuallererst&quot;</a>. Falls Ihnen etwas bekannt vorkommt, Wiederholung ist ein Prinzip des Buchs. Warum, können Sie dort ebenfalls nachlesen in <a href="#Wie-Lernen-funktioniert">&quot;Wie Lernen funktioniert&quot;</a>.</p>
+
+<p>Aber was ist Datenvalidierung überhaupt?</p>
+
+<p>Daten-Validierung oder Daten-Prüfung funktioniert wie eine Datenwäsche, eine geplante und gezielte Daten-Validierung bezeichne ich als &quot;Große Datenwäsche&quot;. In Englisch in Anlehnung an &quot;Clean Code&quot; als &quot;Clean Data&quot;.</p>
 
 <p>Angelieferte Daten sind meistens schmutzig und manchmal stark verseucht (Viren!). Validierung stellt verseuchte Daten in Quarantäne, damit sich die anderen Daten nicht anstecken, und reinigt verschmutzte Daten bis zum gewünschten Reinheitsgrad.</p>
 
@@ -516,7 +538,7 @@
 
 <p>Es existieren wenige, kaum bekannte Frameworks, die den Entwicklern die mühevolle Arbeit abnehmen, Prüfungen zu programmieren und zu testen.</p>
 
-<p>Viele User sind es gewöhnt, Daten gleich korrekt einzugeben, weil im Falle eines Fehlers die Suche nach der Ursache aufwändig werden kann. Im schlechtesten Fall, der immer noch sehr häufig auftritt, stürzt das Programm ab (Ausnahme in ...) oder hängt sich auf und die mühevoll eingetippten Daten sind verloren.</p>
+<p>Viele User sind es gewöhnt, Daten gleich korrekt einzugeben, weil im Falle eines Fehlers die Suche nach der Ursache aufwändig werden kann. Im schlechtesten Fall, der immer noch sehr häufig auftritt, stürzt das Programm ab (Ausnahme in ...) oder hängt sich auf (reagiert nicht mehr) und die mühevoll eingetippten Daten sind verloren.</p>
 
 <p>Wenn der Auftraggeber einer SW-Entwicklung nicht explizit Prüfungen fordert und sie testet, werden oft keine eingebaut. Denn in Software sieht man meistens nicht, ob die Tür zum Tresor offen ist oder gleich ganz fehlt.</p>
 
@@ -652,6 +674,18 @@
 <dd>
 
 </dd>
+<dt id="Validierungsregeln">6. Validierungsregeln</dt>
+<dd>
+
+</dd>
+<dt id="Priorit-t">7. Priorität</dt>
+<dd>
+
+</dd>
+<dt id="Ergebnisse">8. Ergebnisse</dt>
+<dd>
+
+</dd>
 </dl>
 
 <p>Jede Dimension wird im folgenden in einem eigenen Kapitel vorgestellt und genau untersucht.</p>
@@ -692,7 +726,7 @@
 
 <pre><code>  1 Minute = 60 Sekunden</code></pre>
 
-<p>Dieser Text enthält insgesamt 23 Zeichen (ohne Leerraum außen), und zwar 3 Ziffern, 4 Leerzeichen (Space) und ein Sonderzeichen, das Gleichheitszeichen.</p>
+<p>Dieser Text enthält insgesamt 23 Zeichen (ohne Leerraum außen), und zwar außer den großen und kleinen Buchstaben 3 Ziffern, 4 Leerzeichen (Space) und ein Sonderzeichen, das Gleichheitszeichen.</p>
 
 <p>Um z.B. die Anzahl der Tischtennisbälle in einer Verpackung einzugeben wird der Text</p>
 
@@ -777,7 +811,7 @@
 
 <p>Daraus ergeben sich mindestens sieben! Fälle - und nicht nur zwei -, die zu unterscheiden sind!</p>
 
-<p>Die 1-3 sind Status-Informationen über die Durchführung der Prüfung, die letzten 4-7 die möglichen Ergebnisse der Prüfung. Es ist meistens keine gute Idee, die beiden Kategorien zu einer zusammenzufassen, wie man in Teil II sehen wird, aber Ihnen stehen natürlich auch alle anderen Möglichkeiten offen.</p>
+<p>Die Fälle 1-3 sind Status-Informationen über die Durchführung der Prüfung, die letzten 4-7 die möglichen Ergebnisse der Prüfung. Es ist meistens keine gute Idee, die beiden Kategorien zu einer zusammenzufassen, wie man in Teil II sehen wird, aber Ihnen stehen natürlich auch alle anderen Möglichkeiten offen.</p>
 
 <dl>
 
@@ -889,7 +923,7 @@
 
 <p>Als Ergebnis wird &quot;durchgefallen&quot; (Negative) in die Daten eingetragen. Was in diesem Fall nicht stimmt (False) und so manchen Anwender in den Wahnsinn treibt. Er hat ja alles korrekt eingegeben, aber die Daten werden nicht akzeptiert.</p>
 
-<p>Hier ist es wichtig, dass das System von Hand überstimmt werden kann, indem man den Zustand auf &quot;bestanden&quot; ändert. Natürlich nur nach genauer Prüfung durch eine Experten, der nicht der User sein sollte, der die Daten erstellt hat.</p>
+<p>Hier ist es wichtig, dass das System von Hand überstimmt werden kann, indem man den Zustand auf &quot;bestanden&quot; ändert. Natürlich nur nach genauer Prüfung durch einen Experten, der nicht der User sein sollte, der die Daten erstellt hat.</p>
 
 <p>Sonst läuft man Gefahr, dass der User alle fehlerhaften Daten ohne weitere Prüfung einfach &quot;durchwinkt&quot; und das System mit fehlerhaften Daten geflutet wird.</p>
 
@@ -931,19 +965,19 @@
 <p>Welcher Komplexitätsstufe gehören die Daten/Objekte an?</p>
 
 </dd>
-<dt id="Validierungsregeln"><b>6. Validierungsregeln</b></dt>
+<dt id="Validierungsregeln1"><b>6. Validierungsregeln</b></dt>
 <dd>
 
 <p>Regeln im Lauf der Entwicklung und Freigabe (Release) von Software</p>
 
 </dd>
-<dt id="Priorit-t"><b>7. Priorität</b></dt>
+<dt id="Priorit-t1"><b>7. Priorität</b></dt>
 <dd>
 
 <p>Priorität der Ausführung der Daten-Prüfung abhängig von Regeln und Daten</p>
 
 </dd>
-<dt id="Ergebnisse"><b>8. Ergebnisse</b></dt>
+<dt id="Ergebnisse1"><b>8. Ergebnisse</b></dt>
 <dd>
 
 <p>Verarbeitung und Zuordnung der Ergebnisse von Validierungen</p>
@@ -1309,93 +1343,339 @@
 
 <p>Die Realität bezogen auf Software und Internet sieht oft anders aus. Aber einige arbeiten daran, den Standard eines guten Restaurants zu erreichen.</p>
 
-<h2 id="Komplexit-t-7.-Library">Komplexität 7. Library</h2>
+<h2 id="Weitere-Stufen-der-Komplexit-t">Weitere Stufen der Komplexität</h2>
 
-<h2 id="Komplexit-t-8.-Programm-APP">Komplexität 8. Programm/APP</h2>
+<p>Der Service ist nun nicht die höchste Stufe der Komplexität, aber die noch höheren Stufen stellen keine weiteren Anforderungen an die Implementierung der Datenvalidierung, wenn bis hierhin alles passend umgesetzt wurde. Ich möchte sie aber trotzdem kurz auflisten:</p>
 
-<h2 id="Komplexit-t-9.-SW-Produkt-Web-Portal">Komplexität 9. SW-Produkt / Web-Portal</h2>
+<ul>
 
-<h2 id="Komplexit-t-10.-Computer-Smartphone">Komplexität 10. Computer / Smartphone</h2>
+<li><p>Komplexität 7. Library</p>
 
-<h2 id="Komplexit-t-11.-Computernetzwerk">Komplexität 11. Computernetzwerk</h2>
+<p>Eine Library ist eine Zusammenfassung von Objekten/Klassen und Funktionen zu einem bestimmten Thema. Die Implementierung der Validierung ist ein Kandidat für eine Library, die Regeln selbst können in einer zweiten Library oder in einer Datenbank gespeichert werden, wenn sie sehr umfangreich sind. Siehe Teile II und III.</p>
 
-<h2 id="Komplexit-t-12.-World-Wide-Web">Komplexität 12. World-Wide-Web</h2>
+</li>
+<li><p>Komplexität 8. Programm/APP</p>
+
+<p>Mit oder ohne Libraries (nicht zu empfehlen!) erzeugt man ein Programm oder eine App, welche man starten und bedienen kann.</p>
+
+</li>
+<li><p>Komplexität 9. SW-Produkt / Web-Portal</p>
+
+<p>Ein Software-Produkt hat mindestens ein Programm, oft mehrere und zusätzlich noch Konfigurationsdaten.</p>
+
+<p>Ein Web-Portal enthält mindestens einen Web-Server als Programm, oft noch viele weitere zusätzliche Programme, Scripts und Services, die über die Webseiten gestartet und bedient werden.</p>
+
+</li>
+<li><p>Komplexität 10. Computer / Smartphone</p>
+
+<p>Auf einem Computer oder Smartphone laufen viele Programme/Apps parallel. Mittlerweile auch bei Apple...</p>
+
+</li>
+<li><p>Komplexität 11. Computernetzwerk</p>
+
+<p>Computer kann man miteinander verbinden und enthält damit ein Computernetzwerk, in dem Computer Daten austauschen und gegenseitig Services starten können. Von privaten Kleinnetzwerken mit einem PC und einem Smartphone bis zu mehr als 100.000 Computern in großen Firmen ist alles möglich. Große Firmen betreiben oft ein eigenes Intranet, das wie das WWW funktioniert aber nur interne Computer zulässt.</p>
+
+</li>
+<li><p>Komplexität 12. World-Wide-Web</p>
+
+<p>Für das WWW kann jeder einen Server bereitstellen. Dazu benötigt er nichts als eine Web-Domain oder eine URL, eine IP-Adresse und einen Zugang zum WWW. Das WWW organisiert die Reise der Daten zu allen Kommunikations-Partnern und ermöglicht den Zugriff über Web-Browser, das Versenden von Emails und vieles mehr.</p>
+
+<p>Die Anzahl der vernetzten Geräte hat die Milliarden-Grenze durch die vielen Smartphones mittlerweile locker überschritten.</p>
+
+</li>
+</ul>
 
 <h1 id="Dimension-Validierungsregeln">Dimension Validierungsregeln</h1>
 
+<p>Die Gültigkeit, die Änderungen und das Release (Auslieferung) von Validierungsregeln bilden eine weitere Dimension, deren Behandlung außerordentlich komplex ist und die allzuoft vernachlässigt wird.</p>
+
 <h2 id="G-ltigkeit-von-Regeln">Gültigkeit von Regeln</h2>
+
+<p>Nicht alle Regeln sind jederzeit und für jeden gültig.</p>
 
 <h3 id="Zeitliche-G-ltigkeit-von-Regeln">Zeitliche Gültigkeit von Regeln</h3>
 
+<p>Durch Änderungen von Gesetzen kann eine Regel zu einem bestimmten Termin verschärft oder großzügiger ausgelegt werden. Beispiel Zoll:</p>
+
+<p>Zum 01.01.2016 gelten folgende (fiktive) Bestimmungen:</p>
+
+<ul>
+
+<li><p>Alkoholeinfuhr</p>
+
+<p>Statt bisher 5 Liter Wein sind nur noch 3 Liter zollfrei von Gebieten außerhalb der EU einführbar.</p>
+
+<p>Die Regel wurde verschärft. Dadurch müssen alle Lieferungen, die ab dem 01.01.2015 eintreffen, überprüft und neu verzollt werden, wenn sie mehr als 3 Liter Wein enthalten, auch wenn die Bestellung 2014 aufgegeben wurde.</p>
+
+</li>
+<li><p>Zigaretteneinfuhr</p>
+
+<p>Statt bisher 1 Stange Zigaretten können jetzt 2 Stangen zollfrei eingeführt werden.</p>
+
+<p>Die Regel wurde gelockert. Die Lieferung ist auf jeden Fall korrekt verzollt, bei mehr als 1 Stange Zigaretten wird allerdings 1 Stange zuviel verzollt. Um Kosten zu sparen, kann die Lieferung neu verzollt werden.</p>
+
+</li>
+</ul>
+
 <h3 id="Optionale-Regeln">Optionale Regeln</h3>
+
+<p>Optionale Regeln gelten nicht für alle Daten, sondern nur unter bestimmten Bedingungen. Das kann erfordern, vor jeder Anwendung die Regel zu prüfen.</p>
+
+<ul>
+
+<li><p>Zigaretteneinfuhr: Zusatz</p>
+
+<p>Das gilt jetzt neuerdings auch innerhalb der EU.</p>
+
+<p>Dieser Regelzusatz erzwingt die neue Verzollung von Zigaretten, die ab dem 01.01.2015 innerhalb der EU geliefert werden und mehr als 2 Stangen beinhalten. Bisher waren ja beliebige Mengen zollfrei.</p>
+
+<p>Eine einmalige neue Prüfung reicht hier aus.</p>
+
+</li>
+<li><p>Winterreifen</p>
+
+<p>Im Winter muss man bei winterlichen Verhältnissen mit Winter- oder Allwetter-Reifen fahren. Sommerreifen sind unter diesen Bedingungen nicht mehr erlaubt.</p>
+
+<p><b>Vor Antritt von jeder Fahrt</b> muss die Regel geprüft werden. Wie ist die Temperatur? Ist mit Fahrbahnglätte durch Schnee, Eis oder Reif zu rechnen? Falls ja, müssen Fahrzeuge mit Sommerreifen in der Garage stehen bleiben.</p>
+
+</li>
+<li><p>Busfahrer</p>
+
+<p>Für Busfahrer im Fernverkehr gelten besonders strenge Richtlinien. Neben der Fahrerlaubnis muss auf Pausen und Ruhezeiten sowie die Gesundheit des Fahrers geachtet werden. Diese komplexe Prüfung ist dazu in viele Einzelprüfungen aufzulösen, von denen einige vor Fahrtantritt durchzuführen sind, Pausen und Ruhezeiten müssen kontinuierlich während der Fahrt überprüft werden werden.</p>
+
+</li>
+</ul>
 
 <h3 id="Private-Regeln">Private Regeln</h3>
 
+<p>Der Anwohner einer für Kraftfahrzeuge gesperrten Straße hat eine dauerhafte Sondergenehmigung, die ihm das Fahren auf der ansonsten gesperrten Straße erlaubt.</p>
+
+<p>Diese Regel überlagert in seinem Fall das Verbot und erlaubt ihm das Fahren auf der gesperrten Straße.</p>
+
+<h3 id="Kombination-der-G-ltigkeiten-f-r-Regeln">Kombination der Gültigkeiten für Regeln</h3>
+
+<p>Nach häufigem zu schnellen Fahren erhält ein Fahrer eine Fahrsperre und muss für einen Monat seinen Führerschein abgeben. Er darf aber noch zur Arbeit fahren.</p>
+
+<p>Der Fahrer erhält für eine begrenzte Zeit eine private Regel.</p>
+
 <h2 id="nderung-von-Regeln">Änderung von Regeln</h2>
+
+<p>Werden Regeln verändert, die bereits ausgeliefert wurden und in Verwendung sind, müssen abhängig von der Art der Änderung Prüfungen erneut durchgeführt werden.</p>
 
 <h3 id="nderung-der-Regelimplementierung">Änderung der Regelimplementierung</h3>
 
-<h3 id="nderung-der-Regeleltern">Änderung der Regeleltern</h3>
+<p>Änderungen der Implmentierung einer Regel führen zu einer neuen Regel, die stärker oder schwächer einschränken kann oder auch völlig anders arbeitet.</p>
+
+<p>Die sichere Methode ist, alle Prüfungen zu verwerfen und entsprechend neu durchzuführen.</p>
+
+<p>Bei kleinen Änderungen sollte unbedingt durch Tests verifiziert werden, dass die Änderung auch wirklich klein ist. Die Ermittlung, was neu zu testen ist, ist oft aufwendiger als die Prüfung für alle erneut durchzuführen. Denn auch die Auswahl der Prüflinge muss beschrieben, implementiert und getestet werden. Das bindet Entwickler und Tester und kostet Zeit.</p>
+
+<p>Beispiel: *** fehlt ***</p>
+
+<h3 id="nderung-der-Elternregeln">Änderung der Elternregeln</h3>
+
+<p>Wird die Liste der Elternregeln verändert, durch Streichung oder Hinzufügung von Regeln, muss die Prüfung neu durchgeführt werden.</p>
+
+<p>Beispiel: *** fehlt ***</p>
 
 <h3 id="nderung-der-G-ltigkeit">Änderung der Gültigkeit</h3>
 
+<p>Wird die Gültigkeits-Dauer einer Regel verkürzt, müssen alle Prüfungen neu durchgeführt werden, um die neue Gültigkeits-Dauer zu bestimmen.</p>
+
+<p>Dasselbe gilt für die Änderung des Zeitraums, für den eine Regel gilt.</p>
+
+<p>Beispiel: *** fehlt ***</p>
+
+<h3 id="Propagierung-von-Regel-nderungen">Propagierung von Regeländerungen</h3>
+
+<p>Alle Kinder und ihre Enkel, Urenkel, ... einer Regel müssen neu durchgeführt werden, falls eine der oben angegebenen Fälle für eine Änderung dieser Regel eintritt.</p>
+
+<p>Beispiel: *** fehlt ***</p>
+
 <h2 id="Release-von-Regeln">Release von Regeln</h2>
+
+<p>Der letzte Punkt betrifft das Release (Freigabe und Auslieferung) von Regeln.</p>
+
+<p>Jede Änderung einer Regel erzeugt Prüfrunden für alle Kind-Regeln und alle Daten, zu deren Validierung die Regel eingesetzt worden ist.</p>
+
+<p>Wenn ständig Regeln geändert und ausgeliefert werden, werden auch ständig neue Prüfrunden notwendig sein. Irgendwann beschäftigt sich das System dann hauptsächlich mit der Planung und Durchführung von Prüfungen.</p>
+
+<p>Das Ziel sollte daher sein, Regeln in größeren Abständen zu aktualisieren.</p>
+
+<p>Wenn Regeln direkt in der DB geändert werden können, müssen besondere Schutzmaßnahmen getroffen werden, siehe dazu Teil II.</p>
+
+<p>Um überhaupt feststellen zu können, was neu gerpüft werden muss, benötigt jede Regel eine Versionsnummer, die durch das Release hochgezählt wird, wenn die Regel geändert wurde.</p>
+
+<p>Die weiteren Details dazu finden sich ebenfalls in Teil II</p>
 
 <h1 id="Dimension-Priorit-t">Dimension Priorität</h1>
 
+<p>Wenn große Mengen an Daten neu zu validieren sind, müssen Prioritäten die Validierungen in eine sinnvolle Reihenfolge bringen. Das Wichtigste zuerst, das andere später.</p>
+
+<p>Für die Berechnung der Priorität können eigene Regeln definiert werden. Hier ist sehr viel möglich und deshalb können für jedes Projekt andere Einstufungen verwendet werden.</p>
+
+<p>Was sich unter welchen Umständen bewährt, muss sich noch zeigen. Ohne Prioritäten wird man bei großen Datenmengen allerdings nicht glücklich. Wie die Praxis bereits gezeigt hat, ist es oft und regelmäßig notwendig, bestimmte Prüfungen vorzuziehen.</p>
+
 <h2 id="Priorit-t-von-Regeln">Priorität von Regeln</h2>
+
+<p>Zur Festlegung der Reihenfolge für die Abarbeitung von geänderten Regeln existieren folgende Möglichkeiten:</p>
+
+<ul>
+
+<li><p>Betrachtung der Gültigkeitsdauer</p>
+
+</li>
+<li><p>Betrachtung des Versionssprungs</p>
+
+</li>
+<li><p>Manuell vergeben</p>
+
+<p>Falls die Automatik nicht das gewünschte Ergebnis liefert, sollte man noch von Hand eine Priorität vergeben können.</p>
+
+</li>
+</ul>
 
 <h3 id="Regel-Priorit-t-nach-G-ltigkeitsdauer">Regel-Priorität nach Gültigkeitsdauer</h3>
 
+<p>Je kleiner die Gültigkeitsdauer, desto höher die Priorität. Ob das eine sinnvolle Einteilung ist, muss sich noch zeigen.</p>
+
 <h3 id="Regel-Priorit-t-nach-Versionssprung">Regel-Priorität nach Versionssprung</h3>
+
+<p>Je mehr Änderungen eine Regel erfährt, desto wichtiger wird die Prüfung. Auch hier muss die Praxis zeigen, ob es sich um eine sinnvolle Einteilung handelt.</p>
 
 <h3 id="manuelle-Regelpriorit-t">manuelle Regelpriorität</h3>
 
+<p>Falls die Priorität stark von der durch Gültigkeitsdauer und Versionssprung zugewiesenen abweicht, muss die Priorität von Hand vergeben werden können.</p>
+
 <h2 id="Priorit-t-von-Daten">Priorität von Daten</h2>
+
+<p>Die zweite Priorität sortiert die zu prüfenden Datensätze in eine Reihenfolge.</p>
 
 <h3 id="Daten-Priorit-t-nach-Ablaufdatum">Daten-Priorität nach Ablaufdatum</h3>
 
+<p>Wenn Daten ihr Ablaufdatum für die Prüfung überschreiten, müssen sie für die nächsten Prüfrunden eingeplant werden.</p>
+
 <h3 id="Daten-Priorit-t-nach-Einstufung">Daten-Priorität nach Einstufung</h3>
 
-<p>*** Wichtigkeit der Daten-Klasse</p>
+<p>Hier wird die Wichtigkeit nach der Daten-Klasse (z.B Führerschein, Kreditkarte) vergeben. Führerschein-Date und Kreditkarten-Daten werden allgemein eher geprüft als die erfolgreiche Versendung von Werbebriefen.</p>
 
 <h3 id="Manuelle-Daten-Priorit-t">Manuelle Daten-Priorität</h3>
 
-<p>*** Wichtigkeit einzelner Datensätze</p>
+<p>Falls einem einzelnen Kunden der Werbebrief zu einem bestimmten Datum angekündigt wurde, kann für diesen einen Datensatz (des Werbebriefes) manuell eine beliebige, höhere Priorität gesetzt werden.</p>
+
+<p>Dadurch wird die Prüfung schneller erledigt und der Brief kann schneller versendet werden.</p>
 
 <h1 id="Dimension-Ergebnisse">Dimension Ergebnisse</h1>
 
+<p>Als letzte Dimension müssen die Ergebnisse verarbeitet und zugeordnet werden.</p>
+
+<p>Das sollte zentral - z.B. über eine Validierungs-Library - geregelt werden.</p>
+
+<p>Als gelungenes Beispiel führe ich hier die Test-Ergebnisse des CPAN-Testers für <a href="http://matrix.cpantesters.org/?dist=Scalar-Validation+0.700">Scalar::Validation</a> auf. Optisch wäre bestimmt noch mehr möglich, aber dafür läuft es auf jedem Web-Browser und wird vollautomatisch generiert.</p>
+
 <h2 id="Ergebnis-Verarbeitung">Ergebnis Verarbeitung</h2>
+
+<p>Bevor die Ergebnisse präsentiert werden können, müssen sie zunächst einmal verarbeitet werden. Bei großen Datenmengen ist das eine anspruchsvolle Aufgabe, wenn nicht viel Rechenleistung und Speicherplatz dafür verwendet werden darf.</p>
 
 <h3 id="Ergebnisse-speichern">Ergebnisse speichern</h3>
 
+<p>Zunächst müssen die Ergebnisse gespeichert werden. Dabei muss man die Entscheidung treffen, wie ausführlich die gespeicherten Daten sein sollen.</p>
+
+<p>Im minimalen Fall speichert man die Durchführung und das Ergebnis als kleine Zahl(en).</p>
+
+<p>Im maximalen Fall werden alle entstandenen Meldungen und Hilfetexte gespeichert.</p>
+
+<p>Für schnell und leicht wiederholbare Prüfungen genügt oft die Information, dass die Prüfung fehlgeschlagen ist. Bei Bedarf kann man sie wiederholen und das Ergebnis anzeigen.</p>
+
+<p>Für kostenpflichtige oder sehr umfangreiche Prüfungen speichert man besser das Ergebnis ab. Welche Ergebnisdaten wie gespeichert werden, ist wiederum festzulegen.</p>
+
+<p>Für große Systeme kann man die Validierungsergebnisse in eigenen Datenbanken speichern, um das Anwendungs-System zu entlasten.</p>
+
 <h3 id="Ergebnisse-verdichten">Ergebnisse verdichten</h3>
+
+<p>30 Millionen Fehlermeldungen möchte man sich nicht eine nach der anderen ansehen.</p>
+
+<p>Eine Filterung wird mindestens benötigt.</p>
+
+<p>Besser sind verdichtete Daten, z.B. die Anzahl der Fehler in jedem Datentyp, welche Fehler wie oft auftreten usw., weil dadurch die Datenbank nicht so stark belastet wird und die verdichteten Daten in eigene Datenbanken ausgelagert werden können.</p>
 
 <h3 id="Ergebnisse-analysieren">Ergebnisse analysieren</h3>
 
-<h3 id="Ergebnisse-pr-sentieren">Ergebnisse präsentieren</h3>
+<p>Die verdichteten Ergebnisse können nun vollautomatisch, halbautomatisch oder manuell analysiert werden. Welche Ergebnisse sind anders als üblich? Treten bestimmte Fehler neuerdings häufiger auf?</p>
 
 <h2 id="Ergebnis-Zuordnung">Ergebnis-Zuordnung</h2>
 
+<p>Validierungsergebnisse müssen für jede Zielgruppe gefiltert und geeignet präsentiert werden.</p>
+
+<p>Es ist sehr wichtig, die Ausbildung der folgenden Gruppen zu kennen, sie kann sich zwischen den Gruppen oder innerhalb einer Gruppe stark unterscheiden.</p>
+
+<p>Unix-Admins können meistens programmieren, Windows Admins nicht immer, und jemand, der nebenbei einige Server betreibt oder betreiben lässt, hat u.U. gar keine Ausbildung als Administrator, muss aber auch die Ergebnisse soweit verstehen, um Gefahren zu erkennen und Hilfe anfordern zu können.</p>
+
 <h3 id="Ergebnisse-f-r-Administratoren">Ergebnisse für Administratoren</h3>
+
+<p>Administratoren betreiben die Web-Seite, die Server und die Netzwerke. Für sie sind z.B. fehlgeschlagene Login-Versuche interessant, die sich häufen. Es könnte sich um einen Hacker handeln, der versucht, in das System einzubrechen.</p>
+
+<p>Fehler beim Zugriff auf die Datenbank sind für sie ebenfalls interessant.</p>
 
 <h3 id="Ergebnisse-f-r-Entwickler">Ergebnisse für Entwickler</h3>
 
+<p>Entwickler müssen alle Ergebnisse lesen können. Spezielle Trace-Informationen über fehlgeschlagene Prüfungen, die auch einen Call-Stack beinhalten, sind sehr hilfreich.</p>
+
+<p>Diese Informationen dürfen aber keinesfalls beim Anwender landen. Einerseits sind sie meistens für Anwender unverständlich und verdecken die eigentliche Fehlermeldung. Andererseits sind sie für Hacker eine große Hilfe beim Eindringen in das System oder sonstigen unerwünschten Aktivitäten.</p>
+
 <h3 id="Ergebnisse-f-r-Tester">Ergebnisse für Tester</h3>
+
+<p>Tester möchten gerne die Fehlerausgabe in eine private Datensammlung umleiten, damit nach dem Test überprüft werden kann, welche Fehlermeldungen entstanden sind. Sie dürfen auch Einblick in die Traces nehmen, wenn ihnen das hilft.</p>
 
 <h3 id="Ergebnisse-f-r-Support">Ergebnisse für Support</h3>
 
+<p>Der Support möchte oft mehr sehen als ein Anwender, um den Fehler besser eingrenzen zu können. Dazu sollte er alle Meldungen, die durch die Arbeit des Anwenders entstanden sind, herausfiltern können.</p>
+
+<p>Hier sind Fehlernummern und IDs zu den Validierungsergebnissen hilfreich.</p>
+
 <h3 id="Ergebnisse-f-r-externe-Pr-fer">Ergebnisse für externe Prüfer</h3>
+
+<p>Externe Prüfer, z.B. der TÜV oder Steuer- und Bilanzprüfer haben spezielle Anforderungen, sodass sie als eigene Gruppe mit eigenen Rechten und eigenen Sichten eingerichtet werden sollten.</p>
 
 <h3 id="Ergebnisse-f-r-Anwender">Ergebnisse für Anwender</h3>
 
+<p>Alle, die nicht unter eine der oben genannten Kategorien einzuordnen sind, sind Anwender.</p>
+
+<p>Dazu können auch die Betreiber/Auftraggeber gehören. Als Beispiel führe ich hier einen Web-Shop auf und unterteile weiter in Shop-Betreiber und Shop-Kunden.</p>
+
 <h4 id="Ergebnisse-f-r-Shop-Betreiber">Ergebnisse für Shop-Betreiber</h4>
 
+<p>Ein Shop-Betreiber interessiert sich z.B. sehr für fehlgeschlagene Validierungen von Kreditkarten, damit er die Karten oder den Benutzer notfalls sperren kann.</p>
+
+<p>Außerdem interessiert er sich für ungewöhnliche Ereignisse und ungewöhnlich hohe oder niedrige Rechnungen und möchte gern Warnungen erhalten, wenn die Lagerbestände bestimmte Werte unter- oder überschreiten. Auch das kann man mit Validator-Regeln realisieren, da es sich um die Validierung des Lagerbestands handelt.</p>
+
 <h4 id="Ergebnisse-f-r-Shop-Kunden">Ergebnisse für Shop-Kunden</h4>
+
+<p>Der Kunde benötigt eine Hilfestellung bei der Eingabe und die Möglichkeit, bei Schwierigkeiten die ID des Fehlereintrags abzufragen und an den Support zu senden.</p>
+
+<h2 id="Ergebnis-Pr-sentation">Ergebnis-Präsentation</h2>
+
+<p>Nachdem die Ergebnisse verarbeitet und den entsprechenden Interessengruppen zugeordnet wurden, müssen sie jetzt noch in geeigneter Form präsentiert werden.</p>
+
+<p>Das kann durch Tabellen, Grafiken und Einzel-Ansichten durchgeführt werden.</p>
+
+<p>Für den Anwender ist eine schnelle kurze Rückmeldung nach jeder Eingabe hilfreich, die per Kfür oder automatisch weitere Erläuterungen zum gefundenen Fehler liefert und Fehler deutlich anzeigt.</p>
+
+<p>Wer hier ein gutes System findet, wird sehr viel Aufwand in der Hotline einsparen.</p>
+
+<h1 id="Fazit-zu-Validierungsdimensionen">Fazit zu Validierungsdimensionen</h1>
+
+<p>Möglicherweise existieren noch mehr Dimensionen in der Software, die für die Validierung wesentlich sind. Die letzten drei sind mir erst eingefallen, als ich die ersten fünf beschrieben hatte.</p>
+
+<p>In jedem professionellen Software-Projekt <b>muss</b> man für jede dieser Dimensionen prüfen, welche Punkte relevant sind.</p>
+
+<p>Im nun folgenden Teil II werden die Anforderungen/Auswirkungen dieser Dimensionen an die Software herausgearbeitet.</p>
 
 <h1 id="Teil-II:-Anforderungen-an-die-Software">Teil II: Anforderungen an die Software</h1>
 
 <p>==part Teil II: Anforderungen an die Software =====================================================</p>
+
+<p>Als Fehler-ID eignet sich am besten eine <a href="#GUID">&quot;GUID&quot;</a>, sie ist weltweit eindeutig und kann nicht verwechselt werden. Sie muss mindesten kopierbar sein, besser noch automatisch an den Support übermittelt werden.</p>
 
 <h1 id="Neues-Kapitel">&lt;Neues Kapitel&gt;</h1>
 
@@ -1965,7 +2245,8 @@
 
 <p>Zusätzlich schützt dieser Ansatz vor Angriffen, die das System überlasten sollen (Denial of Service Attacks). Nach dem Einloggen kann man durch die Trennung der Web-Server eine andere Leitung nutzen und IP-Adressen und URLs variieren.</p>
 
-</dd>
+<dl>
+
 <dt id="Public-Web-Server">1. Public Web-Server</dt>
 <dd>
 
@@ -1990,8 +2271,7 @@
 </dd>
 </dl>
 
-<dl>
-
+</dd>
 <dt id="Sessions">6. Sessions</dt>
 <dd>
 
@@ -2309,6 +2589,8 @@
 
 <h3 id="Gigaset">Gigaset</h3>
 
+<h3 id="GUID">GUID</h3>
+
 <h3 id="Instanz">Instanz</h3>
 
 <h3 id="Entwickler">Entwickler</h3>
@@ -2399,26 +2681,6 @@
 <p>Für kritische Anwendungen/Funktionen sollte er die UNIT-Tests, die ein Entwickler geschrieben hat, zumindest reviewen, besser noch komplettieren und weiterentwickeln.</p>
 
 <h2 id="Index">Index</h2>
-
-<h1 id="POD-ERRORS">POD ERRORS</h1>
-
-<p>Hey! <b>The above document had some coding errors, which are explained below:</b></p>
-
-<dl>
-
-<dt id="Around-line-2149">Around line 2149:</dt>
-<dd>
-
-<p>Unknown directive: =over2</p>
-
-</dd>
-<dt id="Around-line-2175">Around line 2175:</dt>
-<dd>
-
-<p>&#39;=item&#39; outside of any &#39;=over&#39;</p>
-
-</dd>
-</dl>
 
 
 </body>
