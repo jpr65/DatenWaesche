@@ -575,7 +575,7 @@ Zum 01.01.2016 gelten folgende (fiktive) Bestimmungen:
 Statt bisher 5 Liter Wein sind nur noch 3 Liter zollfrei von Gebieten außerhalb der EU
 einführbar.
 
-Die Regel wurde verschärft. Dadurch müssen alle Lieferungen, die nach ab dem 01.01.2015
+Die Regel wurde verschärft. Dadurch müssen alle Lieferungen, die ab dem 01.01.2015
 eintreffen, überprüft und neu verzollt werden, wenn sie mehr als 3 Liter Wein enthalten,
 auch wenn die Bestellung 2014 aufgegeben wurde.
 
@@ -592,7 +592,7 @@ Um Kosten zu sparen, kann die Lieferung neu verzollt werden.
 =head3 Optionale Regeln
 
 Optionale Regeln gelten nicht für alle Daten, sondern nur unter bestimmten Bedingungen.
-Das kann erfordern, die vor jeder Anwendung die Regel zu prüfen.
+Das kann erfordern, vor jeder Anwendung die Regel zu prüfen.
 
 =over
 
@@ -697,7 +697,7 @@ der Planung und Durchführung von Prüfungen.
 
 Das Ziel sollte daher sein, Regeln in größeren Abständen zu aktualisieren.
 
-Wenn Regeln direkt in der DB geändert werden können, müssen besonderen Schutzmaßnahmen
+Wenn Regeln direkt in der DB geändert werden können, müssen besondere Schutzmaßnahmen
 getroffen werden, siehe dazu Teil II.
 
 Um überhaupt feststellen zu können, was neu gerpüft werden muss, benötigt jede Regel
@@ -720,13 +720,13 @@ ist es oft und regelmäßig notwendig, bestimmte Prüfungen vorzuziehen.
 =head2 Priorität von Regeln
 
 Zur Festlegung der Reihenfolge für die Abarbeitung von geänderten Regeln existieren
-zwei Prinzipien:
+folgende Möglichkeiten:
 
 =over
 
-=item * Gültigkeitsdauer
+=item * Betrachtung der Gültigkeitsdauer
 
-=item * Versionssprung
+=item * Betrachtung des Versionssprungs
 
 =item * Manuell vergeben
 
@@ -761,41 +761,162 @@ nächsten Prüfrunden eingeplant werden.
 
 =head3 Daten-Priorität nach Einstufung
 
-*** Wichtigkeit der Daten-Klasse
+Hier wird die Wichtigkeit nach der Daten-Klasse (z.B Führerschein, Kreditkarte)
+vergeben. Führerschein-Date und Kreditkarten-Daten werden allgemein
+eher geprüft als die erfolgreiche Versendung von Werbebriefen.
 
 =head3 Manuelle Daten-Priorität
 
-*** Wichtigkeit einzelner Datensätze
+Falls einem einzelnen Kunden der Werbebrief zu einem bestimmten Datum angekündigt wurde,
+kann für diesen einen Datensatz (des Werbebriefes)
+manuell eine beliebige, höhere Priorität gesetzt werden.
+
+Dadurch wird die Prüfung schneller erledigt und der Brief kann schneller versendet werden.
 
 =head1 Dimension Ergebnisse
 
+Als letzte Dimension müssen die Ergebnisse verarbeitet und zugeordnet werden.
+
+Das sollte zentral - z.B. über eine Validierungs-Library - geregelt werden.
+
+Als gelungenes Beispiel führe ich hier die Test-Ergebnisse des CPAN-Testers für 
+L<Scalar::Validation|http://matrix.cpantesters.org/?dist=Scalar-Validation+0.700>
+auf. Optisch wäre bestimmt noch mehr möglich, aber dafür läuft es auf jedem Web-Browser
+und wird vollautomatisch generiert.
+
 =head2 Ergebnis Verarbeitung
+
+Bevor die Ergebnisse präsentiert werden können, müssen sie zunächst einmal verarbeitet
+werden. Bei großen Datenmengen ist das eine anspruchsvolle Aufgabe, wenn nicht
+viel Rechenleistung und Speicherplatz dafür verwendet werden darf.
 
 =head3 Ergebnisse speichern
 
+Zunächst müssen die Ergebnisse gespeichert werden. Dabei muss man die Entscheidung treffen,
+wie ausführlich die gespeicherten Daten sein sollen.
+
+Im minimalen Fall speichert man die Durchführung und das Ergebnis als kleine Zahl(en).
+
+Im maximalen Fall werden alle entstandenen Meldungen und Hilfetexte gespeichert.
+
+Für schnell und leicht wiederholbare Prüfungen genügt oft die Information, dass die Prüfung
+fehlgeschlagen ist. Bei Bedarf kann man sie wiederholen und das Ergebnis anzeigen.
+
+Für kostenpflichtige oder sehr umfangreiche Prüfungen speichert man besser das Ergebnis ab.
+Welche Ergebnisdaten wie gespeichert werden, ist wiederum festzulegen.
+
+Für große Systeme kann man die Validierungsergebnisse in eigenen Datenbanken speichern,
+um das Anwendungs-System zu entlasten.
+
 =head3 Ergebnisse verdichten
+
+30 Millionen Fehlermeldungen möchte man sich nicht eine nach der anderen ansehen.
+
+Eine Filterung wird mindestens benötigt.
+
+Besser sind verdichtete Daten, z.B. die Anzahl der Fehler
+in jedem Datentyp, welche Fehler wie oft auftreten usw., weil dadurch die Datenbank
+nicht so stark belastet wird und die verdichteten Daten in eigene Datenbanken ausgelagert
+werden können.
 
 =head3 Ergebnisse analysieren
 
-=head3 Ergebnisse präsentieren
+Die verdichteten Ergebnisse können nun vollautomatisch, halbautomatisch oder manuell
+analysiert werden. Welche Ergebnisse sind anders als üblich? Treten bestimmte Fehler
+neuerdings häufiger auf?
 
 =head2 Ergebnis-Zuordnung
 
+Validierungsergebnisse müssen für jede Zielgruppe gefiltert und geeignet präsentiert werden.
+
+Es ist sehr wichtig, die Ausbildung der folgenden Gruppen zu kennen, sie kann sich zwischen den
+Gruppen oder innerhalb einer Gruppe stark unterscheiden.
+
+Unix-Admins können meistens programmieren, Windows Admins nicht immer, und jemand, der nebenbei
+einige Server betreibt oder betreiben lässt, hat u.U. gar keine Ausbildung als Administrator,
+muss aber auch die Ergebnisse soweit verstehen, um Gefahren zu erkennen und Hilfe anfordern
+zu können.
+
 =head3 Ergebnisse für Administratoren
+
+Administratoren betreiben die Web-Seite, die Server und die Netzwerke. Für sie sind z.B.
+fehlgeschlagene Login-Versuche interessant, die sich häufen. Es könnte sich um einen Hacker
+handeln, der versucht, in das System einzubrechen.
+
+Fehler beim Zugriff auf die Datenbank sind für sie ebenfalls interessant.
 
 =head3 Ergebnisse für Entwickler
 
+Entwickler müssen alle Ergebnisse lesen können. Spezielle Trace-Informationen über
+fehlgeschlagene Prüfungen, die auch einen Call-Stack beinhalten, sind sehr hilfreich.
+
+Diese Informationen dürfen aber keinesfalls beim Anwender landen. Einerseits sind sie
+meistens für Anwender unverständlich und verdecken die eigentliche Fehlermeldung.
+Andererseits sind sie für Hacker eine große Hilfe beim Eindringen in das System
+oder sonstigen unerwünschten Aktivitäten.
+
 =head3 Ergebnisse für Tester
+
+Tester möchten gerne die Fehlerausgabe in eine private Datensammlung umleiten,
+damit nach dem Test überprüft werden kann, welche Fehlermeldungen entstanden sind.
+Sie dürfen auch Einblick in die Traces nehmen, wenn ihnen das hilft.
 
 =head3 Ergebnisse für Support
 
+Der Support möchte oft mehr sehen als ein Anwender, um den Fehler besser eingrenzen zu können.
+Dazu sollte er alle Meldungen, die durch die Arbeit des Anwenders entstanden sind, herausfiltern
+können.
+
+Hier sind Fehlernummern und IDs zu den Validierungsergebnissen hilfreich.
+
 =head3 Ergebnisse für externe Prüfer
+
+Externe Prüfer, z.B. der TÜV oder Steuer- und Bilanzprüfer haben spezielle Anforderungen,
+sodass sie als eigene Gruppe mit eigenen Rechten und eigenen Sichten eingerichtet werden sollten.
 
 =head3 Ergebnisse für Anwender
 
+Alle, die nicht unter eine der oben genannten Kategorien einzuordnen sind, sind Anwender.
+
+Dazu können auch die Betreiber/Auftraggeber gehören. Als Beispiel führe ich hier einen Web-Shop auf
+und unterteile weiter in Shop-Betreiber und Shop-Kunden.
+
 =head4 Ergebnisse für Shop-Betreiber
+
+Ein Shop-Betreiber interessiert sich z.B. sehr für fehlgeschlagene Validierungen von Kreditkarten,
+damit er die Karten oder den Benutzer notfalls sperren kann.
+
+Außerdem interessiert er sich für ungewöhnliche Ereignisse und ungewöhnlich hohe oder niedrige
+Rechnungen und möchte gern Warnungen erhalten, wenn die Lagerbestände bestimmte Werte unter-
+oder überschreiten. Auch das kann man mit Validator-Regeln realisieren, da es sich um die 
+Validierung des Lagerbestands handelt.
 
 =head4 Ergebnisse für Shop-Kunden
 
+Der Kunde benötigt eine Hilfestellung bei der Eingabe und die Möglichkeit,
+bei Schwierigkeiten die ID des Fehlereintrags abzufragen und an den Support zu senden.
 
+=head2 Ergebnis-Präsentation
 
+Nachdem die Ergebnisse verarbeitet und den entsprechenden Interessengruppen zugeordnet
+wurden, müssen sie jetzt noch in geeigneter Form präsentiert werden.
+
+Das kann durch Tabellen, Grafiken und Einzel-Ansichten durchgeführt werden.
+
+Für den Anwender ist eine schnelle kurze Rückmeldung nach jeder Eingabe hilfreich,
+die per Kfür oder automatisch weitere Erläuterungen zum gefundenen Fehler liefert
+und Fehler deutlich anzeigt.
+
+Wer hier ein gutes System findet, wird sehr viel Aufwand in der Hotline einsparen.
+
+=head1 Fazit zu Validierungsdimensionen
+
+Möglicherweise existieren noch mehr Dimensionen in der Software, die für die Validierung
+wesentlich sind. Die letzten drei sind mir erst eingefallen, als ich die ersten fünf
+beschrieben hatte.
+
+In jedem professionellen Software-Projekt B<muss> man für jede dieser Dimensionen
+prüfen, welche Punkte relevant sind.
+
+Im nun folgenden Teil II werden die Anforderungen/Auswirkungen dieser Dimensionen an die Software
+herausgearbeitet.

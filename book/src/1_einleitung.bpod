@@ -6,9 +6,30 @@
 
 =head1 Einleitung
 
+Mein Buch ist der erste Versuch, das Gebiet der Daten-Validierung in der
+Informations-Technologie (IT) umfassend zu beschreiben.
+Ob es mir gelungen ist, alles verständlich und vollständig darzustellen, kann ich nicht 
+beurteilen. Dazu warte ich auf Ihre Kommentare, liebe Leser.
+
+Dieses Buch verfolgt unter anderem folgende Ziele:
+
+=over
+
+=item * Sensibilität für Daten-Validierung wecken
+
+=item * Diskussionen über Daten-Validierung anstoßen
+
+=back
+
+Weitere Ziele sind gelistet unter L</Ziele des Buchs> im Kapitel L</Zuallererst>.
+Falls Ihnen etwas bekannt vorkommt, Wiederholung ist ein Prinzip des Buchs.
+Warum, können Sie dort ebenfalls nachlesen in L<Wie Lernen funktioniert>.
+
+Aber was ist Datenvalidierung überhaupt?
+
 Daten-Validierung oder Daten-Prüfung funktioniert wie eine Datenwäsche, 
 eine geplante und gezielte Daten-Validierung bezeichne ich 
-als "Große Datenwäsche".
+als "Große Datenwäsche". In Englisch in Anlehnung an "Clean Code" als "Clean Data".
 
 Angelieferte Daten sind meistens schmutzig und manchmal stark verseucht (Viren!).
 Validierung stellt verseuchte Daten in Quarantäne, damit sich die anderen Daten
@@ -118,7 +139,8 @@ die mühevolle Arbeit abnehmen, Prüfungen zu programmieren und zu testen.
 Viele User sind es gewöhnt, Daten gleich korrekt einzugeben, weil im Falle eines
 Fehlers die Suche nach der Ursache aufwändig werden kann. Im schlechtesten Fall,
 der immer noch sehr häufig auftritt, stürzt das Programm ab (Ausnahme in ...)
-oder hängt sich auf und die mühevoll eingetippten Daten sind verloren.
+oder hängt sich auf (reagiert nicht mehr)
+und die mühevoll eingetippten Daten sind verloren.
 
 Wenn der Auftraggeber einer SW-Entwicklung nicht explizit Prüfungen fordert
 und sie testet, werden oft keine eingebaut. Denn in Software sieht man meistens

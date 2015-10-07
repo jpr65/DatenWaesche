@@ -19,6 +19,12 @@ Diese Betrachtungsrichtungen ("Dimensionen") der Validierung sind:
 
 =item 5. Komplexität der Daten
 
+=item 6. Validierungsregeln
+
+=item 7. Priorität
+
+=item 8. Ergebnisse
+
 =back
 
 Jede Dimension wird im folgenden in einem eigenen Kapitel vorgestellt und genau untersucht.
@@ -63,6 +69,7 @@ eine Abfolge von Zeichen, z.B.
   1 Minute = 60 Sekunden
 
 Dieser Text enthält insgesamt 23 Zeichen (ohne Leerraum außen), und zwar
+außer den großen und kleinen Buchstaben
 3 Ziffern, 4 Leerzeichen (Space) und ein Sonderzeichen, das Gleichheitszeichen.
 
 Um z.B. die Anzahl der Tischtennisbälle in einer Verpackung einzugeben wird der Text
@@ -171,7 +178,7 @@ der Regel entsprechen oder nicht.
 
 Daraus ergeben sich mindestens sieben! Fälle - und nicht nur zwei -, die zu unterscheiden sind!
 
-Die 1-3 sind Status-Informationen über die Durchführung der Prüfung, die letzten 4-7
+Die Fälle 1-3 sind Status-Informationen über die Durchführung der Prüfung, die letzten 4-7
 die möglichen Ergebnisse der Prüfung. Es ist meistens keine gute Idee, die beiden Kategorien
 zu einer zusammenzufassen, wie man in Teil II sehen wird,
 aber Ihnen stehen natürlich auch alle anderen Möglichkeiten offen.
@@ -300,7 +307,7 @@ Was in diesem Fall nicht stimmt (False) und so manchen Anwender in den Wahnsinn 
 Er hat ja alles korrekt eingegeben, aber die Daten werden nicht akzeptiert.
 
 Hier ist es wichtig, dass das System von Hand überstimmt werden kann, indem man den
-Zustand auf "bestanden" ändert. Natürlich nur nach genauer Prüfung durch eine Experten,
+Zustand auf "bestanden" ändert. Natürlich nur nach genauer Prüfung durch einen Experten,
 der nicht der User sein sollte, der die Daten erstellt hat.
 
 Sonst läuft man Gefahr, dass der User alle fehlerhaften Daten ohne weitere Prüfung

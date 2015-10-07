@@ -4,6 +4,10 @@
 
 ==part Teil II: Anforderungen an die Software =====================================================
 
+Als Fehler-ID eignet sich am besten eine L</GUID>, sie ist weltweit eindeutig
+und kann nicht verwechselt werden. Sie muss mindesten kopierbar sein, besser noch automatisch
+an den Support übermittelt werden.
+
 =head1 <Neues Kapitel>
 
 =head2 <Neues Unterkapitel>
