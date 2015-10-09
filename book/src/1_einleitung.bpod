@@ -27,13 +27,22 @@ Warum, können Sie dort ebenfalls nachlesen in L<Wie Lernen funktioniert>.
 
 Aber was ist Datenvalidierung überhaupt?
 
-Daten-Validierung oder Daten-Prüfung funktioniert wie eine Datenwäsche, 
-eine geplante und gezielte Daten-Validierung bezeichne ich 
+Die eigentliche Daten-Validierung oder Daten-Prüfung funktioniert wie ein Filter
+oder ein Wächter, der verschmutzte Daten abweist.
+
+Für diese Daten muss eine "Datenwäsche" durchgeführt werden, 
+eine geplante und gezielte Daten-Validierung mit anschließender Wäsche bezeichne ich 
 als "Große Datenwäsche". In Englisch in Anlehnung an "Clean Code" als "Clean Data".
 
 Angelieferte Daten sind meistens schmutzig und manchmal stark verseucht (Viren!).
 Validierung stellt verseuchte Daten in Quarantäne, damit sich die anderen Daten
-nicht anstecken, und reinigt verschmutzte Daten bis zum gewünschten Reinheitsgrad.
+nicht anstecken, und markiert die verschmutzten Daten für die Reinigung,
+falls sie nicht dem gewünschten Reinheitsgrad entsprechen.
+
+So wie man seine lehmverschmierten Stiefel vor der Haustür auszieht, damit der Gang zum
+WC und danach in die Küche nicht eine stundenlange Reinigung des gesamten Hauses verursacht.
+Der Validator wacht über die Sauberkeit der Daten wie der Reinigungsservice über den
+frisch gewischten Boden.
 
 In der industriellen Produktion gibt es viele Verfahren zur Aufbereitung von Rohmaterial:
 
@@ -43,7 +52,8 @@ Kleidung verwenden kann.
 
 Für jeden Verarbeitungsschritt ist die Eingangs- und Ausgangsqualität genau definiert.
 
-Für elektronische Datenverarbeitung existieren solche Standards nicht.
+Daten in der der elektronischen Datenverarbeitung müssen auch gefiltert und gewaschen werden,
+aber Standards für Verfahren und die Beschreibung Reinheits-Stufe existieren nicht.
 
 =head2 Warum ist Daten-Validierung wichtig?
 
