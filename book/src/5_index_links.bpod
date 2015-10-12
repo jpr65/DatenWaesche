@@ -221,6 +221,12 @@ Alles weitere sollte man auf Wikipedia oder in einem der dort gelisteten guten P
 Viele der hier aufgeführten Kurzerklärungen sind von Wikipedia und anderen OpenData im Web
 übernommen. Der angefügte Link dient als Quellennachweis.
 
+=head3 Aggregat
+
+Den Zusammenbau von mehreren L<Objekten|/Objekt>/L<Instanzen|/Instanz>
+zu etwas Größerem nennt man Aggregat. Siehe dazu Kapitel L<Komplexität 4. Aggregatdaten> und
+L<Komplexität 5. Zusammengesetztes Aggregat>
+
 =head3 ATB
 
 =head3 CPAN
@@ -232,12 +238,6 @@ Englisch für Entwickler, s.u.
 =head3 edi@energy
 
 =head3 EDIFACT
-
-=head3 Gigaset
-
-=head3 GUID
-
-=head3 Instanz
 
 =head3 Entwickler
 
@@ -265,6 +265,10 @@ statt des roten und alle vier Ampeln einer unübersichtlichen Kreuzung grün zei
 Das passiert allerdings fast nie, da Ampelschaltungen nach sehr gründlichen
 Vorschriften validiert werden.
 
+=head3 Gigaset
+
+=head3 GUID
+
 =head3 Hardware
 
 Auf Hardware läuft die Software, das Programm ab. Hardware lässt sich
@@ -280,14 +284,127 @@ Mechanische und elektrische Systeme werden immer mehr durch Elektronik ersetzt,
 was oft nicht notwendig und manchmal sogar gefährlich ist. Elektronik mit
 Software ist eben viel komplexer und fehleranfälliger.
 
+=head3 Instanz
+
+Ein L</Objekt> einer bestimmten L</Klasse> im Programm-Code.
+
+Siehe auch kleine Einführung in die L</Objektorientierung>.
+
+=head3 IO
+
+Mit I/O (Input/Output) bezeichnet man in der Informatik
+alles, was Daten liest, schreibt oder anderweitig ausgibt:
+
+=over
+
+=item * Datenbankverarbeitung mit SQL
+
+=item * Lesen/Schreiben aus Dateien
+
+=item * Webservices senden und empfangen Daten
+
+=item * Streams
+
+=back
+
+B<Reports> sind Operationen, werden aber oft mit I/O-Funktionalität ausgestattet,
+mit zum Teil schwerwiegenden Folgen für die Systemarchitektur. 
+Das gilt vor allem für externe Tools, die direkt aus der DB lesen.
+
+=head3 IODA
+
+IODA oder Integration-Operation-Daten-API ist eine Programmier-Architektur, die
+Klassen in Integratoren, Operationen und Daten unterteilt. Unterlagerte Bibliotheken
+(Schichten) werden als API bezeichnet und setzen sich wiederum aus Integratoren, Operationen
+und Daten zusammen.
+
+Entwickelt wurde diese L<Architektur von Ralf Westphal:
+|http://blog.ralfw.de/2015/04/die-ioda-architektur.html>
+
+"So entsteht Software als Summe von Prozessen, deren Schritte in Operationen implementiert sind,
+ die Daten konsumieren und produzieren unter Zuhilfenahme von APIs."
+
+B<Daten> sind sehr egozentriert und beschäftigen sich nur mit sich selbst.
+Sie haben keine Kenntnis von der Außenwelt, dürfen
+aber andere Daten innerhalb eines L<Aggregates|/Aggregat> kennen.
+
+B<Operationen> verarbeiten Daten. Sie erhalten Daten und verändern sie oder erzeugen neue Daten.
+
+B<Integratoren> sind die Manager. Sie verbinden Operationen, versorgen sie mit Daten, nehmen
+die Ergebnisse der Operationen als Daten in Empfang
+und verteilen sie weiter an andere Operationen.
+
+B<Kontrollkonstrukte> wie If-Then-Else oder Schleifen sollten idealerweise nur
+in Operationen verwendet werden.
+Integratoren sollten einfach nur Daten von einer zur nächsten Operation weiterreichen.
+
+Ein weiterer zentraler Aspekt ist die B<Kapselung>. So dürfen Operationen/Daten 
+durchaus wieder 
+aus Integrationen, Operationen und Daten bestehen, wenn sie von einer Kapsel umgeben sind und
+sich nach außen wie Operationen/Daten verhalten. D.h. sie kommunizieren nicht direkt mit anderen, die
+außerhalb ihrer Kapsel liegen.
+
+Man kann auch Operationen und Integrationen innerhalb von einer Klasse kombinieren,
+wenn die Klasse klein genug bleibt. Dann wird die Trennung in die Ebene der Methoden verschoben,
+indem jede Methode entweder Operations- oder Integrations-Character hat.
+
+Der letzte wichtige Aspekt ist B<L</IO>>. Mit I/O (Input/Output) bezeichnet man in der Informatik
+alles, was Daten liest, schreibt oder anderweitig ausgibt.
+
+Optimalerweise erstellt man eigene Klassen für I/O. Falls das in Altcode nicht so leicht möglich ist,
+kann man die I/O-Operationen in eigene Methoden auslagern.
+
+Dadurch wird die Erstellung von L</Unit-Tests>
+für Operationen leicht, denn es kann direkt im Hauptspeicher gearbeitet werden,
+man benötigt keine Datenbanken, Webservices, Streams, Dateien oder ähnliches.
+
+=head3 Klasse
+
+Gleichartige L<Objekte|/Objekt> werden zu Klassen zusammengefasst. Eine Klasse
+funktioniert wie eine Schablone, mit der L<Instanzen|/Instanz> hergestellt werden.
+
+Siehe auch kleine Einführung in die L</Objektorientierung>.
+
 =head3 Moo
 
 =head3 Notaus
 
 =head3 Objekt
 
-C[Muss noch einfacher werden] Ein Objekt (engl. Object) der realen Welt wird oft mehr
-oder weniger 1:1 in die Anwendungs-Domäne der Software übernommen.
+Im Sinne der Informationsverarbeitung ist ein Objekt ein "etwas",
+das Daten (Attribute) speichern und etwas tun kann (Methoden) und dazu mit
+anderen Objekten kommuniziert.
+
+Siehe auch kleine Einführung in die L</Objektorientierung>.
+
+=head3 Objektorientierung
+
+Gegeben: Ein Sandkasten mit Sand und ein Fischförmchen.
+
+Ein "Fisch" ist das Objekt der realen Welt.
+
+Im Sandkasten entspricht das Förmchen der Klasse. Man bildet eine Instanz,
+indem man das Förmchen mit Sand füllt, umstürzt und das Förmchen entfernt.
+Das entspricht dem Aufruf des Konstruktors.
+
+Der übriggebliebene Fisch aus Sand kann noch weiter verziert werden.
+Der Sandfisch muss einer L<Datenklasse|/IODA> angehören, denn er kann nichts weiter
+unternehmen als dazuliegen und in der Sonne auszutrocknen.
+
+Wird die Sand-Figur nicht mehr benötigt, wird der Destruktor auf der Instanz
+aufgerufen. Die Figur wird zerstört und wieder in den allgemeinen Sandhaufen
+zurückgeführt.
+
+Ein Beispiel für eine Instanz einer L<Operationsklasse|/IODA>, ein B<Pkw>.
+
+In einen Pkw können Personen einsteigen und er kann Ladung aufnehmen,
+das entspricht einem schreibenden Speichervorgang.
+Der Pkw kann dann zu einem anderen Ort fahren, das entspricht einer Methode.
+Dort steigen dann ein Teil der Personen aus und er wird entladen (Speicher lesen).
+
+Es existieren verschiedene Objektorientierte Architekturmodelle. Ich favorisiere L</IODA>.
+
+Siehe auch Wikipedia: L<https://de.wikipedia.org/wiki/Objektorientierung>
 
 =head3 Perl
 
@@ -349,6 +466,8 @@ zusätzlich einfallen. Danach implementiert er die Funktionalität,
 erweitert die Tests wechselweise
 und bezieht auch die Tester ein.
 
+*** Wikipedia
+
 =head3 Tester
 
 Ein guter SW-Tester kann Software schreiben, nämlich automatische Tests und Hilfstools für das
@@ -360,6 +479,21 @@ Dazu versucht er auch, das System mit unsinnigen und unerlaubten Eingaben auszut
 
 Für kritische Anwendungen/Funktionen sollte er die UNIT-Tests, die ein Entwickler geschrieben
 hat, zumindest reviewen, besser noch komplettieren und weiterentwickeln.
+
+*** Wikipedia
+
+=head3 Unit-Tests
+
+Mit Unit-Tests bezeichne ich Tests von einzelnen Klassen und Methoden, die schnell
+durchführbar und beliebig wiederholbar sind. Idealerweise verwenden Unit-Tests keinerlei I/O
+mit Ausnahme der Ausgabe der Testergebnisse, wie z.B. L</TAP - Test Anything Protocol>.
+
+Wie man das erreicht, steht kurz in L</IODA>
+oder ausführlich im Kapitel [***???NochZuSchreiben*** ].
+
+Siehe dazu auch L<Test-Driven-Development, kurz TDD|/TDD - Test Driven Development>.
+
+*** Wikipedia
 
 =head2 Index
 
