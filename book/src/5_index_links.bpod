@@ -10,7 +10,9 @@ werden, gibt es hier eine kleine Einführung, die bei Ihnen vielleicht Appetit a
 
 =head4 Perl Kommentare
 
-Das Kommentarzeichen ist das Hash-Tag "#".
+Das Kommentarzeichen ist das Hash-Tag "#". Alle nachfolgenden Zeichen werden damit
+zu Kommentar, den der Compiler ignoriert. (Es gibt allerdings einige Ausnahmen, wo
+'#' keinen Kommentar einleitet, aber das würde hier zu weit führen.)
 
 =head4 Perl Variablen
 
@@ -307,7 +309,8 @@ alles, was Daten liest, schreibt oder anderweitig ausgibt:
 
 =back
 
-B<Reports> sind Operationen, werden aber oft mit I/O-Funktionalität ausgestattet,
+B<Report-Tools> zum Erzeugen von Reports sind Operationen und
+werden oft mit I/O-Funktionalität ausgestattet,
 mit zum Teil schwerwiegenden Folgen für die Systemarchitektur. 
 Das gilt vor allem für externe Tools, die direkt aus der DB lesen.
 
