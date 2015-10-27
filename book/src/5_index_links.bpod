@@ -231,7 +231,22 @@ L<Komplexität 5. Zusammengesetztes Aggregat>
 
 =head3 ATB
 
+Ein Allterrainboard (deutsch „Allgeländebrett“) oder auch Mountainboard (allgemeine Bezeichnung)
+ist ein Funsportgerät. Es ist optisch und technisch eine Mischung aus Skateboard und Snowboard
+und ist mit luftbereiften Rädern ausgestattet um auf jedem Untergrund benutzt werden zu können.
+
+L<https://de.wikipedia.org/wiki/Allterrainboard>
+
 =head3 CPAN
+
+CPAN (englisch Comprehensive Perl Archive Network) ist ein weltweit gespiegeltes Online-Repository
+für Perl-Module, -Anwendungen und -Dokumentationen, das am 25. Oktober 1995 in Anlehnung
+an die TeX-Library CTAN ins Leben gerufen wurde und sich schnell zum De-facto-Standard entwickelt hat.
+Es bietet die Möglichkeit einer komfortablen Installation und Verwaltung von Perl-Modulen.
+Heute umfasst das CPAN circa 260 Server auf fünf Kontinenten und enthält
+ca. 29.000 Distributionen von über 11.000 Autoren mit einem Volumen von ungefähr 17 GB.[1]
+
+L<https://de.wikipedia.org/wiki/CPAN>
 
 =head3 Developer
 
@@ -368,6 +383,16 @@ funktioniert wie eine Schablone, mit der L<Instanzen|/Instanz> hergestellt werde
 
 Siehe auch kleine Einführung in die L</Objektorientierung>.
 
+=head3 KLB
+
+Kite Landboarding (KLB) ist eine Extremsportart, die im Prinzip dem Kitesurfing und Snowkiting
+sehr ähnelt. Im Gegensatz zu den beiden genannten Sportarten wird Kitelandboarding
+jedoch an Land auf festem Untergrund durchgeführt,
+wobei man sich auf einem Allterrainboard von einer Lenkmatte ziehen lässt.
+
+L<https://de.wikipedia.org/wiki/Kitelandboarding>
+
+
 =head3 Moo
 
 =head3 Notaus
@@ -411,14 +436,29 @@ Siehe auch Wikipedia: L<https://de.wikipedia.org/wiki/Objektorientierung>
 
 =head3 Perl
 
-L<Wikipedia:|https://de.m.wikipedia.org/wiki/Perl_(Programmiersprache)>
-L<Perl|https://de.m.wikipedia.org/wiki/Perl_(Programmiersprache)>
+L<Wikipedia:|https://de.wikipedia.org/wiki/Perl_(Programmiersprache)>
+L<Perl|https://de.wikipedia.org/wiki/Perl_(Programmiersprache)>
 ist eine freie, plattformunabhängige und interpretierte Programmiersprache
 (Skriptsprache), die mehrere Programmierparadigmen unterstützt.
 
 Eine kleine Einführung steht im Kapitel L</Kleine Einführung in Perl>.
 
 =head3 POD und BPOD
+
+=head3 Powermatte
+
+Mattendrachen (auch: Airfoils, Parafoils, Soft Kite, Lenkmatte oder einfach Matte genannt)
+sind stablose Drachen, die bei Anströmung ein Flügelprofil ähnlich einem Gleitschirm entwickeln.
+Da sie vollständig aus Gewebe und Leinen bestehen, können sie platzsparend gefaltet
+und problemlos transportiert werden.
+
+Die Powerversionen können mehrere hundert Kilo heben oder ziehen und sind deshalb kein Spielzeug, sondern
+Extremsportgeräte. Leider habe ich schon viele Verkäufer erlebt, die die Unterschiede zu
+einfachen Lenkmatten mit wenig Zugkraft nicht kennen. Meine Zugschnüre sind auf Zugkräfte bis 180kg
+ausgelegt, insgesamt also 360kg.
+Bei ausreichend Wind und ungünstigen Flugmanövern werden diese Kräfte auch erreicht.
+
+L<https://de.wikipedia.org/wiki/Lenkmatte#Mattendrachen>
 
 =head3 Renesas
 

@@ -66,7 +66,7 @@ Eine Wand für ein Wohnhaus hat eine Toleranz von vielleicht 5mm, ein Micro-USB-
 für ein Ladegerät eine Toleranz von 0,1mm.
 
 Die Fertigungstoleranz entspricht bei Daten dem "Verschmutzungsgrad". Durch mehrfaches
-Validieren (Waschen) werden die Daten bis zum gewünschten Ergebnis gesäubert. Wie das
+Validieren und Waschen werden die Daten bis zum gewünschten Ergebnis gesäubert. Wie das
 funktioniert und was es bedeutet, wird im Folgenden mit der Validierung eines Geburtsdatums
 illustriert.
 
@@ -395,7 +395,7 @@ ist eines der zentralen Themen in Teil II und Teil III dieses Buches.
 
 =head1 Dimension Komplexität der Daten
 
-Die Komplexität der Daten/Klassen bildet die letzte Dimension der Validierung.
+Die Komplexität der Daten/Klassen bildet eine weitere Dimension der Validierung.
 
 
 
@@ -762,7 +762,7 @@ nächsten Prüfrunden eingeplant werden.
 =head3 Daten-Priorität nach Einstufung
 
 Hier wird die Wichtigkeit nach der Daten-Klasse (z.B Führerschein, Kreditkarte)
-vergeben. Führerschein-Date und Kreditkarten-Daten werden allgemein
+vergeben. Führerschein-Daten und Kreditkarten-Daten werden allgemein
 eher geprüft als die erfolgreiche Versendung von Werbebriefen.
 
 =head3 Manuelle Daten-Priorität
@@ -829,8 +829,8 @@ neuerdings häufiger auf?
 
 Validierungsergebnisse müssen für jede Zielgruppe gefiltert und geeignet präsentiert werden.
 
-Es ist sehr wichtig, die Ausbildung der folgenden Gruppen zu kennen, sie kann sich zwischen den
-Gruppen oder innerhalb einer Gruppe stark unterscheiden.
+Es ist sehr wichtig, die Ausbildung der Mitglieder aus den folgenden Gruppen zu kennen,
+sie kann sich zwischen den Gruppen oder innerhalb einer Gruppe stark unterscheiden.
 
 Unix-Admins können meistens programmieren, Windows Admins nicht immer, und jemand, der nebenbei
 einige Server betreibt oder betreiben lässt, hat u.U. gar keine Ausbildung als Administrator,
@@ -904,7 +904,7 @@ wurden, müssen sie jetzt noch in geeigneter Form präsentiert werden.
 Das kann durch Tabellen, Grafiken und Einzel-Ansichten durchgeführt werden.
 
 Für den Anwender ist eine schnelle kurze Rückmeldung nach jeder Eingabe hilfreich,
-die per Kfür oder automatisch weitere Erläuterungen zum gefundenen Fehler liefert
+die per Mouse-Klick oder automatisch weitere Erläuterungen zum gefundenen Fehler liefert
 und Fehler deutlich anzeigt.
 
 Wer hier ein gutes System findet, wird sehr viel Aufwand in der Hotline einsparen.

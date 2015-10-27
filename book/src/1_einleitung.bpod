@@ -52,8 +52,8 @@ Kleidung verwenden kann.
 
 Für jeden Verarbeitungsschritt ist die Eingangs- und Ausgangsqualität genau definiert.
 
-Daten in der der elektronischen Datenverarbeitung müssen auch gefiltert und gewaschen werden,
-aber Standards für Verfahren und die Beschreibung Reinheits-Stufe existieren nicht.
+Daten in der elektronischen Datenverarbeitung müssen auch gefiltert und gewaschen werden,
+aber Standards für Verfahren und die Beschreibung der Reinheits-Stufe existieren nicht.
 
 =head2 Warum ist Daten-Validierung wichtig?
 
