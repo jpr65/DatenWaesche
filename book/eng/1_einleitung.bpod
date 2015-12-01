@@ -1,0 +1,316 @@
+﻿# Buch
+
+=head1 Teil I: Grundlagen
+
+==part Teil I: Grundlagen ===================================================================
+
+=head1 Einleitung
+
+Mein Buch ist der erste Versuch, das Gebiet der Daten-Validierung in der
+Informations-Technologie (IT) umfassend zu beschreiben.
+Ob es mir gelungen ist, alles verständlich und vollständig darzustellen, kann ich nicht 
+beurteilen. Dazu warte ich auf Ihre Kommentare, liebe Leser.
+
+Dieses Buch verfolgt unter anderem folgende Ziele:
+
+=over
+
+=item * Sensibilität für Daten-Validierung wecken
+
+=item * Diskussionen über Daten-Validierung anstoßen
+
+=back
+
+Weitere Ziele sind gelistet unter L</Ziele des Buchs> im Kapitel L</Zuallererst>.
+Falls Ihnen etwas bekannt vorkommt, Wiederholung ist ein Prinzip des Buchs.
+Warum, können Sie dort ebenfalls nachlesen in L<Wie Lernen funktioniert>.
+
+Aber was ist Datenvalidierung überhaupt?
+
+Die eigentliche Daten-Validierung oder Daten-Prüfung funktioniert wie ein Filter
+oder ein Wächter, der verschmutzte Daten abweist.
+
+Für diese Daten muss eine "Datenwäsche" durchgeführt werden, 
+eine geplante und gezielte Daten-Validierung mit anschließender Wäsche bezeichne ich 
+als "Große Datenwäsche". In Englisch in Anlehnung an "Clean Code" als "Clean Data".
+
+Angelieferte Daten sind meistens schmutzig und manchmal stark verseucht (Viren!).
+Validierung stellt verseuchte Daten in Quarantäne, damit sich die anderen Daten
+nicht anstecken, und markiert die verschmutzten Daten für die Reinigung,
+falls sie nicht dem gewünschten Reinheitsgrad entsprechen.
+
+So wie man seine lehmverschmierten Stiefel vor der Haustür auszieht, damit der Gang zum
+WC und danach in die Küche nicht eine stundenlange Reinigung des gesamten Hauses verursacht.
+Der Validator wacht über die Sauberkeit der Daten wie der Reinigungsservice über den
+frisch gewischten Boden.
+
+In der industriellen Produktion gibt es viele Verfahren zur Aufbereitung von Rohmaterial:
+
+Schafwolle wird mehrfach gewaschen, gekämmt und geglättet, bis man einen
+Faden hat, den man in der Textilerzeugung zur Herstellung von Decken und
+Kleidung verwenden kann.
+
+Für jeden Verarbeitungsschritt ist die Eingangs- und Ausgangsqualität genau definiert.
+
+Daten in der elektronischen Datenverarbeitung müssen auch gefiltert und gewaschen werden,
+aber Standards für Verfahren und die Beschreibung der Reinheits-Stufe existieren nicht.
+
+=head2 Warum ist Daten-Validierung wichtig?
+
+Einige Beispiele über die Folgen von unzureichender Daten-Validierung:
+
+=over
+
+=item *
+
+Ein L<Warenkorb|/Teurer Einkaufswagen> in einem Online-Shop
+kostet immer über 5 Mio Euro, auch ein leerer
+
+=item *
+
+Eine neue Generation von Bluetooth-Autoschlüsseln muss in einer Keksdose aus
+Metall aufbewahrt werden
+
+=item *
+
+Hacker kaufen mit erfundenen oder gestohlenen Kreditkarten im großen Stil in Online-Shops ein,
+Besitzer der Karten müssen sich gegen Abbuchungen/Rechnungen wehren.
+
+=item *
+
+Die Webserver von Internet-Portalen fallen immer wieder aus
+
+=item *
+
+"Schmutzige Daten" verhindern die Fertigstellung eines
+Software-Produkts
+
+=item *
+
+In Indien leben viele Verstorbene noch ein langes Leben
+
+=back
+
+Das ist nur eine kleine Auswahl, mit zum Teil fatalen Folgen für
+die Betroffenen. Betriebswirtschaftlich drohen große Kapitalverluste
+oder der Konkurs des Unternehmens.
+
+Die oben aufgelisteten Fälle
+werden im Buch analysiert und es werden Strategien
+für die SW-Entwicklung vorgestellt,
+die derartige Probleme gar nicht erst entstehen lassen.
+
+Diese Strategien werden im letzten Teil zu einem
+Validierungskonzept verdichtet und die Einhaltung
+dieses Konzepts wird durch Checklisten auch für
+Anwender und Entscheider überprüfbar.
+
+=head2 Daten-Validierung
+
+Unter Daten-Validierung versteht man die Prüfung der
+
+   formalen Richtigkeit der Daten (Syntax - Rechtschreibung),
+
+die Beurteilung der 
+
+   Gültigkeit von Regeln, die auf die Daten angewendet werden,
+
+und die 
+    
+   inhaltliche Korrektheit.
+
+Die ersten beiden Punkte können automatisiert und vollständig
+durch Software geprüft werden. Beim letzten Punkt, der inhaltlichen Korrektheit,
+wird dies nur in Ausnahmefällen gelingen.
+
+=head3 Aktueller Stand der Daten-Validierung
+
+Schon die Römer führten Volkszählungen durch, wie im Neuen Testmanent
+und in anderen Quellen beschrieben ist.
+
+Auch diese Daten mussten damals überprüft werden, damit nicht bewusst weniger
+Einwohner angegeben werden konnten, um z.B. weniger Steuern zahlen zu müssen.
+
+Ohne Unterstützung durch IT war die Validierung der Daten
+damals wahrscheinlich sehr aufwändig.
+
+Heute verfügen wir über Mobile-Phones, Computer, Server und andere IT-Technologie,
+aber die Menge der zu prüfenden Daten und die Anzahl an erforderlichen Prüfungen
+steigt stark an, genauso wie die Anzahl der SW-Systeme, die diese Prüfungen
+automatisiert durchführen sollen.
+
+Leider wird Daten-Validierung durch IT nicht an Universitäten gelehrt
+oder in Schulungen behandelt. Standards existieren nicht und dieses
+Buch ist eines der ersten, das sich ausschließlich diesem Thema widmet.
+
+Es existieren wenige, kaum bekannte Frameworks, die den Entwicklern
+die mühevolle Arbeit abnehmen, Prüfungen zu programmieren und zu testen.
+
+Viele User sind es gewöhnt, Daten gleich korrekt einzugeben, weil im Falle eines
+Fehlers die Suche nach der Ursache aufwändig werden kann. Im schlechtesten Fall,
+der immer noch sehr häufig auftritt, stürzt das Programm ab (Ausnahme in ...)
+oder hängt sich auf (reagiert nicht mehr)
+und die mühevoll eingetippten Daten sind verloren.
+
+Wenn der Auftraggeber einer SW-Entwicklung nicht explizit Prüfungen fordert
+und sie testet, werden oft keine eingebaut. Denn in Software sieht man meistens
+nicht, ob die Tür zum Tresor offen ist oder gleich ganz fehlt.
+
+=head2 Der beste Validator
+
+Wir selbst führen unablässig Prüfungen durch,
+wenn wir unsere Sinneseindrücke verarbeiten.
+Unsere Augen, Ohren, Nasen und Hände liefern 
+nämlich oft falsche, ungenaue, widersprüchliche
+oder doch stark unterschiedliche Eindrücke unserer Umgebung,
+die erst durch die Prüfung und Weiterverarbeitung 
+als konsistentes Ganzes - als persönliche Wirklichkeit - erfahren wird.
+
+Dafür nutzen wir den besten Validator, der uns zur Verfügung steht:
+
+  Unser Gehirn.
+
+Nachts werden dann die neuen Eindrücke nochmals sortiert,
+neuronale Fehlschaltungen identifiziert und korrigiert.
+Und das alles mühelos, vollautomatisch, nebenbei.
+
+Genau verstanden haben das die Experten für Hirnforschung noch nicht.
+
+=head2 Software und Daten enthalten Fehler
+
+Jede ungeprüfte Software enthält Fehler, eine gut getestete Software enthält weniger
+Fehler.
+
+Die Komplexität jeder größeren Software-Lösung überschreitet irgendwann den Punkt,
+wo ein einzelner sie insgesamt und in allen Details verstehen kann.
+
+Das führt so weit, dass die Experten, die die Software ja entwickelt haben,
+überhaupt nicht mehr wissen, was da genau abläuft.
+
+Fehlerhafte Software kann natürlich keine fehlerfreien Daten garantieren.
+
+Erstaunlicherweise gehen die meisten Software-Entwickler aber davon aus,
+dass ihre Daten immer korrekt sind. Aber nur validierte Daten sind "korrekt".
+Wobei "korrekt" eine sehr unspezifische Bezeichnung ist. Ich bevorzuge:
+
+  Die Daten sind bereit zum Einsatz für ...
+
+=head4 Beispiel für Zustände von Daten
+
+Ein Feuerwehrfahrzeug, das gerade keine Räder montiert hat, ist nicht
+direkt einsatzbereit.
+
+Die Validierungsprüfung für Einsatzbereitschaft ergibt daher:
+
+  Nicht einsatzbereit
+
+oder auch genauer:
+
+  Einsatzbereit nach Montage der Reifen in ca. 60 Minuten.
+
+Man muss das Fahrzeug jetzt nicht verschrotten, nur weil die Reifen noch fehlen.
+
+Aber genau das passiert, wenn man ungültige Daten nicht speichern kann. Sie
+werden vernichtet. Für Einzelwerte wie z.B. ein Datum, eine ganze Zahl u.ä.
+kann es akzeptabel und sinnvoll sein, wenn man ungültige Werte nicht in der Datenbank
+speichern darf.
+
+Aber einen Brief oder eine Email muss man immer speichern können, unabhängig ob
+leer, fast beendet oder fertig gestellt, auch wenn in der Anschrift die Postleitzahl nicht
+zum Ort passt oder die Email-Adresse unerlaubte Zeichen enthält.
+
+Die Email erhält dann den Status "Nicht versendbar" bedingt durch die ungültige Email-Adresse.
+
+Das Versenden dieser Email kann man dann generell
+verbieten oder den Anwender warnen und abfragen, ob versendet werden soll oder nicht.
+
+Aber er kann die Email öffnen, verändern und erneut prüfen lassen. Ist das Ergebnis positiv,
+wird der Status der Email in "versendbar" geändert und
+sie darf ohne weitere Rückfrage versendet werden.
+
+=head3 Funktionstests während der Entwicklung
+
+Mit Tests findet man Fehler/Abweichungen in der Software, korrigiert sie und testet erneut.
+Das alles findet B<während der Entwicklung im eigenen Hause> statt. 
+Somit ist die gesamte Testumgebung B<kein Produktbestandteil> und muss nur von Testern und
+Entwicklern bedient und verstanden werden.
+
+=head3 Datenwäsche beim Kunden
+
+Die zu prüfenden Daten fallen in der Regel erst beim Kunden an und
+können dann auch nur beim Kunden geprüft werden.
+Die B<Validierung> ist somit B<Produktbestandteil>
+und muss B<vom Kunden bedient und verstanden> werden.
+Als Produktbestandteil muss natürlich auch die Validierung Funktionstests unterzogen werden.
+
+=head2 Forderung eines standardisierten Daten-Validierungskonzepts
+
+Die Komplexität von Software und Daten erfordert eine gute Systemarchitektur,
+gut testete Funktionalität und robuste Algorithmen.
+
+Die Verwendung von ungewaschenen, nicht geprüften Daten
+führt in den meisten Fällen zu vermeidbaren Fehlern im weiteren Ablauf.
+Eine gezielte Validierung wird die Komplexität der Software reduzieren,
+in vielen Fällen signifikant reduzieren. Datenvalidierung ist also
+ein wichtiger Teil des Software-Produkts.
+
+Wenn dieses Buch der Datenvalidierung die notwendige Aufmerksamkeit
+verschafft, wäre das ein erster Schritt. Ein weiterer wäre die Verabschiedung
+von Standards und eines standardisierten Validierungskonzepts.
+
+Für alle Entwickler: auf dem CPAN finden Sie mein Perl-Modul 
+
+  Scalar::Validation
+
+das einige der hier noch zu besprechenden Verfahrensweisen bereits
+bereitstellt und sich in realen Projekten bewährt hat.
+
+=head2 Thematische Abgrenzung
+
+Datensicherheit, die Verarbeitung personenbezogener Daten und Login-Verfahren
+überschneiden sich teilweise mit der Datenvalidierung.
+
+=head3 Login-Verfahren
+
+Login-Verfahren validieren/verifizieren den Anwender, der sich am System anmeldet.
+Das ist ebenfalls eine Art von Datenvalidierung, noch dazu eine äußerst kritische.
+Die Problematik ist fachlich ausführlich beschrieben. Erstaunlicherweise
+wird hier jedoch oft gegen einfachste Regeln verstoßen, sodass sich unnötigerweise
+Schwachstellen ergeben.
+
+Im Kapitel L<Das Wichtigste zu Login-Verfahren>
+gehe ich daher kurz auf wichtige Punkte ein. Die fertige Lösung sollte unbedingt
+von einem Spezialisten untersucht werden!
+
+=head3 Personenbezogene Daten
+
+Die Verarbeitung personenbezogener Daten - auch einfach Datenschutz genannt -
+ist gesetzlich geregelt. Hier steht allerdings
+die Speicherung und Verwendung der Daten im Vordergrund. Sie findet in der Regel
+B<nach> der Validierung statt. Zugriffe auf solche Daten während der Validierung sollten
+von einem fachkundigen Datenschützer untersucht und freigegeben werden.
+Bei wiederholten oder groben Verstößen ist mit empfindlichen Strafen zu rechnen!
+
+=head3 Datensicherheit
+
+Datensicherheit ist ein vieldeutiger Begriff. Er wird im Zusammenhang mit
+Personenbezogenen Daten verwendet, siehe vorigen Abschnitt.
+
+Eine weitere Verwendung findet im Zusammenhang mit Daten-Sicherung und -Wiederherstellung (Backup)
+statt.
+
+Die dritte Bedeutung ist die folgende:
+
+Sind die Daten verlässlich? Korrekt? Geprüft? In diesem Sinne bildet
+Datensicherheit einen Teilaspekt von Datenvalidierung.
+
+=head4 Beispiel Texterkennung
+
+Werden Dokumente / Briefe / Formulare fotografiert oder eingescannt und
+anschließend eine automatische Texterkennung (OCR) durchgeführt,
+ergeben sich unsichere Daten. 
+
+Buchstaben werden verwechselt, hinzugefügt, überlesen.
+
+Diese Unsicherheit kann unter anderem durch die Anwendung von Daten-Validierung
+reduziert oder beseitigt werden.

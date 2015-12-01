@@ -1,0 +1,41 @@
+﻿# Buch
+
+=head1 Title Page
+
+=head2 Large Data Laundry
+
+=head3 Clean Data
+
+=head4 Reduce costs and minimize risks by use of this new data validation guideline
+
+# Oben Links: Blatt mit Schrift, darunter Pfeil auf
+
+# Mitte, darunter: Skizze einer Waschmaschine mit Buchstaben und Zeichen in der Trommel
+
+# Rechts: Geldhaufen/Scheine, auf die ein Pfeil aus der Waschmaschine zeigt.
+
+=head1 Back Side / Promotion
+
+Data validation is a neglected territory of software development.
+
+Using the software techniques described in this book will lead to an
+easy to use standard procedure for washing of data laundry.
+
+As result you will reduce time and costs of development.
+
+Customers define in the validation concept, which validations have to
+be done, when and how.
+
+Users get standardized, understandable error messages and hints in the UI, what was wrong
+and how to do the corrections. 
+
+Expirienced users can assign validation rules to data fields and UI components by their own.
+
+Developers get exact markup of the code line, where the dirty data elements were detected.
+
+Testers can write automatic, isolated tests for the validation rules.
+
+SW architecture will be improved joint to
+robustness and testability. Efforts for development and tests will decrease.
+
+
