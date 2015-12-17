@@ -1,52 +1,62 @@
 ﻿# Buch
 
-=head1 Zuallererst 
+=head1 At First 
 
-Hier wird der grundsätzliche Aufbau des Buches beschrieben und man erhält Tipps,
-wie man mit dem Buch arbeiten kann.
+This chapter describes the fundamental structures of the book and you get hints,
+how to work with this book.
 
-=head2 Ziele des Buchs
+=head2 Goals Of This Book
 
-Dieses Buch verfolgt mehrere Ziele:
+This book has several goals:
 
-Es soll darstellen, dass eine gründliche, geplante Datenprüfung Zeit und Geld in der Entwicklung 
-von Software einspart und ihre Qualität deutlich verbessert.
+It should illustrate, that a systematic data validation will reduce time and costs of
+software development and does a big improve of the software quality. 
 
-Es soll das Bewusstsein vermitteln, dass Datenprüfung eine absolute Notwendigkeit ist und
-ihre Vernachlässigung schwer wiegende Folgen haben kann.
+It should generate your awareness, that data validation is an absolute must and its neglecting
+will create heavy problems.
 
-Es soll alle Beteiligten mit dem für sie nötigen Wissen über Datenprüfung ausstatten.
+It should give all involved parties the necessary knowlegde about data validation.
 
-Es soll einen Leitfaden für die Datenprüfung liefern.
+It should be a guideline for data validation.
 
-Wenn es jetzt noch gelänge, eine Clean-Data Initiative analog zur CleanCode Initiative zu starten,
-wäre das mehr, als ich erwarten kann.
+If it would start a CleanData initiative analog to the CleanCode initiative, that would be more
+than to be expected.
 
-=head2 Leseempfehlungen für dieses Buch
+=head2 How to read this book
 
-=head3 Für Unentschlossene
+=head3 For undecided readers
 
-Die Rückseite haben Sie wahrscheinlich schon gelesen, wenn nicht, dann dort starten.
+Did you read the rear page (rear side of book?) ? If not, start there.
 
-Im Anschluss die Einleitung lesen, dann dieses Kapitel und sich eine der in den
-folgenden Unterkapiteln beschriebenen Rollen aussuchen.
+Then read the introduction, afterwards this chapter and choose one of the roles
+described in the following.
 
-=head3 Für Entschlossene
+=head3 For Strong-Willed
 
-Die Einleitung und die weiteren Unterkapitel von diesem hier lesen startend bei
-"Wie Lernen funktioniert"
+Read the introduction and the following subchapters of this one, start at
+"How learning works"
 
-=head3 Für Anwender (User)
+=head3 For Software Users
+
+...
 
 =head3 Für Entscheider
 
-=head3 Für Software-Spezialisten
+...
 
-Alles lesen.
+=head3 For Software Specialists
 
-=head3 Für Tester
+Read the whole book.
 
-=head2 Wie Lernen funktioniert
+=head3 For Testers
+
+...
+
+=head2 How learning works
+
+repeat, repeat, repeat...
+
+[not translated]
 
 Menschen lernen durch Beispiele und Wiederholungen, die wenigsten haben ein fotographisches
 Gedächtnis, durch das sie wie durch Wikipedia browsen können.
@@ -66,7 +76,9 @@ wiederhole ich kurze Erklärungen für wichtige Begriffe, wichtige Eigenschaften
 oder wichtige Resultate, damit man nicht immer im Buch hin- und herspringen muss,
 was besonders in der gedruckten Version sehr lästig ist.
 
-=head2 Über den Umgang mit dem Buch
+=head2 How to work with the book
+
+[not translated]
 
 In der Überschrift oder Einleitung jedes Kapitels informiere ich darüber, für welche Zielgruppen 
 dieses Kapitel interessant ist, wenn es nicht für alle geschrieben ist.
@@ -81,7 +93,9 @@ das geht vorbei wie ein kleiner Regenschauer. Falls technisch umsetzbar
 werde ich solche Teile mit einem "Achtung: Technik"-Symbol am Rand
 der Seite markieren.
 
-=head4 Und jetzt: Achtung, ein bischen Technik!
+=head4 And now: Attention: Software Technics
+
+[not translated]
 
 Falls Sie Codezeilen nicht verstehen, treten Sie ein wenig zurück und lassen Sie
 das so entstehende Bild auf sich wirken, ohne zu lesen. Wirkt es unordentlich und kompliziert,

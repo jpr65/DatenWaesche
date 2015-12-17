@@ -1,86 +1,74 @@
 ﻿# Buch
 
-=head1 Teil I: Grundlagen
+=head1 Part I: Fundamentals
 
-==part Teil I: Grundlagen ===================================================================
+==part Part I: Fundamentals ===================================================================
 
-=head1 Einleitung
+=head1 Introduction
 
-Mein Buch ist der erste Versuch, das Gebiet der Daten-Validierung in der
-Informations-Technologie (IT) umfassend zu beschreiben.
-Ob es mir gelungen ist, alles verständlich und vollständig darzustellen, kann ich nicht 
-beurteilen. Dazu warte ich auf Ihre Kommentare, liebe Leser.
+This book is the first trial, to create a complete description for the domain of data validation
+in information technology. If it succeded, if everything is clearly and complete, I cannot know.
+I wait for your comments of missing parts or misunderstandable / unclear phrases.
 
-Dieses Buch verfolgt unter anderem folgende Ziele:
+These are some of the goals of this book:
 
 =over
 
-=item * Sensibilität für Daten-Validierung wecken
+=item * Awaken sensibility for data validation
 
-=item * Diskussionen über Daten-Validierung anstoßen
+=item * Start discussions about data validation
 
 =back
 
-Weitere Ziele sind gelistet unter L</Ziele des Buchs> im Kapitel L</Zuallererst>.
-Falls Ihnen etwas bekannt vorkommt, Wiederholung ist ein Prinzip des Buchs.
-Warum, können Sie dort ebenfalls nachlesen in L<Wie Lernen funktioniert>.
+Additional goals are listed at ... in Chapter ...
+If you think, I already read it somewhere, repeating is a principle of this book.
+Why, you can read in L<How Learning works>.
 
-Aber was ist Datenvalidierung überhaupt?
+What is data validation?
 
-Die eigentliche Daten-Validierung oder Daten-Prüfung funktioniert wie ein Filter
-oder ein Wächter, der verschmutzte Daten abweist.
+Data validation or data checks are working like a filter or a guard rejecting dirty data.
 
-Für diese Daten muss eine "Datenwäsche" durchgeführt werden, 
-eine geplante und gezielte Daten-Validierung mit anschließender Wäsche bezeichne ich 
-als "Große Datenwäsche". In Englisch in Anlehnung an "Clean Code" als "Clean Data".
+These data have to be "cleaned" for further use. A planned and systematic 
+data validation with following cleaning is named by me as "Large Data Laundry"
+(german: Große Datenwäsche). As result you get easy to use "Clean Data".
 
-Angelieferte Daten sind meistens schmutzig und manchmal stark verseucht (Viren!).
-Validierung stellt verseuchte Daten in Quarantäne, damit sich die anderen Daten
-nicht anstecken, und markiert die verschmutzten Daten für die Reinigung,
-falls sie nicht dem gewünschten Reinheitsgrad entsprechen.
+Delivered data are often dirty and sometimes contamined by viruses.
+Validation quarantines these data, so they cannot infect other data and markups them
+for cleaning. Also data will be marked for cleaning, if it has not the puritiy level that is
+necessary for processing.
 
-So wie man seine lehmverschmierten Stiefel vor der Haustür auszieht, damit der Gang zum
-WC und danach in die Küche nicht eine stundenlange Reinigung des gesamten Hauses verursacht.
-Der Validator wacht über die Sauberkeit der Daten wie der Reinigungsservice über den
-frisch gewischten Boden.
+[Examples, not translated ...]
 
-In der industriellen Produktion gibt es viele Verfahren zur Aufbereitung von Rohmaterial:
+Data in electronic IT have to be filtered and cleaned, too, but standard procedures 
+and descriptions of the puritiy levels are missing.
 
-Schafwolle wird mehrfach gewaschen, gekämmt und geglättet, bis man einen
-Faden hat, den man in der Textilerzeugung zur Herstellung von Decken und
-Kleidung verwenden kann.
+=head2 Why is data validation important?
 
-Für jeden Verarbeitungsschritt ist die Eingangs- und Ausgangsqualität genau definiert.
-
-Daten in der elektronischen Datenverarbeitung müssen auch gefiltert und gewaschen werden,
-aber Standards für Verfahren und die Beschreibung der Reinheits-Stufe existieren nicht.
-
-=head2 Warum ist Daten-Validierung wichtig?
-
-Einige Beispiele über die Folgen von unzureichender Daten-Validierung:
+Some examples about the results of incomplete data validation:
 
 =over
 
 =item *
 
-Ein L<Warenkorb|/Teurer Einkaufswagen> in einem Online-Shop
-kostet immer über 5 Mio Euro, auch ein leerer
+A shopping cart in a online shop costs more than 5 000 000 Euro,
+independent from content, also if it is empty.
 
 =item *
 
-Eine neue Generation von Bluetooth-Autoschlüsseln muss in einer Keksdose aus
-Metall aufbewahrt werden
+A new generation of bluettooth car keys have to be put into a metal box if not used.
 
 =item *
 
-Hacker kaufen mit erfundenen oder gestohlenen Kreditkarten im großen Stil in Online-Shops ein,
-Besitzer der Karten müssen sich gegen Abbuchungen/Rechnungen wehren.
+Hacker by with faked or stolen credit card informations in online shops,
+owner of the cards have to fight against debits and wrong bills.
 
 =item *
 
-Die Webserver von Internet-Portalen fallen immer wieder aus
+The Webservers of internet portals are failing several times
 
 =item *
+
+"Dirty Data" ...
 
 "Schmutzige Daten" verhindern die Fertigstellung eines
 Software-Produkts
