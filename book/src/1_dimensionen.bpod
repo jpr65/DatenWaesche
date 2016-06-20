@@ -566,7 +566,7 @@ Nicht alle Regeln sind jederzeit und für jeden gültig.
 Durch Änderungen von Gesetzen kann eine Regel zu einem bestimmten Termin verschärft oder 
 großzügiger ausgelegt werden. Beispiel Zoll:
 
-Zum 01.01.2016 gelten folgende (fiktive) Bestimmungen:
+Zum 01.01.2015 gelten folgende (fiktive) Bestimmungen:
 
 =over
 
@@ -621,7 +621,7 @@ Für Busfahrer im Fernverkehr gelten besonders strenge Richtlinien. Neben der Fa
 muss auf Pausen und Ruhezeiten sowie die Gesundheit des Fahrers geachtet werden.
 Diese komplexe Prüfung ist dazu in viele Einzelprüfungen aufzulösen, von denen einige vor Fahrtantritt
 durchzuführen sind, Pausen und Ruhezeiten müssen kontinuierlich
-während der Fahrt überprüft werden werden.
+während der Fahrt überprüft werden.
 
 =back
 
@@ -647,7 +647,7 @@ müssen abhängig von der Art der Änderung Prüfungen erneut durchgeführt werd
 
 =head3 Änderung der Regelimplementierung
 
-Änderungen der Implmentierung einer Regel führen zu einer neuen Regel,
+Änderungen der Implementierung einer Regel führen zu einer neuen Regel,
 die stärker oder schwächer einschränken kann oder auch völlig anders arbeitet.
 
 Die sichere Methode ist, alle Prüfungen zu verwerfen und entsprechend neu
