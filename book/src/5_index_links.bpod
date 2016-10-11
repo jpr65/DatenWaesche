@@ -192,8 +192,8 @@ ergibt die Ausgabe von
  
 Beim lesenden Zugriff auf den Vornamen lässt man die Klammern üblicherweise weg:
  
-  say auto_besitzer->Vorname;            # GetVorname
-  say auto_besitzer->Vorname("Peter");   # SetVorname
+  say auto_besitzer->Vorname;        # GetVorname
+  auto_besitzer->Vorname("Peter");   # SetVorname
      
 L</Moo> vom L</CPAN> sollte als Minimum verwendet werden, wenn man selbst Objekte/Klassen
 definieren möchte, zusätzlich zu einer Validierung wie L</Scalar::Validation>.

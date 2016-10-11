@@ -286,7 +286,7 @@ zwischengelagert werden. Die Einführung des neuen Produkts bei den Kunden konnt
 nicht mehr begleiten, weil ich Ende 2012 nach Renesas wechselte.
 
 Bei Renesas Europe implementierte ich Tools für die Chip-Entwicklung, in meiner Lieblingssprache Perl.
-Dort lernte ich das TestAnythingProtokoll (TAP) schätzen, das als Integraler Bestandteil
+Dort lernte ich das TestAnythingProtokoll (TAP) schätzen, das als integraler Bestandteil
 von Perl seit über 20 Jahren im Einsatz ist.
 
 Hier perfektionierte ich meine TestDrivenEntwicklung:
